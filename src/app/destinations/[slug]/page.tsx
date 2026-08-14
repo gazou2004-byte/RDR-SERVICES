@@ -1,0 +1,175 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { PageHero } from "@/components/sections/page-hero";
+import { Cta } from "@/components/sections/cta";
+import { Container, SectionHeading } from "@/components/ui/section";
+import { destinations } from "@/content/site";
+
+type Props = { params: Promise<{ slug: string }> };
+
+export function generateStaticParams() {
+  return destinations.map((destination) => ({ slug: destination.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const destination = destinations.find((item) => item.slug === slug);
+  if (!destination) return {};
+
+  return {
+    title: `${destination.name} — tour privé`,
+    description: destination.intro,
+  };
+}
+
+export default async function DestinationPage({ params }: Props) {
+  const { slug } = await params;
+  const destination = destinations.find((item) => item.slug === slug);
+  if (!destination) notFound();
+
+  const others = destinations.filter((item) => item.slug !== slug);
+
+  return (
+    <>
+      <PageHero
+        eyebrow={`Tour privé — ${destination.duration}`}
+        title={destination.name}
+        description={destination.tagline}
+        image={destination.image}
+      />
+
+      {/* Présentation & informations clés */}
+      <section className="border-b border-parch-200/10 py-24 lg:py-32">
+        <Container>
+          <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
+            <div className="reveal lg:col-span-7">
+              <p className="font-display text-2xl leading-relaxed font-light text-parch-100 sm:text-3xl">
+                {destination.intro}
+              </p>
+              <span className="rule-gold mt-9" />
+            </div>
+
+            <dl className="reveal space-y-7 lg:col-span-5">
+              <div className="border-b border-parch-200/12 pb-6">
+                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-500 uppercase">
+                  Durée conseillée
+                </dt>
+                <dd className="mt-2 font-display text-2xl font-light text-parch-50">
+                  {destination.duration}
+                </dd>
+              </div>
+              <div className="border-b border-parch-200/12 pb-6">
+                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-500 uppercase">
+                  Meilleure saison
+                </dt>
+                <dd className="mt-2 font-display text-2xl font-light text-parch-50">
+                  {destination.season}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-500 uppercase">
+                  Format
+                </dt>
+                <dd className="mt-2 font-display text-2xl font-light text-parch-50">
+                  Privatif intégral
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </Container>
+      </section>
+
+      {/* Temps forts */}
+      <section className="border-b border-parch-200/10 bg-wine-900 py-24 lg:py-32">
+        <Container>
+          <SectionHeading eyebrow="Temps forts" title="Ce que vous verrez" />
+          <ul className="mt-14 grid gap-px border border-parch-200/10 bg-parch-200/10 sm:grid-cols-2">
+            {destination.highlights.map((highlight, index) => (
+              <li
+                key={highlight}
+                className="reveal flex items-start gap-6 bg-wine-900 p-9"
+              >
+                <span className="font-display text-3xl leading-none font-light text-wine-600">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="pt-1.5 text-[0.95rem] leading-relaxed text-parch-200">
+                  {highlight}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* Itinéraire suggéré */}
+      <section className="border-b border-parch-200/10 py-24 lg:py-32">
+        <Container>
+          <SectionHeading
+            eyebrow="Itinéraire suggéré"
+            title="Un exemple,"
+            accent="pas une formule"
+            description="Voici comment se déroule un séjour type. Le vôtre sera recomposé de zéro après notre premier échange."
+          />
+
+          <ol className="mt-14 space-y-px border-l border-parch-200/15">
+            {destination.itinerary.map((day) => (
+              <li key={day.day} className="reveal relative pb-12 pl-9 last:pb-0">
+                <span
+                  aria-hidden
+                  className="absolute top-2 -left-[4.5px] h-2 w-2 rotate-45 bg-gold-500"
+                />
+                <p className="text-[0.64rem] tracking-[0.22em] text-gold-400 uppercase">
+                  {day.day}
+                </p>
+                <h3 className="mt-3 font-display text-2xl font-light text-parch-50 sm:text-3xl">
+                  {day.title}
+                </h3>
+                <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-parch-300">
+                  {day.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      {/* Autres destinations */}
+      <section className="border-b border-parch-200/10 bg-wine-900 py-24 lg:py-32">
+        <Container>
+          <SectionHeading
+            eyebrow="Poursuivre"
+            title="Les autres territoires"
+          />
+          <div className="mt-14 grid gap-6 sm:grid-cols-3">
+            {others.map((other) => (
+              <Link
+                key={other.slug}
+                href={`/destinations/${other.slug}`}
+                className="reveal group relative aspect-4/3 overflow-hidden"
+              >
+                <Image
+                  src={other.image}
+                  alt={other.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-[1000ms] group-hover:scale-107"
+                />
+                <div className="absolute inset-0 bg-wine-950/60 transition-colors duration-500 group-hover:bg-wine-950/35" />
+                <h3 className="absolute inset-x-0 bottom-0 p-6 font-display text-2xl font-light text-parch-50">
+                  {other.name}
+                </h3>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <Cta
+        title={`Composer votre séjour en ${destination.name}`}
+        description="Dites-nous vos dates, le nombre de voyageurs et ce qui vous fait envie. Nous revenons vers vous sous 72 heures avec un programme complet."
+      />
+    </>
+  );
+}

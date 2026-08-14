@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette vin — bordeaux, grenat, lie-de-vin, or et parchemin */
+  --color-wine-950: #120508; /* fond, presque noir teinté vin */
+  --color-wine-900: #1e070d;
+  --color-wine-850: #2a0a13;
+  --color-wine-800: #3a0e1b;
+  --color-wine-700: #5a1226; /* bordeaux profond */
+  --color-wine-600: #7b1e3a; /* grenat — couleur principale */
+  --color-wine-500: #963350;
+  --color-wine-400: #b5566f;
+  --color-wine-300: #d18ea0;
+
+  --color-gold-500: #c9a227; /* or — accent */
+  --color-gold-400: #d9b752;
+  --color-gold-300: #e6cf8c;
+
+  --color-parch-50: #faf6ef; /* parchemin */
+  --color-parch-100: #f2eadd;
+  --color-parch-200: #e2d5c1;
+  --color-parch-300: #c3b29a;
+  --color-parch-400: #948473;
+
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --tracking-brand: 0.28em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-wine-950);
+    color: var(--color-parch-100);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-500);
+    color: var(--color-wine-950);
+  }
+}
+
+@layer components {
+  /* Filet doré sous les titres de section */
+  .rule-gold {
+    @apply block h-px w-16 bg-gold-500;
+  }
+
+  .eyebrow {
+    @apply text-[0.68rem] font-medium uppercase text-gold-400;
+    letter-spacing: var(--tracking-brand);
+  }
+}
+
+/* Apparition au défilement */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*
+ * Le contenu est visible par défaut : si JavaScript est indisponible ou échoue,
+ * la page reste entièrement lisible. La classe `js` n'est posée sur <html>
+ * que lorsque le script d'amorçage s'exécute — c'est seulement à ce
+ * moment-là que les éléments partent en fondu.
+ */
+.js .reveal {
+  opacity: 0;
+}
+
+.js .reveal.is-visible {
+  animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal,
+  .js .reveal.is-visible {
+    opacity: 1;
+    animation: none;
+  }
+}

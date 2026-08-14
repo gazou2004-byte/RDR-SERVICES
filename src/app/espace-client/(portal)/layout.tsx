@@ -31,7 +31,7 @@ export default async function PortalLayout({
           <form action={logoutAction}>
             <button
               type="submit"
-              className="border border-vine-900/25 px-5 py-2.5 text-[0.66rem] font-medium tracking-[0.18em] text-vine-600 uppercase transition-colors hover:border-wine-600 hover:text-wine-600"
+              className="border border-vine-900/25 px-5 py-2.5 text-[0.66rem] font-medium tracking-[0.18em] text-vine-600 uppercase transition-colors hover:border-tuile-600 hover:text-tuile-600"
             >
               Se déconnecter
             </button>

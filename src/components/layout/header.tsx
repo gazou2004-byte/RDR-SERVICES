@@ -62,8 +62,8 @@ export function Header() {
                     ? "text-gold-400"
                     : "text-sand-50 hover:text-gold-400"
                   : isActive(item.href)
-                    ? "text-wine-600"
-                    : "text-vine-800 hover:text-wine-600"
+                    ? "text-tuile-600"
+                    : "text-vine-800 hover:text-tuile-600"
               }`}
             >
               {item.label}
@@ -75,7 +75,7 @@ export function Header() {
             className={`ml-2 border px-5 py-2.5 text-[0.64rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
               transparent
                 ? "border-sand-50/60 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
-                : "border-wine-600/60 text-wine-700 hover:bg-wine-600 hover:text-sand-50"
+                : "border-tuile-600/60 text-tuile-700 hover:bg-tuile-600 hover:text-sand-50"
             }`}
           >
             Espace client
@@ -114,7 +114,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={`border-b border-vine-900/10 py-4 font-display text-2xl font-light ${
-                isActive(item.href) ? "text-wine-600" : "text-vine-900"
+                isActive(item.href) ? "text-tuile-600" : "text-vine-900"
               }`}
             >
               {item.label}
@@ -122,7 +122,7 @@ export function Header() {
           ))}
           <Link
             href="/espace-client"
-            className="mt-6 border border-wine-600/60 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-wine-700 uppercase"
+            className="mt-6 border border-tuile-600/60 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-tuile-700 uppercase"
           >
             Espace client
           </Link>

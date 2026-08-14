@@ -14,11 +14,11 @@ export function Cta({
   description?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-wine-800 py-28 lg:py-36">
+    <section className="relative overflow-hidden bg-tuile-800 py-28 lg:py-36">
       {/* Halo doré discret en fond */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-wine-600/40 blur-[130px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-tuile-600/40 blur-[130px]"
       />
 
       <Container className="relative z-10 text-center">

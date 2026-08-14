@@ -53,7 +53,7 @@ export default function CreditsPage() {
                   href={credit.page}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold-600 transition-colors hover:text-wine-600"
+                  className="text-gold-600 transition-colors hover:text-tuile-600"
                 >
                   Page Wikimedia Commons →
                 </a>
@@ -62,7 +62,7 @@ export default function CreditsPage() {
                     href={credit.licenseUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gold-600 transition-colors hover:text-wine-600"
+                    className="text-gold-600 transition-colors hover:text-tuile-600"
                   >
                     Texte de la licence →
                   </a>

@@ -63,7 +63,7 @@ export function SectionHeading({
             {/* Sur un titre centré, l'accent prend sa propre ligne */}
             {centered ? null : " "}
             <span
-              className={`normal-case italic ${centered ? "block" : ""} ${light ? "text-gold-400" : "text-wine-600"}`}
+              className={`normal-case italic ${centered ? "block" : ""} ${light ? "text-gold-400" : "text-tuile-600"}`}
             >
               {accent}
             </span>

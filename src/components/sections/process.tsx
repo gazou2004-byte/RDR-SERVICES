@@ -18,7 +18,7 @@ export function Process() {
               key={item.step}
               className="reveal group relative bg-sand-100 p-9 transition-colors duration-500 hover:bg-sand-200 lg:p-10"
             >
-              <span className="font-display text-5xl leading-none font-light text-vine-400 transition-colors duration-500 group-hover:text-wine-600">
+              <span className="font-display text-5xl leading-none font-light text-vine-400 transition-colors duration-500 group-hover:text-tuile-600">
                 {item.step}
               </span>
               <h3 className="mt-7 font-display text-2xl font-light text-vine-900">

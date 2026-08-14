@@ -73,7 +73,7 @@ export function RegisterForm() {
         Vous avez déjà un compte ?{" "}
         <Link
           href="/espace-client/connexion"
-          className="text-gold-600 transition-colors hover:text-wine-600"
+          className="text-gold-600 transition-colors hover:text-tuile-600"
         >
           Se connecter
         </Link>

@@ -62,7 +62,7 @@ export default async function DashboardPage() {
           {upcoming.length > 0 ? (
             <Link
               href="/espace-client/sejours"
-              className="text-[0.66rem] tracking-[0.18em] text-wine-600 uppercase transition-colors hover:text-wine-600"
+              className="text-[0.66rem] tracking-[0.18em] text-tuile-600 uppercase transition-colors hover:text-tuile-600"
             >
               Tout voir →
             </Link>
@@ -95,7 +95,7 @@ export default async function DashboardPage() {
           {documents.length > 0 ? (
             <Link
               href="/espace-client/documents"
-              className="text-[0.66rem] tracking-[0.18em] text-wine-600 uppercase transition-colors hover:text-wine-600"
+              className="text-[0.66rem] tracking-[0.18em] text-tuile-600 uppercase transition-colors hover:text-tuile-600"
             >
               Tout voir →
             </Link>

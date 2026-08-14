@@ -37,7 +37,7 @@ export default async function BookingDetailPage({ params }: Props) {
     <div className="space-y-12">
       <Link
         href="/espace-client/sejours"
-        className="inline-block text-[0.66rem] tracking-[0.18em] text-vine-500 uppercase transition-colors hover:text-wine-600"
+        className="inline-block text-[0.66rem] tracking-[0.18em] text-vine-500 uppercase transition-colors hover:text-tuile-600"
       >
         ← Tous mes séjours
       </Link>
@@ -158,7 +158,7 @@ export default async function BookingDetailPage({ params }: Props) {
                         {document.sizeLabel ? ` · ${document.sizeLabel}` : ""}
                       </p>
                     </div>
-                    <span className="shrink-0 text-[0.62rem] tracking-[0.18em] text-wine-600 uppercase">
+                    <span className="shrink-0 text-[0.62rem] tracking-[0.18em] text-tuile-600 uppercase">
                       Ouvrir
                     </span>
                   </a>

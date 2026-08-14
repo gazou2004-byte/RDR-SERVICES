@@ -23,7 +23,7 @@ export function FaqSection() {
                 name="faq"
                 className="group border-b border-vine-900/12"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left text-[0.98rem] font-medium text-vine-800 transition-colors hover:text-wine-600 [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left text-[0.98rem] font-medium text-vine-800 transition-colors hover:text-tuile-600 [&::-webkit-details-marker]:hidden">
                   {item.question}
                   <span
                     aria-hidden

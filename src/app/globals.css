@@ -1,34 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette : fonds verts, texte vert de vigne, or en accent */
+  /* Palette : vert de grappe de raisin, terre cuite des tuiles, or */
 
   /*
-   * Les fonds. Teinte amande : franchement verte mais assez claire pour
-   * que le texte reste confortable à lire sur de longs paragraphes.
-   * Pour un fond plus discret, éclaircir vers #f1f4ea ;
-   * pour un fond plus soutenu, foncer vers #dfe8d1.
+   * Les fonds — vert de grappe de raisin, un vert tirant sur le jaune,
+   * plus chaud et plus végétal que l'amande précédente.
+   * Pour un fond plus discret, éclaircir vers #f0f2e5 ;
+   * pour un fond plus soutenu, foncer vers #e0e5cb.
    */
-  --color-sand-50: #e9efdf;
-  --color-sand-100: #dee6d1;
-  --color-sand-200: #cdd9bb;
-  --color-sand-300: #b4c59e;
-  --color-sand-400: #95a87d;
+  --color-sand-50: #ebeedd;
+  --color-sand-100: #e1e6cf;
+  --color-sand-200: #d0d8b7;
+  --color-sand-300: #b6c199;
+  --color-sand-400: #97a578;
 
-  /* Vert de vigne — le texte et les fonds sombres */
-  --color-vine-900: #1e2a1c;
-  --color-vine-800: #2b3a26;
-  --color-vine-700: #3d5133;
-  --color-vine-600: #4f6741;
-  --color-vine-500: #6b8459;
-  --color-vine-400: #91a67e;
-  --color-vine-300: #b6c6a5;
+  /* Vert de grappe — le texte et les fonds sombres */
+  --color-vine-900: #232d17;
+  --color-vine-800: #303c20;
+  --color-vine-700: #44542c;
+  --color-vine-600: #586b39;
+  --color-vine-500: #748852;
+  --color-vine-400: #9aab7a;
+  --color-vine-300: #bfcaa3;
 
   /*
    * Deux accents, deux rôles distincts.
    *
    * L'OR décore : ornements, filets, sur-titres, chiffres, bordures.
-   * Le BORDEAUX agit : boutons, liens actifs, mots mis en valeur dans
+   * La TUILE agit : boutons, liens actifs, mots mis en valeur dans
    * les titres, bandeau d'appel à contact.
    *
    * S'en tenir à ce partage évite que les deux couleurs se disputent
@@ -42,13 +42,14 @@
   --color-gold-400: #d5bb78;
   --color-gold-300: #e6d5a6;
 
-  /* Bordeaux — l'action */
-  --color-wine-800: #43101f;
-  --color-wine-700: #5c1428;
-  --color-wine-600: #7b1e3a;
-  --color-wine-500: #96304c;
-  --color-wine-400: #b5566f;
-  --color-wine-100: #f4e4e8;
+  /* Tuile — l'action. Terre cuite des toits du Sud-Ouest,
+     un rouge chaud et terreux plutôt qu'un bordeaux violacé. */
+  --color-tuile-800: #5e2718;
+  --color-tuile-700: #7c3620;
+  --color-tuile-600: #9c472c;
+  --color-tuile-500: #b55b3d;
+  --color-tuile-400: #cb7f61;
+  --color-tuile-100: #f6e5dd;
 
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -95,9 +96,9 @@
     letter-spacing: var(--tracking-brand);
   }
 
-  /* Le mot mis en valeur dans un titre : bordeaux, en italique */
+  /* Le mot mis en valeur dans un titre : terre cuite, en italique */
   .accent-word {
-    @apply text-wine-600 normal-case italic;
+    @apply text-tuile-600 normal-case italic;
   }
 
   /*

@@ -24,12 +24,31 @@
   --color-vine-400: #91a67e;
   --color-vine-300: #b6c6a5;
 
-  /* Or — l'accent */
+  /*
+   * Deux accents, deux rôles distincts.
+   *
+   * L'OR décore : ornements, filets, sur-titres, chiffres, bordures.
+   * Le BORDEAUX agit : boutons, liens actifs, mots mis en valeur dans
+   * les titres, bandeau d'appel à contact.
+   *
+   * S'en tenir à ce partage évite que les deux couleurs se disputent
+   * l'attention sur une même page.
+   */
+
+  /* Or — la décoration */
   --color-gold-700: #8c6f24;
   --color-gold-600: #a8862f;
   --color-gold-500: #c2a04a;
   --color-gold-400: #d5bb78;
   --color-gold-300: #e6d5a6;
+
+  /* Bordeaux — l'action */
+  --color-wine-800: #43101f;
+  --color-wine-700: #5c1428;
+  --color-wine-600: #7b1e3a;
+  --color-wine-500: #96304c;
+  --color-wine-400: #b5566f;
+  --color-wine-100: #f4e4e8;
 
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -74,6 +93,11 @@
   .eyebrow-light {
     @apply text-[0.68rem] font-medium uppercase text-gold-400;
     letter-spacing: var(--tracking-brand);
+  }
+
+  /* Le mot mis en valeur dans un titre : bordeaux, en italique */
+  .accent-word {
+    @apply text-wine-600 normal-case italic;
   }
 
   /*

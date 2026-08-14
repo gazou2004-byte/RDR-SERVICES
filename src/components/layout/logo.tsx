@@ -18,7 +18,7 @@ export function Logo({
         className={`font-display text-2xl leading-none font-medium tracking-[0.12em] transition-colors ${
           tone === "light"
             ? "text-sand-50 group-hover:text-gold-400"
-            : "text-vine-900 group-hover:text-gold-600"
+            : "text-vine-900 group-hover:text-wine-600"
         }`}
       >
         RDR

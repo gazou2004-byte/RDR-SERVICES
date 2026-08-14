@@ -59,7 +59,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                 ) : (
                   <Link
                     href="/services"
-                    className="group mt-10 inline-flex items-center gap-2 text-[0.7rem] font-medium tracking-[0.2em] text-gold-600 uppercase transition-colors hover:text-gold-700"
+                    className="group mt-10 inline-flex items-center gap-2 text-[0.7rem] font-medium tracking-[0.2em] text-wine-600 uppercase transition-colors hover:text-wine-700"
                   >
                     Voir plus
                     <svg

@@ -48,7 +48,7 @@ export function LoginForm() {
         Pas encore de compte ?{" "}
         <Link
           href="/espace-client/inscription"
-          className="text-gold-600 transition-colors hover:text-gold-700"
+          className="text-gold-600 transition-colors hover:text-wine-600"
         >
           Créer mon espace
         </Link>

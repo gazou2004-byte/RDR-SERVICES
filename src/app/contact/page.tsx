@@ -47,7 +47,7 @@ export default function ContactPage() {
                     <dd className="mt-1">
                       <a
                         href={`tel:${company.phoneHref}`}
-                        className="font-display text-2xl font-light text-vine-900 transition-colors hover:text-gold-600"
+                        className="font-display text-2xl font-light text-vine-900 transition-colors hover:text-wine-600"
                       >
                         {company.phone}
                       </a>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                     <dd className="mt-1">
                       <a
                         href={`mailto:${company.email}`}
-                        className="text-[0.95rem] text-vine-800 transition-colors hover:text-gold-600"
+                        className="text-[0.95rem] text-vine-800 transition-colors hover:text-wine-600"
                       >
                         {company.email}
                       </a>

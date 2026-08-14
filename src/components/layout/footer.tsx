@@ -23,7 +23,7 @@ export function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[0.68rem] tracking-[0.14em] text-vine-500 uppercase transition-colors hover:text-gold-600"
+                  className="text-[0.68rem] tracking-[0.14em] text-vine-500 uppercase transition-colors hover:text-wine-600"
                 >
                   {name}
                 </a>
@@ -59,7 +59,7 @@ export function Footer() {
             <li>
               <a
                 href={`tel:${company.phoneHref}`}
-                className="text-sm text-vine-600 transition-colors hover:text-gold-600"
+                className="text-sm text-vine-600 transition-colors hover:text-wine-600"
               >
                 {company.phone}
               </a>
@@ -67,7 +67,7 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${company.email}`}
-                className="text-sm text-vine-600 transition-colors hover:text-gold-600"
+                className="text-sm text-vine-600 transition-colors hover:text-wine-600"
               >
                 {company.email}
               </a>
@@ -76,7 +76,7 @@ export function Footer() {
             <li className="pt-4">
               <Link
                 href="/contact"
-                className="text-[0.68rem] tracking-[0.16em] text-gold-600 uppercase transition-colors hover:text-gold-700"
+                className="text-[0.68rem] tracking-[0.16em] text-wine-600 uppercase transition-colors hover:text-wine-600"
               >
                 Demander un devis →
               </Link>
@@ -95,19 +95,19 @@ export function Footer() {
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link
               href="/mentions-legales"
-              className="transition-colors hover:text-gold-600"
+              className="transition-colors hover:text-wine-600"
             >
               Mentions légales
             </Link>
             <Link
               href="/confidentialite"
-              className="transition-colors hover:text-gold-600"
+              className="transition-colors hover:text-wine-600"
             >
               Confidentialité
             </Link>
             <Link
               href="/credits"
-              className="transition-colors hover:text-gold-600"
+              className="transition-colors hover:text-wine-600"
             >
               Crédits photo
             </Link>
@@ -146,7 +146,7 @@ function FooterLink({
     <li>
       <Link
         href={href}
-        className="text-sm text-vine-600 transition-colors hover:text-gold-600"
+        className="text-sm text-vine-600 transition-colors hover:text-wine-600"
       >
         {children}
       </Link>

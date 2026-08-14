@@ -89,7 +89,7 @@ export default function PrivacyPage() {
               Pour toute question relative à vos données :{" "}
               <a
                 href={`mailto:${company.email}`}
-                className="text-gold-600 transition-colors hover:text-gold-700"
+                className="text-gold-600 transition-colors hover:text-wine-600"
               >
                 {company.email}
               </a>

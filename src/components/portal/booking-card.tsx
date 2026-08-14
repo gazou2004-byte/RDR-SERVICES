@@ -21,14 +21,14 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
   return (
     <Link
       href={`/espace-client/sejours/${booking.id}`}
-      className="group block border border-vine-900/12 bg-sand-100 p-7 transition-colors hover:border-gold-600/40 sm:p-9"
+      className="group block border border-vine-900/12 bg-sand-100 p-7 transition-colors hover:border-wine-600/40 sm:p-9"
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="text-[0.62rem] tracking-[0.22em] text-vine-500 uppercase">
             {booking.reference}
           </p>
-          <h3 className="mt-2.5 font-display text-2xl font-light text-vine-900 transition-colors group-hover:text-gold-600 sm:text-3xl">
+          <h3 className="mt-2.5 font-display text-2xl font-light text-vine-900 transition-colors group-hover:text-wine-600 sm:text-3xl">
             {booking.destination}
           </h3>
         </div>

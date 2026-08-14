@@ -158,7 +158,7 @@ export default async function DestinationPage({ params }: Props) {
                     className="object-cover transition-transform duration-[1000ms] group-hover:scale-105"
                   />
                 </div>
-                <h3 className="border-b border-vine-900/12 pt-5 pb-5 font-display text-2xl font-light text-vine-900 transition-colors group-hover:border-gold-600 group-hover:text-gold-600">
+                <h3 className="border-b border-vine-900/12 pt-5 pb-5 font-display text-2xl font-light text-vine-900 transition-colors group-hover:border-wine-600 group-hover:text-wine-600">
                   {other.name}
                 </h3>
               </Link>

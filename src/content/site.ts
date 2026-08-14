@@ -161,20 +161,18 @@ export const experiences = [
       "/images/exp-vendanges.jpg",
   },
   {
-    title: "Cours avec un chef étoilé",
-    place: "Périgord",
+    title: "Villages perchés du Périgord",
+    place: "Dordogne",
     description:
-      "Marché aux truffes le matin, cuisine l'après-midi, dégustation le soir. En cuisine avec le chef, pas devant un écran.",
-    image:
-      "/images/exp-beynac-int.jpg",
+      "Belvès, Domme, Monpazier : trois bastides classées parcourues avec un historien qui y vit, loin des heures d'affluence.",
+    image: "/images/exp-beynac-int.jpg",
   },
   {
-    title: "Surf & côte basque",
+    title: "Retour de pêche à Saint-Jean-de-Luz",
     place: "Pays Basque",
     description:
-      "Session privée avec un moniteur à Biarritz au lever du jour, puis petit-déjeuner face à l'océan.",
-    image:
-      "/images/exp-surf.jpg",
+      "Le port au petit matin, la criée, puis le déjeuner du jour préparé avec ce qui vient d'être débarqué.",
+    image: "/images/exp-surf.jpg",
   },
   {
     title: "Déjeuner au cœur des vignes",
@@ -184,12 +182,11 @@ export const experiences = [
     image: "/images/exp-margaux.jpg",
   },
   {
-    title: "Château privé & art de vivre",
-    place: "Dordogne",
+    title: "La Dordogne en gabare privée",
+    place: "Périgord",
     description:
-      "Une propriété classée, habituellement fermée, ouverte pour vous le temps d'un déjeuner dans ses jardins à la française.",
-    image:
-      "/images/exp-chateau.jpg",
+      "Descente de la rivière sur une gabare privatisée, au pied des falaises de La Roque-Gageac, avec un panier de producteurs à bord.",
+    image: "/images/exp-chateau.jpg",
   },
 ];
 

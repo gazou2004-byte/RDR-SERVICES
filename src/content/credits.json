@@ -1,29 +1,5 @@
 [
   {
-    "slot": "dest-perigord",
-    "title": "La Roque-Gageac - 03.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Benjamin Smith",
-    "page": "https://commons.wikimedia.org/wiki/File:La_Roque-Gageac_-_03.jpg"
-  },
-  {
-    "slot": "dest-basque",
-    "title": "Saint-Jean-de-Luz - Le port et maison de l'Infante - btv1b10570422f.jpg",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "author": "",
-    "page": "https://commons.wikimedia.org/wiki/File:Saint-Jean-de-Luz_-_Le_port_et_maison_de_l%27Infante_-_btv1b10570422f.jpg"
-  },
-  {
-    "slot": "dest-gascogne",
-    "title": "Fourcès Gers 13.jpg",
-    "license": "FAL",
-    "licenseUrl": "http://artlibre.org/licence/lal/en",
-    "author": "Jean-noël Lafargue (Jean-no)",
-    "page": "https://commons.wikimedia.org/wiki/File:Fourc%C3%A8s_Gers_13.jpg"
-  },
-  {
     "slot": "hero-services",
     "title": "Chai à barriques Château de Chambert.jpg",
     "license": "CC BY-SA 3.0",
@@ -40,60 +16,12 @@
     "page": "https://commons.wikimedia.org/wiki/File:Chais_%C3%A0_barriques_de_Sigalas.jpg"
   },
   {
-    "slot": "hero-contact",
-    "title": "Sarlat-la-Canéda - Place de la Liberté - 2.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Benjamin Smith",
-    "page": "https://commons.wikimedia.org/wiki/File:Sarlat-la-Can%C3%A9da_-_Place_de_la_Libert%C3%A9_-_2.jpg"
-  },
-  {
-    "slot": "svc-acces",
-    "title": "Chai à barriques Haut Selve.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Jluthringer",
-    "page": "https://commons.wikimedia.org/wiki/File:Chai_%C3%A0_barriques_Haut_Selve.jpg"
-  },
-  {
-    "slot": "exp-surf",
-    "title": "Rocher de la Vierge depuis l'esplanade.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Christian David",
-    "page": "https://commons.wikimedia.org/wiki/File:Rocher_de_la_Vierge_depuis_l%27esplanade.jpg"
-  },
-  {
-    "slot": "exp-beynac-int",
-    "title": "Château de Beynac Chapelle Dordogne 10.jpg",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "author": "Jebulon",
-    "page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Beynac_Chapelle_Dordogne_10.jpg"
-  },
-  {
     "slot": "svc-transport",
     "title": "2023 Mercedes-Benz V-Class 300d (W447) IMG 9812.jpg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "author": "Alexander-93",
     "page": "https://commons.wikimedia.org/wiki/File:2023_Mercedes-Benz_V-Class_300d_(W447)_IMG_9812.jpg"
-  },
-  {
-    "slot": "svc-excursions",
-    "title": "Sarlat-la-Canéda - Rue de la République & place du 14 juillet.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Benjamin Smith",
-    "page": "https://commons.wikimedia.org/wiki/File:Sarlat-la-Can%C3%A9da_-_Rue_de_la_R%C3%A9publique_%26_place_du_14_juillet.jpg"
-  },
-  {
-    "slot": "exp-vendanges",
-    "title": "Couleurs de la vigne 3, Gironde, France.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Pascal MOULIN",
-    "page": "https://commons.wikimedia.org/wiki/File:Couleurs_de_la_vigne_3,_Gironde,_France.jpg"
   },
   {
     "slot": "exp-margaux",
@@ -104,44 +32,12 @@
     "page": "https://commons.wikimedia.org/wiki/File:Chateau_Margaux_fr33460_vignoble_banner.jpg"
   },
   {
-    "slot": "exp-chateau",
-    "title": "Château de Beynac 2.jpg",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "author": "Jebulon",
-    "page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Beynac_2.jpg"
-  },
-  {
-    "slot": "exp-verticale",
-    "title": "Chai à barriques du château de Malle (Gironde), janvier 2025.jpg",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "author": "Jefunky",
-    "page": "https://commons.wikimedia.org/wiki/File:Chai_%C3%A0_barriques_du_ch%C3%A2teau_de_Malle_(Gironde),_janvier_2025.jpg"
-  },
-  {
-    "slot": "svc-creations",
-    "title": "Fourcès Gers 9.jpg",
-    "license": "FAL",
-    "licenseUrl": "http://artlibre.org/licence/lal/en",
-    "author": "Jean-noël Lafargue (Jean-no)",
-    "page": "https://commons.wikimedia.org/wiki/File:Fourc%C3%A8s_Gers_9.jpg"
-  },
-  {
     "slot": "hero-accueil",
     "title": "Vineyard in the Haut-Medoc.jpg",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "author": "Jonas Roux",
     "page": "https://commons.wikimedia.org/wiki/File:Vineyard_in_the_Haut-Medoc.jpg"
-  },
-  {
-    "slot": "dest-bordeaux",
-    "title": "Place de la Bourse et le miroir d'eau - Bordeaux 02.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Javier Perez Montes",
-    "page": "https://commons.wikimedia.org/wiki/File:Place_de_la_Bourse_et_le_miroir_d%27eau_-_Bordeaux_02.jpg"
   },
   {
     "slot": "hero-experiences",
@@ -152,11 +48,115 @@
     "page": "https://commons.wikimedia.org/wiki/File:Vignes_de_Talmont_sur_Gironde.jpg"
   },
   {
-    "slot": "auth-fond",
+    "slot": "dest-perigord",
+    "title": "Dordogne River 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Krzysztof Golik",
+    "page": "https://commons.wikimedia.org/wiki/File:Dordogne_River_02.jpg"
+  },
+  {
+    "slot": "dest-basque",
+    "title": "Biarritz (View from the Lighthouse).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Jörg Braukmann",
+    "page": "https://commons.wikimedia.org/wiki/File:Biarritz_(View_from_the_Lighthouse).jpg"
+  },
+  {
+    "slot": "dest-bordeaux",
+    "title": "Bordeaux Quai Louis XVIII R01.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "author": "Marc Ryckaert (MJJR)",
+    "page": "https://commons.wikimedia.org/wiki/File:Bordeaux_Quai_Louis_XVIII_R01.jpg"
+  },
+  {
+    "slot": "dest-gascogne",
+    "title": "Saint Lawrence Church in Fourcès - H4A4447.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "Pierre-Selim Huard",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint_Lawrence_Church_in_Fourc%C3%A8s_-_H4A4447.jpg"
+  },
+  {
+    "slot": "svc-excursions",
+    "title": "Grand Rue in Domme 03.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Krzysztof Golik",
+    "page": "https://commons.wikimedia.org/wiki/File:Grand_Rue_in_Domme_03.jpg"
+  },
+  {
+    "slot": "svc-acces",
+    "title": "Saint-Emilion 33 La Grande Muraille 2013.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "JLPC",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_La_Grande_Muraille_2013.jpg"
+  },
+  {
+    "slot": "svc-creations",
     "title": "Saint-Emilion 33 Place 2013.jpg",
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "author": "JLPC",
     "page": "https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg"
+  },
+  {
+    "slot": "exp-verticale",
+    "title": "Rutherford Hill Wine Cave-1369.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Frank Schulenburg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rutherford_Hill_Wine_Cave-1369.jpg"
+  },
+  {
+    "slot": "exp-vendanges",
+    "title": "Javier shows part of the grape harvest in his Lysekil vineyard 1 - cropped.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "author": "W.carter",
+    "page": "https://commons.wikimedia.org/wiki/File:Javier_shows_part_of_the_grape_harvest_in_his_Lysekil_vineyard_1_-_cropped.jpg"
+  },
+  {
+    "slot": "exp-chateau",
+    "title": "La Roque-Gageac - 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Benjamin Smith",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Roque-Gageac_-_02.jpg"
+  },
+  {
+    "slot": "exp-beynac-int",
+    "title": "View of Belves 04.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Krzysztof Golik",
+    "page": "https://commons.wikimedia.org/wiki/File:View_of_Belves_04.jpg"
+  },
+  {
+    "slot": "exp-surf",
+    "title": "Saint-Jean-de-Luz 64 Bassin port 2012.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "JLPC",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint-Jean-de-Luz_64_Bassin_port_2012.jpg"
+  },
+  {
+    "slot": "hero-contact",
+    "title": "Paysage Dordogne Domme.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "author": "Jebulon",
+    "page": "https://commons.wikimedia.org/wiki/File:Paysage_Dordogne_Domme.jpg"
+  },
+  {
+    "slot": "auth-fond",
+    "title": "Dordogne River 05.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Krzysztof Golik",
+    "page": "https://commons.wikimedia.org/wiki/File:Dordogne_River_05.jpg"
   }
 ]

@@ -44,11 +44,11 @@ export function LoginForm() {
         Se connecter
       </SubmitButton>
 
-      <p className="text-center text-[0.82rem] text-parch-400">
+      <p className="text-center text-[0.82rem] text-vine-500">
         Pas encore de compte ?{" "}
         <Link
           href="/espace-client/inscription"
-          className="text-gold-400 transition-colors hover:text-gold-300"
+          className="text-wine-600 transition-colors hover:text-wine-700"
         >
           Créer mon espace
         </Link>

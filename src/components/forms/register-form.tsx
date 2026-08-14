@@ -69,11 +69,11 @@ export function RegisterForm() {
         Créer mon espace
       </SubmitButton>
 
-      <p className="text-center text-[0.82rem] text-parch-400">
+      <p className="text-center text-[0.82rem] text-vine-500">
         Vous avez déjà un compte ?{" "}
         <Link
           href="/espace-client/connexion"
-          className="text-gold-400 transition-colors hover:text-gold-300"
+          className="text-wine-600 transition-colors hover:text-wine-700"
         >
           Se connecter
         </Link>

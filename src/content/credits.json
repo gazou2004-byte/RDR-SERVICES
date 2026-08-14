@@ -1,21 +1,5 @@
 [
   {
-    "slot": "hero-accueil",
-    "title": "Chateau Pichon-Longueville Baron at night.jpg",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "author": "BillBl",
-    "page": "https://commons.wikimedia.org/wiki/File:Chateau_Pichon-Longueville_Baron_at_night.jpg"
-  },
-  {
-    "slot": "dest-bordeaux",
-    "title": "Bordeaux place de la bourse with tram.JPG",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "author": "Phillip Maiwald (Nikopol)",
-    "page": "https://commons.wikimedia.org/wiki/File:Bordeaux_place_de_la_bourse_with_tram.JPG"
-  },
-  {
     "slot": "dest-perigord",
     "title": "La Roque-Gageac - 03.jpg",
     "license": "CC BY-SA 4.0",
@@ -48,14 +32,6 @@
     "page": "https://commons.wikimedia.org/wiki/File:Chai_%C3%A0_barriques_Ch%C3%A2teau_de_Chambert.jpg"
   },
   {
-    "slot": "hero-destinations",
-    "title": "Vineyard in the Haut-Medoc.jpg",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "author": "Jonas Roux",
-    "page": "https://commons.wikimedia.org/wiki/File:Vineyard_in_the_Haut-Medoc.jpg"
-  },
-  {
     "slot": "hero-apropos",
     "title": "Chais à barriques de Sigalas.jpg",
     "license": "CC BY-SA 4.0",
@@ -70,14 +46,6 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "author": "Benjamin Smith",
     "page": "https://commons.wikimedia.org/wiki/File:Sarlat-la-Can%C3%A9da_-_Place_de_la_Libert%C3%A9_-_2.jpg"
-  },
-  {
-    "slot": "auth-fond",
-    "title": "Château de Lussac Chai à barriques.jpg",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "author": "Relaisfrancmayne",
-    "page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Lussac_Chai_%C3%A0_barriques.jpg"
   },
   {
     "slot": "svc-acces",
@@ -158,5 +126,37 @@
     "licenseUrl": "http://artlibre.org/licence/lal/en",
     "author": "Jean-noël Lafargue (Jean-no)",
     "page": "https://commons.wikimedia.org/wiki/File:Fourc%C3%A8s_Gers_9.jpg"
+  },
+  {
+    "slot": "hero-accueil",
+    "title": "Vineyard in the Haut-Medoc.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Jonas Roux",
+    "page": "https://commons.wikimedia.org/wiki/File:Vineyard_in_the_Haut-Medoc.jpg"
+  },
+  {
+    "slot": "dest-bordeaux",
+    "title": "Place de la Bourse et le miroir d'eau - Bordeaux 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Javier Perez Montes",
+    "page": "https://commons.wikimedia.org/wiki/File:Place_de_la_Bourse_et_le_miroir_d%27eau_-_Bordeaux_02.jpg"
+  },
+  {
+    "slot": "hero-experiences",
+    "title": "Vignes de Talmont sur Gironde.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "OTtalmont",
+    "page": "https://commons.wikimedia.org/wiki/File:Vignes_de_Talmont_sur_Gironde.jpg"
+  },
+  {
+    "slot": "auth-fond",
+    "title": "Saint-Emilion 33 Place 2013.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "JLPC",
+    "page": "https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg"
   }
 ]

@@ -41,38 +41,38 @@ export default async function DestinationPage({ params }: Props) {
       />
 
       {/* Présentation & informations clés */}
-      <section className="border-b border-parch-200/10 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 py-24 lg:py-32">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
             <div className="reveal lg:col-span-7">
-              <p className="font-display text-2xl leading-relaxed font-light text-parch-100 sm:text-3xl">
+              <p className="font-display text-2xl leading-relaxed font-light text-vine-800 sm:text-3xl">
                 {destination.intro}
               </p>
-              <span className="rule-gold mt-9" />
+              <span className="rule-wine mt-9" />
             </div>
 
             <dl className="reveal space-y-7 lg:col-span-5">
-              <div className="border-b border-parch-200/12 pb-6">
-                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-500 uppercase">
+              <div className="border-b border-vine-900/12 pb-6">
+                <dt className="text-[0.64rem] tracking-[0.22em] text-wine-600 uppercase">
                   Durée conseillée
                 </dt>
-                <dd className="mt-2 font-display text-2xl font-light text-parch-50">
+                <dd className="mt-2 font-display text-2xl font-light text-vine-900">
                   {destination.duration}
                 </dd>
               </div>
-              <div className="border-b border-parch-200/12 pb-6">
-                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-500 uppercase">
+              <div className="border-b border-vine-900/12 pb-6">
+                <dt className="text-[0.64rem] tracking-[0.22em] text-wine-600 uppercase">
                   Meilleure saison
                 </dt>
-                <dd className="mt-2 font-display text-2xl font-light text-parch-50">
+                <dd className="mt-2 font-display text-2xl font-light text-vine-900">
                   {destination.season}
                 </dd>
               </div>
               <div>
-                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-500 uppercase">
+                <dt className="text-[0.64rem] tracking-[0.22em] text-wine-600 uppercase">
                   Format
                 </dt>
-                <dd className="mt-2 font-display text-2xl font-light text-parch-50">
+                <dd className="mt-2 font-display text-2xl font-light text-vine-900">
                   Privatif intégral
                 </dd>
               </div>
@@ -82,19 +82,19 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       {/* Temps forts */}
-      <section className="border-b border-parch-200/10 bg-wine-900 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 bg-stone-100 py-24 lg:py-32">
         <Container>
           <SectionHeading eyebrow="Temps forts" title="Ce que vous verrez" />
-          <ul className="mt-14 grid gap-px border border-parch-200/10 bg-parch-200/10 sm:grid-cols-2">
+          <ul className="mt-14 grid gap-px border border-vine-900/10 bg-vine-900/10 sm:grid-cols-2">
             {destination.highlights.map((highlight, index) => (
               <li
                 key={highlight}
-                className="reveal flex items-start gap-6 bg-wine-900 p-9"
+                className="reveal flex items-start gap-6 bg-stone-100 p-9"
               >
                 <span className="font-display text-3xl leading-none font-light text-wine-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="pt-1.5 text-[0.95rem] leading-relaxed text-parch-200">
+                <p className="pt-1.5 text-[0.95rem] leading-relaxed text-vine-700">
                   {highlight}
                 </p>
               </li>
@@ -104,7 +104,7 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       {/* Itinéraire suggéré */}
-      <section className="border-b border-parch-200/10 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 py-24 lg:py-32">
         <Container>
           <SectionHeading
             eyebrow="Itinéraire suggéré"
@@ -113,20 +113,20 @@ export default async function DestinationPage({ params }: Props) {
             description="Voici comment se déroule un séjour type. Le vôtre sera recomposé de zéro après notre premier échange."
           />
 
-          <ol className="mt-14 space-y-px border-l border-parch-200/15">
+          <ol className="mt-14 space-y-px border-l border-vine-900/15">
             {destination.itinerary.map((day) => (
               <li key={day.day} className="reveal relative pb-12 pl-9 last:pb-0">
                 <span
                   aria-hidden
-                  className="absolute top-2 -left-[4.5px] h-2 w-2 rotate-45 bg-gold-500"
+                  className="absolute top-2 -left-[4.5px] h-2 w-2 rotate-45 bg-wine-600"
                 />
-                <p className="text-[0.64rem] tracking-[0.22em] text-gold-400 uppercase">
+                <p className="text-[0.64rem] tracking-[0.22em] text-wine-600 uppercase">
                   {day.day}
                 </p>
-                <h3 className="mt-3 font-display text-2xl font-light text-parch-50 sm:text-3xl">
+                <h3 className="mt-3 font-display text-2xl font-light text-vine-900 sm:text-3xl">
                   {day.title}
                 </h3>
-                <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-parch-300">
+                <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-vine-600">
                   {day.description}
                 </p>
               </li>
@@ -136,7 +136,7 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       {/* Autres destinations */}
-      <section className="border-b border-parch-200/10 bg-wine-900 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 bg-stone-100 py-24 lg:py-32">
         <Container>
           <SectionHeading
             eyebrow="Poursuivre"
@@ -147,17 +147,18 @@ export default async function DestinationPage({ params }: Props) {
               <Link
                 key={other.slug}
                 href={`/destinations/${other.slug}`}
-                className="reveal group relative aspect-4/3 overflow-hidden"
+                className="reveal group block"
               >
-                <Image
-                  src={other.image}
-                  alt={other.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-[1000ms] group-hover:scale-107"
-                />
-                <div className="absolute inset-0 bg-wine-950/60 transition-colors duration-500 group-hover:bg-wine-950/35" />
-                <h3 className="absolute inset-x-0 bottom-0 p-6 font-display text-2xl font-light text-parch-50">
+                <div className="relative aspect-4/3 overflow-hidden bg-stone-200">
+                  <Image
+                    src={other.image}
+                    alt={other.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-[1000ms] group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="border-b border-vine-900/12 pt-5 pb-5 font-display text-2xl font-light text-vine-900 transition-colors group-hover:border-wine-600 group-hover:text-wine-600">
                   {other.name}
                 </h3>
               </Link>

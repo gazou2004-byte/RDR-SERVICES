@@ -30,9 +30,9 @@ export function ContactForm() {
 
   if (state.success) {
     return (
-      <div className="border border-gold-500/40 bg-wine-900/60 p-12 text-center">
-        <p className="font-display text-3xl font-light text-gold-400">Merci</p>
-        <p className="mx-auto mt-5 max-w-md text-[0.95rem] leading-relaxed text-parch-200">
+      <div className="border border-wine-600/40 bg-stone-100 p-12 text-center">
+        <p className="font-display text-3xl font-light text-wine-600">Merci</p>
+        <p className="mx-auto mt-5 max-w-md text-[0.95rem] leading-relaxed text-vine-700">
           {state.success}
         </p>
       </div>
@@ -133,7 +133,7 @@ export function ContactForm() {
 
       <div className="flex flex-col gap-5 pt-2 sm:flex-row sm:items-center">
         <SubmitButton>Envoyer ma demande</SubmitButton>
-        <p className="text-[0.72rem] leading-relaxed text-parch-400">
+        <p className="text-[0.72rem] leading-relaxed text-vine-500">
           Réponse sous 24 h ouvrées. Vos données ne sont ni revendues ni
           transmises à des tiers.
         </p>

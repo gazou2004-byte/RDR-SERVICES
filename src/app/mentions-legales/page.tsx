@@ -12,13 +12,13 @@ export default function LegalPage() {
     <div className="pt-40 pb-24">
       <Container>
         <p className="eyebrow">Informations légales</p>
-        <h1 className="mt-5 font-display text-5xl font-light text-parch-50">
+        <h1 className="mt-5 font-display text-5xl font-light text-vine-900">
           Mentions légales
         </h1>
-        <span className="rule-gold mt-8" />
+        <span className="rule-wine mt-8" />
 
-        <div className="mt-14 max-w-2xl space-y-10 text-[0.92rem] leading-relaxed text-parch-300">
-          <p className="border border-gold-500/35 bg-gold-500/8 px-5 py-4 text-[0.85rem] text-gold-300">
+        <div className="mt-14 max-w-2xl space-y-10 text-[0.92rem] leading-relaxed text-vine-600">
+          <p className="border border-wine-600/35 bg-wine-100 px-5 py-4 text-[0.85rem] text-wine-700">
             À compléter avec vos informations réelles (raison sociale, SIRET,
             capital, assurance RCP, garantie financière) avant la mise en ligne.
           </p>
@@ -97,7 +97,7 @@ function Block({
 }) {
   return (
     <section className="space-y-4">
-      <h2 className="font-display text-2xl font-light text-parch-50">
+      <h2 className="font-display text-2xl font-light text-vine-900">
         {title}
       </h2>
       {children}

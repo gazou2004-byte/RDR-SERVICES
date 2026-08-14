@@ -7,7 +7,7 @@ export function ExperiencesGrid({ limit }: { limit?: number }) {
   const items = limit ? experiences.slice(0, limit) : experiences;
 
   return (
-    <section className="border-b border-parch-200/10 bg-wine-900 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 bg-stone-100 py-28 lg:py-36">
       <Container>
         <SectionHeading
           eyebrow="Expériences uniques"
@@ -17,32 +17,28 @@ export function ExperiencesGrid({ limit }: { limit?: number }) {
           align="center"
         />
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-9 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((experience) => (
-            <article
-              key={experience.title}
-              className="reveal group relative aspect-4/5 overflow-hidden"
-            >
-              <Image
-                src={experience.image}
-                alt={experience.title}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-[1100ms] group-hover:scale-108"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/55 to-wine-950/15 transition-opacity duration-500 group-hover:from-wine-800" />
-
-              <div className="absolute inset-x-0 bottom-0 p-8">
-                <p className="text-[0.62rem] tracking-[0.24em] text-gold-400 uppercase">
-                  {experience.place}
-                </p>
-                <h3 className="mt-3 font-display text-2xl leading-tight font-light text-parch-50">
-                  {experience.title}
-                </h3>
-                <p className="mt-3 max-h-0 overflow-hidden text-sm leading-relaxed text-parch-200 opacity-0 transition-all duration-500 group-hover:max-h-40 group-hover:opacity-100">
-                  {experience.description}
-                </p>
+            <article key={experience.title} className="reveal group">
+              <div className="relative aspect-4/3 overflow-hidden bg-stone-200">
+                <Image
+                  src={experience.image}
+                  alt={experience.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-[1100ms] group-hover:scale-105"
+                />
               </div>
+
+              <p className="mt-6 text-[0.62rem] tracking-[0.24em] text-wine-600 uppercase">
+                {experience.place}
+              </p>
+              <h3 className="mt-2.5 font-display text-2xl leading-tight font-light text-vine-900">
+                {experience.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-vine-600">
+                {experience.description}
+              </p>
             </article>
           ))}
         </div>

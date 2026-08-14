@@ -3,7 +3,7 @@ import { testimonials } from "@/content/site";
 
 export function Testimonials() {
   return (
-    <section className="border-b border-parch-200/10 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 py-28 lg:py-36">
       <Container>
         <SectionHeading
           eyebrow="Ils nous ont fait confiance"
@@ -16,22 +16,22 @@ export function Testimonials() {
           {testimonials.map((testimonial) => (
             <figure
               key={testimonial.author}
-              className="reveal flex flex-col border border-parch-200/12 bg-wine-900/50 p-9 transition-colors duration-500 hover:border-gold-500/35"
+              className="reveal flex flex-col border border-vine-900/12 bg-stone-100 p-9 transition-colors duration-500 hover:border-wine-600/35"
             >
               <span
                 aria-hidden
-                className="font-display text-6xl leading-none text-gold-500/45"
+                className="font-display text-6xl leading-none text-wine-600/45"
               >
                 &ldquo;
               </span>
-              <blockquote className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-parch-200 italic">
+              <blockquote className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-vine-700 italic">
                 {testimonial.quote}
               </blockquote>
-              <figcaption className="mt-8 border-t border-parch-200/12 pt-6">
-                <p className="text-sm font-medium text-parch-50">
+              <figcaption className="mt-8 border-t border-vine-900/12 pt-6">
+                <p className="text-sm font-medium text-vine-900">
                   {testimonial.author}
                 </p>
-                <p className="mt-1 text-[0.72rem] tracking-[0.08em] text-parch-400">
+                <p className="mt-1 text-[0.72rem] tracking-[0.08em] text-vine-500">
                   {testimonial.origin}
                 </p>
               </figcaption>

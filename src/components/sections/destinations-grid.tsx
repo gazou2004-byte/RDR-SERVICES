@@ -5,7 +5,7 @@ import { destinations } from "@/content/site";
 
 export function DestinationsGrid() {
   return (
-    <section className="border-b border-parch-200/10 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 py-28 lg:py-36">
       <Container>
         <SectionHeading
           eyebrow="Tours privés"
@@ -14,33 +14,33 @@ export function DestinationsGrid() {
           description="Chaque itinéraire présenté ici est un point de départ. Nous le retravaillons entièrement selon vos envies, votre rythme et la saison."
         />
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+        <div className="mt-16 grid gap-10 md:grid-cols-2">
           {destinations.map((destination) => (
             <Link
               key={destination.slug}
               href={`/destinations/${destination.slug}`}
-              className="reveal group relative aspect-16/11 overflow-hidden"
+              className="reveal group block"
             >
-              <Image
-                src={destination.image}
-                alt={destination.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-[1100ms] group-hover:scale-107"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/45 to-transparent" />
-              <div className="absolute inset-0 border border-transparent transition-colors duration-500 group-hover:border-gold-500/45" />
+              <div className="relative aspect-16/11 overflow-hidden bg-stone-200">
+                <Image
+                  src={destination.image}
+                  alt={destination.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-[1100ms] group-hover:scale-105"
+                />
+              </div>
 
-              <div className="absolute inset-x-0 bottom-0 p-9">
-                <h3 className="font-display text-3xl leading-tight font-light text-parch-50 sm:text-4xl">
+              <div className="border-b border-vine-900/12 pt-7 pb-7 transition-colors group-hover:border-wine-600">
+                <h3 className="font-display text-3xl leading-tight font-light text-vine-900 transition-colors group-hover:text-wine-600 sm:text-4xl">
                   {destination.name}
                 </h3>
-                <p className="mt-2 text-sm text-parch-200 italic">
+                <p className="mt-2 text-sm text-vine-600 italic">
                   {destination.tagline}
                 </p>
-                <div className="mt-5 flex items-center gap-4 text-[0.64rem] tracking-[0.2em] text-gold-400 uppercase">
+                <div className="mt-5 flex items-center gap-4 text-[0.64rem] tracking-[0.2em] text-wine-600 uppercase">
                   <span>{destination.duration}</span>
-                  <span className="h-px w-8 bg-gold-500/60 transition-all duration-500 group-hover:w-14" />
+                  <span className="h-px w-8 bg-wine-600/50 transition-all duration-500 group-hover:w-14" />
                   <span>Découvrir</span>
                 </div>
               </div>

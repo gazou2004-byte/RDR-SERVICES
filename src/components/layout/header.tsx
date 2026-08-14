@@ -41,7 +41,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled || open
-          ? "border-b border-parch-200/10 bg-wine-950/92 py-4 backdrop-blur-lg"
+          ? "border-b border-vine-900/10 bg-stone-50/92 py-4 shadow-[0_1px_24px_-12px] shadow-vine-900/30 backdrop-blur-lg"
           : "border-b border-transparent py-7"
       }`}
     >
@@ -55,13 +55,13 @@ export function Header() {
               href={item.href}
               className={`relative text-[0.7rem] font-medium tracking-[0.16em] whitespace-nowrap uppercase transition-colors ${
                 isActive(item.href)
-                  ? "text-gold-400"
-                  : "text-parch-200 hover:text-gold-400"
+                  ? "text-wine-600"
+                  : "text-vine-700 hover:text-wine-600"
               }`}
             >
               {item.label}
               {isActive(item.href) ? (
-                <span className="absolute -bottom-2 left-0 h-px w-full bg-gold-500" />
+                <span className="absolute -bottom-2 left-0 h-px w-full bg-wine-600" />
               ) : null}
             </Link>
           ))}
@@ -70,13 +70,13 @@ export function Header() {
         <div className="hidden shrink-0 items-center gap-6 lg:flex">
           <a
             href={`tel:${company.phoneHref}`}
-            className="hidden text-[0.7rem] whitespace-nowrap text-parch-300 transition-colors hover:text-gold-400 xl:block"
+            className="hidden text-[0.7rem] whitespace-nowrap text-vine-600 transition-colors hover:text-wine-600 xl:block"
           >
             {company.phone}
           </a>
           <Link
             href="/espace-client"
-            className="border border-gold-500/45 px-5 py-2.5 text-[0.66rem] font-medium tracking-[0.18em] whitespace-nowrap text-gold-400 uppercase transition-all hover:bg-gold-500 hover:text-wine-950"
+            className="border border-wine-600/50 px-5 py-2.5 text-[0.66rem] font-medium tracking-[0.18em] whitespace-nowrap text-wine-600 uppercase transition-all hover:bg-wine-600 hover:text-stone-50"
           >
             Espace client
           </Link>
@@ -90,17 +90,17 @@ export function Header() {
           className="flex h-10 w-10 flex-col items-center justify-center gap-[6px] lg:hidden"
         >
           <span
-            className={`h-px w-6 bg-parch-100 transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+            className={`h-px w-6 bg-vine-900 transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
           />
           <span
-            className={`h-px w-6 bg-parch-100 transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+            className={`h-px w-6 bg-vine-900 transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
           />
         </button>
       </div>
 
       {/* Menu mobile */}
       <div
-        className={`overflow-hidden transition-[max-height,opacity] duration-500 lg:hidden ${
+        className={`overflow-hidden bg-stone-50 transition-[max-height,opacity] duration-500 lg:hidden ${
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -109,8 +109,8 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`border-b border-parch-200/10 py-4 font-display text-2xl font-light ${
-                isActive(item.href) ? "text-gold-400" : "text-parch-100"
+              className={`border-b border-vine-900/10 py-4 font-display text-2xl font-light ${
+                isActive(item.href) ? "text-wine-600" : "text-vine-900"
               }`}
             >
               {item.label}
@@ -118,13 +118,13 @@ export function Header() {
           ))}
           <Link
             href="/espace-client"
-            className="mt-6 border border-gold-500/45 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-gold-400 uppercase"
+            className="mt-6 border border-wine-600/50 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-wine-600 uppercase"
           >
             Espace client
           </Link>
           <a
             href={`tel:${company.phoneHref}`}
-            className="mt-4 text-center text-sm tracking-[0.1em] text-parch-300"
+            className="mt-4 text-center text-sm tracking-[0.1em] text-vine-600"
           >
             {company.phone}
           </a>

@@ -7,12 +7,12 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-parch-200/10 bg-wine-900">
+    <footer className="border-t border-vine-900/10 bg-stone-100">
       <Container className="py-20">
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Logo />
-            <p className="mt-6 max-w-xs text-sm leading-relaxed text-parch-300">
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-vine-600">
               Conciergerie de voyage indépendante. Séjours privés sur mesure
               dans le Sud-Ouest de la France.
             </p>
@@ -23,7 +23,7 @@ export function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[0.68rem] tracking-[0.14em] text-parch-400 uppercase transition-colors hover:text-gold-400"
+                  className="text-[0.68rem] tracking-[0.14em] text-vine-500 uppercase transition-colors hover:text-wine-600"
                 >
                   {name}
                 </a>
@@ -59,7 +59,7 @@ export function Footer() {
             <li>
               <a
                 href={`tel:${company.phoneHref}`}
-                className="text-sm text-parch-300 transition-colors hover:text-gold-400"
+                className="text-sm text-vine-600 transition-colors hover:text-wine-600"
               >
                 {company.phone}
               </a>
@@ -67,16 +67,16 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${company.email}`}
-                className="text-sm text-parch-300 transition-colors hover:text-gold-400"
+                className="text-sm text-vine-600 transition-colors hover:text-wine-600"
               >
                 {company.email}
               </a>
             </li>
-            <li className="text-sm text-parch-300">{company.address}</li>
+            <li className="text-sm text-vine-600">{company.address}</li>
             <li className="pt-4">
               <Link
                 href="/contact"
-                className="text-[0.68rem] tracking-[0.16em] text-gold-400 uppercase transition-colors hover:text-gold-300"
+                className="text-[0.68rem] tracking-[0.16em] text-wine-600 uppercase transition-colors hover:text-wine-700"
               >
                 Demander un devis →
               </Link>
@@ -84,7 +84,7 @@ export function Footer() {
           </FooterColumn>
         </div>
 
-        <div className="mt-16 flex flex-col gap-5 border-t border-parch-200/10 pt-8 text-[0.72rem] text-parch-400 md:flex-row md:items-center md:justify-between">
+        <div className="mt-16 flex flex-col gap-5 border-t border-vine-900/10 pt-8 text-[0.72rem] text-vine-500 md:flex-row md:items-center md:justify-between">
           <p>
             © {year} {company.legalName}. Tous droits réservés.
           </p>
@@ -92,22 +92,22 @@ export function Footer() {
             <span>Licence ATOUT FRANCE n° {company.licenceAtoutFrance}</span>
             <span>Licence transport n° {company.licenceTransport}</span>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link
               href="/mentions-legales"
-              className="transition-colors hover:text-gold-400"
+              className="transition-colors hover:text-wine-600"
             >
               Mentions légales
             </Link>
             <Link
               href="/confidentialite"
-              className="transition-colors hover:text-gold-400"
+              className="transition-colors hover:text-wine-600"
             >
               Confidentialité
             </Link>
             <Link
               href="/credits"
-              className="transition-colors hover:text-gold-400"
+              className="transition-colors hover:text-wine-600"
             >
               Crédits photo
             </Link>
@@ -127,7 +127,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-gold-500 uppercase">
+      <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-wine-600 uppercase">
         {title}
       </h3>
       <ul className="mt-6 space-y-3">{children}</ul>
@@ -146,7 +146,7 @@ function FooterLink({
     <li>
       <Link
         href={href}
-        className="text-sm text-parch-300 transition-colors hover:text-gold-400"
+        className="text-sm text-vine-600 transition-colors hover:text-wine-600"
       >
         {children}
       </Link>

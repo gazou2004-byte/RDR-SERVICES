@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette vin — bordeaux, grenat, lie-de-vin, or et parchemin */
-  --color-wine-950: #120508; /* fond, presque noir teinté vin */
-  --color-wine-900: #1e070d;
-  --color-wine-850: #2a0a13;
-  --color-wine-800: #3a0e1b;
-  --color-wine-700: #5a1226; /* bordeaux profond */
-  --color-wine-600: #7b1e3a; /* grenat — couleur principale */
-  --color-wine-500: #963350;
+  /*
+   * Palette « vignes » — pierre blonde du Bordelais, feuille de vigne,
+   * et le bordeaux gardé en accent seulement.
+   */
+
+  /* Pierre & parchemin : les fonds */
+  --color-stone-50: #fdfbf6;
+  --color-stone-100: #f7f3e9;
+  --color-stone-200: #ede7d7;
+  --color-stone-300: #dcd3bd;
+  --color-stone-400: #c3b79c;
+
+  /* Vigne : le texte et les fonds sombres */
+  --color-vine-900: #222a1a;
+  --color-vine-800: #2f3a24;
+  --color-vine-700: #41512f;
+  --color-vine-600: #57693f;
+  --color-vine-500: #728659;
+  --color-vine-400: #93a67c;
+  --color-vine-300: #b8c7a3;
+
+  /* Bordeaux : l'accent */
+  --color-wine-700: #5f1428;
+  --color-wine-600: #7b1e3a;
+  --color-wine-500: #96304c;
   --color-wine-400: #b5566f;
-  --color-wine-300: #d18ea0;
+  --color-wine-100: #f4e5e9;
 
-  --color-gold-500: #c9a227; /* or — accent */
-  --color-gold-400: #d9b752;
-  --color-gold-300: #e6cf8c;
-
-  --color-parch-50: #faf6ef; /* parchemin */
-  --color-parch-100: #f2eadd;
-  --color-parch-200: #e2d5c1;
-  --color-parch-300: #c3b29a;
-  --color-parch-400: #948473;
+  /* Ocre : les détails */
+  --color-ochre-600: #a8752e;
+  --color-ochre-500: #c08f3c;
 
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -34,26 +45,36 @@
   }
 
   body {
-    background-color: var(--color-wine-950);
-    color: var(--color-parch-100);
+    background-color: var(--color-stone-50);
+    color: var(--color-vine-900);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background-color: var(--color-gold-500);
-    color: var(--color-wine-950);
+    background-color: var(--color-wine-600);
+    color: var(--color-stone-50);
   }
 }
 
 @layer components {
-  /* Filet doré sous les titres de section */
-  .rule-gold {
-    @apply block h-px w-16 bg-gold-500;
+  /* Filet bordeaux sous les titres de section */
+  .rule-wine {
+    @apply block h-px w-16 bg-wine-600;
   }
 
   .eyebrow {
-    @apply text-[0.68rem] font-medium uppercase text-gold-400;
+    @apply text-[0.68rem] font-medium uppercase text-wine-600;
+    letter-spacing: var(--tracking-brand);
+  }
+
+  /* Variante des deux éléments ci-dessus sur fond sombre */
+  .rule-wine-light {
+    @apply block h-px w-16 bg-ochre-500;
+  }
+
+  .eyebrow-light {
+    @apply text-[0.68rem] font-medium uppercase text-ochre-500;
     letter-spacing: var(--tracking-brand);
   }
 }

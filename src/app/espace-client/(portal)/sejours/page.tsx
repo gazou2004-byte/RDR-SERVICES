@@ -22,7 +22,7 @@ export default async function BookingsPage() {
   return (
     <div className="space-y-14">
       <section>
-        <h2 className="font-display text-3xl font-light text-parch-50">
+        <h2 className="font-display text-3xl font-light text-vine-900">
           Séjours à venir
         </h2>
         <div className="mt-7 space-y-5">
@@ -43,7 +43,7 @@ export default async function BookingsPage() {
 
       {past.length > 0 ? (
         <section>
-          <h2 className="font-display text-3xl font-light text-parch-50">
+          <h2 className="font-display text-3xl font-light text-vine-900">
             Historique
           </h2>
           <div className="mt-7 space-y-5 opacity-75">

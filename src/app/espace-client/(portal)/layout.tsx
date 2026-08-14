@@ -17,13 +17,13 @@ export default async function PortalLayout({
   const user = await requireUser();
 
   return (
-    <div className="border-b border-parch-200/10 pt-32 pb-24 lg:pt-40">
+    <div className="border-b border-vine-900/10 pt-32 pb-24 lg:pt-40">
       <Container>
         {/* En-tête de l'espace */}
-        <div className="flex flex-col gap-6 border-b border-parch-200/12 pb-10 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-6 border-b border-vine-900/12 pb-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="eyebrow">Espace client</p>
-            <h1 className="mt-4 font-display text-4xl leading-tight font-light text-parch-50 sm:text-5xl">
+            <h1 className="mt-4 font-display text-4xl leading-tight font-light text-vine-900 sm:text-5xl">
               Bonjour, {user.firstName}
             </h1>
           </div>
@@ -31,7 +31,7 @@ export default async function PortalLayout({
           <form action={logoutAction}>
             <button
               type="submit"
-              className="border border-parch-200/25 px-5 py-2.5 text-[0.66rem] font-medium tracking-[0.18em] text-parch-300 uppercase transition-colors hover:border-gold-500 hover:text-gold-400"
+              className="border border-vine-900/25 px-5 py-2.5 text-[0.66rem] font-medium tracking-[0.18em] text-vine-600 uppercase transition-colors hover:border-wine-600 hover:text-wine-600"
             >
               Se déconnecter
             </button>

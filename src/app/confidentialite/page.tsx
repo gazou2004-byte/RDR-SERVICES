@@ -57,12 +57,12 @@ export default function PrivacyPage() {
     <div className="pt-40 pb-24">
       <Container>
         <p className="eyebrow">Vos données</p>
-        <h1 className="mt-5 font-display text-5xl font-light text-parch-50">
+        <h1 className="mt-5 font-display text-5xl font-light text-vine-900">
           Politique de confidentialité
         </h1>
-        <span className="rule-gold mt-8" />
+        <span className="rule-wine mt-8" />
 
-        <div className="mt-14 max-w-2xl space-y-10 text-[0.92rem] leading-relaxed text-parch-300">
+        <div className="mt-14 max-w-2xl space-y-10 text-[0.92rem] leading-relaxed text-vine-600">
           <p>
             {company.legalName} attache une importance particulière à la
             protection de vos données personnelles. Cette page explique
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
 
           {sections.map((section) => (
             <section key={section.title} className="space-y-4">
-              <h2 className="font-display text-2xl font-light text-parch-50">
+              <h2 className="font-display text-2xl font-light text-vine-900">
                 {section.title}
               </h2>
               {section.body.map((paragraph) => (
@@ -81,15 +81,15 @@ export default function PrivacyPage() {
             </section>
           ))}
 
-          <section className="space-y-4 border-t border-parch-200/12 pt-10">
-            <h2 className="font-display text-2xl font-light text-parch-50">
+          <section className="space-y-4 border-t border-vine-900/12 pt-10">
+            <h2 className="font-display text-2xl font-light text-vine-900">
               Nous contacter
             </h2>
             <p>
               Pour toute question relative à vos données :{" "}
               <a
                 href={`mailto:${company.email}`}
-                className="text-gold-400 transition-colors hover:text-gold-300"
+                className="text-wine-600 transition-colors hover:text-wine-700"
               >
                 {company.email}
               </a>

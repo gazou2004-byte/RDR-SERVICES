@@ -1,10 +1,14 @@
 import { bookingStatus } from "@/lib/format";
 
 const tones: Record<string, string> = {
-  gold: "border-gold-500/50 bg-gold-500/12 text-gold-300",
-  wine: "border-wine-400/50 bg-wine-600/25 text-wine-300",
-  neutral: "border-parch-200/25 bg-parch-200/8 text-parch-200",
-  muted: "border-parch-200/15 bg-transparent text-parch-400",
+  // Confirmé : vert vigne, l'état le plus positif
+  gold: "border-vine-600/55 bg-vine-300/45 text-vine-800",
+  // En cours : bordeaux
+  wine: "border-wine-600/45 bg-wine-100 text-wine-700",
+  // Devis en attente : neutre
+  neutral: "border-vine-900/22 bg-stone-100 text-vine-700",
+  // Terminé / annulé : effacé
+  muted: "border-vine-900/15 bg-transparent text-vine-500",
 };
 
 export function StatusBadge({ status }: { status: string }) {

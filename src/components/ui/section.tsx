@@ -36,18 +36,18 @@ export function SectionHeading({
       className={`reveal max-w-3xl ${centered ? "mx-auto text-center" : ""} ${className}`}
     >
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-      <h2 className="mt-5 font-display text-4xl leading-[1.1] font-light text-parch-50 sm:text-5xl">
+      <h2 className="mt-5 font-display text-4xl leading-[1.1] font-light text-vine-900 sm:text-5xl">
         {title}
         {accent ? (
           <>
             {" "}
-            <span className="text-gold-400 italic">{accent}</span>
+            <span className="text-wine-600 italic">{accent}</span>
           </>
         ) : null}
       </h2>
-      <span className={`rule-gold mt-7 ${centered ? "mx-auto" : ""}`} />
+      <span className={`rule-wine mt-7 ${centered ? "mx-auto" : ""}`} />
       {description ? (
-        <p className="mt-7 text-[0.98rem] leading-relaxed text-parch-300">
+        <p className="mt-7 text-[0.98rem] leading-relaxed text-vine-600">
           {description}
         </p>
       ) : null}

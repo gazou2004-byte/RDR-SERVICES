@@ -5,7 +5,7 @@ import { services } from "@/content/site";
 
 export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
   return (
-    <section className="border-b border-parch-200/10 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 py-28 lg:py-36">
       <Container>
         <SectionHeading
           eyebrow="Ce que nous faisons"
@@ -14,13 +14,13 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
           description="De la journée d'excursion au voyage de trois semaines, tout passe par la même personne. Vous n'avez jamais à réexpliquer votre dossier."
         />
 
-        <div className="mt-16 grid gap-px border border-parch-200/10 bg-parch-200/10 sm:grid-cols-2">
+        <div className="mt-16 grid gap-px border border-vine-900/10 bg-vine-900/10 sm:grid-cols-2">
           {services.map((service) => (
             <article
               key={service.slug}
-              className="reveal group relative flex flex-col overflow-hidden bg-wine-950"
+              className="reveal group relative flex flex-col overflow-hidden bg-stone-50"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-56 overflow-hidden bg-stone-200">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -28,14 +28,13 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                   sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-cover transition-transform duration-[900ms] group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/40 to-transparent" />
               </div>
 
               <div className="flex flex-1 flex-col p-9 lg:p-11">
-                <h3 className="font-display text-3xl font-light text-parch-50">
+                <h3 className="font-display text-3xl font-light text-vine-900">
                   {service.title}
                 </h3>
-                <p className="mt-4 text-[0.95rem] leading-relaxed text-parch-300">
+                <p className="mt-4 text-[0.95rem] leading-relaxed text-vine-600">
                   {detailed ? service.description : service.short}
                 </p>
 
@@ -44,11 +43,11 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                     {service.bullets.map((bullet) => (
                       <li
                         key={bullet}
-                        className="flex gap-3 text-sm leading-relaxed text-parch-300"
+                        className="flex gap-3 text-sm leading-relaxed text-vine-600"
                       >
                         <span
                           aria-hidden
-                          className="mt-2 h-1 w-1 shrink-0 rotate-45 bg-gold-500"
+                          className="mt-2 h-1 w-1 shrink-0 rotate-45 bg-wine-600"
                         />
                         {bullet}
                       </li>
@@ -57,7 +56,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                 ) : null}
 
                 {service.licence ? (
-                  <p className="mt-7 text-[0.68rem] tracking-[0.12em] text-parch-400 uppercase">
+                  <p className="mt-7 text-[0.68rem] tracking-[0.12em] text-vine-500 uppercase">
                     {service.licence}
                   </p>
                 ) : null}

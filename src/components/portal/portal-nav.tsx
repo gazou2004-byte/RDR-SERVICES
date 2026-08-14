@@ -15,7 +15,7 @@ export function PortalNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-px overflow-x-auto border border-parch-200/12 bg-parch-200/10 lg:flex-col lg:overflow-visible">
+    <nav className="flex gap-px overflow-x-auto border border-vine-900/12 bg-vine-900/10 lg:flex-col lg:overflow-visible">
       {links.map((link) => {
         const active =
           link.href === "/espace-client"
@@ -29,12 +29,12 @@ export function PortalNav() {
             aria-current={active ? "page" : undefined}
             className={`relative shrink-0 px-6 py-4 text-[0.7rem] font-medium tracking-[0.16em] whitespace-nowrap uppercase transition-colors ${
               active
-                ? "bg-wine-800 text-gold-400"
-                : "bg-wine-900 text-parch-300 hover:bg-wine-850 hover:text-parch-100"
+                ? "bg-stone-200 text-wine-600"
+                : "bg-stone-100 text-vine-600 hover:bg-stone-200 hover:text-vine-800"
             }`}
           >
             {active ? (
-              <span className="absolute inset-y-0 left-0 hidden w-0.5 bg-gold-500 lg:block" />
+              <span className="absolute inset-y-0 left-0 hidden w-0.5 bg-wine-600 lg:block" />
             ) : null}
             {link.label}
           </Link>

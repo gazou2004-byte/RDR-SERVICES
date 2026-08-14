@@ -21,7 +21,7 @@ export default function ContactPage() {
         image="/images/hero-contact.jpg"
       />
 
-      <section className="border-b border-parch-200/10 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 py-24 lg:py-32">
         <Container>
           <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
             <div className="reveal lg:col-span-7">
@@ -36,46 +36,46 @@ export default function ContactPage() {
             </div>
 
             <aside className="reveal lg:col-span-5">
-              <div className="border border-parch-200/12 bg-wine-900/50 p-9">
-                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-gold-500 uppercase">
+              <div className="border border-vine-900/12 bg-stone-100 p-9">
+                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-wine-600 uppercase">
                   Nous joindre directement
                 </h3>
                 <dl className="mt-7 space-y-6">
                   <div>
-                    <dt className="text-[0.72rem] text-parch-400">Téléphone</dt>
+                    <dt className="text-[0.72rem] text-vine-500">Téléphone</dt>
                     <dd className="mt-1">
                       <a
                         href={`tel:${company.phoneHref}`}
-                        className="font-display text-2xl font-light text-parch-50 transition-colors hover:text-gold-400"
+                        className="font-display text-2xl font-light text-vine-900 transition-colors hover:text-wine-600"
                       >
                         {company.phone}
                       </a>
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-[0.72rem] text-parch-400">E-mail</dt>
+                    <dt className="text-[0.72rem] text-vine-500">E-mail</dt>
                     <dd className="mt-1">
                       <a
                         href={`mailto:${company.email}`}
-                        className="text-[0.95rem] text-parch-100 transition-colors hover:text-gold-400"
+                        className="text-[0.95rem] text-vine-800 transition-colors hover:text-wine-600"
                       >
                         {company.email}
                       </a>
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-[0.72rem] text-parch-400">Bureau</dt>
-                    <dd className="mt-1 text-[0.95rem] text-parch-100">
+                    <dt className="text-[0.72rem] text-vine-500">Bureau</dt>
+                    <dd className="mt-1 text-[0.95rem] text-vine-800">
                       {company.address}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-[0.72rem] text-parch-400">
+                    <dt className="text-[0.72rem] text-vine-500">
                       Disponibilité
                     </dt>
-                    <dd className="mt-1 text-[0.95rem] text-parch-100">
+                    <dd className="mt-1 text-[0.95rem] text-vine-800">
                       Lundi – samedi, 9 h – 19 h
-                      <span className="mt-1 block text-[0.8rem] text-parch-300">
+                      <span className="mt-1 block text-[0.8rem] text-vine-600">
                         Assistance 24 h/24 pendant votre séjour
                       </span>
                     </dd>
@@ -83,21 +83,21 @@ export default function ContactPage() {
                 </dl>
               </div>
 
-              <div className="mt-8 border border-parch-200/12 p-9">
-                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-gold-500 uppercase">
+              <div className="mt-8 border border-vine-900/12 p-9">
+                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-wine-600 uppercase">
                   La suite
                 </h3>
                 <ol className="mt-7 space-y-6">
                   {process.map((item) => (
                     <li key={item.step} className="flex gap-5">
-                      <span className="font-display text-xl leading-none font-light text-wine-500">
+                      <span className="font-display text-xl leading-none font-light text-vine-400">
                         {item.step}
                       </span>
                       <div>
-                        <p className="text-[0.9rem] font-medium text-parch-100">
+                        <p className="text-[0.9rem] font-medium text-vine-800">
                           {item.title}
                         </p>
-                        <p className="mt-1.5 text-[0.82rem] leading-relaxed text-parch-400">
+                        <p className="mt-1.5 text-[0.82rem] leading-relaxed text-vine-500">
                           {item.description}
                         </p>
                       </div>

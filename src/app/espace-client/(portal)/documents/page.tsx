@@ -17,10 +17,10 @@ export default async function DocumentsPage() {
 
   return (
     <div>
-      <h2 className="font-display text-3xl font-light text-parch-50">
+      <h2 className="font-display text-3xl font-light text-vine-900">
         Tous vos documents
       </h2>
-      <p className="mt-4 max-w-xl text-[0.9rem] leading-relaxed text-parch-400">
+      <p className="mt-4 max-w-xl text-[0.9rem] leading-relaxed text-vine-500">
         Devis, factures, programmes détaillés et bons d&apos;échange. Tout reste
         accessible après votre séjour.
       </p>
@@ -34,24 +34,24 @@ export default async function DocumentsPage() {
             actionHref="/contact"
           />
         ) : (
-          <ul className="divide-y divide-parch-200/12 border border-parch-200/12">
+          <ul className="divide-y divide-vine-900/12 border border-vine-900/12">
             {documents.map((document) => (
               <li
                 key={document.id}
-                className="flex flex-wrap items-center justify-between gap-5 px-6 py-6 transition-colors hover:bg-wine-900/50"
+                className="flex flex-wrap items-center justify-between gap-5 px-6 py-6 transition-colors hover:bg-stone-100"
               >
                 <div>
-                  <p className="text-[0.95rem] text-parch-100">
+                  <p className="text-[0.95rem] text-vine-800">
                     {document.title}
                   </p>
-                  <p className="mt-1.5 text-[0.72rem] text-parch-400">
+                  <p className="mt-1.5 text-[0.72rem] text-vine-500">
                     {documentKinds[document.kind] ?? document.kind} ·{" "}
                     {formatDate(document.createdAt)}
                     {document.sizeLabel ? ` · ${document.sizeLabel}` : ""}
                   </p>
                   <Link
                     href={`/espace-client/sejours/${document.booking.id}`}
-                    className="mt-2 inline-block text-[0.72rem] text-gold-400/80 transition-colors hover:text-gold-300"
+                    className="mt-2 inline-block text-[0.72rem] text-wine-600/80 transition-colors hover:text-wine-700"
                   >
                     {document.booking.destination} ·{" "}
                     {document.booking.reference}
@@ -59,7 +59,7 @@ export default async function DocumentsPage() {
                 </div>
                 <a
                   href={document.url}
-                  className="shrink-0 border border-parch-200/25 px-5 py-2.5 text-[0.62rem] tracking-[0.18em] text-parch-200 uppercase transition-colors hover:border-gold-500 hover:text-gold-400"
+                  className="shrink-0 border border-vine-900/25 px-5 py-2.5 text-[0.62rem] tracking-[0.18em] text-vine-700 uppercase transition-colors hover:border-wine-600 hover:text-wine-600"
                 >
                   Ouvrir
                 </a>

@@ -1,14 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette : beige, vert de vigne, or */
+  /* Palette : fonds verts, texte vert de vigne, or en accent */
 
-  /* Beige — les fonds */
-  --color-sand-50: #fbf8f0;
-  --color-sand-100: #f4eede;
-  --color-sand-200: #e9e0c9;
-  --color-sand-300: #d6c9a8;
-  --color-sand-400: #bdad86;
+  /*
+   * Les fonds. Teinte amande : franchement verte mais assez claire pour
+   * que le texte reste confortable à lire sur de longs paragraphes.
+   * Pour un fond plus discret, éclaircir vers #f1f4ea ;
+   * pour un fond plus soutenu, foncer vers #dfe8d1.
+   */
+  --color-sand-50: #e9efdf;
+  --color-sand-100: #dee6d1;
+  --color-sand-200: #cdd9bb;
+  --color-sand-300: #b4c59e;
+  --color-sand-400: #95a87d;
 
   /* Vert de vigne — le texte et les fonds sombres */
   --color-vine-900: #1e2a1c;

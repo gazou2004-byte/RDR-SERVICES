@@ -18,7 +18,7 @@ export default function RegisterPage() {
         Suivez vos séjours, téléchargez vos documents et échangez avec votre
         conseiller au même endroit.
       </p>
-      <span className="rule-wine mt-8 mb-9" />
+      <span className="rule-gold mt-8 mb-9" />
       <RegisterForm />
     </>
   );

@@ -3,7 +3,7 @@ import { faq } from "@/content/site";
 
 export function FaqSection() {
   return (
-    <section className="border-b border-vine-900/10 bg-stone-100 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 bg-sand-100 py-28 lg:py-36">
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-4">
@@ -12,7 +12,8 @@ export function FaqSection() {
               title="Ce que l'on nous"
               accent="demande souvent"
               description="Une question qui n'est pas ici ? Écrivez-nous, nous répondons sous 24 heures."
-            />
+            align="left"
+              />
           </div>
 
           <div className="reveal lg:col-span-8">
@@ -22,11 +23,11 @@ export function FaqSection() {
                 name="faq"
                 className="group border-b border-vine-900/12"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left text-[0.98rem] font-medium text-vine-800 transition-colors hover:text-wine-600 [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left text-[0.98rem] font-medium text-vine-800 transition-colors hover:text-gold-600 [&::-webkit-details-marker]:hidden">
                   {item.question}
                   <span
                     aria-hidden
-                    className="relative h-4 w-4 shrink-0 text-wine-600"
+                    className="relative h-4 w-4 shrink-0 text-gold-600"
                   >
                     <span className="absolute top-1/2 left-0 h-px w-4 -translate-y-1/2 bg-current" />
                     <span className="absolute top-0 left-1/2 h-4 w-px -translate-x-1/2 bg-current transition-transform duration-300 group-open:rotate-90 group-open:opacity-0" />

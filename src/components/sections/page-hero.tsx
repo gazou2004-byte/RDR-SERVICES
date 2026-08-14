@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/section";
+import { Ornament } from "@/components/ui/ornament";
 
+/**
+ * En-tête des pages internes : photo pleine largeur, voile vert,
+ * titre centré en capitales sérif. Même écriture que le héros d'accueil.
+ */
 export function PageHero({
   eyebrow,
   title,
@@ -15,7 +20,7 @@ export function PageHero({
   image: string;
 }) {
   return (
-    <section className="relative flex min-h-[58svh] items-end overflow-hidden pt-32 pb-16 lg:min-h-[64svh] lg:pb-24">
+    <section className="relative flex min-h-[62svh] items-center overflow-hidden pt-32 pb-20 lg:min-h-[68svh]">
       <Image
         src={image}
         alt=""
@@ -24,27 +29,24 @@ export function PageHero({
         sizes="100vw"
         className="object-cover"
       />
+      <div className="absolute inset-0 bg-vine-900/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-vine-900/60 via-transparent to-vine-900/60" />
 
-      {/*
-        Voile dégradé vers le bas : le texte se pose sur la pierre,
-        le haut de l'image reste visible.
-      */}
-      <div className="absolute inset-0 bg-gradient-to-t from-stone-50 via-stone-50/88 via-45% to-stone-50/25" />
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-stone-50/85 to-transparent" />
-
-      <Container className="relative z-10">
-        <p className="eyebrow reveal">{eyebrow}</p>
-        <h1 className="reveal mt-6 max-w-3xl font-display text-5xl leading-[1.05] font-light text-vine-900 sm:text-6xl lg:text-7xl">
+      <Container className="relative z-10 text-center">
+        <Ornament tone="light" className="mx-auto" />
+        <p className="eyebrow-light reveal mt-7">{eyebrow}</p>
+        <h1 className="section-title reveal mt-6 !text-sand-50">
           {title}
           {accent ? (
             <>
               {" "}
-              <span className="text-wine-600 italic">{accent}</span>
+              <span className="text-gold-400 normal-case italic">{accent}</span>
             </>
           ) : null}
         </h1>
+        <span className="rule-gold-light reveal mx-auto mt-8" />
         {description ? (
-          <p className="reveal mt-8 max-w-xl text-[0.98rem] leading-relaxed text-vine-700">
+          <p className="reveal mx-auto mt-8 max-w-2xl text-[0.98rem] leading-relaxed text-sand-200">
             {description}
           </p>
         ) : null}

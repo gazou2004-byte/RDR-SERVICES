@@ -3,31 +3,34 @@ import { intro } from "@/content/site";
 
 export function Intro() {
   return (
-    <section className="border-b border-vine-900/10 py-28 lg:py-36">
+    <section
+      id="intro"
+      className="scroll-mt-24 border-b border-vine-900/10 py-28 lg:py-36"
+    >
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
-          <div className="lg:col-span-6">
-            <SectionHeading eyebrow={intro.eyebrow} title={intro.title} />
-          </div>
-          <div className="reveal space-y-6 lg:col-span-6 lg:pt-20">
-            {intro.body.map((paragraph) => (
-              <p
-                key={paragraph}
-                className="text-[0.98rem] leading-relaxed text-vine-600"
-              >
-                {paragraph}
-              </p>
-            ))}
-          </div>
+        <SectionHeading eyebrow={intro.eyebrow} title={intro.title} />
+
+        <div className="reveal mx-auto mt-12 max-w-2xl space-y-6 text-center">
+          {intro.body.map((paragraph) => (
+            <p
+              key={paragraph}
+              className="text-[0.98rem] leading-relaxed text-vine-600"
+            >
+              {paragraph}
+            </p>
+          ))}
         </div>
 
-        <dl className="reveal mt-20 grid grid-cols-2 gap-px border border-vine-900/10 bg-vine-900/10 lg:grid-cols-4">
+        <dl className="reveal mt-20 grid grid-cols-2 gap-y-12 lg:grid-cols-4">
           {intro.stats.map((stat) => (
-            <div key={stat.label} className="bg-stone-50 px-7 py-10 text-center">
-              <dt className="font-display text-4xl font-light text-wine-600 sm:text-5xl">
+            <div
+              key={stat.label}
+              className="border-l border-gold-600/30 px-6 text-center first:border-l-0 lg:first:border-l"
+            >
+              <dt className="font-display text-4xl font-light text-gold-600 sm:text-5xl">
                 {stat.value}
               </dt>
-              <dd className="mt-3 text-[0.78rem] leading-relaxed text-vine-600">
+              <dd className="mx-auto mt-3 max-w-[14rem] text-[0.78rem] leading-relaxed text-vine-600">
                 {stat.label}
               </dd>
             </div>

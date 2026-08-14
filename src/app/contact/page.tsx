@@ -29,6 +29,7 @@ export default function ContactPage() {
                 eyebrow="Demande de devis"
                 title="Dites-nous tout"
                 description="Plus vous êtes précis, plus notre proposition sera juste du premier coup."
+              align="left"
               />
               <div className="mt-12">
                 <ContactForm />
@@ -36,8 +37,8 @@ export default function ContactPage() {
             </div>
 
             <aside className="reveal lg:col-span-5">
-              <div className="border border-vine-900/12 bg-stone-100 p-9">
-                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-wine-600 uppercase">
+              <div className="border border-vine-900/12 bg-sand-100 p-9">
+                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
                   Nous joindre directement
                 </h3>
                 <dl className="mt-7 space-y-6">
@@ -46,7 +47,7 @@ export default function ContactPage() {
                     <dd className="mt-1">
                       <a
                         href={`tel:${company.phoneHref}`}
-                        className="font-display text-2xl font-light text-vine-900 transition-colors hover:text-wine-600"
+                        className="font-display text-2xl font-light text-vine-900 transition-colors hover:text-gold-600"
                       >
                         {company.phone}
                       </a>
@@ -57,7 +58,7 @@ export default function ContactPage() {
                     <dd className="mt-1">
                       <a
                         href={`mailto:${company.email}`}
-                        className="text-[0.95rem] text-vine-800 transition-colors hover:text-wine-600"
+                        className="text-[0.95rem] text-vine-800 transition-colors hover:text-gold-600"
                       >
                         {company.email}
                       </a>
@@ -84,7 +85,7 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8 border border-vine-900/12 p-9">
-                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-wine-600 uppercase">
+                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
                   La suite
                 </h3>
                 <ol className="mt-7 space-y-6">

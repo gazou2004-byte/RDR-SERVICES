@@ -29,12 +29,12 @@ export function PortalNav() {
             aria-current={active ? "page" : undefined}
             className={`relative shrink-0 px-6 py-4 text-[0.7rem] font-medium tracking-[0.16em] whitespace-nowrap uppercase transition-colors ${
               active
-                ? "bg-stone-200 text-wine-600"
-                : "bg-stone-100 text-vine-600 hover:bg-stone-200 hover:text-vine-800"
+                ? "bg-sand-200 text-gold-600"
+                : "bg-sand-100 text-vine-600 hover:bg-sand-200 hover:text-vine-800"
             }`}
           >
             {active ? (
-              <span className="absolute inset-y-0 left-0 hidden w-0.5 bg-wine-600 lg:block" />
+              <span className="absolute inset-y-0 left-0 hidden w-0.5 bg-gold-600 lg:block" />
             ) : null}
             {link.label}
           </Link>

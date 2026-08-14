@@ -4,19 +4,19 @@ import type { ComponentProps, ReactNode } from "react";
 type Variant = "primary" | "outline" | "light" | "ghost";
 
 const base =
-  "inline-flex items-center justify-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine-600";
+  "inline-flex items-center justify-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-600";
 
 const variants: Record<Variant, string> = {
-  // Fond bordeaux, texte pierre — l'action principale
+  // Fond doré, texte sable — l'action principale
   primary:
-    "bg-wine-600 px-8 py-4 text-stone-50 hover:bg-wine-700 hover:shadow-[0_12px_32px_-14px] hover:shadow-wine-600",
+    "bg-gold-600 px-8 py-4 text-sand-50 hover:bg-gold-700 hover:shadow-[0_12px_32px_-14px] hover:shadow-gold-600",
   // Contour discret sur fond clair
   outline:
-    "border border-vine-900/25 px-8 py-4 text-vine-800 hover:border-wine-600 hover:text-wine-600",
+    "border border-vine-900/25 px-8 py-4 text-vine-800 hover:border-gold-600 hover:text-gold-600",
   // Contour clair, à poser sur les fonds sombres (bandeau d'appel, images)
   light:
-    "border border-stone-50/45 px-8 py-4 text-stone-50 hover:border-stone-50 hover:bg-stone-50 hover:text-vine-900",
-  ghost: "px-2 py-1 text-wine-600 hover:text-wine-700",
+    "border border-sand-50/45 px-8 py-4 text-sand-50 hover:border-sand-50 hover:bg-sand-50 hover:text-vine-900",
+  ghost: "px-2 py-1 text-gold-600 hover:text-gold-700",
 };
 
 export function Button({

@@ -16,11 +16,11 @@ export function Testimonials() {
           {testimonials.map((testimonial) => (
             <figure
               key={testimonial.author}
-              className="reveal flex flex-col border border-vine-900/12 bg-stone-100 p-9 transition-colors duration-500 hover:border-wine-600/35"
+              className="reveal flex flex-col border border-vine-900/12 bg-sand-100 p-9 transition-colors duration-500 hover:border-gold-600/35"
             >
               <span
                 aria-hidden
-                className="font-display text-6xl leading-none text-wine-600/45"
+                className="font-display text-6xl leading-none text-gold-600/45"
               >
                 &ldquo;
               </span>

@@ -4,7 +4,7 @@ import type { ComponentProps, ReactNode } from "react";
 import { useFormStatus } from "react-dom";
 
 const fieldBase =
-  "w-full border border-vine-900/22 bg-stone-50 px-4 py-3.5 text-[0.95rem] text-vine-900 transition-colors placeholder:text-vine-400 focus:border-wine-600 focus:outline-none";
+  "w-full border border-vine-900/22 bg-sand-50 px-4 py-3.5 text-[0.95rem] text-vine-900 transition-colors placeholder:text-vine-400 focus:border-gold-600 focus:outline-none";
 
 export function Field({
   label,
@@ -34,7 +34,7 @@ export function Field({
         <p className="mt-2 text-[0.72rem] text-vine-500">{hint}</p>
       ) : null}
       {errors?.length ? (
-        <p className="mt-2 text-[0.75rem] text-wine-600">{errors[0]}</p>
+        <p className="mt-2 text-[0.75rem] text-gold-600">{errors[0]}</p>
       ) : null}
     </div>
   );
@@ -82,7 +82,7 @@ export function SubmitButton({
     <button
       type="submit"
       disabled={pending}
-      className={`inline-flex items-center justify-center gap-2 bg-wine-600 px-8 py-4 text-[0.72rem] font-medium tracking-[0.2em] text-stone-50 uppercase transition-all duration-300 hover:bg-wine-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine-600 disabled:cursor-not-allowed disabled:opacity-60 ${className}`}
+      className={`inline-flex items-center justify-center gap-2 bg-gold-600 px-8 py-4 text-[0.72rem] font-medium tracking-[0.2em] text-sand-50 uppercase transition-all duration-300 hover:bg-gold-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-600 disabled:cursor-not-allowed disabled:opacity-60 ${className}`}
     >
       {pending ? pendingLabel : children}
     </button>
@@ -101,7 +101,7 @@ export function FormAlert({
       role="status"
       className={`border px-5 py-4 text-[0.85rem] leading-relaxed ${
         tone === "error"
-          ? "border-wine-600/45 bg-wine-100 text-wine-700"
+          ? "border-gold-600/45 bg-gold-300/40 text-gold-700"
           : "border-vine-500/50 bg-vine-300/25 text-vine-700"
       }`}
     >

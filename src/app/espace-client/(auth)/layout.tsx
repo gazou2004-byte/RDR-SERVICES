@@ -20,10 +20,10 @@ export default async function AuthLayout({
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-stone-50/88" />
-      <div className="absolute inset-0 bg-gradient-to-b from-stone-50 via-stone-50/75 to-stone-50" />
+      <div className="absolute inset-0 bg-sand-50/88" />
+      <div className="absolute inset-0 bg-gradient-to-b from-sand-50 via-sand-50/75 to-sand-50" />
 
-      <div className="relative z-10 w-full max-w-lg border border-vine-900/12 bg-stone-50/90 p-9 shadow-[0_24px_60px_-30px] shadow-vine-900/40 backdrop-blur-md sm:p-12">
+      <div className="relative z-10 w-full max-w-lg border border-vine-900/12 bg-sand-50/90 p-9 shadow-[0_24px_60px_-30px] shadow-vine-900/40 backdrop-blur-md sm:p-12">
         {children}
       </div>
     </div>

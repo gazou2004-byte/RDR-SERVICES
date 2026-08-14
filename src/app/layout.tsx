@@ -4,6 +4,7 @@ import "./globals.css";
 import { company } from "@/content/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ContactBar } from "@/components/layout/contact-bar";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 
 const cormorant = Cormorant_Garamond({
@@ -73,11 +74,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="flex min-h-screen flex-col bg-stone-50">
+      {/* pb-16 : réserve la hauteur de la barre de contact fixe */}
+      <body className="flex min-h-screen flex-col bg-sand-50 pb-16">
         <RevealOnScroll />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ContactBar />
       </body>
     </html>
   );

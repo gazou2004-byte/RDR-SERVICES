@@ -17,15 +17,15 @@ export function Logo({
       <span
         className={`font-display text-2xl leading-none font-medium tracking-[0.12em] transition-colors ${
           tone === "light"
-            ? "text-stone-50 group-hover:text-ochre-500"
-            : "text-vine-900 group-hover:text-wine-600"
+            ? "text-sand-50 group-hover:text-gold-400"
+            : "text-vine-900 group-hover:text-gold-600"
         }`}
       >
         RDR
       </span>
       <span
         className={`text-[0.6rem] leading-none font-medium tracking-[0.34em] uppercase ${
-          tone === "light" ? "text-ochre-500" : "text-wine-600"
+          tone === "light" ? "text-gold-400" : "text-gold-600"
         }`}
       >
         Service

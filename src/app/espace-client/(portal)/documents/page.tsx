@@ -38,7 +38,7 @@ export default async function DocumentsPage() {
             {documents.map((document) => (
               <li
                 key={document.id}
-                className="flex flex-wrap items-center justify-between gap-5 px-6 py-6 transition-colors hover:bg-stone-100"
+                className="flex flex-wrap items-center justify-between gap-5 px-6 py-6 transition-colors hover:bg-sand-100"
               >
                 <div>
                   <p className="text-[0.95rem] text-vine-800">
@@ -51,7 +51,7 @@ export default async function DocumentsPage() {
                   </p>
                   <Link
                     href={`/espace-client/sejours/${document.booking.id}`}
-                    className="mt-2 inline-block text-[0.72rem] text-wine-600/80 transition-colors hover:text-wine-700"
+                    className="mt-2 inline-block text-[0.72rem] text-gold-600/80 transition-colors hover:text-gold-700"
                   >
                     {document.booking.destination} ·{" "}
                     {document.booking.reference}
@@ -59,7 +59,7 @@ export default async function DocumentsPage() {
                 </div>
                 <a
                   href={document.url}
-                  className="shrink-0 border border-vine-900/25 px-5 py-2.5 text-[0.62rem] tracking-[0.18em] text-vine-700 uppercase transition-colors hover:border-wine-600 hover:text-wine-600"
+                  className="shrink-0 border border-vine-900/25 px-5 py-2.5 text-[0.62rem] tracking-[0.18em] text-vine-700 uppercase transition-colors hover:border-gold-600 hover:text-gold-600"
                 >
                   Ouvrir
                 </a>

@@ -42,8 +42,8 @@ export default async function DashboardPage() {
       <section>
         <dl className="grid grid-cols-2 gap-px border border-vine-900/12 bg-vine-900/10 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.label} className="bg-stone-100 px-5 py-8 text-center">
-              <dt className="font-display text-3xl font-light text-wine-600">
+            <div key={stat.label} className="bg-sand-100 px-5 py-8 text-center">
+              <dt className="font-display text-3xl font-light text-gold-600">
                 {stat.value}
               </dt>
               <dd className="mt-2 text-[0.72rem] leading-snug text-vine-500">
@@ -62,7 +62,7 @@ export default async function DashboardPage() {
           {upcoming.length > 0 ? (
             <Link
               href="/espace-client/sejours"
-              className="text-[0.66rem] tracking-[0.18em] text-wine-600 uppercase transition-colors hover:text-wine-700"
+              className="text-[0.66rem] tracking-[0.18em] text-gold-600 uppercase transition-colors hover:text-gold-700"
             >
               Tout voir →
             </Link>
@@ -95,7 +95,7 @@ export default async function DashboardPage() {
           {documents.length > 0 ? (
             <Link
               href="/espace-client/documents"
-              className="text-[0.66rem] tracking-[0.18em] text-wine-600 uppercase transition-colors hover:text-wine-700"
+              className="text-[0.66rem] tracking-[0.18em] text-gold-600 uppercase transition-colors hover:text-gold-700"
             >
               Tout voir →
             </Link>
@@ -114,7 +114,7 @@ export default async function DashboardPage() {
                 <li key={document.id}>
                   <a
                     href={document.url}
-                    className="flex items-center justify-between gap-6 px-6 py-5 transition-colors hover:bg-stone-100"
+                    className="flex items-center justify-between gap-6 px-6 py-5 transition-colors hover:bg-sand-100"
                   >
                     <div>
                       <p className="text-[0.9rem] text-vine-800">
@@ -126,7 +126,7 @@ export default async function DashboardPage() {
                         {formatDate(document.createdAt)}
                       </p>
                     </div>
-                    <span className="shrink-0 text-[0.62rem] tracking-[0.18em] text-wine-600 uppercase">
+                    <span className="shrink-0 text-[0.62rem] tracking-[0.18em] text-gold-600 uppercase">
                       Ouvrir
                     </span>
                   </a>

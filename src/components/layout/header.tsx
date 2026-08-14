@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { company, nav } from "@/content/site";
+import { nav } from "@/content/site";
 import { Logo } from "./logo";
 
 export function Header() {
@@ -12,7 +12,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -26,7 +26,6 @@ export function Header() {
     setOpen(false);
   }
 
-  // Bloque le défilement de la page quand le menu mobile est ouvert
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -34,53 +33,54 @@ export function Header() {
     };
   }, [open]);
 
+  // L'espace client n'a pas d'image d'en-tête : le bandeau y est opaque d'emblée
+  const overHero = !pathname.startsWith("/espace-client");
+  const transparent = overHero && !scrolled && !open;
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled || open
-          ? "border-b border-vine-900/10 bg-stone-50/92 py-4 shadow-[0_1px_24px_-12px] shadow-vine-900/30 backdrop-blur-lg"
-          : "border-b border-transparent py-7"
+        transparent
+          ? "py-8"
+          : "border-b border-vine-900/10 bg-sand-50/95 py-4 shadow-[0_1px_20px_-14px] shadow-vine-900/40 backdrop-blur-lg"
       }`}
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-8 px-6 lg:px-10">
-        <Logo className="shrink-0" />
+        <Logo className="shrink-0" tone={transparent ? "light" : "dark"} />
 
-        <nav className="hidden items-center gap-7 lg:flex xl:gap-9">
+        <nav className="hidden items-center gap-9 lg:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`relative text-[0.7rem] font-medium tracking-[0.16em] whitespace-nowrap uppercase transition-colors ${
-                isActive(item.href)
-                  ? "text-wine-600"
-                  : "text-vine-700 hover:text-wine-600"
+              className={`font-display text-lg whitespace-nowrap transition-colors ${
+                transparent
+                  ? isActive(item.href)
+                    ? "text-gold-400"
+                    : "text-sand-50 hover:text-gold-400"
+                  : isActive(item.href)
+                    ? "text-gold-600"
+                    : "text-vine-800 hover:text-gold-600"
               }`}
             >
               {item.label}
-              {isActive(item.href) ? (
-                <span className="absolute -bottom-2 left-0 h-px w-full bg-wine-600" />
-              ) : null}
             </Link>
           ))}
-        </nav>
 
-        <div className="hidden shrink-0 items-center gap-6 lg:flex">
-          <a
-            href={`tel:${company.phoneHref}`}
-            className="hidden text-[0.7rem] whitespace-nowrap text-vine-600 transition-colors hover:text-wine-600 xl:block"
-          >
-            {company.phone}
-          </a>
           <Link
             href="/espace-client"
-            className="border border-wine-600/50 px-5 py-2.5 text-[0.66rem] font-medium tracking-[0.18em] whitespace-nowrap text-wine-600 uppercase transition-all hover:bg-wine-600 hover:text-stone-50"
+            className={`ml-2 border px-5 py-2.5 text-[0.64rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
+              transparent
+                ? "border-sand-50/60 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
+                : "border-gold-600/60 text-gold-700 hover:bg-gold-600 hover:text-sand-50"
+            }`}
           >
             Espace client
           </Link>
-        </div>
+        </nav>
 
         <button
           type="button"
@@ -90,17 +90,21 @@ export function Header() {
           className="flex h-10 w-10 flex-col items-center justify-center gap-[6px] lg:hidden"
         >
           <span
-            className={`h-px w-6 bg-vine-900 transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+            className={`h-px w-6 transition-transform duration-300 ${
+              transparent ? "bg-sand-50" : "bg-vine-900"
+            } ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
           />
           <span
-            className={`h-px w-6 bg-vine-900 transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+            className={`h-px w-6 transition-transform duration-300 ${
+              transparent ? "bg-sand-50" : "bg-vine-900"
+            } ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
           />
         </button>
       </div>
 
       {/* Menu mobile */}
       <div
-        className={`overflow-hidden bg-stone-50 transition-[max-height,opacity] duration-500 lg:hidden ${
+        className={`overflow-hidden bg-sand-50 transition-[max-height,opacity] duration-500 lg:hidden ${
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -110,7 +114,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={`border-b border-vine-900/10 py-4 font-display text-2xl font-light ${
-                isActive(item.href) ? "text-wine-600" : "text-vine-900"
+                isActive(item.href) ? "text-gold-600" : "text-vine-900"
               }`}
             >
               {item.label}
@@ -118,16 +122,10 @@ export function Header() {
           ))}
           <Link
             href="/espace-client"
-            className="mt-6 border border-wine-600/50 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-wine-600 uppercase"
+            className="mt-6 border border-gold-600/60 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-gold-700 uppercase"
           >
             Espace client
           </Link>
-          <a
-            href={`tel:${company.phoneHref}`}
-            className="mt-4 text-center text-sm tracking-[0.1em] text-vine-600"
-          >
-            {company.phone}
-          </a>
         </nav>
       </div>
     </header>

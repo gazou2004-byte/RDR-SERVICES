@@ -20,7 +20,7 @@ export function EmptyState({
       {actionLabel && actionHref ? (
         <Link
           href={actionHref}
-          className="mt-8 inline-block bg-wine-600 px-7 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] text-stone-50 uppercase transition-colors hover:bg-wine-500"
+          className="mt-8 inline-block bg-gold-600 px-7 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] text-sand-50 uppercase transition-colors hover:bg-gold-500"
         >
           {actionLabel}
         </Link>

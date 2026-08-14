@@ -9,7 +9,7 @@ export default function NotFound() {
         <h1 className="mt-6 font-display text-6xl font-light text-vine-900 sm:text-7xl">
           Page introuvable
         </h1>
-        <span className="rule-wine mx-auto mt-8" />
+        <span className="rule-gold mx-auto mt-8" />
         <p className="mx-auto mt-8 max-w-md text-[0.95rem] leading-relaxed text-vine-600">
           Cette page n&apos;existe pas ou a été déplacée. Revenons sur nos pas.
         </p>

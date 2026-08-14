@@ -37,7 +37,7 @@ export default async function BookingDetailPage({ params }: Props) {
     <div className="space-y-12">
       <Link
         href="/espace-client/sejours"
-        className="inline-block text-[0.66rem] tracking-[0.18em] text-vine-500 uppercase transition-colors hover:text-wine-600"
+        className="inline-block text-[0.66rem] tracking-[0.18em] text-vine-500 uppercase transition-colors hover:text-gold-600"
       >
         ← Tous mes séjours
       </Link>
@@ -71,7 +71,7 @@ export default async function BookingDetailPage({ params }: Props) {
             { term: "Voyageurs", value: String(booking.travelers) },
             { term: "Montant total", value: formatPrice(booking.totalCents) },
           ].map((item) => (
-            <div key={item.term} className="bg-stone-100 px-6 py-7">
+            <div key={item.term} className="bg-sand-100 px-6 py-7">
               <dt className="text-[0.62rem] tracking-[0.18em] text-vine-500 uppercase">
                 {item.term}
               </dt>
@@ -86,7 +86,7 @@ export default async function BookingDetailPage({ params }: Props) {
       {/* Suivi du règlement */}
       {booking.totalCents > 0 ? (
         <section className="border border-vine-900/12 p-8">
-          <h3 className="text-[0.66rem] font-medium tracking-[0.22em] text-wine-600 uppercase">
+          <h3 className="text-[0.66rem] font-medium tracking-[0.22em] text-gold-600 uppercase">
             Règlement
           </h3>
           <div className="mt-6 flex flex-wrap items-baseline justify-between gap-4">
@@ -111,7 +111,7 @@ export default async function BookingDetailPage({ params }: Props) {
             aria-label="Progression du règlement"
           >
             <div
-              className="h-full bg-wine-600 transition-all duration-700"
+              className="h-full bg-gold-600 transition-all duration-700"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -120,8 +120,8 @@ export default async function BookingDetailPage({ params }: Props) {
 
       {/* Notes du conseiller */}
       {booking.notes ? (
-        <section className="border-l-2 border-wine-600 bg-stone-100 p-8">
-          <h3 className="text-[0.66rem] font-medium tracking-[0.22em] text-wine-600 uppercase">
+        <section className="border-l-2 border-gold-600 bg-sand-100 p-8">
+          <h3 className="text-[0.66rem] font-medium tracking-[0.22em] text-gold-600 uppercase">
             Note de votre conseiller
           </h3>
           <p className="mt-5 text-[0.95rem] leading-relaxed whitespace-pre-line text-vine-700">
@@ -146,7 +146,7 @@ export default async function BookingDetailPage({ params }: Props) {
                 <li key={document.id}>
                   <a
                     href={document.url}
-                    className="flex items-center justify-between gap-6 px-6 py-5 transition-colors hover:bg-stone-100"
+                    className="flex items-center justify-between gap-6 px-6 py-5 transition-colors hover:bg-sand-100"
                   >
                     <div>
                       <p className="text-[0.9rem] text-vine-800">
@@ -158,7 +158,7 @@ export default async function BookingDetailPage({ params }: Props) {
                         {document.sizeLabel ? ` · ${document.sizeLabel}` : ""}
                       </p>
                     </div>
-                    <span className="shrink-0 text-[0.62rem] tracking-[0.18em] text-wine-600 uppercase">
+                    <span className="shrink-0 text-[0.62rem] tracking-[0.18em] text-gold-600 uppercase">
                       Ouvrir
                     </span>
                   </a>
@@ -169,13 +169,13 @@ export default async function BookingDetailPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="border border-vine-900/12 bg-stone-100 p-8 text-center">
+      <section className="border border-vine-900/12 bg-sand-100 p-8 text-center">
         <p className="text-[0.95rem] text-vine-700">
           Une question sur ce séjour ?
         </p>
         <Link
           href="/espace-client/messages"
-          className="mt-5 inline-block bg-wine-600 px-7 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] text-stone-50 uppercase transition-colors hover:bg-wine-500"
+          className="mt-5 inline-block bg-gold-600 px-7 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] text-sand-50 uppercase transition-colors hover:bg-gold-500"
         >
           Écrire à mon conseiller
         </Link>

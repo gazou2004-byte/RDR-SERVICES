@@ -33,14 +33,24 @@ export const nav = [
 
 export const hero = {
   eyebrow: "Immersion & expériences",
-  title: "Voyage privé",
-  titleAccent: "dans le Sud-Ouest",
+  /** Grand titre centré : le nom de la maison, très espacé. */
+  title: "RDR Service",
+  /** Bandeau posé sous le titre. */
+  banner: "Découvrez le Sud-Ouest, conduit par nos experts locaux",
   subtitle:
-    "Vignobles bordelais, Périgord, Pays Basque et Gascogne, accompagné de nos experts locaux. Chaque séjour est composé à la main, pour vous seul.",
+    "Vignobles bordelais, Périgord, Pays Basque et Gascogne. Chaque séjour est composé à la main, pour vous seul.",
   primaryCta: { label: "Composer mon séjour", href: "/contact" },
   secondaryCta: { label: "Découvrir nos services", href: "/services" },
-  image:
-    "/images/hero-accueil.jpg",
+  /**
+   * Quatre panneaux d'images côte à côte, chacun représentant un territoire.
+   * Sur mobile, seuls les deux premiers restent visibles.
+   */
+  panels: [
+    { image: "/images/hero-accueil.jpg", label: "Médoc" },
+    { image: "/images/dest-perigord.jpg", label: "Périgord" },
+    { image: "/images/dest-basque.jpg", label: "Pays Basque" },
+    { image: "/images/dest-gascogne.jpg", label: "Gascogne" },
+  ],
 };
 
 export const intro = {

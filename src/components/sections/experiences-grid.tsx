@@ -7,7 +7,7 @@ export function ExperiencesGrid({ limit }: { limit?: number }) {
   const items = limit ? experiences.slice(0, limit) : experiences;
 
   return (
-    <section className="border-b border-vine-900/10 bg-stone-100 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 bg-sand-100 py-28 lg:py-36">
       <Container>
         <SectionHeading
           eyebrow="Expériences uniques"
@@ -20,7 +20,7 @@ export function ExperiencesGrid({ limit }: { limit?: number }) {
         <div className="mt-16 grid gap-9 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((experience) => (
             <article key={experience.title} className="reveal group">
-              <div className="relative aspect-4/3 overflow-hidden bg-stone-200">
+              <div className="relative aspect-4/3 overflow-hidden bg-sand-200">
                 <Image
                   src={experience.image}
                   alt={experience.title}
@@ -30,7 +30,7 @@ export function ExperiencesGrid({ limit }: { limit?: number }) {
                 />
               </div>
 
-              <p className="mt-6 text-[0.62rem] tracking-[0.24em] text-wine-600 uppercase">
+              <p className="mt-6 text-[0.62rem] tracking-[0.24em] text-gold-600 uppercase">
                 {experience.place}
               </p>
               <h3 className="mt-2.5 font-display text-2xl leading-tight font-light text-vine-900">

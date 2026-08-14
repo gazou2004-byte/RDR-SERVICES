@@ -15,18 +15,18 @@ export function Cta({
 }) {
   return (
     <section className="relative overflow-hidden bg-vine-900 py-28 lg:py-36">
-      {/* Halo bordeaux discret en fond */}
+      {/* Halo doré discret en fond */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-wine-700/30 blur-[130px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-700/30 blur-[130px]"
       />
 
       <Container className="relative z-10 text-center">
         <p className="eyebrow-light reveal">Prendre contact</p>
-        <h2 className="reveal mx-auto mt-6 max-w-2xl font-display text-4xl leading-[1.12] font-light text-stone-50 sm:text-5xl">
+        <h2 className="reveal mx-auto mt-6 max-w-2xl font-display text-4xl leading-[1.12] font-light text-sand-50 sm:text-5xl">
           {title}
         </h2>
-        <p className="reveal mx-auto mt-7 max-w-xl text-[0.98rem] leading-relaxed text-stone-200">
+        <p className="reveal mx-auto mt-7 max-w-xl text-[0.98rem] leading-relaxed text-sand-200">
           {description}
         </p>
 

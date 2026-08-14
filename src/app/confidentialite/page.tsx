@@ -60,7 +60,7 @@ export default function PrivacyPage() {
         <h1 className="mt-5 font-display text-5xl font-light text-vine-900">
           Politique de confidentialité
         </h1>
-        <span className="rule-wine mt-8" />
+        <span className="rule-gold mt-8" />
 
         <div className="mt-14 max-w-2xl space-y-10 text-[0.92rem] leading-relaxed text-vine-600">
           <p>
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
               Pour toute question relative à vos données :{" "}
               <a
                 href={`mailto:${company.email}`}
-                className="text-wine-600 transition-colors hover:text-wine-700"
+                className="text-gold-600 transition-colors hover:text-gold-700"
               >
                 {company.email}
               </a>

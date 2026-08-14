@@ -3,51 +3,64 @@ import Link from "next/link";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { destinations } from "@/content/site";
 
+/**
+ * Les quatre territoires, en colonnes pleine largeur : la devise en italique
+ * au-dessus de la photo, et un bouton « Découvrir » centré sur l'image.
+ */
 export function DestinationsGrid() {
   return (
-    <section className="border-b border-vine-900/10 py-28 lg:py-36">
-      <Container>
+    <section className="border-b border-vine-900/10 bg-sand-100">
+      <Container className="py-28 lg:py-36">
         <SectionHeading
           eyebrow="Tours privés"
-          title="Quatre territoires,"
+          title="Quatre territoires"
           accent="un même Sud-Ouest"
           description="Chaque itinéraire présenté ici est un point de départ. Nous le retravaillons entièrement selon vos envies, votre rythme et la saison."
         />
+      </Container>
 
-        <div className="mt-16 grid gap-10 md:grid-cols-2">
-          {destinations.map((destination) => (
-            <Link
-              key={destination.slug}
-              href={`/destinations/${destination.slug}`}
-              className="reveal group block"
-            >
-              <div className="relative aspect-16/11 overflow-hidden bg-stone-200">
-                <Image
-                  src={destination.image}
-                  alt={destination.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-[1100ms] group-hover:scale-105"
-                />
-              </div>
+      <div className="grid items-stretch sm:grid-cols-2 lg:grid-cols-4">
+        {destinations.map((destination) => (
+          <Link
+            key={destination.slug}
+            href={`/destinations/${destination.slug}`}
+            className="reveal group block border-t border-l border-gold-600/25 last:border-r"
+          >
+            {/*
+              Hauteur fixe : les devises n'ont pas le même nombre de lignes,
+              sans cela les quatre photos ne démarreraient pas au même niveau.
+            */}
+            <p className="flex min-h-[6rem] items-center justify-center px-5 py-4 text-center font-display text-lg leading-snug text-vine-800 italic">
+              « {destination.tagline} »
+            </p>
 
-              <div className="border-b border-vine-900/12 pt-7 pb-7 transition-colors group-hover:border-wine-600">
-                <h3 className="font-display text-3xl leading-tight font-light text-vine-900 transition-colors group-hover:text-wine-600 sm:text-4xl">
+            {/* Photo + bouton */}
+            <div className="relative aspect-3/4 overflow-hidden bg-sand-200">
+              <Image
+                src={destination.image}
+                alt={destination.name}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-vine-900/25 transition-colors duration-500 group-hover:bg-vine-900/45" />
+
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-5 text-center">
+                {/* min-h : les noms sur deux lignes ne doivent pas décaler le bouton */}
+                <h3 className="flex min-h-[3.5rem] items-center font-display text-2xl leading-tight font-light tracking-[0.06em] text-sand-50 uppercase">
                   {destination.name}
                 </h3>
-                <p className="mt-2 text-sm text-vine-600 italic">
-                  {destination.tagline}
-                </p>
-                <div className="mt-5 flex items-center gap-4 text-[0.64rem] tracking-[0.2em] text-wine-600 uppercase">
-                  <span>{destination.duration}</span>
-                  <span className="h-px w-8 bg-wine-600/50 transition-all duration-500 group-hover:w-14" />
-                  <span>Découvrir</span>
-                </div>
+                <span className="border border-sand-50/70 px-6 py-2.5 text-[0.66rem] font-medium tracking-[0.2em] text-sand-50 uppercase transition-colors group-hover:bg-sand-50 group-hover:text-vine-900">
+                  Découvrir
+                </span>
+                <span className="text-[0.62rem] tracking-[0.18em] text-sand-100/85 uppercase">
+                  {destination.duration}
+                </span>
               </div>
-            </Link>
-          ))}
-        </div>
-      </Container>
+            </div>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }

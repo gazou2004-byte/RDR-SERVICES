@@ -15,10 +15,10 @@ export default function LegalPage() {
         <h1 className="mt-5 font-display text-5xl font-light text-vine-900">
           Mentions légales
         </h1>
-        <span className="rule-wine mt-8" />
+        <span className="rule-gold mt-8" />
 
         <div className="mt-14 max-w-2xl space-y-10 text-[0.92rem] leading-relaxed text-vine-600">
-          <p className="border border-wine-600/35 bg-wine-100 px-5 py-4 text-[0.85rem] text-wine-700">
+          <p className="border border-gold-600/35 bg-gold-300/40 px-5 py-4 text-[0.85rem] text-gold-700">
             À compléter avec vos informations réelles (raison sociale, SIRET,
             capital, assurance RCP, garantie financière) avant la mise en ligne.
           </p>

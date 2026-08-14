@@ -3,7 +3,7 @@ import { process } from "@/content/site";
 
 export function Process() {
   return (
-    <section className="border-b border-vine-900/10 bg-stone-100 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 bg-sand-100 py-28 lg:py-36">
       <Container>
         <SectionHeading
           eyebrow="Comment ça se passe"
@@ -16,9 +16,9 @@ export function Process() {
           {process.map((item) => (
             <li
               key={item.step}
-              className="reveal group relative bg-stone-100 p-9 transition-colors duration-500 hover:bg-stone-200 lg:p-10"
+              className="reveal group relative bg-sand-100 p-9 transition-colors duration-500 hover:bg-sand-200 lg:p-10"
             >
-              <span className="font-display text-5xl leading-none font-light text-vine-400 transition-colors duration-500 group-hover:text-wine-600">
+              <span className="font-display text-5xl leading-none font-light text-vine-400 transition-colors duration-500 group-hover:text-gold-600">
                 {item.step}
               </span>
               <h3 className="mt-7 font-display text-2xl font-light text-vine-900">

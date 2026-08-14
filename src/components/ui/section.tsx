@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Ornament } from "./ornament";
 
 export function Container({
   children,
@@ -14,12 +15,17 @@ export function Container({
   );
 }
 
+/**
+ * Titre de section : ornement doré, grande capitale sérif, filet doré,
+ * puis le texte d'introduction. Centré par défaut.
+ */
 export function SectionHeading({
   eyebrow,
   title,
   accent,
   description,
-  align = "left",
+  align = "center",
+  tone = "dark",
   className = "",
 }: {
   eyebrow?: string;
@@ -27,27 +33,52 @@ export function SectionHeading({
   accent?: string;
   description?: string;
   align?: "left" | "center";
+  tone?: "dark" | "light";
   className?: string;
 }) {
   const centered = align === "center";
+  const light = tone === "light";
 
   return (
     <div
-      className={`reveal max-w-3xl ${centered ? "mx-auto text-center" : ""} ${className}`}
+      className={`reveal ${centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} ${className}`}
     >
-      {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-      <h2 className="mt-5 font-display text-4xl leading-[1.1] font-light text-vine-900 sm:text-5xl">
+      <Ornament
+        tone={tone}
+        className={centered ? "mx-auto" : ""}
+      />
+
+      {eyebrow ? (
+        <p className={`mt-7 ${light ? "eyebrow-light" : "eyebrow"}`}>
+          {eyebrow}
+        </p>
+      ) : null}
+
+      <h2
+        className={`section-title mt-6 ${light ? "!text-sand-50" : ""}`}
+      >
         {title}
         {accent ? (
           <>
-            {" "}
-            <span className="text-wine-600 italic">{accent}</span>
+            {/* Sur un titre centré, l'accent prend sa propre ligne */}
+            {centered ? null : " "}
+            <span
+              className={`normal-case italic ${centered ? "block" : ""} ${light ? "text-gold-400" : "text-gold-600"}`}
+            >
+              {accent}
+            </span>
           </>
         ) : null}
       </h2>
-      <span className={`rule-wine mt-7 ${centered ? "mx-auto" : ""}`} />
+
+      <span
+        className={`${light ? "rule-gold-light" : "rule-gold"} mt-8 ${centered ? "mx-auto" : ""}`}
+      />
+
       {description ? (
-        <p className="mt-7 text-[0.98rem] leading-relaxed text-vine-600">
+        <p
+          className={`mt-8 text-[0.98rem] leading-relaxed ${light ? "text-sand-200" : "text-vine-600"} ${centered ? "mx-auto max-w-2xl" : ""}`}
+        >
           {description}
         </p>
       ) : null}

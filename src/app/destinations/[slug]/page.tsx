@@ -48,12 +48,12 @@ export default async function DestinationPage({ params }: Props) {
               <p className="font-display text-2xl leading-relaxed font-light text-vine-800 sm:text-3xl">
                 {destination.intro}
               </p>
-              <span className="rule-wine mt-9" />
+              <span className="rule-gold mt-9" />
             </div>
 
             <dl className="reveal space-y-7 lg:col-span-5">
               <div className="border-b border-vine-900/12 pb-6">
-                <dt className="text-[0.64rem] tracking-[0.22em] text-wine-600 uppercase">
+                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-600 uppercase">
                   Durée conseillée
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
@@ -61,7 +61,7 @@ export default async function DestinationPage({ params }: Props) {
                 </dd>
               </div>
               <div className="border-b border-vine-900/12 pb-6">
-                <dt className="text-[0.64rem] tracking-[0.22em] text-wine-600 uppercase">
+                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-600 uppercase">
                   Meilleure saison
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
@@ -69,7 +69,7 @@ export default async function DestinationPage({ params }: Props) {
                 </dd>
               </div>
               <div>
-                <dt className="text-[0.64rem] tracking-[0.22em] text-wine-600 uppercase">
+                <dt className="text-[0.64rem] tracking-[0.22em] text-gold-600 uppercase">
                   Format
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
@@ -82,16 +82,16 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       {/* Temps forts */}
-      <section className="border-b border-vine-900/10 bg-stone-100 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 bg-sand-100 py-24 lg:py-32">
         <Container>
           <SectionHeading eyebrow="Temps forts" title="Ce que vous verrez" />
           <ul className="mt-14 grid gap-px border border-vine-900/10 bg-vine-900/10 sm:grid-cols-2">
             {destination.highlights.map((highlight, index) => (
               <li
                 key={highlight}
-                className="reveal flex items-start gap-6 bg-stone-100 p-9"
+                className="reveal flex items-start gap-6 bg-sand-100 p-9"
               >
-                <span className="font-display text-3xl leading-none font-light text-wine-600">
+                <span className="font-display text-3xl leading-none font-light text-gold-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <p className="pt-1.5 text-[0.95rem] leading-relaxed text-vine-700">
@@ -118,9 +118,9 @@ export default async function DestinationPage({ params }: Props) {
               <li key={day.day} className="reveal relative pb-12 pl-9 last:pb-0">
                 <span
                   aria-hidden
-                  className="absolute top-2 -left-[4.5px] h-2 w-2 rotate-45 bg-wine-600"
+                  className="absolute top-2 -left-[4.5px] h-2 w-2 rotate-45 bg-gold-600"
                 />
-                <p className="text-[0.64rem] tracking-[0.22em] text-wine-600 uppercase">
+                <p className="text-[0.64rem] tracking-[0.22em] text-gold-600 uppercase">
                   {day.day}
                 </p>
                 <h3 className="mt-3 font-display text-2xl font-light text-vine-900 sm:text-3xl">
@@ -136,7 +136,7 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       {/* Autres destinations */}
-      <section className="border-b border-vine-900/10 bg-stone-100 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 bg-sand-100 py-24 lg:py-32">
         <Container>
           <SectionHeading
             eyebrow="Poursuivre"
@@ -149,7 +149,7 @@ export default async function DestinationPage({ params }: Props) {
                 href={`/destinations/${other.slug}`}
                 className="reveal group block"
               >
-                <div className="relative aspect-4/3 overflow-hidden bg-stone-200">
+                <div className="relative aspect-4/3 overflow-hidden bg-sand-200">
                   <Image
                     src={other.image}
                     alt={other.name}
@@ -158,7 +158,7 @@ export default async function DestinationPage({ params }: Props) {
                     className="object-cover transition-transform duration-[1000ms] group-hover:scale-105"
                   />
                 </div>
-                <h3 className="border-b border-vine-900/12 pt-5 pb-5 font-display text-2xl font-light text-vine-900 transition-colors group-hover:border-wine-600 group-hover:text-wine-600">
+                <h3 className="border-b border-vine-900/12 pt-5 pb-5 font-display text-2xl font-light text-vine-900 transition-colors group-hover:border-gold-600 group-hover:text-gold-600">
                   {other.name}
                 </h3>
               </Link>

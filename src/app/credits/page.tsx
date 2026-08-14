@@ -18,7 +18,7 @@ export default function CreditsPage() {
         <h1 className="mt-5 font-display text-5xl font-light text-vine-900">
           Crédits photographiques
         </h1>
-        <span className="rule-wine mt-8" />
+        <span className="rule-gold mt-8" />
 
         <div className="mt-12 max-w-3xl space-y-6 text-[0.92rem] leading-relaxed text-vine-600">
           <p>
@@ -28,7 +28,7 @@ export default function CreditsPage() {
             photographies propres à {""}
             <span className="text-vine-800">RDR Service</span>.
           </p>
-          <p className="border border-wine-600/35 bg-wine-100 px-5 py-4 text-[0.85rem] text-wine-700">
+          <p className="border border-gold-600/35 bg-gold-300/40 px-5 py-4 text-[0.85rem] text-gold-700">
             Certaines licences (CC BY, CC BY-SA, FAL) imposent de citer
             l&apos;auteur. Tant que ces images sont en ligne, cette page doit le
             rester et rester accessible depuis le pied de page.
@@ -38,7 +38,7 @@ export default function CreditsPage() {
         <ul className="mt-14 max-w-3xl divide-y divide-vine-900/12 border-t border-vine-900/12">
           {sorted.map((credit) => (
             <li key={credit.slot} className="py-6">
-              <p className="text-[0.62rem] tracking-[0.2em] text-wine-600 uppercase">
+              <p className="text-[0.62rem] tracking-[0.2em] text-gold-600 uppercase">
                 {credit.slot}
               </p>
               <p className="mt-2 text-[0.95rem] text-vine-800">
@@ -53,7 +53,7 @@ export default function CreditsPage() {
                   href={credit.page}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-wine-600 transition-colors hover:text-wine-700"
+                  className="text-gold-600 transition-colors hover:text-gold-700"
                 >
                   Page Wikimedia Commons →
                 </a>
@@ -62,7 +62,7 @@ export default function CreditsPage() {
                     href={credit.licenseUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-wine-600 transition-colors hover:text-wine-700"
+                    className="text-gold-600 transition-colors hover:text-gold-700"
                   >
                     Texte de la licence →
                   </a>

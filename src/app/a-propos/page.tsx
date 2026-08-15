@@ -47,7 +47,7 @@ export default function AboutPage() {
       />
 
       {/* Histoire */}
-      <section className="border-b border-vine-900/10 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-32">
         <Container>
           <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
             <div className="reveal relative aspect-4/5 lg:col-span-5">
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
               <dl className="reveal mt-11 grid gap-8 sm:grid-cols-2">
                 <div>
-                  <dt className="text-[0.64rem] tracking-[0.22em] text-gold-600 uppercase">
+                  <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
                     Licence ATOUT FRANCE
                   </dt>
                   <dd className="mt-2 text-sm text-vine-700">
@@ -104,7 +104,7 @@ export default function AboutPage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[0.64rem] tracking-[0.22em] text-gold-600 uppercase">
+                  <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
                     Licence de transport
                   </dt>
                   <dd className="mt-2 text-sm text-vine-700">
@@ -118,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* Chiffres */}
-      <section className="border-b border-vine-900/10 bg-sand-100 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-32">
         <Container>
           <dl className="reveal grid grid-cols-2 gap-px border border-vine-900/10 bg-vine-900/10 lg:grid-cols-4">
             {intro.stats.map((stat) => (
@@ -139,7 +139,7 @@ export default function AboutPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="border-b border-vine-900/10 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-32">
         <Container>
           <SectionHeading
             eyebrow="Nos engagements"

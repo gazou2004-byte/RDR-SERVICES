@@ -21,7 +21,7 @@ export default function ContactPage() {
         image="/images/hero-contact.jpg"
       />
 
-      <section className="border-b border-vine-900/10 py-24 lg:py-32">
+      <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-32">
         <Container>
           <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
             <div className="reveal lg:col-span-7">
@@ -38,7 +38,7 @@ export default function ContactPage() {
 
             <aside className="reveal lg:col-span-5">
               <div className="border border-vine-900/12 bg-sand-100 p-9">
-                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
+                <h3 className="text-[0.7rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
                   Nous joindre directement
                 </h3>
                 <dl className="mt-7 space-y-6">
@@ -47,7 +47,7 @@ export default function ContactPage() {
                     <dd className="mt-1">
                       <a
                         href={`tel:${company.phoneHref}`}
-                        className="font-display text-2xl font-light text-vine-900 transition-colors hover:text-tuile-600"
+                        className="inline-block py-1 font-display text-2xl font-light text-vine-900 transition-colors hover:text-tuile-600"
                       >
                         {company.phone}
                       </a>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                     <dd className="mt-1">
                       <a
                         href={`mailto:${company.email}`}
-                        className="text-[0.95rem] text-vine-800 transition-colors hover:text-tuile-600"
+                        className="inline-block py-2 text-[0.95rem] text-vine-800 transition-colors hover:text-tuile-600"
                       >
                         {company.email}
                       </a>
@@ -85,7 +85,7 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8 border border-vine-900/12 p-9">
-                <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
+                <h3 className="text-[0.7rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
                   La suite
                 </h3>
                 <ol className="mt-7 space-y-6">

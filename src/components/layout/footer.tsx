@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-vine-900/10 bg-sand-100">
-      <Container className="py-20">
+      <Container className="py-14 sm:py-20">
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Logo />
@@ -16,14 +16,14 @@ export function Footer() {
               Conciergerie de voyage indépendante. Séjours privés sur mesure
               dans le Sud-Ouest de la France.
             </p>
-            <div className="mt-7 flex gap-5">
+            <div className="mt-5 flex gap-6">
               {Object.entries(company.socials).map(([name, href]) => (
                 <a
                   key={name}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[0.68rem] tracking-[0.14em] text-vine-500 uppercase transition-colors hover:text-tuile-600"
+                  className="py-2 text-[0.74rem] tracking-[0.14em] text-vine-500 uppercase transition-colors hover:text-tuile-600"
                 >
                   {name}
                 </a>
@@ -59,7 +59,7 @@ export function Footer() {
             <li>
               <a
                 href={`tel:${company.phoneHref}`}
-                className="text-sm text-vine-600 transition-colors hover:text-tuile-600"
+                className="inline-block py-2 text-sm text-vine-600 transition-colors hover:text-tuile-600"
               >
                 {company.phone}
               </a>
@@ -67,7 +67,7 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${company.email}`}
-                className="text-sm text-vine-600 transition-colors hover:text-tuile-600"
+                className="inline-block py-2 text-sm text-vine-600 transition-colors hover:text-tuile-600"
               >
                 {company.email}
               </a>
@@ -76,7 +76,7 @@ export function Footer() {
             <li className="pt-4">
               <Link
                 href="/contact"
-                className="text-[0.68rem] tracking-[0.16em] text-tuile-600 uppercase transition-colors hover:text-tuile-600"
+                className="inline-block py-2 text-[0.74rem] tracking-[0.16em] text-tuile-600 uppercase transition-colors hover:text-tuile-700"
               >
                 Demander un devis →
               </Link>
@@ -95,19 +95,19 @@ export function Footer() {
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link
               href="/mentions-legales"
-              className="transition-colors hover:text-tuile-600"
+              className="inline-block py-2 transition-colors hover:text-tuile-600"
             >
               Mentions légales
             </Link>
             <Link
               href="/confidentialite"
-              className="transition-colors hover:text-tuile-600"
+              className="inline-block py-2 transition-colors hover:text-tuile-600"
             >
               Confidentialité
             </Link>
             <Link
               href="/credits"
-              className="transition-colors hover:text-tuile-600"
+              className="inline-block py-2 transition-colors hover:text-tuile-600"
             >
               Crédits photo
             </Link>
@@ -127,7 +127,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-[0.66rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
+      <h3 className="text-[0.7rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
         {title}
       </h3>
       <ul className="mt-6 space-y-3">{children}</ul>
@@ -146,7 +146,7 @@ function FooterLink({
     <li>
       <Link
         href={href}
-        className="text-sm text-vine-600 transition-colors hover:text-tuile-600"
+        className="inline-block py-2 text-sm text-vine-600 transition-colors hover:text-tuile-600"
       >
         {children}
       </Link>

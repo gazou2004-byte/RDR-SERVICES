@@ -11,7 +11,7 @@ export function Logo({
   return (
     <Link
       href="/"
-      className={`group flex items-baseline gap-2.5 ${className}`}
+      className={`group flex items-baseline gap-2.5 py-1.5 ${className}`}
       aria-label="RDR Service — retour à l'accueil"
     >
       <span

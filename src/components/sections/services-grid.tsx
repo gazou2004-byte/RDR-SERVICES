@@ -10,7 +10,7 @@ import { services } from "@/content/site";
 export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
   return (
     <section className="border-b border-vine-900/10">
-      <Container className="py-28 lg:py-36">
+      <Container className="py-16 sm:py-24 lg:py-36">
         <SectionHeading
           eyebrow="Ce que nous faisons"
           title="Quatre métiers"
@@ -30,7 +30,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
             >
               {/* Texte */}
               <div
-                className={`reveal flex flex-col items-center justify-center px-6 py-16 text-center lg:px-16 lg:py-28 ${
+                className={`reveal flex flex-col items-center justify-center px-6 py-12 text-center sm:py-16 lg:px-16 lg:py-28 ${
                   imageRight ? "" : "lg:order-2"
                 }`}
               >
@@ -59,7 +59,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                 ) : (
                   <Link
                     href="/services"
-                    className="group mt-10 inline-flex items-center gap-2 text-[0.7rem] font-medium tracking-[0.2em] text-tuile-600 uppercase transition-colors hover:text-tuile-700"
+                    className="group mt-8 inline-flex items-center gap-2 py-2 text-[0.74rem] font-medium tracking-[0.2em] text-tuile-600 uppercase transition-colors hover:text-tuile-700 sm:mt-10"
                   >
                     Voir plus
                     <svg
@@ -76,7 +76,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                 )}
 
                 {service.licence ? (
-                  <p className="mt-8 text-[0.64rem] tracking-[0.14em] text-vine-500 uppercase">
+                  <p className="mt-8 text-[0.7rem] tracking-[0.14em] text-vine-500 uppercase">
                     {service.licence}
                   </p>
                 ) : null}
@@ -84,7 +84,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
 
               {/* Photo, à fond perdu */}
               <div
-                className={`reveal relative min-h-[18rem] bg-sand-200 lg:min-h-[30rem] ${
+                className={`reveal relative min-h-[14rem] bg-sand-200 sm:min-h-[18rem] lg:min-h-[30rem] ${
                   imageRight ? "" : "lg:order-1"
                 }`}
               >

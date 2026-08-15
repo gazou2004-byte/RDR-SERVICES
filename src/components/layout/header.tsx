@@ -72,7 +72,7 @@ export function Header() {
 
           <Link
             href="/espace-client"
-            className={`ml-2 border px-5 py-2.5 text-[0.64rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
+            className={`ml-2 border px-5 py-2.5 text-[0.7rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
               transparent
                 ? "border-sand-50/60 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
                 : "border-tuile-600/60 text-tuile-700 hover:bg-tuile-600 hover:text-sand-50"

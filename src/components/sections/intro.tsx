@@ -5,7 +5,7 @@ export function Intro() {
   return (
     <section
       id="intro"
-      className="scroll-mt-24 border-b border-vine-900/10 py-28 lg:py-36"
+      className="scroll-mt-24 border-b border-vine-900/10 py-16 sm:py-24 lg:py-36"
     >
       <Container>
         <SectionHeading eyebrow={intro.eyebrow} title={intro.title} />

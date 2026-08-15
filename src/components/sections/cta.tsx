@@ -14,7 +14,7 @@ export function Cta({
   description?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-tuile-800 py-28 lg:py-36">
+    <section className="relative overflow-hidden bg-tuile-800 py-16 sm:py-24 lg:py-36">
       {/* Halo doré discret en fond */}
       <div
         aria-hidden

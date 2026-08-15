@@ -25,7 +25,7 @@ export function Field({
     <div className={className}>
       <label
         htmlFor={name}
-        className="block text-[0.66rem] font-medium tracking-[0.18em] text-vine-600 uppercase"
+        className="block text-[0.7rem] font-medium tracking-[0.18em] text-vine-600 uppercase"
       >
         {label}
       </label>

@@ -16,7 +16,7 @@ export function StatusBadge({ status }: { status: string }) {
 
   return (
     <span
-      className={`inline-flex items-center border px-3 py-1.5 text-[0.62rem] font-medium tracking-[0.16em] uppercase ${tones[tone]}`}
+      className={`inline-flex items-center border px-3 py-1.5 text-[0.7rem] font-medium tracking-[0.16em] uppercase ${tones[tone]}`}
     >
       {label}
     </span>

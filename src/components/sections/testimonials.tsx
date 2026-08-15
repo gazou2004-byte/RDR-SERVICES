@@ -3,7 +3,7 @@ import { testimonials } from "@/content/site";
 
 export function Testimonials() {
   return (
-    <section className="border-b border-vine-900/10 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 py-16 sm:py-24 lg:py-36">
       <Container>
         <SectionHeading
           eyebrow="Ils nous ont fait confiance"

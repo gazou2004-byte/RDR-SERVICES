@@ -50,7 +50,7 @@ export default async function MessagesPage() {
               }`}
             >
               <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <p className="text-[0.62rem] tracking-[0.18em] text-gold-600 uppercase">
+                <p className="text-[0.7rem] tracking-[0.18em] text-gold-600 uppercase">
                   {message.fromStaff ? "Votre conseiller" : "Vous"}
                 </p>
                 <p className="text-[0.68rem] text-vine-500">

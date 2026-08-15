@@ -32,7 +32,7 @@ export function MessageForm({
         <div>
           <label
             htmlFor="bookingId"
-            className="block text-[0.66rem] font-medium tracking-[0.18em] text-vine-600 uppercase"
+            className="block text-[0.7rem] font-medium tracking-[0.18em] text-vine-600 uppercase"
           >
             Séjour concerné
           </label>
@@ -55,7 +55,7 @@ export function MessageForm({
       <div>
         <label
           htmlFor="body"
-          className="block text-[0.66rem] font-medium tracking-[0.18em] text-vine-600 uppercase"
+          className="block text-[0.7rem] font-medium tracking-[0.18em] text-vine-600 uppercase"
         >
           Votre message
         </label>

@@ -25,7 +25,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="text-[0.62rem] tracking-[0.22em] text-vine-500 uppercase">
+          <p className="text-[0.7rem] tracking-[0.22em] text-vine-500 uppercase">
             {booking.reference}
           </p>
           <h3 className="mt-2.5 font-display text-2xl font-light text-vine-900 transition-colors group-hover:text-tuile-600 sm:text-3xl">
@@ -37,7 +37,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
 
       <dl className="mt-7 grid gap-5 border-t border-vine-900/12 pt-6 sm:grid-cols-4">
         <div>
-          <dt className="text-[0.62rem] tracking-[0.16em] text-vine-500 uppercase">
+          <dt className="text-[0.7rem] tracking-[0.16em] text-vine-500 uppercase">
             Dates
           </dt>
           <dd className="mt-1.5 text-[0.85rem] text-vine-800">
@@ -45,7 +45,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
           </dd>
         </div>
         <div>
-          <dt className="text-[0.62rem] tracking-[0.16em] text-vine-500 uppercase">
+          <dt className="text-[0.7rem] tracking-[0.16em] text-vine-500 uppercase">
             Durée
           </dt>
           <dd className="mt-1.5 text-[0.85rem] text-vine-800">
@@ -53,7 +53,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
           </dd>
         </div>
         <div>
-          <dt className="text-[0.62rem] tracking-[0.16em] text-vine-500 uppercase">
+          <dt className="text-[0.7rem] tracking-[0.16em] text-vine-500 uppercase">
             Voyageurs
           </dt>
           <dd className="mt-1.5 text-[0.85rem] text-vine-800">
@@ -61,7 +61,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
           </dd>
         </div>
         <div>
-          <dt className="text-[0.62rem] tracking-[0.16em] text-vine-500 uppercase">
+          <dt className="text-[0.7rem] tracking-[0.16em] text-vine-500 uppercase">
             {remaining > 0 ? "Reste à régler" : "Montant"}
           </dt>
           <dd className="mt-1.5 text-[0.85rem] text-gold-600">

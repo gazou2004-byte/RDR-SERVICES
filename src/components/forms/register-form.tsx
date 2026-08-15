@@ -73,7 +73,7 @@ export function RegisterForm() {
         Vous avez déjà un compte ?{" "}
         <Link
           href="/espace-client/connexion"
-          className="text-gold-600 transition-colors hover:text-tuile-600"
+          className="inline-block py-1.5 text-tuile-600 transition-colors hover:text-tuile-700"
         >
           Se connecter
         </Link>

@@ -38,7 +38,7 @@ export default function CreditsPage() {
         <ul className="mt-14 max-w-3xl divide-y divide-vine-900/12 border-t border-vine-900/12">
           {sorted.map((credit) => (
             <li key={credit.slot} className="py-6">
-              <p className="text-[0.62rem] tracking-[0.2em] text-gold-600 uppercase">
+              <p className="text-[0.7rem] tracking-[0.2em] text-gold-600 uppercase">
                 {credit.slot}
               </p>
               <p className="mt-2 text-[0.95rem] text-vine-800">

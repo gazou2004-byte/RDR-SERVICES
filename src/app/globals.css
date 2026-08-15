@@ -82,7 +82,7 @@
   }
 
   .eyebrow {
-    @apply text-[0.68rem] font-medium uppercase text-gold-600;
+    @apply text-[0.72rem] font-medium uppercase text-gold-600;
     letter-spacing: var(--tracking-brand);
   }
 
@@ -92,7 +92,7 @@
   }
 
   .eyebrow-light {
-    @apply text-[0.68rem] font-medium uppercase text-gold-400;
+    @apply text-[0.72rem] font-medium uppercase text-gold-400;
     letter-spacing: var(--tracking-brand);
   }
 

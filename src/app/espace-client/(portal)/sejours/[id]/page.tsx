@@ -37,7 +37,7 @@ export default async function BookingDetailPage({ params }: Props) {
     <div className="space-y-12">
       <Link
         href="/espace-client/sejours"
-        className="inline-block text-[0.66rem] tracking-[0.18em] text-vine-500 uppercase transition-colors hover:text-tuile-600"
+        className="inline-block text-[0.7rem] tracking-[0.18em] text-vine-500 uppercase transition-colors hover:text-tuile-600"
       >
         ← Tous mes séjours
       </Link>
@@ -45,7 +45,7 @@ export default async function BookingDetailPage({ params }: Props) {
       <header className="border-b border-vine-900/12 pb-9">
         <div className="flex flex-wrap items-start justify-between gap-5">
           <div>
-            <p className="text-[0.62rem] tracking-[0.22em] text-vine-500 uppercase">
+            <p className="text-[0.7rem] tracking-[0.22em] text-vine-500 uppercase">
               {booking.reference}
             </p>
             <h2 className="mt-3 font-display text-4xl leading-tight font-light text-vine-900 sm:text-5xl">
@@ -72,7 +72,7 @@ export default async function BookingDetailPage({ params }: Props) {
             { term: "Montant total", value: formatPrice(booking.totalCents) },
           ].map((item) => (
             <div key={item.term} className="bg-sand-100 px-6 py-7">
-              <dt className="text-[0.62rem] tracking-[0.18em] text-vine-500 uppercase">
+              <dt className="text-[0.7rem] tracking-[0.18em] text-vine-500 uppercase">
                 {item.term}
               </dt>
               <dd className="mt-2.5 text-[0.95rem] text-vine-800">
@@ -86,7 +86,7 @@ export default async function BookingDetailPage({ params }: Props) {
       {/* Suivi du règlement */}
       {booking.totalCents > 0 ? (
         <section className="border border-vine-900/12 p-8">
-          <h3 className="text-[0.66rem] font-medium tracking-[0.22em] text-gold-600 uppercase">
+          <h3 className="text-[0.7rem] font-medium tracking-[0.22em] text-gold-600 uppercase">
             Règlement
           </h3>
           <div className="mt-6 flex flex-wrap items-baseline justify-between gap-4">
@@ -121,7 +121,7 @@ export default async function BookingDetailPage({ params }: Props) {
       {/* Notes du conseiller */}
       {booking.notes ? (
         <section className="border-l-2 border-gold-600 bg-sand-100 p-8">
-          <h3 className="text-[0.66rem] font-medium tracking-[0.22em] text-gold-600 uppercase">
+          <h3 className="text-[0.7rem] font-medium tracking-[0.22em] text-gold-600 uppercase">
             Note de votre conseiller
           </h3>
           <p className="mt-5 text-[0.95rem] leading-relaxed whitespace-pre-line text-vine-700">
@@ -158,7 +158,7 @@ export default async function BookingDetailPage({ params }: Props) {
                         {document.sizeLabel ? ` · ${document.sizeLabel}` : ""}
                       </p>
                     </div>
-                    <span className="shrink-0 text-[0.62rem] tracking-[0.18em] text-tuile-600 uppercase">
+                    <span className="shrink-0 text-[0.7rem] tracking-[0.18em] text-tuile-600 uppercase">
                       Ouvrir
                     </span>
                   </a>

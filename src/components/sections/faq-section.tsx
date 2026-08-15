@@ -3,7 +3,7 @@ import { faq } from "@/content/site";
 
 export function FaqSection() {
   return (
-    <section className="border-b border-vine-900/10 bg-sand-100 py-28 lg:py-36">
+    <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-36">
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-4">

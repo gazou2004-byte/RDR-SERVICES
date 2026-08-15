@@ -38,11 +38,11 @@ export function Hero() {
 
       {/* Titre */}
       <div className="relative z-10 w-full px-6 text-center">
-        <h1 className="font-display text-[2.6rem] leading-none font-light tracking-[0.1em] text-sand-50 uppercase sm:text-6xl lg:text-[5rem]">
+        <h1 className="font-display text-[2.05rem] leading-none font-light tracking-[0.08em] text-sand-50 uppercase sm:text-6xl sm:tracking-[0.1em] lg:text-[5rem]">
           {hero.title}
         </h1>
 
-        <p className="mx-auto mt-9 inline-block max-w-3xl bg-vine-900/55 px-8 py-4 text-[0.72rem] font-medium tracking-[0.2em] text-sand-50 uppercase backdrop-blur-[2px] sm:text-[0.8rem]">
+        <p className="mx-auto mt-7 inline-block max-w-3xl bg-vine-900/55 px-5 py-3.5 text-[0.7rem] font-medium tracking-[0.14em] text-sand-50 uppercase backdrop-blur-[2px] sm:mt-9 sm:px-8 sm:py-4 sm:text-[0.8rem] sm:tracking-[0.2em]">
           {hero.banner}
         </p>
       </div>
@@ -51,7 +51,7 @@ export function Hero() {
       <a
         href="#intro"
         aria-label="Aller à la section suivante"
-        className="absolute bottom-28 left-1/2 z-10 -translate-x-1/2 text-sand-50/80 transition-colors hover:text-gold-400"
+        className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 p-3 text-sand-50/80 transition-colors hover:text-gold-400"
       >
         <svg
           viewBox="0 0 32 20"

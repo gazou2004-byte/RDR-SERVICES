@@ -47,3 +47,6 @@ next-env.d.ts
 
 # client Prisma généré (recréé par `npx prisma generate`)
 /src/generated
+
+# export de la vitrine statique (regénéré par `npm run build:vitrine`)
+/out

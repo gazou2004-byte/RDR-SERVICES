@@ -6,6 +6,10 @@ import { useEffect, useState } from "react";
 import { nav } from "@/content/site";
 import { Logo } from "./logo";
 
+// Sur la vitrine statique, l'espace client n'est pas déployé : on masque
+// les liens qui y mènent plutôt que d'envoyer les visiteurs sur une 404.
+const espaceClientDisponible = process.env.NEXT_PUBLIC_VITRINE !== "1";
+
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -70,16 +74,18 @@ export function Header() {
             </Link>
           ))}
 
-          <Link
-            href="/espace-client"
-            className={`ml-2 border px-5 py-2.5 text-[0.7rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
-              transparent
-                ? "border-sand-50/60 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
-                : "border-tuile-600/60 text-tuile-700 hover:bg-tuile-600 hover:text-sand-50"
-            }`}
-          >
-            Espace client
-          </Link>
+          {espaceClientDisponible ? (
+            <Link
+              href="/espace-client"
+              className={`ml-2 border px-5 py-2.5 text-[0.7rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
+                transparent
+                  ? "border-sand-50/60 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
+                  : "border-tuile-600/60 text-tuile-700 hover:bg-tuile-600 hover:text-sand-50"
+              }`}
+            >
+              Espace client
+            </Link>
+          ) : null}
         </nav>
 
         <button
@@ -120,12 +126,14 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/espace-client"
-            className="mt-6 border border-tuile-600/60 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-tuile-700 uppercase"
-          >
-            Espace client
-          </Link>
+          {espaceClientDisponible ? (
+            <Link
+              href="/espace-client"
+              className="mt-6 border border-tuile-600/60 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-tuile-700 uppercase"
+            >
+              Espace client
+            </Link>
+          ) : null}
         </nav>
       </div>
     </header>

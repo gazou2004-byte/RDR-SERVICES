@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "warm": "node scripts/warm-images.mjs",
+    "build:vitrine": "node scripts/build-vitrine.mjs",
     "db:migrate": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",

@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
 import { destinations } from "@/content/site";
 
+// Requis par l'export statique de la vitrine ; sans effet en mode serveur.
+export const dynamic = "force-static";
+
 const BASE_URL = "https://rdr-service.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {

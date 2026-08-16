@@ -12,9 +12,8 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
     <section className="border-b border-vine-900/10">
       <Container className="py-16 sm:py-24 lg:py-36">
         <SectionHeading
-          eyebrow="Ce que nous faisons"
+          eyebrow="Un seul interlocuteur"
           title="Quatre métiers"
-          accent="un seul interlocuteur"
           description="De la journée d'excursion au voyage de trois semaines, tout passe par la même personne. Vous n'avez jamais à réexpliquer votre dossier."
         />
       </Container>

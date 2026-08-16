@@ -17,9 +17,8 @@ export function ExperiencesGrid({ limit }: { limit?: number }) {
     <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-36">
       <Container>
         <SectionHeading
-          eyebrow="Expériences uniques"
-          title="Ce que l'on ne trouve"
-          accent="nulle part ailleurs"
+          eyebrow="Accès privilégiés & rencontres"
+          title="Expériences uniques"
           description="Des moments rendus possibles par dix ans de relations locales. Aucun de ceux-ci n'est réservable en ligne."
           align="center"
         />

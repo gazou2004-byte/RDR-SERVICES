@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHero } from "@/components/sections/page-hero";
+import { StoryMosaic } from "@/components/sections/story-mosaic";
 import { Cta } from "@/components/sections/cta";
 import { FaqSection } from "@/components/sections/faq-section";
 import { Container, SectionHeading } from "@/components/ui/section";
@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "RDR Services : une conciergerie de voyage indépendante née de dix ans dans l'hôtellerie de luxe et le transport privé dans le Sud-Ouest.",
 };
+
+const histoire = [
+  "RDR Services est né d'un constat simple, fait après dix ans passés dans l'hôtellerie de luxe, la conciergerie et le transport privé : les voyageurs qui viennent dans le Sud-Ouest passent à côté de l'essentiel. Ils visitent les châteaux que tout le monde visite, dînent là où tout le monde dîne, et rentrent chez eux avec les mêmes photos que les autres.",
+  "Ce qui manquait, ce n'était pas une agence de plus. C'était quelqu'un capable de décrocher son téléphone un dimanche matin pour qu'un grand cru classé vous ouvre ses chais, ou de trouver la table de quinze couverts qui n'a jamais eu de site internet.",
+  "Aujourd'hui, nous composons des séjours privés d'une journée à trois semaines, de Bordeaux au Pays Basque, du Périgord à la Gascogne. Toujours en privatif, toujours avec le même chauffeur, toujours avec un interlocuteur unique joignable 24 h/24 pendant votre voyage.",
+] as const;
 
 const values = [
   {
@@ -47,73 +53,34 @@ export default function AboutPage() {
       />
 
       {/* Histoire */}
-      <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-32">
+      <section className="pt-16 sm:pt-24 lg:pt-32">
         <Container>
-          <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
-            <div className="reveal relative aspect-4/5 lg:col-span-5">
-              <Image
-                src="/images/hero-contact.jpg"
-                alt="Place de village en Périgord, l'un des territoires que nous parcourons"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 border border-gold-600/25" />
-            </div>
+          <SectionHeading eyebrow="Notre histoire" title="Dix ans à ouvrir des portes" />
+        </Container>
+      </section>
 
-            <div className="lg:col-span-7">
-              <SectionHeading
-                eyebrow="Notre histoire"
-                title="Dix ans à ouvrir"
-                accent="des portes"
-                align="left"
-              />
-              <div className="reveal mt-9 space-y-6 text-[0.98rem] leading-relaxed text-vine-600">
-                <p>
-                  RDR Services est né d&apos;un constat simple, fait après dix
-                  ans passés dans l&apos;hôtellerie de luxe, la conciergerie et
-                  le transport privé : les voyageurs qui viennent dans le
-                  Sud-Ouest passent à côté de l&apos;essentiel. Ils visitent les
-                  châteaux que tout le monde visite, dînent là où tout le monde
-                  dîne, et rentrent chez eux avec les mêmes photos que les
-                  autres.
-                </p>
-                <p>
-                  Ce qui manquait, ce n&apos;était pas une agence de plus.
-                  C&apos;était quelqu&apos;un capable de décrocher son téléphone
-                  un dimanche matin pour qu&apos;un grand cru classé vous
-                  ouvre ses chais, ou de trouver la table de quinze couverts
-                  qui n&apos;a jamais eu de site internet.
-                </p>
-                <p>
-                  Aujourd&apos;hui, nous composons des séjours privés d&apos;une
-                  journée à trois semaines, de Bordeaux au Pays Basque, du
-                  Périgord à la Gascogne. Toujours en privatif, toujours avec le
-                  même chauffeur, toujours avec un interlocuteur unique
-                  joignable 24h/24 pendant votre voyage.
-                </p>
-              </div>
+      <StoryMosaic paragraphes={histoire} />
 
-              <dl className="reveal mt-11 grid gap-8 sm:grid-cols-2">
-                <div>
-                  <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
-                    Licence ATOUT FRANCE
-                  </dt>
-                  <dd className="mt-2 text-sm text-vine-700">
-                    n° {company.licenceAtoutFrance}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
-                    Licence de transport
-                  </dt>
-                  <dd className="mt-2 text-sm text-vine-700">
-                    n° {company.licenceTransport}
-                  </dd>
-                </div>
-              </dl>
+      <section className="border-b border-vine-900/10 py-14 sm:py-20">
+        <Container>
+          <dl className="reveal grid gap-8 text-center sm:grid-cols-2">
+            <div>
+              <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
+                Licence ATOUT FRANCE
+              </dt>
+              <dd className="mt-2 text-sm text-vine-700">
+                n° {company.licenceAtoutFrance}
+              </dd>
             </div>
-          </div>
+            <div>
+              <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
+                Licence de transport
+              </dt>
+              <dd className="mt-2 text-sm text-vine-700">
+                n° {company.licenceTransport}
+              </dd>
+            </div>
+          </dl>
         </Container>
       </section>
 

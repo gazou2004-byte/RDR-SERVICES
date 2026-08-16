@@ -6,9 +6,8 @@ export function Process() {
     <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-36">
       <Container>
         <SectionHeading
-          eyebrow="Comment ça se passe"
-          title="De la première idée"
-          accent="au dernier jour"
+          eyebrow="De la première idée au départ"
+          title="Comment ça se passe"
           align="center"
         />
 

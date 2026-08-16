@@ -12,9 +12,8 @@ export function DestinationsGrid() {
     <section className="border-b border-vine-900/10 bg-sand-100">
       <Container className="py-16 sm:py-24 lg:py-36">
         <SectionHeading
-          eyebrow="Tours privés"
-          title="Quatre territoires"
-          accent="un même Sud-Ouest"
+          eyebrow="Quatre territoires du Sud-Ouest"
+          title="Tours privés"
           description="Chaque itinéraire présenté ici est un point de départ. Nous le retravaillons entièrement selon vos envies, votre rythme et la saison."
         />
       </Container>

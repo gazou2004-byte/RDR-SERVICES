@@ -6,9 +6,8 @@ export function Testimonials() {
     <section className="border-b border-vine-900/10 py-16 sm:py-24 lg:py-36">
       <Container>
         <SectionHeading
-          eyebrow="Ils nous ont fait confiance"
-          title="Ce qu'en disent"
-          accent="nos voyageurs"
+          eyebrow="Témoignages"
+          title="Ils nous ont confié leur séjour"
           align="center"
         />
 

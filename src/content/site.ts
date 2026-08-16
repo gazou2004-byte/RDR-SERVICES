@@ -365,6 +365,59 @@ export const destinations: Destination[] = [
   },
 ];
 
+/**
+ * Panneau de synthèse : ce que fait la maison, en cinq lignes.
+ * Affiché entre deux photos, comme une carte de visite au milieu du site.
+ */
+export const resume = {
+  points: [
+    {
+      titre: "Agence locale du Sud-Ouest",
+      detail: "Nous vivons ici, nous connaissons les gens",
+    },
+    {
+      titre: "Séjours privés sur mesure",
+      detail: "D'une excursion à la journée à trois semaines",
+    },
+    {
+      titre: "Chauffeur dédié",
+      detail: "Le même expert local du premier au dernier jour",
+    },
+    {
+      titre: "Accès privilégiés",
+      detail: "Des châteaux et des tables fermés au public",
+    },
+    {
+      titre: "Un seul interlocuteur",
+      detail: "Joignable avant, pendant et après votre voyage",
+    },
+  ],
+  citation: "De votre premier appel à votre retour, nous nous occupons de tout",
+  images: {
+    gauche: "/images/svc-acces.jpg",
+    droite: "/images/exp-verticale.jpg",
+  },
+};
+
+/** Mosaïque de photos qui encadre le récit de la page « À propos ». */
+export const mosaique = {
+  gauche: [
+    "/images/dest-perigord.jpg",
+    "/images/svc-excursions.jpg",
+    "/images/exp-chateau.jpg",
+    "/images/dest-gascogne.jpg",
+  ],
+  droite: [
+    "/images/exp-vendanges.jpg",
+    "/images/dest-basque.jpg",
+    "/images/exp-verticale.jpg",
+    "/images/hero-accueil.jpg",
+  ],
+  citation:
+    "Quoi de mieux que découvrir un territoire d'exception, pris en charge par un expert local passionné",
+  signature: "Le fondateur, expert local",
+};
+
 export const process = [
   {
     step: "01",

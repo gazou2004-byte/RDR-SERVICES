@@ -1,44 +1,44 @@
 import { Container, SectionHeading } from "@/components/ui/section";
 import { faq } from "@/content/site";
 
+/**
+ * Questions fréquentes en deux colonnes de fiches.
+ * L'élément <details> natif porte l'ouverture : la section reste utilisable
+ * même si le JavaScript ne s'exécute pas.
+ */
 export function FaqSection() {
   return (
     <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-36">
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
-          <div className="lg:col-span-4">
-            <SectionHeading
-              eyebrow="Questions fréquentes"
-              title="Ce que l'on nous"
-              accent="demande souvent"
-              description="Une question qui n'est pas ici ? Écrivez-nous, nous répondons sous 24 heures."
-            align="left"
-              />
-          </div>
+        <SectionHeading
+          eyebrow="Questions fréquentes"
+          title="Ce que l'on nous demande"
+          description="Une question qui n'est pas ici ? Écrivez-nous, nous répondons sous 24 heures."
+        />
 
-          <div className="reveal lg:col-span-8">
-            {faq.map((item) => (
-              <details
-                key={item.question}
-                name="faq"
-                className="group border-b border-vine-900/12"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left text-[0.98rem] font-medium text-vine-800 transition-colors hover:text-tuile-600 [&::-webkit-details-marker]:hidden">
-                  {item.question}
-                  <span
-                    aria-hidden
-                    className="relative h-4 w-4 shrink-0 text-gold-600"
-                  >
-                    <span className="absolute top-1/2 left-0 h-px w-4 -translate-y-1/2 bg-current" />
-                    <span className="absolute top-0 left-1/2 h-4 w-px -translate-x-1/2 bg-current transition-transform duration-300 group-open:rotate-90 group-open:opacity-0" />
-                  </span>
-                </summary>
-                <p className="pb-7 text-[0.92rem] leading-relaxed text-vine-600">
-                  {item.answer}
-                </p>
-              </details>
-            ))}
-          </div>
+        <div className="reveal mt-14 grid gap-5 lg:grid-cols-2 lg:gap-x-7">
+          {faq.map((item) => (
+            <details
+              key={item.question}
+              className="group h-fit border-b-2 border-vine-900/70 bg-sand-50 shadow-[0_2px_10px_-6px] shadow-vine-900/50 transition-shadow hover:shadow-[0_8px_20px_-10px] hover:shadow-vine-900/50"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 text-left text-[0.95rem] font-medium text-vine-900 [&::-webkit-details-marker]:hidden">
+                {item.question}
+                {/* Triangle qui pivote à l'ouverture */}
+                <svg
+                  aria-hidden
+                  viewBox="0 0 10 12"
+                  className="h-3 w-2.5 shrink-0 text-tuile-600 transition-transform duration-300 group-open:rotate-90"
+                  fill="currentColor"
+                >
+                  <path d="M0 0l10 6-10 6z" />
+                </svg>
+              </summary>
+              <p className="border-t border-vine-900/10 px-6 py-5 text-[0.92rem] leading-relaxed text-vine-600">
+                {item.answer}
+              </p>
+            </details>
+          ))}
         </div>
       </Container>
     </section>

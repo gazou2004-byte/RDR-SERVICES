@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { Intro } from "@/components/sections/intro";
 import { ServicesGrid } from "@/components/sections/services-grid";
+import { SummaryPanel } from "@/components/sections/summary-panel";
 import { ExperiencesGrid } from "@/components/sections/experiences-grid";
 import { DestinationsGrid } from "@/components/sections/destinations-grid";
 import { Process } from "@/components/sections/process";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Hero />
       <Intro />
       <ServicesGrid />
+      <SummaryPanel />
       <ExperiencesGrid limit={6} />
       <DestinationsGrid />
       <Process />

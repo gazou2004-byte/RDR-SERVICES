@@ -24,7 +24,7 @@ export function Logo({
         RDR
       </span>
       <span
-        className={`text-[0.6rem] leading-none font-medium tracking-[0.34em] uppercase ${
+        className={`text-[0.72rem] leading-none font-medium tracking-[0.28em] uppercase ${
           tone === "light" ? "text-gold-400" : "text-gold-600"
         }`}
       >

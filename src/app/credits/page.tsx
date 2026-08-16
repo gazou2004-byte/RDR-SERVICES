@@ -5,7 +5,7 @@ import credits from "@/content/credits.json";
 export const metadata: Metadata = {
   title: "Crédits photographiques",
   description:
-    "Auteurs et licences des photographies utilisées sur le site RDR Service.",
+    "Auteurs et licences des photographies utilisées sur le site RDR Services.",
 };
 
 export default function CreditsPage() {
@@ -26,7 +26,7 @@ export default function CreditsPage() {
             Wikimedia Commons et sont réutilisées dans le respect de leurs
             licences respectives. Elles ont vocation à être remplacées par les
             photographies propres à {""}
-            <span className="text-vine-800">RDR Service</span>.
+            <span className="text-vine-800">RDR Services</span>.
           </p>
           <p className="border border-gold-600/35 bg-gold-300/40 px-5 py-4 text-[0.85rem] text-gold-700">
             Certaines licences (CC BY, CC BY-SA, FAL) imposent de citer

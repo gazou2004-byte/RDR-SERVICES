@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rdr-service.fr"),
+  metadataBase: new URL("https://rdr-services.fr"),
   title: {
     default: `${company.name} — ${company.tagline} dans le Sud-Ouest`,
     template: `%s | ${company.name}`,

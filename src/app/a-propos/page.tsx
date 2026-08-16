@@ -9,7 +9,7 @@ import { company, intro } from "@/content/site";
 export const metadata: Metadata = {
   title: "À propos",
   description:
-    "RDR Service : une conciergerie de voyage indépendante née de dix ans dans l'hôtellerie de luxe et le transport privé dans le Sud-Ouest.",
+    "RDR Services : une conciergerie de voyage indépendante née de dix ans dans l'hôtellerie de luxe et le transport privé dans le Sud-Ouest.",
 };
 
 const values = [
@@ -70,7 +70,7 @@ export default function AboutPage() {
               />
               <div className="reveal mt-9 space-y-6 text-[0.98rem] leading-relaxed text-vine-600">
                 <p>
-                  RDR Service est né d&apos;un constat simple, fait après dix
+                  RDR Services est né d&apos;un constat simple, fait après dix
                   ans passés dans l&apos;hôtellerie de luxe, la conciergerie et
                   le transport privé : les voyageurs qui viennent dans le
                   Sud-Ouest passent à côté de l&apos;essentiel. Ils visitent les

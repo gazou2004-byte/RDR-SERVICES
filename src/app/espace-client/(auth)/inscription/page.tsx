@@ -3,7 +3,7 @@ import { RegisterForm } from "@/components/forms/register-form";
 
 export const metadata: Metadata = {
   title: "Créer votre espace client",
-  description: "Créez votre espace RDR Service pour suivre vos séjours.",
+  description: "Créez votre espace RDR Services pour suivre vos séjours.",
   robots: { index: false },
 };
 

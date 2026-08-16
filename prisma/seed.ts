@@ -3,7 +3,7 @@
  * Lancer avec : npm run db:seed
  *
  * Crée un compte client de test :
- *   e-mail   : client@rdr-service.fr
+ *   e-mail   : client@rdr-services.fr
  *   mot de passe : demo1234
  */
 import "dotenv/config";
@@ -18,9 +18,17 @@ const prisma = new PrismaClient({
 });
 
 async function main() {
-  const email = "client@rdr-service.fr";
+  const email = "client@rdr-services.fr";
 
-  await prisma.user.deleteMany({ where: { email } });
+  /*
+   * On efface toute trace d'un peuplement précédent avant de recommencer.
+   * Filtrer sur la seule adresse actuelle ne suffit pas : si elle a changé
+   * entre-temps, l'ancien compte reste en base et ses séjours font échouer
+   * la contrainte d'unicité sur les références.
+   */
+  await prisma.booking.deleteMany({ where: { reference: { startsWith: "RDR-" } } });
+  await prisma.user.deleteMany({ where: { email: { contains: "@rdr-service" } } });
+  await prisma.lead.deleteMany({ where: { email: { contains: "@exemple.fr" } } });
 
   const user = await prisma.user.create({
     data: {
@@ -157,7 +165,7 @@ async function main() {
   });
 
   console.log("Données de démonstration créées.");
-  console.log("Connexion : client@rdr-service.fr / demo1234");
+  console.log("Connexion : client@rdr-services.fr / demo1234");
 }
 
 main()

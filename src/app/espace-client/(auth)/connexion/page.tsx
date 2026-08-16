@@ -3,7 +3,7 @@ import { LoginForm } from "@/components/forms/login-form";
 
 export const metadata: Metadata = {
   title: "Connexion à votre espace",
-  description: "Accédez à vos séjours, documents et messages RDR Service.",
+  description: "Accédez à vos séjours, documents et messages RDR Services.",
   robots: { index: false },
 };
 

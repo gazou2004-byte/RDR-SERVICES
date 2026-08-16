@@ -1,4 +1,4 @@
-// Schéma de la base RDR Service
+// Schéma de la base RDR Services
 // SQLite en développement — bascule vers PostgreSQL en production
 // en changeant `provider` ci-dessous et la variable DATABASE_URL.
 

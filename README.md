@@ -1,4 +1,4 @@
-# RDR Service — site & espace client
+# RDR Services — site & espace client
 
 Site vitrine et espace client d'une conciergerie de voyage haut de gamme dans le
 Sud-Ouest de la France (Bordelais, Périgord, Pays Basque, Gascogne).
@@ -22,7 +22,7 @@ Un compte de démonstration est créé par `npm run db:seed` :
 
 | | |
 |---|---|
-| E-mail | `client@rdr-service.fr` |
+| E-mail | `client@rdr-services.fr` |
 | Mot de passe | `demo1234` |
 
 > ⚠️ Avant toute mise en ligne : générez une vraie clé avec
@@ -156,7 +156,7 @@ Puis `npx prisma migrate deploy`.
 
 ### 3. Adresse du site
 
-Remplacez `https://rdr-service.fr` par votre domaine dans :
+Remplacez `https://rdr-services.fr` par votre domaine dans :
 
 - `src/app/layout.tsx` (`metadataBase`)
 - `src/app/sitemap.ts`

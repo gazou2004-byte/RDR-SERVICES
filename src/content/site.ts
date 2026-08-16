@@ -4,13 +4,13 @@
  */
 
 export const company = {
-  name: "RDR Service",
-  legalName: "RDR Service",
+  name: "RDR Services",
+  legalName: "RDR Services",
   tagline: "Conciergerie & voyages privés",
   baseline: "L'art de voyager dans le Sud-Ouest",
   phone: "+33 6 00 00 00 00",
   phoneHref: "+33600000000",
-  email: "contact@rdr-service.fr",
+  email: "contact@rdr-services.fr",
   address: "Bordeaux, Nouvelle-Aquitaine, France",
   // Numéros à remplacer par les vôtres une fois les licences obtenues
   licenceAtoutFrance: "IM0000000000",
@@ -34,7 +34,7 @@ export const nav = [
 export const hero = {
   eyebrow: "Immersion & expériences",
   /** Grand titre centré : le nom de la maison, très espacé. */
-  title: "RDR Service",
+  title: "RDR Services",
   /** Bandeau posé sous le titre. */
   banner: "Découvrez le Sud-Ouest, conduit par nos experts locaux",
   subtitle:
@@ -57,7 +57,7 @@ export const intro = {
   eyebrow: "Agence locale — services & expériences uniques",
   title: "Découvrez le meilleur du Sud-Ouest",
   body: [
-    "RDR Service est une conciergerie de voyage indépendante, née d'une conviction simple : les plus beaux souvenirs ne s'achètent pas en ligne, ils se construisent avec quelqu'un qui connaît le terrain.",
+    "RDR Services est une conciergerie de voyage indépendante, née d'une conviction simple : les plus beaux souvenirs ne s'achètent pas en ligne, ils se construisent avec quelqu'un qui connaît le terrain.",
     "Nous concevons des séjours privés d'une journée à trois semaines — des grands crus du Médoc aux vallées basques — avec chauffeur dédié, accès privilégiés et un interlocuteur unique disponible avant, pendant et après votre voyage.",
   ],
   stats: [

@@ -12,7 +12,7 @@ export function Logo({
     <Link
       href="/"
       className={`group flex items-baseline gap-2.5 py-1.5 ${className}`}
-      aria-label="RDR Service — retour à l'accueil"
+      aria-label="RDR Services — retour à l'accueil"
     >
       <span
         className={`font-display text-2xl leading-none font-medium tracking-[0.12em] transition-colors ${
@@ -28,7 +28,7 @@ export function Logo({
           tone === "light" ? "text-gold-400" : "text-gold-600"
         }`}
       >
-        Service
+        Services
       </span>
     </Link>
   );

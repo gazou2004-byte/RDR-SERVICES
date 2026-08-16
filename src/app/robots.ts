@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/espace-client",
     },
-    sitemap: "https://rdr-service.fr/sitemap.xml",
+    sitemap: "https://rdr-services.fr/sitemap.xml",
   };
 }

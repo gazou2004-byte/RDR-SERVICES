@@ -53,8 +53,8 @@ git("init -q");
 git("checkout -q -B gh-pages");
 git("add -A");
 git(
-  '-c user.email="noreply@anthropic.com" -c user.name="RDR Service" ' +
-    'commit -q -m "Vitrine RDR Service — export statique"',
+  '-c user.email="noreply@anthropic.com" -c user.name="RDR Services" ' +
+    'commit -q -m "Vitrine RDR Services — export statique"',
 );
 
 execSync(`git push --force ${url} gh-pages:gh-pages`, {

@@ -18,7 +18,7 @@ export default function ServicesPage() {
         title="Tout est pris en charge,"
         accent="rien n'est standard"
         description="Quatre métiers complémentaires, réunis sous un seul interlocuteur. Vous n'avez jamais à coordonner qui que ce soit."
-        image="/images/hero-services.jpg"
+        image="/images/hero-accueil.jpg"
       />
       <ServicesGrid detailed />
       <Process />

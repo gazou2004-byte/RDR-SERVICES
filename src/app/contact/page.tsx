@@ -18,7 +18,7 @@ export default function ContactPage() {
         title="Parlons de"
         accent="votre séjour"
         description="Remplissez ce formulaire ou appelez-nous directement. Un appel de trente minutes suffit pour savoir si nous sommes le bon interlocuteur."
-        image="/images/hero-contact.jpg"
+        image="/images/hero-apropos.jpg"
       />
 
       <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-32">

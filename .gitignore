@@ -50,3 +50,6 @@ next-env.d.ts
 
 # export de la vitrine statique (regénéré par `npm run build:vitrine`)
 /out
+
+# photos sources déposées par le client (converties dans public/images)
+/photos

@@ -18,7 +18,7 @@ export default function ExperiencesPage() {
         title="Des portes qui ne s'ouvrent"
         accent="pas toutes seules"
         description="Chaque expérience présentée ici repose sur une relation personnelle, construite au fil des années. Aucune n'est réservable en ligne, par personne."
-        image="/images/hero-experiences.jpg"
+        image="/images/auth-fond.jpg"
       />
       <ExperiencesGrid />
       <Testimonials />

@@ -17,7 +17,7 @@ export default function DestinationsPage() {
         title="Le Sud-Ouest,"
         accent="territoire par territoire"
         description="Quatre régions que nous parcourons toute l'année. Les itinéraires ci-dessous sont des exemples : le vôtre sera différent."
-        image="/images/exp-margaux.jpg"
+        image="/images/bordeaux-bourse.jpg"
       />
       <DestinationsGrid />
       <Cta />

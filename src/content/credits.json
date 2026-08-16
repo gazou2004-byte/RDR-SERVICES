@@ -8,6 +8,30 @@
     "page": "https://commons.wikimedia.org/wiki/File:Dordogne_River_05.jpg"
   },
   {
+    "slot": "biarritz-plage",
+    "title": "Photographie fournie par RDR Services",
+    "license": "Droits à confirmer par le propriétaire du site",
+    "licenseUrl": "",
+    "author": "",
+    "page": ""
+  },
+  {
+    "slot": "bordeaux-bourse",
+    "title": "Photographie fournie par RDR Services",
+    "license": "Droits à confirmer par le propriétaire du site",
+    "licenseUrl": "",
+    "author": "",
+    "page": ""
+  },
+  {
+    "slot": "chateau-margaux",
+    "title": "Photographie fournie par RDR Services",
+    "license": "Droits à confirmer par le propriétaire du site",
+    "licenseUrl": "",
+    "author": "",
+    "page": ""
+  },
+  {
     "slot": "dest-basque",
     "title": "Biarritz - pano plage.jpg",
     "license": "CC BY 3.0",
@@ -152,11 +176,19 @@
     "page": "https://commons.wikimedia.org/wiki/File:Grand_Rue_in_Domme_03.jpg"
   },
   {
-    "slot": "svc-transport",
-    "title": "2023 Mercedes-Benz V-Class 300d (W447) IMG 9812.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Alexander-93",
-    "page": "https://commons.wikimedia.org/wiki/File:2023_Mercedes-Benz_V-Class_300d_(W447)_IMG_9812.jpg"
+    "slot": "vans-chateau",
+    "title": "Photographie fournie par RDR Services",
+    "license": "Droits à confirmer par le propriétaire du site",
+    "licenseUrl": "",
+    "author": "",
+    "page": ""
+  },
+  {
+    "slot": "vignes-chateau",
+    "title": "Photographie fournie par RDR Services",
+    "license": "Droits à confirmer par le propriétaire du site",
+    "licenseUrl": "",
+    "author": "",
+    "page": ""
   }
 ]

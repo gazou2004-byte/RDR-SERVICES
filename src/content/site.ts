@@ -46,10 +46,10 @@ export const hero = {
    * Sur mobile, seuls les deux premiers restent visibles.
    */
   panels: [
-    { image: "/images/hero-accueil.jpg", label: "Médoc" },
-    { image: "/images/dest-perigord.jpg", label: "Périgord" },
-    { image: "/images/dest-basque.jpg", label: "Pays Basque" },
-    { image: "/images/dest-gascogne.jpg", label: "Gascogne" },
+    { image: "/images/vignes-chateau.jpg", label: "Médoc" },
+    { image: "/images/hero-contact.jpg", label: "Périgord" },
+    { image: "/images/biarritz-plage.jpg", label: "Pays Basque" },
+    { image: "/images/svc-creations.jpg", label: "Gascogne" },
   ],
 };
 
@@ -107,7 +107,7 @@ export const services: Service[] = [
       "Ajustements illimités jusqu'à validation",
     ],
     image:
-      "/images/svc-creations.jpg",
+      "/images/hero-experiences.jpg",
     licence: `Licence ATOUT FRANCE n° ${company.licenceAtoutFrance}`,
   },
   {
@@ -123,7 +123,7 @@ export const services: Service[] = [
       "Eau, wifi et sièges enfant sur demande",
     ],
     image:
-      "/images/svc-transport.jpg",
+      "/images/vans-chateau.jpg",
     licence: `Licence de transport n° ${company.licenceTransport}`,
   },
   {
@@ -149,16 +149,14 @@ export const experiences = [
     place: "Médoc",
     description:
       "Une dégustation de six millésimes commentée par le maître de chai, dans un château classé habituellement fermé aux visites.",
-    image:
-      "/images/exp-verticale.jpg",
+    image: "/images/exp-verticale.jpg",
   },
   {
     title: "Vendanges en Saint-Émilion",
     place: "Gironde",
     description:
       "Une matinée dans les rangs pendant les vendanges, suivie d'un déjeuner vigneron au milieu des cuves.",
-    image:
-      "/images/exp-vendanges.jpg",
+    image: "/images/exp-vendanges.jpg",
   },
   {
     title: "Villages perchés du Périgord",
@@ -244,7 +242,7 @@ export const destinations: Destination[] = [
       },
     ],
     image:
-      "/images/dest-bordeaux.jpg",
+      "/images/chateau-margaux.jpg",
   },
   {
     slug: "perigord",
@@ -394,8 +392,8 @@ export const resume = {
   ],
   citation: "De votre premier appel à votre retour, nous nous occupons de tout",
   images: {
-    gauche: "/images/svc-acces.jpg",
-    droite: "/images/exp-verticale.jpg",
+    gauche: "/images/hero-apropos.jpg",
+    droite: "/images/hero-services.jpg",
   },
 };
 

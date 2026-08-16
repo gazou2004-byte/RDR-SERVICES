@@ -49,7 +49,7 @@ export default function AboutPage() {
         title="Une agence née"
         accent="d'une conviction"
         description="Les plus beaux souvenirs ne s'achètent pas en ligne. Ils se construisent avec quelqu'un qui connaît le terrain."
-        image="/images/hero-apropos.jpg"
+        image="/images/dest-bordeaux.jpg"
       />
 
       {/* Histoire */}

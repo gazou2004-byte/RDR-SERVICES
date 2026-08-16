@@ -22,9 +22,9 @@ export default function CreditsPage() {
 
         <div className="mt-12 max-w-3xl space-y-6 text-[0.92rem] leading-relaxed text-vine-600">
           <p>
-            Les photographies actuellement utilisées sur ce site proviennent de
-            Wikimedia Commons et sont réutilisées dans le respect de leurs
-            licences respectives. Elles ont vocation à être remplacées par les
+            Une partie des photographies provient de Wikimedia Commons et est
+            réutilisée dans le respect de leurs licences. Les autres ont été
+            fournies par RDR Services. Elles ont vocation à être remplacées par les
             photographies propres à {""}
             <span className="text-vine-800">RDR Services</span>.
           </p>

@@ -13,7 +13,7 @@ export default async function AuthLayout({
   return (
     <div className="relative flex min-h-[100svh] items-center justify-center px-6 py-32">
       <Image
-        src="/images/auth-fond.jpg"
+        src="/images/exp-verticale.jpg"
         alt=""
         fill
         priority

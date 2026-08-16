@@ -26,7 +26,7 @@ const espaceClientMasque = path.join(racine, "src/app/_espace-client");
 const pageContact = path.join(racine, "src/app/contact/page.tsx");
 
 // Nom du dépôt : sur GitHub Pages, le site vit dans /<dépôt>/
-const basePath = process.argv[2] ?? "/RDR-SERVICE";
+const basePath = process.argv[2] ?? "/RDR-SERVICES";
 
 const contactOriginal = readFileSync(pageContact, "utf8");
 let deplace = false;

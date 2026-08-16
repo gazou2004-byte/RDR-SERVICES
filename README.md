@@ -131,7 +131,29 @@ dans la table `leads`. Pour les consulter : `npm run db:studio`.
 
 ---
 
-## Mise en ligne
+## Mise en ligne de la vitrine (déjà en place)
+
+Le site public est publié sur GitHub Pages :
+
+**https://gazou2004-byte.github.io/RDR-SERVICES/**
+
+Pour republier après une modification :
+
+```bash
+npm run deploy:vitrine
+```
+
+La commande recompile le site public et le pousse sur la branche `gh-pages`.
+Le nom du sous-dossier est déduit du dépôt distant : si le dépôt est renommé,
+pensez à mettre à jour l'adresse avec
+`git remote set-url origin <nouvelle-url>` avant de republier.
+
+L'espace client n'est pas inclus dans cette version : il lui faut un serveur
+et une base de données. Voir la section suivante.
+
+---
+
+## Mise en ligne du site complet
 
 ### 1. Choisir une base de données
 

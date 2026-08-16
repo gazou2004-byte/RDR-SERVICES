@@ -7,10 +7,10 @@ const base =
   "inline-flex items-center justify-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tuile-600";
 
 const variants: Record<Variant, string> = {
-  // Fond terre cuite, texte clair — l'action principale
+  // Fond aubergine, texte clair — l'action principale
   primary:
     "bg-tuile-600 px-8 py-4 text-sand-50 hover:bg-tuile-700 hover:shadow-[0_12px_32px_-14px] hover:shadow-tuile-700",
-  // Fond doré : réservé aux fonds terre cuite, où le bouton terre cuite
+  // Fond doré : réservé aux fonds aubergine, où le bouton aubergine
   // ne se détacherait pas assez
   gold: "bg-gold-500 px-8 py-4 text-tuile-800 hover:bg-gold-400",
   // Contour discret sur fond clair

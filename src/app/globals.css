@@ -1,34 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette : vert de grappe de raisin, terre cuite des tuiles, or */
+  /* Palette : fonds ivoire neutres, texte grain noir, or et aubergine */
 
   /*
-   * Les fonds — vert de grappe de raisin, un vert tirant sur le jaune,
-   * plus chaud et plus végétal que l'amande précédente.
-   * Pour un fond plus discret, éclaircir vers #f0f2e5 ;
-   * pour un fond plus soutenu, foncer vers #e0e5cb.
+   * Les fonds. Volontairement neutres : ce sont les photographies qui
+   * portent la couleur, le fond ne fait que les mettre en valeur.
+   * Un ivoire à peine chaud, sans teinte verte ni rosée.
    */
-  --color-sand-50: #ebeedd;
-  --color-sand-100: #e1e6cf;
-  --color-sand-200: #d0d8b7;
-  --color-sand-300: #b6c199;
-  --color-sand-400: #97a578;
+  --color-sand-50: #fbfaf6;
+  --color-sand-100: #f4f2ea;
+  --color-sand-200: #e9e5d9;
+  --color-sand-300: #d3cec0;
+  --color-sand-400: #b0aa9b;
 
-  /* Vert de grappe — le texte et les fonds sombres */
-  --color-vine-900: #232d17;
-  --color-vine-800: #303c20;
-  --color-vine-700: #44542c;
-  --color-vine-600: #586b39;
-  --color-vine-500: #748852;
-  --color-vine-400: #9aab7a;
-  --color-vine-300: #bfcaa3;
+  /* Grain noir — le texte et les fonds sombres. Un noir tirant sur la prune,
+     couleur du raisin mûr, plutôt qu'un gris neutre. */
+  --color-vine-900: #1c1920;
+  --color-vine-800: #29242f;
+  --color-vine-700: #3b3445;
+  --color-vine-600: #514860;
+  --color-vine-500: #6f6681;
+  --color-vine-400: #9b93a8;
+  --color-vine-300: #c4bfcd;
 
   /*
    * Deux accents, deux rôles distincts.
    *
    * L'OR décore : ornements, filets, sur-titres, chiffres, bordures.
-   * La TUILE agit : boutons, liens actifs, mots mis en valeur dans
+   * L'AUBERGINE agit : boutons, liens actifs, mots mis en valeur dans
    * les titres, bandeau d'appel à contact.
    *
    * S'en tenir à ce partage évite que les deux couleurs se disputent
@@ -42,14 +42,14 @@
   --color-gold-400: #d5bb78;
   --color-gold-300: #e6d5a6;
 
-  /* Tuile — l'action. Terre cuite des toits du Sud-Ouest,
-     un rouge chaud et terreux plutôt qu'un bordeaux violacé. */
-  --color-tuile-800: #5e2718;
-  --color-tuile-700: #7c3620;
-  --color-tuile-600: #9c472c;
-  --color-tuile-500: #b55b3d;
-  --color-tuile-400: #cb7f61;
-  --color-tuile-100: #f6e5dd;
+  /* Aubergine — l'action. La couleur du grain de raisin noir,
+     profonde et sourde, qui tranche sans crier sur l'ivoire. */
+  --color-tuile-800: #34112b;
+  --color-tuile-700: #481838;
+  --color-tuile-600: #64244d;
+  --color-tuile-500: #7e3564;
+  --color-tuile-400: #a05f88;
+  --color-tuile-100: #f4e7f0;
 
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -96,7 +96,7 @@
     letter-spacing: var(--tracking-brand);
   }
 
-  /* Le mot mis en valeur dans un titre : terre cuite, en italique */
+  /* Le mot mis en valeur dans un titre : aubergine, en italique */
   .accent-word {
     @apply text-tuile-600 normal-case italic;
   }

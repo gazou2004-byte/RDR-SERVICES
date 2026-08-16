@@ -168,17 +168,17 @@ export const experiences = [
     image: "/images/exp-beynac-int.jpg",
   },
   {
-    title: "Retour de pêche à Saint-Jean-de-Luz",
+    title: "Crépuscule sur la côte basque",
     place: "Pays Basque",
     description:
-      "Le port au petit matin, la criée, puis le déjeuner du jour préparé avec ce qui vient d'être débarqué.",
+      "Le phare, les rochers et l'océan à l'heure bleue, puis une table face à la mer réservée pour vous seuls.",
     image: "/images/exp-surf.jpg",
   },
   {
-    title: "Déjeuner au cœur des vignes",
-    place: "Médoc",
+    title: "Palaces et maisons d'exception",
+    place: "Côte basque",
     description:
-      "Une table dressée entre les rangs, au milieu d'un grand cru classé, avec le propriétaire pour commenter chaque bouteille.",
+      "Nous négocions pour vous les plus belles adresses de la région, des palaces Belle Époque aux propriétés privées ouvertes à quelques hôtes.",
     image: "/images/exp-margaux.jpg",
   },
   {

@@ -16,22 +16,6 @@
     "page": "https://commons.wikimedia.org/wiki/File:Chais_%C3%A0_barriques_de_Sigalas.jpg"
   },
   {
-    "slot": "svc-transport",
-    "title": "2023 Mercedes-Benz V-Class 300d (W447) IMG 9812.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "Alexander-93",
-    "page": "https://commons.wikimedia.org/wiki/File:2023_Mercedes-Benz_V-Class_300d_(W447)_IMG_9812.jpg"
-  },
-  {
-    "slot": "exp-margaux",
-    "title": "Chateau Margaux fr33460 vignoble banner.jpg",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "author": "Chateau Margaux vineyards.jpg : Agne27~commonswiki\nderivative work : Barbe-sauvage",
-    "page": "https://commons.wikimedia.org/wiki/File:Chateau_Margaux_fr33460_vignoble_banner.jpg"
-  },
-  {
     "slot": "hero-accueil",
     "title": "Vineyard in the Haut-Medoc.jpg",
     "license": "CC BY 2.0",
@@ -72,14 +56,6 @@
     "page": "https://commons.wikimedia.org/wiki/File:Bordeaux_Quai_Louis_XVIII_R01.jpg"
   },
   {
-    "slot": "dest-gascogne",
-    "title": "Saint Lawrence Church in Fourcès - H4A4447.jpg",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "author": "Pierre-Selim Huard",
-    "page": "https://commons.wikimedia.org/wiki/File:Saint_Lawrence_Church_in_Fourc%C3%A8s_-_H4A4447.jpg"
-  },
-  {
     "slot": "svc-excursions",
     "title": "Grand Rue in Domme 03.jpg",
     "license": "CC BY-SA 4.0",
@@ -96,28 +72,12 @@
     "page": "https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_La_Grande_Muraille_2013.jpg"
   },
   {
-    "slot": "svc-creations",
-    "title": "Saint-Emilion 33 Place 2013.jpg",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "author": "JLPC",
-    "page": "https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg"
-  },
-  {
     "slot": "exp-verticale",
     "title": "Rutherford Hill Wine Cave-1369.jpg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "author": "Frank Schulenburg",
     "page": "https://commons.wikimedia.org/wiki/File:Rutherford_Hill_Wine_Cave-1369.jpg"
-  },
-  {
-    "slot": "exp-vendanges",
-    "title": "Javier shows part of the grape harvest in his Lysekil vineyard 1 - cropped.jpg",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "author": "W.carter",
-    "page": "https://commons.wikimedia.org/wiki/File:Javier_shows_part_of_the_grape_harvest_in_his_Lysekil_vineyard_1_-_cropped.jpg"
   },
   {
     "slot": "exp-chateau",
@@ -136,14 +96,6 @@
     "page": "https://commons.wikimedia.org/wiki/File:View_of_Belves_04.jpg"
   },
   {
-    "slot": "exp-surf",
-    "title": "Saint-Jean-de-Luz 64 Bassin port 2012.jpg",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "author": "JLPC",
-    "page": "https://commons.wikimedia.org/wiki/File:Saint-Jean-de-Luz_64_Bassin_port_2012.jpg"
-  },
-  {
     "slot": "hero-contact",
     "title": "Paysage Dordogne Domme.jpg",
     "license": "CC0",
@@ -158,5 +110,53 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "author": "Krzysztof Golik",
     "page": "https://commons.wikimedia.org/wiki/File:Dordogne_River_05.jpg"
+  },
+  {
+    "slot": "svc-transport",
+    "title": "Allée des philosophes château Chantilly.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "author": "André Le Nôtre",
+    "page": "https://commons.wikimedia.org/wiki/File:All%C3%A9e_des_philosophes_ch%C3%A2teau_Chantilly.jpg"
+  },
+  {
+    "slot": "svc-creations",
+    "title": "Arcades Place Nationale in Montauban 01.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Krzysztof Golik",
+    "page": "https://commons.wikimedia.org/wiki/File:Arcades_Place_Nationale_in_Montauban_01.jpg"
+  },
+  {
+    "slot": "dest-gascogne",
+    "title": "Place des Arcades in Sauveterre-de-R 01.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Krzysztof Golik",
+    "page": "https://commons.wikimedia.org/wiki/File:Place_des_Arcades_in_Sauveterre-de-R_01.jpg"
+  },
+  {
+    "slot": "exp-surf",
+    "title": "Phare de Biarritz depuis Rocher du Basta.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Christian David",
+    "page": "https://commons.wikimedia.org/wiki/File:Phare_de_Biarritz_depuis_Rocher_du_Basta.jpg"
+  },
+  {
+    "slot": "exp-vendanges",
+    "title": "Löwenstein - Wolfertsberg - Weinberge und Waldrand im Oktober.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Roman Eisele",
+    "page": "https://commons.wikimedia.org/wiki/File:L%C3%B6wenstein_-_Wolfertsberg_-_Weinberge_und_Waldrand_im_Oktober.jpg"
+  },
+  {
+    "slot": "exp-margaux",
+    "title": "Hôtel du Palais de Biarritz.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Christian David",
+    "page": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_du_Palais_de_Biarritz.jpg"
   }
 ]

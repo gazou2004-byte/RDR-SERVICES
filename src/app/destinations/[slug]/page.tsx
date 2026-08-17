@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/sections/page-hero";
 import { Cta } from "@/components/sections/cta";
 import { RegionExperiences } from "@/components/sections/region-experiences";
+import { RegionActivities } from "@/components/sections/region-activities";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { destinations } from "@/content/site";
 
@@ -135,6 +136,8 @@ export default async function DestinationPage({ params }: Props) {
           </ol>
         </Container>
       </section>
+
+      <RegionActivities region={destination.slug} />
 
       <RegionExperiences region={destination.slug} />
 

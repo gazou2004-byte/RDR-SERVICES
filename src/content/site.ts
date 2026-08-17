@@ -180,7 +180,7 @@ export const experiences: Experience[] = [
     place: "Dordogne",
     description:
       "Belvès, Domme, Monpazier : trois bastides classées parcourues avec un historien qui y vit, loin des heures d'affluence.",
-    image: "/images/exp-beynac-int.jpg",
+    image: "/images/exp-troglodyte.jpg",
   },
   {
     region: "perigord",
@@ -212,7 +212,7 @@ export const experiences: Experience[] = [
     place: "Côte basque",
     description:
       "Nous négocions pour vous les plus belles adresses de la région, des palaces Belle Époque aux propriétés privées ouvertes à quelques hôtes.",
-    image: "/images/exp-margaux.jpg",
+    image: "/images/exp-bayonne.jpg",
   },
   {
     region: "gascogne-armagnac",
@@ -494,6 +494,70 @@ export const mosaique = {
   citation:
     "Quoi de mieux que découvrir un territoire d'exception, pris en charge par un expert local passionné",
   signature: "Le fondateur, expert local",
+};
+
+/**
+ * Activités proposées sur place, par région.
+ * La clé reprend le `slug` de la destination ; une région sans entrée
+ * n'affiche simplement pas la section.
+ */
+export type Activite = { titre: string; detail: string; image: string };
+
+export const activites: Record<string, Activite[]> = {
+  "bordeaux-medoc": [
+    {
+      titre: "La Cité du Vin",
+      detail: "Visite privée avant l'ouverture, puis dégustation au belvédère du huitième étage.",
+      image: "/images/activites/act-bdx-cite-du-vin.jpg",
+    },
+    {
+      titre: "Chai d'un grand cru classé",
+      detail: "Les barriques à perte de vue, commentées par le maître de chai qui les assemble.",
+      image: "/images/activites/act-bdx-chai.jpg",
+    },
+    {
+      titre: "Les Bassins des Lumières",
+      detail: "Une base sous-marine transformée en plus grand centre d'art numérique du monde.",
+      image: "/images/activites/act-bdx-bassins-lumieres.jpg",
+    },
+    {
+      titre: "Le miroir d'eau",
+      detail: "La place de la Bourse et son reflet, tôt le matin quand la place est encore vide.",
+      image: "/images/activites/act-bdx-miroir-eau.jpg",
+    },
+    {
+      titre: "Sensations en hauteur",
+      detail: "Pour ceux qui veulent voir la ville autrement, une ascension encadrée par un guide.",
+      image: "/images/activites/act-bdx-escalade.jpg",
+    },
+  ],
+  perigord: [
+    {
+      titre: "Canoë sur la Dordogne",
+      detail: "Descente au pied des falaises et des châteaux, à votre rythme, avec récupération en fin de parcours.",
+      image: "/images/activites/act-per-canoe.jpg",
+    },
+    {
+      titre: "Montgolfière au lever du jour",
+      detail: "Survol de la vallée et de La Roque-Gageac dans la lumière rasante du matin.",
+      image: "/images/activites/act-per-montgolfiere.jpg",
+    },
+    {
+      titre: "Via ferrata",
+      detail: "Les falaises du Périgord en toute sécurité, encadré par un moniteur diplômé.",
+      image: "/images/activites/act-per-via-ferrata.jpg",
+    },
+    {
+      titre: "Vélo électrique en famille",
+      detail: "Les chemins entre les villages et les châteaux, sans souffrir dans les côtes.",
+      image: "/images/activites/act-per-vtt.jpg",
+    },
+    {
+      titre: "Journée médiévale",
+      detail: "Costumes, tir à l'arc et combats d'entraînement dans un château fort : les enfants adorent.",
+      image: "/images/activites/act-per-medieval.jpg",
+    },
+  ],
 };
 
 export const process = [

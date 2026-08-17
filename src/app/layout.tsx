@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: `%s | ${company.name}`,
   },
   description:
-    "Conciergerie de voyage haut de gamme dans le Sud-Ouest : séjours privés sur mesure, grands crus du Bordelais, Périgord, Pays Basque et Gascogne, transport VIP avec chauffeur dédié.",
+    "Conciergerie de voyage haut de gamme dans le Sud-Ouest : séjours privés sur mesure, grands crus du Bordelais, Périgord, Landes, Pyrénées-Atlantiques et Gascogne, transport VIP avec chauffeur dédié.",
   keywords: [
     "conciergerie",
     "voyage privé",
@@ -35,7 +35,8 @@ export const metadata: Metadata = {
     "Bordeaux",
     "Médoc",
     "Périgord",
-    "Pays Basque",
+    "Landes",
+    "Pyrénées-Atlantiques",
     "Gascogne",
     "chauffeur privé",
     "œnotourisme",

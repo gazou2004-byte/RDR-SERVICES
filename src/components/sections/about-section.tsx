@@ -5,7 +5,7 @@ import { company, intro } from "@/content/site";
 const histoire = [
   "RDR Services est né d'un constat simple, fait après dix ans passés dans l'hôtellerie de luxe, la conciergerie et le transport privé : les voyageurs qui viennent dans le Sud-Ouest passent à côté de l'essentiel. Ils visitent les châteaux que tout le monde visite, dînent là où tout le monde dîne, et rentrent chez eux avec les mêmes photos que les autres.",
   "Ce qui manquait, ce n'était pas une agence de plus. C'était quelqu'un capable de décrocher son téléphone un dimanche matin pour qu'un grand cru classé vous ouvre ses chais, ou de trouver la table de quinze couverts qui n'a jamais eu de site internet.",
-  "Aujourd'hui, nous composons des séjours privés d'une journée à trois semaines, de Bordeaux au Pays Basque, du Périgord à la Gascogne. Toujours en privatif, toujours avec le même chauffeur, toujours avec un interlocuteur unique joignable 24 h/24 pendant votre voyage.",
+  "Aujourd'hui, nous composons des séjours privés d'une journée à trois semaines, de Bordeaux aux Pyrénées-Atlantiques, du Périgord aux Landes. Toujours en privatif, toujours avec le même chauffeur, toujours avec un interlocuteur unique joignable 24 h/24 pendant votre voyage.",
 ] as const;
 
 export function AboutSection() {

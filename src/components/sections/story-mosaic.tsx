@@ -12,7 +12,7 @@ export function StoryMosaic({
   paragraphes: readonly string[];
 }) {
   return (
-    <section className="border-b border-vine-900/10 py-16 sm:py-24 lg:py-32">
+    <section className="border-b border-vine-900/10 py-16 sm:py-24 lg:py-24">
       <div className="mx-auto grid w-full max-w-[92rem] items-center gap-10 px-6 lg:grid-cols-[1fr_minmax(0,34rem)_1fr] lg:gap-14 lg:px-10">
         <Mosaique photos={mosaique.gauche} cote="gauche" />
 

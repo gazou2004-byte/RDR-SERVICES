@@ -41,7 +41,7 @@ export default async function DestinationPage({ params }: Props) {
       />
 
       {/* Présentation & informations clés */}
-      <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-32">
+      <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-24">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
             <div className="reveal lg:col-span-7">
@@ -82,7 +82,7 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       {/* Temps forts */}
-      <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-32">
+      <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading eyebrow="Temps forts" title="Ce que vous verrez" />
           <ul className="mt-14 grid gap-px border border-vine-900/10 bg-vine-900/10 sm:grid-cols-2">
@@ -104,7 +104,7 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       {/* Itinéraire suggéré */}
-      <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-32">
+      <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading
             eyebrow="Itinéraire suggéré"
@@ -136,7 +136,7 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       {/* Autres destinations */}
-      <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-32">
+      <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading
             eyebrow="Poursuivre"

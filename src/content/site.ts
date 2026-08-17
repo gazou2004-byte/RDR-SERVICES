@@ -22,13 +22,18 @@ export const company = {
   },
 } as const;
 
+/**
+ * Le site tient sur une seule page : le menu pointe vers ses sections.
+ * Seules les quatre destinations ont leur propre page, atteignable depuis
+ * la section « Tours privés ».
+ */
 export const nav = [
-  { label: "Accueil", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Expériences", href: "/experiences" },
-  { label: "Destinations", href: "/destinations" },
-  { label: "À propos", href: "/a-propos" },
-  { label: "Contact", href: "/contact" },
+  { label: "Accueil", href: "/#accueil" },
+  { label: "Services", href: "/#services" },
+  { label: "Expériences", href: "/#experiences" },
+  { label: "Tours privés", href: "/#sejours" },
+  { label: "À propos", href: "/#a-propos" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export const hero = {
@@ -39,8 +44,8 @@ export const hero = {
   banner: "Découvrez le Sud-Ouest, conduit par nos experts locaux",
   subtitle:
     "Vignobles bordelais, Périgord, Pays Basque et Gascogne. Chaque séjour est composé à la main, pour vous seul.",
-  primaryCta: { label: "Composer mon séjour", href: "/contact" },
-  secondaryCta: { label: "Découvrir nos services", href: "/services" },
+  primaryCta: { label: "Composer mon séjour", href: "/#contact" },
+  secondaryCta: { label: "Découvrir nos services", href: "/#services" },
   /**
    * Quatre panneaux d'images côte à côte, chacun représentant un territoire.
    * Sur mobile, seuls les deux premiers restent visibles.

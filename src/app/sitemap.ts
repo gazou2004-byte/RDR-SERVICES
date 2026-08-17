@@ -7,13 +7,10 @@ export const dynamic = "force-static";
 const BASE_URL = "https://rdr-services.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Le site public tient sur une seule page ; seules les destinations
+  // et les pages légales ont leur propre adresse.
   const staticRoutes = [
     { path: "", priority: 1 },
-    { path: "/services", priority: 0.9 },
-    { path: "/experiences", priority: 0.9 },
-    { path: "/destinations", priority: 0.9 },
-    { path: "/a-propos", priority: 0.7 },
-    { path: "/contact", priority: 0.8 },
     { path: "/mentions-legales", priority: 0.2 },
     { path: "/confidentialite", priority: 0.2 },
     { path: "/credits", priority: 0.1 },

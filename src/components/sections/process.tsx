@@ -3,7 +3,7 @@ import { process } from "@/content/site";
 
 export function Process() {
   return (
-    <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-36">
+    <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-24">
       <Container>
         <SectionHeading
           eyebrow="De la première idée au départ"

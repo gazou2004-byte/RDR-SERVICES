@@ -9,8 +9,8 @@ import { services } from "@/content/site";
  */
 export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
   return (
-    <section className="border-b border-vine-900/10">
-      <Container className="py-16 sm:py-24 lg:py-36">
+    <section id="services" className="scroll-mt-24 border-b border-vine-900/10">
+      <Container className="py-16 sm:py-24 lg:py-24">
         <SectionHeading
           eyebrow="Un seul interlocuteur"
           title="Quatre métiers"
@@ -29,7 +29,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
             >
               {/* Texte */}
               <div
-                className={`reveal flex flex-col items-center justify-center px-6 py-12 text-center sm:py-16 lg:px-16 lg:py-28 ${
+                className={`reveal flex flex-col items-center justify-center px-6 py-10 text-center sm:py-14 lg:px-16 lg:py-16 ${
                   imageRight ? "" : "lg:order-2"
                 }`}
               >
@@ -57,7 +57,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                   </ul>
                 ) : (
                   <Link
-                    href="/services"
+                    href="/#services"
                     className="group mt-8 inline-flex items-center gap-2 py-2 text-[0.74rem] font-medium tracking-[0.2em] text-tuile-600 uppercase transition-colors hover:text-tuile-700 sm:mt-10"
                   >
                     Voir plus
@@ -83,7 +83,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
 
               {/* Photo, à fond perdu */}
               <div
-                className={`reveal relative min-h-[14rem] bg-sand-200 sm:min-h-[18rem] lg:min-h-[30rem] ${
+                className={`reveal relative min-h-[11rem] bg-sand-200 sm:min-h-[16rem] lg:min-h-[24rem] ${
                   imageRight ? "" : "lg:order-1"
                 }`}
               >

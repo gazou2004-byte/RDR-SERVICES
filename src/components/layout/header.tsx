@@ -41,8 +41,40 @@ export function Header() {
   const overHero = !pathname.startsWith("/espace-client");
   const transparent = overHero && !scrolled && !open;
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  /*
+   * Le menu pointe vers des sections de la page d'accueil : on suit la
+   * section la plus haute encore visible pour allumer la bonne entrée.
+   */
+  const [sectionVue, setSectionVue] = useState("accueil");
+
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const ids = nav
+      .map((item) => item.href.split("#")[1])
+      .filter(Boolean) as string[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibles = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visibles[0]) setSectionVue(visibles[0].target.id);
+      },
+      { rootMargin: "-20% 0px -70% 0px" },
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  const isActive = (href: string) => {
+    const ancre = href.split("#")[1];
+    if (!ancre) return pathname === href;
+    return pathname === "/" && sectionVue === ancre;
+  };
 
   return (
     <header

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { company, destinations, nav, services } from "@/content/site";
+import { company, destinations, nav } from "@/content/site";
 import { Container } from "@/components/ui/section";
 import { Logo } from "./logo";
 
@@ -9,8 +9,8 @@ export function Footer() {
   return (
     <footer className="border-t border-vine-900/10 bg-sand-100">
       <Container className="py-14 sm:py-20">
-        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:gap-14 lg:grid-cols-4">
+          <div className="col-span-2 lg:col-span-1">
             <Logo />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-vine-600">
               Conciergerie de voyage indépendante. Séjours privés sur mesure
@@ -48,11 +48,7 @@ export function Footer() {
                 {destination.name}
               </FooterLink>
             ))}
-            {services.slice(0, 2).map((service) => (
-              <FooterLink key={service.slug} href="/services">
-                {service.title}
-              </FooterLink>
-            ))}
+
           </FooterColumn>
 
           <FooterColumn title="Contact">
@@ -75,7 +71,7 @@ export function Footer() {
             <li className="text-sm text-vine-600">{company.address}</li>
             <li className="pt-4">
               <Link
-                href="/contact"
+                href="/#contact"
                 className="inline-block py-2 text-[0.74rem] tracking-[0.16em] text-tuile-600 uppercase transition-colors hover:text-tuile-700"
               >
                 Demander un devis →

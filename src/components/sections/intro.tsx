@@ -5,12 +5,12 @@ export function Intro() {
   return (
     <section
       id="intro"
-      className="scroll-mt-24 border-b border-vine-900/10 py-16 sm:py-24 lg:py-36"
+      className="scroll-mt-24 border-b border-vine-900/10 py-16 sm:py-24 lg:py-24"
     >
       <Container>
         <SectionHeading eyebrow={intro.eyebrow} title={intro.title} />
 
-        <div className="reveal mx-auto mt-12 max-w-2xl space-y-6 text-center">
+        <div className="reveal mx-auto mt-10 max-w-2xl space-y-5 text-center">
           {intro.body.map((paragraph) => (
             <p
               key={paragraph}
@@ -21,7 +21,7 @@ export function Intro() {
           ))}
         </div>
 
-        <dl className="reveal mt-20 grid grid-cols-2 gap-y-12 lg:grid-cols-4">
+        <dl className="reveal mt-14 grid grid-cols-2 gap-y-10 sm:mt-20 sm:gap-y-12 lg:grid-cols-4">
           {intro.stats.map((stat) => (
             <div
               key={stat.label}

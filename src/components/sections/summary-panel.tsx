@@ -13,13 +13,13 @@ export function SummaryPanel() {
       <div className="grid lg:grid-cols-[1fr_minmax(0,42rem)_1fr]">
         <Photo
           src={resume.images.gauche}
-          className="h-40 sm:h-56 lg:h-auto lg:min-h-[42rem]"
+          className="h-40 sm:h-56 lg:h-auto lg:min-h-[34rem]"
         />
 
-        <div className="reveal flex flex-col items-center px-6 py-16 text-center sm:py-20 lg:px-12 lg:py-28">
+        <div className="reveal flex flex-col items-center px-6 py-14 text-center sm:py-16 lg:px-12 lg:py-16">
           <Ornament />
 
-          <dl className="mt-12 space-y-8">
+          <dl className="mt-10 space-y-6">
             {resume.points.map((point) => (
               <div key={point.titre}>
                 <dt className="text-[0.82rem] font-semibold tracking-[0.14em] text-vine-900 uppercase sm:text-[0.88rem]">
@@ -32,16 +32,16 @@ export function SummaryPanel() {
             ))}
           </dl>
 
-          <span className="rule-gold mt-12" />
+          <span className="rule-gold mt-10" />
 
-          <p className="mt-10 max-w-md font-display text-xl leading-snug text-vine-800 italic sm:text-2xl">
+          <p className="mt-8 max-w-md font-display text-xl leading-snug text-vine-800 italic sm:text-2xl">
             « {resume.citation} »
           </p>
 
           <svg
             aria-hidden
             viewBox="0 0 32 28"
-            className="mt-10 h-6 w-8 text-tuile-600"
+            className="mt-8 h-6 w-8 text-tuile-600"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.6"
@@ -54,7 +54,7 @@ export function SummaryPanel() {
 
         <Photo
           src={resume.images.droite}
-          className="h-40 sm:h-56 lg:h-auto lg:min-h-[42rem]"
+          className="h-40 sm:h-56 lg:h-auto lg:min-h-[34rem]"
         />
       </div>
     </section>

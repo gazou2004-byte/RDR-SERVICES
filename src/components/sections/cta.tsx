@@ -14,7 +14,7 @@ export function Cta({
   description?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-tuile-800 py-16 sm:py-24 lg:py-36">
+    <section className="relative overflow-hidden bg-tuile-800 py-16 sm:py-24 lg:py-24">
       {/* Halo doré discret en fond */}
       <div
         aria-hidden
@@ -31,7 +31,7 @@ export function Cta({
         </p>
 
         <div className="reveal mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <ButtonLink href="/contact" variant="gold">
+          <ButtonLink href="/#contact" variant="gold">
             Demander un devis
           </ButtonLink>
           <ButtonLink href={`tel:${company.phoneHref}`} variant="light">

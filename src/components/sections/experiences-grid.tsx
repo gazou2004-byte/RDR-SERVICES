@@ -14,7 +14,7 @@ export function ExperiencesGrid({ limit }: { limit?: number }) {
   const items = limit ? experiences.slice(0, limit) : experiences;
 
   return (
-    <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-36">
+    <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-24">
       <Container>
         <SectionHeading
           eyebrow="Accès privilégiés & rencontres"
@@ -62,7 +62,7 @@ export function ExperiencesGrid({ limit }: { limit?: number }) {
               limit < experiences.length ? "" : "sm:hidden"
             }`}
           >
-            <ButtonLink href="/experiences" variant="outline">
+            <ButtonLink href="/#experiences" variant="outline">
               Toutes les expériences
             </ButtonLink>
           </div>

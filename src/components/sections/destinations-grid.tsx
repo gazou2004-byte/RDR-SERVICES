@@ -9,8 +9,8 @@ import { destinations } from "@/content/site";
  */
 export function DestinationsGrid() {
   return (
-    <section className="border-b border-vine-900/10 bg-sand-100">
-      <Container className="py-16 sm:py-24 lg:py-36">
+    <section id="sejours" className="scroll-mt-24 border-b border-vine-900/10 bg-sand-100">
+      <Container className="py-16 sm:py-24 lg:py-24">
         <SectionHeading
           eyebrow="Quatre territoires du Sud-Ouest"
           title="Tours privés"
@@ -34,7 +34,7 @@ export function DestinationsGrid() {
             </p>
 
             {/* Photo + bouton */}
-            <div className="relative aspect-4/3 overflow-hidden bg-sand-200 sm:aspect-3/4">
+            <div className="relative aspect-4/3 overflow-hidden bg-sand-200 sm:aspect-4/5">
               <Image
                 src={destination.image}
                 alt={destination.name}

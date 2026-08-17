@@ -8,7 +8,7 @@ import { faq } from "@/content/site";
  */
 export function FaqSection() {
   return (
-    <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-36">
+    <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-24">
       <Container>
         <SectionHeading
           eyebrow="Questions fréquentes"
@@ -16,13 +16,13 @@ export function FaqSection() {
           description="Une question qui n'est pas ici ? Écrivez-nous, nous répondons sous 24 heures."
         />
 
-        <div className="reveal mt-14 grid gap-5 lg:grid-cols-2 lg:gap-x-7">
+        <div className="reveal mt-12 grid gap-4 sm:mt-14 sm:gap-5 lg:grid-cols-2 lg:gap-x-7">
           {faq.map((item) => (
             <details
               key={item.question}
               className="group h-fit border-b-2 border-vine-900/70 bg-sand-50 shadow-[0_2px_10px_-6px] shadow-vine-900/50 transition-shadow hover:shadow-[0_8px_20px_-10px] hover:shadow-vine-900/50"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 text-left text-[0.95rem] font-medium text-vine-900 [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-5 py-4 sm:px-6 sm:py-5 text-left text-[0.95rem] font-medium text-vine-900 [&::-webkit-details-marker]:hidden">
                 {item.question}
                 {/* Triangle qui pivote à l'ouverture */}
                 <svg
@@ -34,7 +34,7 @@ export function FaqSection() {
                   <path d="M0 0l10 6-10 6z" />
                 </svg>
               </summary>
-              <p className="border-t border-vine-900/10 px-6 py-5 text-[0.92rem] leading-relaxed text-vine-600">
+              <p className="border-t border-vine-900/10 px-5 py-4 sm:px-6 sm:py-5 text-[0.92rem] leading-relaxed text-vine-600">
                 {item.answer}
               </p>
             </details>

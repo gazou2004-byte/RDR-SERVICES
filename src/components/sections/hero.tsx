@@ -7,7 +7,7 @@ import { hero } from "@/content/site";
  */
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
+    <section id="accueil" className="relative flex min-h-[100svh] items-center overflow-hidden">
       {/* Les quatre panneaux */}
       <div className="absolute inset-0 grid grid-cols-2 lg:grid-cols-4">
         {hero.panels.map((panel, index) => (

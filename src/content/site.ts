@@ -531,6 +531,72 @@ export const activites: Record<string, Activite[]> = {
       image: "/images/activites/act-bdx-escalade.jpg",
     },
   ],
+  "pyrenees-atlantiques": [
+    {
+      titre: "Le train de la Rhune",
+      detail: "Un train à crémaillère de 1924 qui grimpe jusqu'à 900 mètres, avec l'océan d'un côté et l'Espagne de l'autre.",
+      image: "/images/activites/act-pa-rhune.jpg",
+    },
+    {
+      titre: "Espelette et son piment",
+      detail: "Les façades rouges couvertes de cordes de piments, et l'atelier d'un producteur qui vous explique tout.",
+      image: "/images/activites/act-pa-espelette.jpg",
+    },
+    {
+      titre: "Saint-Jean-Pied-de-Port",
+      detail: "La dernière étape française du chemin de Compostelle, ses remparts et ses ruelles pavées.",
+      image: "/images/activites/act-pa-stjean.jpg",
+    },
+    {
+      titre: "Une partie de pelote",
+      detail: "Le sport qui fait battre le cœur du pays, vu depuis les gradins avec quelqu'un qui vous en explique les règles.",
+      image: "/images/activites/act-pa-pelote.jpg",
+    },
+  ],
+  landes: [
+    {
+      titre: "Surf à Hossegor",
+      detail: "Cours particulier sur l'un des plus beaux spots d'Europe, adapté à votre niveau, planches fournies.",
+      image: "/images/activites/act-lan-surf.jpg",
+    },
+    {
+      titre: "Cent kilomètres de plage",
+      detail: "Du sable à perte de vue, sans une falaise, et des postes de secours surveillés tout l'été.",
+      image: "/images/activites/act-lan-plage.jpg",
+    },
+    {
+      titre: "Une course landaise",
+      detail: "Ni corrida ni mise à mort : des écarteurs qui esquivent la vache d'un cheveu, sous les vivats du village.",
+      image: "/images/activites/act-lan-course.jpg",
+    },
+    {
+      titre: "Les thermes de Dax",
+      detail: "Première station thermale de France, ses boues chaudes et ses bassins, en accès privatisé.",
+      image: "/images/activites/act-lan-thermes.jpg",
+    },
+  ],
+  "gascogne-armagnac": [
+    {
+      titre: "L'abbaye de Flaran",
+      detail: "Un cloître cistercien du XIIe siècle, parmi les mieux conservés du Sud-Ouest, ouvert avant les visiteurs.",
+      image: "/images/activites/act-gas-flaran.jpg",
+    },
+    {
+      titre: "Larressingle",
+      detail: "La plus petite cité fortifiée de France, deux cents mètres de remparts intacts autour de huit maisons.",
+      image: "/images/activites/act-gas-larressingle.jpg",
+    },
+    {
+      titre: "Fourcès et ses bastides",
+      detail: "Une place ronde bordée d'arcades, une rivière, des saules : le village le plus photographié du Gers.",
+      image: "/images/activites/act-gas-fources.jpg",
+    },
+    {
+      titre: "Le château de Larressingle",
+      detail: "Le donjon des évêques de Condom, ruine spectaculaire au cœur des remparts.",
+      image: "/images/activites/act-gas-chateau.jpg",
+    },
+  ],
   perigord: [
     {
       titre: "Canoë sur la Dordogne",

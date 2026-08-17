@@ -40,6 +40,102 @@
     "page": ""
   },
   {
+    "slot": "act-gas-chateau",
+    "title": "Château de Larressingle -1.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "MOSSOT",
+    "page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Larressingle_-1.JPG"
+  },
+  {
+    "slot": "act-gas-flaran",
+    "title": "Valence-sur-Baïse (32) Abbaye de Flaran Cloître 11.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "GO69",
+    "page": "https://commons.wikimedia.org/wiki/File:Valence-sur-Ba%C3%AFse_(32)_Abbaye_de_Flaran_Clo%C3%AEtre_11.JPG"
+  },
+  {
+    "slot": "act-gas-fources",
+    "title": "Fourcès Gers 6.jpg",
+    "license": "FAL",
+    "licenseUrl": "http://artlibre.org/licence/lal/en",
+    "author": "Jean-noël Lafargue (Jean-no)",
+    "page": "https://commons.wikimedia.org/wiki/File:Fourc%C3%A8s_Gers_6.jpg"
+  },
+  {
+    "slot": "act-gas-larressingle",
+    "title": "Village fortifié de Larressingle - J-A Brutails - Université Bordeaux Montaigne - 2463.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "Jean-Auguste Brutails",
+    "page": "https://commons.wikimedia.org/wiki/File:Village_fortifi%C3%A9_de_Larressingle_-_J-A_Brutails_-_Universit%C3%A9_Bordeaux_Montaigne_-_2463.jpg"
+  },
+  {
+    "slot": "act-lan-course",
+    "title": "Arènes de Baigts 2007 (2).jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "C. Lalanne",
+    "page": "https://commons.wikimedia.org/wiki/File:Ar%C3%A8nes_de_Baigts_2007_(2).jpg"
+  },
+  {
+    "slot": "act-lan-plage",
+    "title": "PlageHossegor2.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "ElfeJediBiochimiste Kelly Walter",
+    "page": "https://commons.wikimedia.org/wiki/File:PlageHossegor2.JPG"
+  },
+  {
+    "slot": "act-lan-surf",
+    "title": "SurfHossegor.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "ElfeJediBiochimiste Kelly Walter",
+    "page": "https://commons.wikimedia.org/wiki/File:SurfHossegor.JPG"
+  },
+  {
+    "slot": "act-lan-thermes",
+    "title": "Dax Les Thermes1-France.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Jacquym",
+    "page": "https://commons.wikimedia.org/wiki/File:Dax_Les_Thermes1-France.jpg"
+  },
+  {
+    "slot": "act-pa-espelette",
+    "title": "Espelette Façade Piments (2).jpg",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "author": "No machine-readable author provided. Harrieta171 assumed (based on copyright claims).",
+    "page": "https://commons.wikimedia.org/wiki/File:Espelette_Fa%C3%A7ade_Piments_(2).jpg"
+  },
+  {
+    "slot": "act-pa-pelote",
+    "title": "Banderas riojanas en un partido de pelota mano.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Contranorma",
+    "page": "https://commons.wikimedia.org/wiki/File:Banderas_riojanas_en_un_partido_de_pelota_mano.jpg"
+  },
+  {
+    "slot": "act-pa-rhune",
+    "title": "Le train de la Rhune, descente.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Zewan",
+    "page": "https://commons.wikimedia.org/wiki/File:Le_train_de_la_Rhune,_descente.jpg"
+  },
+  {
+    "slot": "act-pa-stjean",
+    "title": "PorteSaint-Jacques.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Kolossus",
+    "page": "https://commons.wikimedia.org/wiki/File:PorteSaint-Jacques.jpg"
+  },
+  {
     "slot": "act-per-canoe",
     "title": "Photographie fournie par RDR Services",
     "license": "Droits confirmés par le propriétaire du site",

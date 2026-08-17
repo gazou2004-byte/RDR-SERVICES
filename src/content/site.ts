@@ -42,17 +42,18 @@ export const hero = {
   /** Bandeau posé sous le titre. */
   banner: "Découvrez le Sud-Ouest, conduit par nos experts locaux",
   subtitle:
-    "Vignobles bordelais, Périgord, Pays Basque et Gascogne. Chaque séjour est composé à la main, pour vous seul.",
+    "Vignobles bordelais, Périgord, Landes et Pyrénées-Atlantiques. Chaque séjour est composé à la main, pour vous seul.",
   primaryCta: { label: "Composer mon séjour", href: "/#contact" },
   secondaryCta: { label: "Découvrir nos services", href: "/#services" },
   /**
-   * Quatre panneaux d'images côte à côte, chacun représentant un territoire.
-   * Sur mobile, seuls les deux premiers restent visibles.
+   * Les photos qui défilent en plein écran derrière le titre.
+   * Chacune occupe toute la largeur : plus de découpe en bandes étroites,
+   * qui amputait les sujets.
    */
   panels: [
+    { image: "/images/biarritz-plage.jpg", label: "Pyrénées-Atlantiques" },
     { image: "/images/vignes-chateau.jpg", label: "Médoc" },
     { image: "/images/hero-contact.jpg", label: "Périgord" },
-    { image: "/images/biarritz-plage.jpg", label: "Pays Basque" },
     { image: "/images/svc-creations.jpg", label: "Gascogne" },
   ],
 };
@@ -190,15 +191,23 @@ export const experiences: Experience[] = [
     image: "/images/exp-chateau.jpg",
   },
   {
-    region: "pays-basque",
+    region: "landes",
+    title: "Le Courant d'Huchet en barque",
+    place: "Landes",
+    description:
+      "Deux heures à la rame sur une eau translucide, sous une voûte de chênes-lièges, avec l'un des rares bateliers encore agréés.",
+    image: "/images/exp-landes.jpg",
+  },
+  {
+    region: "pyrenees-atlantiques",
     title: "Crépuscule sur la côte basque",
-    place: "Pays Basque",
+    place: "Pyrénées-Atlantiques",
     description:
       "Le phare, les rochers et l'océan à l'heure bleue, puis une table face à la mer réservée pour vous seuls.",
     image: "/images/exp-surf.jpg",
   },
   {
-    region: "pays-basque",
+    region: "pyrenees-atlantiques",
     title: "Palaces et maisons d'exception",
     place: "Côte basque",
     description:
@@ -323,8 +332,44 @@ export const destinations: Destination[] = [
       "/images/dest-perigord.jpg",
   },
   {
-    slug: "pays-basque",
-    name: "Pays Basque",
+    slug: "landes",
+    name: "Landes",
+    tagline: "Océan, pinède & silence",
+    intro:
+      "La plus grande forêt d'Europe occidentale, cent kilomètres de plage sans une falaise, et des courants d'eau claire qui serpentent sous les arbres. Les Landes ne se visitent pas, elles se traversent lentement.",
+    duration: "3 à 6 jours",
+    season: "Mai à octobre",
+    highlights: [
+      "Courant d'Huchet en barque à la rame, avec un batelier",
+      "Plages de Moliets, Contis et Mimizan hors saison",
+      "Airials et bergeries de la Grande Lande",
+      "Cuisine landaise : canard, asperge des sables, pignons",
+    ],
+    itinerary: [
+      {
+        day: "Jour 1",
+        title: "Côte et dunes",
+        description:
+          "Arrivée, installation en pinède, découverte du littoral au coucher du soleil et dîner de poissons de l'Adour.",
+      },
+      {
+        day: "Jour 2",
+        title: "Le Courant d'Huchet",
+        description:
+          "Descente du courant en barque à la rame avec un batelier, entre chênes-lièges et hibiscus sauvages, puis déjeuner à l'estuaire.",
+      },
+      {
+        day: "Jour 3",
+        title: "Grande Lande",
+        description:
+          "Airials, bergeries et écomusée de Marquèze, rencontre avec un producteur d'asperges des sables et table landaise le soir.",
+      },
+    ],
+    image: "/images/dest-landes.jpg",
+  },
+  {
+    slug: "pyrenees-atlantiques",
+    name: "Pyrénées-Atlantiques",
     tagline: "Océan, montagne & caractère",
     intro:
       "Une identité qui ne ressemble à aucune autre. En une journée : les vagues de Biarritz le matin, les villages de la Rhune l'après-midi, et une table où l'on parle encore basque le soir.",

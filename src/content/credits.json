@@ -56,6 +56,14 @@
     "page": "https://commons.wikimedia.org/wiki/File:Place_des_Arcades_in_Sauveterre-de-R_01.jpg"
   },
   {
+    "slot": "dest-landes",
+    "title": "Courant Huchet.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "author": "No machine-readable author provided. Jibi44 assumed (based on copyright claims).",
+    "page": "https://commons.wikimedia.org/wiki/File:Courant_Huchet.JPG"
+  },
+  {
     "slot": "dest-perigord",
     "title": "Dordogne River 02.jpg",
     "license": "CC BY-SA 4.0",
@@ -78,6 +86,14 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "author": "Benjamin Smith",
     "page": "https://commons.wikimedia.org/wiki/File:La_Roque-Gageac_-_02.jpg"
+  },
+  {
+    "slot": "exp-landes",
+    "title": "Contis vue du phare 2.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Jibi44",
+    "page": "https://commons.wikimedia.org/wiki/File:Contis_vue_du_phare_2.jpg"
   },
   {
     "slot": "exp-margaux",
@@ -174,6 +190,14 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "author": "Krzysztof Golik",
     "page": "https://commons.wikimedia.org/wiki/File:Grand_Rue_in_Domme_03.jpg"
+  },
+  {
+    "slot": "svc-transport",
+    "title": "Allée des philosophes château Chantilly.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "author": "André Le Nôtre",
+    "page": "https://commons.wikimedia.org/wiki/File:All%C3%A9e_des_philosophes_ch%C3%A2teau_Chantilly.jpg"
   },
   {
     "slot": "vans-chateau",

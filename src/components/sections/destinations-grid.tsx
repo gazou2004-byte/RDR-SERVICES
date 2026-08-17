@@ -18,7 +18,7 @@ export function DestinationsGrid() {
         />
       </Container>
 
-      <div className="grid items-stretch sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid items-stretch sm:grid-cols-2 lg:grid-cols-5">
         {destinations.map((destination) => (
           <Link
             key={destination.slug}
@@ -39,7 +39,7 @@ export function DestinationsGrid() {
                 src={destination.image}
                 alt={destination.name}
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                 className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
               />
               {/* Voile assez dense pour que le texte clair tienne sur un ciel */}
@@ -47,7 +47,7 @@ export function DestinationsGrid() {
 
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6 text-center">
                 {/* min-h : les noms sur deux lignes ne doivent pas décaler le bouton */}
-                <h3 className="flex min-h-[3.5rem] items-center font-display text-xl leading-tight font-light tracking-[0.06em] text-sand-50 uppercase sm:text-2xl">
+                <h3 className="flex min-h-[3.5rem] items-center font-display text-lg leading-tight font-light tracking-[0.04em] text-sand-50 uppercase sm:text-xl lg:text-lg xl:text-xl">
                   {destination.name}
                 </h3>
                 <span className="border border-sand-50/70 px-6 py-2.5 text-[0.7rem] font-medium tracking-[0.2em] text-sand-50 uppercase transition-colors group-hover:bg-sand-50 group-hover:text-vine-900">

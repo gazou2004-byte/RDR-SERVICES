@@ -23,7 +23,7 @@ import path from "node:path";
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const espaceClient = path.join(racine, "src/app/espace-client");
 const espaceClientMasque = path.join(racine, "src/app/_espace-client");
-const pageContact = path.join(racine, "src/app/contact/page.tsx");
+const pageContact = path.join(racine, "src/components/sections/contact-section.tsx");
 
 // Nom du dépôt : sur GitHub Pages, le site vit dans /<dépôt>/
 const basePath = process.argv[2] ?? "/RDR-SERVICES";
@@ -37,7 +37,7 @@ function restaurer() {
     console.log("· espace client remis en place");
   }
   writeFileSync(pageContact, contactOriginal);
-  console.log("· page contact restaurée");
+  console.log("· section contact restaurée");
 }
 
 process.on("SIGINT", () => {

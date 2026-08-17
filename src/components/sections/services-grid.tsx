@@ -92,7 +92,11 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                   alt={service.title}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  /*
+                   * Ancré en bas : sur la photo du transport, les véhicules
+                   * occupent le bas du cadre et se faisaient rogner.
+                   */
+                  className="object-cover object-bottom"
                 />
               </div>
             </article>

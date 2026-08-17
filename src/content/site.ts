@@ -25,13 +25,12 @@ export const company = {
 /**
  * Le site tient sur une seule page : le menu pointe vers ses sections.
  * Seules les quatre destinations ont leur propre page, atteignable depuis
- * la section « Tours privés ».
+ * la section « Visites privées ».
  */
 export const nav = [
   { label: "Accueil", href: "/#accueil" },
   { label: "Services", href: "/#services" },
-  { label: "Expériences", href: "/#experiences" },
-  { label: "Tours privés", href: "/#sejours" },
+  { label: "Visites privées", href: "/#sejours", regions: true },
   { label: "À propos", href: "/#a-propos" },
   { label: "Contact", href: "/#contact" },
 ] as const;
@@ -112,7 +111,7 @@ export const services: Service[] = [
       "Ajustements illimités jusqu'à validation",
     ],
     image:
-      "/images/hero-experiences.jpg",
+      "/images/bordeaux-bourse.jpg",
     licence: `Licence ATOUT FRANCE n° ${company.licenceAtoutFrance}`,
   },
   {
@@ -144,12 +143,22 @@ export const services: Service[] = [
       "Chais et bastides ouverts en dehors des horaires",
     ],
     image:
-      "/images/svc-acces.jpg",
+      "/images/chateau-margaux.jpg",
   },
 ];
 
-export const experiences = [
+export type Experience = {
+  /** Renvoie au `slug` d'une destination : l'expérience s'affiche sur sa fiche. */
+  region: string;
+  title: string;
+  place: string;
+  description: string;
+  image: string;
+};
+
+export const experiences: Experience[] = [
   {
+    region: "bordeaux-medoc",
     title: "Verticale en grand cru classé",
     place: "Médoc",
     description:
@@ -157,6 +166,7 @@ export const experiences = [
     image: "/images/exp-verticale.jpg",
   },
   {
+    region: "bordeaux-medoc",
     title: "Vendanges en Saint-Émilion",
     place: "Gironde",
     description:
@@ -164,6 +174,7 @@ export const experiences = [
     image: "/images/exp-vendanges.jpg",
   },
   {
+    region: "perigord",
     title: "Villages perchés du Périgord",
     place: "Dordogne",
     description:
@@ -171,6 +182,15 @@ export const experiences = [
     image: "/images/exp-beynac-int.jpg",
   },
   {
+    region: "perigord",
+    title: "La Dordogne en gabare privée",
+    place: "Périgord",
+    description:
+      "Descente de la rivière sur une gabare privatisée, au pied des falaises de La Roque-Gageac, avec un panier de producteurs à bord.",
+    image: "/images/exp-chateau.jpg",
+  },
+  {
+    region: "pays-basque",
     title: "Crépuscule sur la côte basque",
     place: "Pays Basque",
     description:
@@ -178,6 +198,7 @@ export const experiences = [
     image: "/images/exp-surf.jpg",
   },
   {
+    region: "pays-basque",
     title: "Palaces et maisons d'exception",
     place: "Côte basque",
     description:
@@ -185,11 +206,20 @@ export const experiences = [
     image: "/images/exp-margaux.jpg",
   },
   {
-    title: "La Dordogne en gabare privée",
-    place: "Périgord",
+    region: "gascogne-armagnac",
+    title: "Chais d'armagnac centenaires",
+    place: "Gascogne",
     description:
-      "Descente de la rivière sur une gabare privatisée, au pied des falaises de La Roque-Gageac, avec un panier de producteurs à bord.",
-    image: "/images/exp-chateau.jpg",
+      "Un domaine familial, sa réserve de millésimes plus vieux que vos grands-parents, et une dégustation dans le chai historique.",
+    image: "/images/hero-apropos.jpg",
+  },
+  {
+    region: "gascogne-armagnac",
+    title: "Table gasconne chez le producteur",
+    place: "Gers",
+    description:
+      "Cuisine au foie gras et au canard, préparée devant vous par la maîtresse de maison, dans une ferme qui élève encore ses bêtes.",
+    image: "/images/hero-services.jpg",
   },
 ];
 
@@ -247,7 +277,7 @@ export const destinations: Destination[] = [
       },
     ],
     image:
-      "/images/chateau-margaux.jpg",
+      "/images/svc-acces.jpg",
   },
   {
     slug: "perigord",
@@ -397,24 +427,24 @@ export const resume = {
   ],
   citation: "De votre premier appel à votre retour, nous nous occupons de tout",
   images: {
-    gauche: "/images/hero-apropos.jpg",
-    droite: "/images/hero-services.jpg",
+    gauche: "/images/dest-bordeaux.jpg",
+    droite: "/images/hero-experiences.jpg",
   },
 };
 
 /** Mosaïque de photos qui encadre le récit de la page « À propos ». */
 export const mosaique = {
   gauche: [
-    "/images/dest-perigord.jpg",
-    "/images/svc-excursions.jpg",
+    "/images/exp-verticale.jpg",
+    "/images/exp-vendanges.jpg",
+    "/images/exp-beynac-int.jpg",
     "/images/exp-chateau.jpg",
-    "/images/dest-gascogne.jpg",
   ],
   droite: [
-    "/images/exp-vendanges.jpg",
-    "/images/dest-basque.jpg",
-    "/images/exp-verticale.jpg",
+    "/images/exp-surf.jpg",
+    "/images/exp-margaux.jpg",
     "/images/hero-accueil.jpg",
+    "/images/auth-fond.jpg",
   ],
   citation:
     "Quoi de mieux que découvrir un territoire d'exception, pris en charge par un expert local passionné",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/sections/page-hero";
 import { Cta } from "@/components/sections/cta";
+import { RegionExperiences } from "@/components/sections/region-experiences";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { destinations } from "@/content/site";
 
@@ -134,6 +135,8 @@ export default async function DestinationPage({ params }: Props) {
           </ol>
         </Container>
       </section>
+
+      <RegionExperiences region={destination.slug} />
 
       {/* Autres destinations */}
       <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-24">

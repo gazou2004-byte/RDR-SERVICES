@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav } from "@/content/site";
+import { destinations, nav } from "@/content/site";
 import { Logo } from "./logo";
 
 // Sur la vitrine statique, l'espace client n'est pas déployé : on masque
@@ -88,23 +88,49 @@ export function Header() {
         <Logo className="shrink-0" tone={transparent ? "light" : "dark"} />
 
         <nav className="hidden items-center gap-9 lg:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`font-display text-lg whitespace-nowrap transition-colors ${
-                transparent
-                  ? isActive(item.href)
-                    ? "text-gold-400"
-                    : "text-sand-50 hover:text-gold-400"
-                  : isActive(item.href)
-                    ? "text-tuile-600"
-                    : "text-vine-800 hover:text-tuile-600"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) => {
+            const lien = (
+              <Link
+                href={item.href}
+                className={`font-display text-lg whitespace-nowrap transition-colors ${
+                  transparent
+                    ? isActive(item.href)
+                      ? "text-gold-400"
+                      : "text-sand-50 hover:text-gold-400"
+                    : isActive(item.href)
+                      ? "text-tuile-600"
+                      : "text-vine-800 hover:text-tuile-600"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+
+            // « Visites privées » déroule les quatre régions au survol
+            if (!("regions" in item)) {
+              return <span key={item.href}>{lien}</span>;
+            }
+
+            return (
+              <div key={item.href} className="group relative">
+                {lien}
+                <div className="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <ul className="min-w-[15rem] border border-vine-900/12 bg-sand-50 py-2 shadow-[0_18px_40px_-24px] shadow-vine-900/60">
+                    {destinations.map((destination) => (
+                      <li key={destination.slug}>
+                        <Link
+                          href={`/destinations/${destination.slug}`}
+                          className="block px-6 py-3 text-[0.72rem] font-medium tracking-[0.16em] whitespace-nowrap text-vine-800 uppercase transition-colors hover:bg-sand-100 hover:text-tuile-600"
+                        >
+                          {destination.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
 
           {espaceClientDisponible ? (
             <Link
@@ -148,15 +174,30 @@ export function Header() {
       >
         <nav className="flex flex-col gap-1 px-6 pt-8 pb-10">
           {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`border-b border-vine-900/10 py-4 font-display text-2xl font-light ${
-                isActive(item.href) ? "text-tuile-600" : "text-vine-900"
-              }`}
-            >
-              {item.label}
-            </Link>
+            <div key={item.href}>
+              <Link
+                href={item.href}
+                className={`block border-b border-vine-900/10 py-4 font-display text-2xl font-light ${
+                  isActive(item.href) ? "text-tuile-600" : "text-vine-900"
+                }`}
+              >
+                {item.label}
+              </Link>
+              {"regions" in item ? (
+                <ul className="border-b border-vine-900/10 py-2">
+                  {destinations.map((destination) => (
+                    <li key={destination.slug}>
+                      <Link
+                        href={`/destinations/${destination.slug}`}
+                        className="block py-2.5 pl-5 text-[0.78rem] tracking-[0.14em] text-vine-600 uppercase"
+                      >
+                        {destination.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
           ))}
           {espaceClientDisponible ? (
             <Link

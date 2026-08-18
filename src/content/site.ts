@@ -46,15 +46,33 @@ export const hero = {
   primaryCta: { label: "Composer mon séjour", href: "/#contact" },
   secondaryCta: { label: "Découvrir nos services", href: "/#services" },
   /**
-   * Les photos qui défilent en plein écran derrière le titre.
-   * Chacune occupe toute la largeur : plus de découpe en bandes étroites,
-   * qui amputait les sujets.
+   * Les quatre panneaux du héros, côte à côte.
+   *
+   * `cadrage` indique quelle partie de la photo garder : une bande verticale
+   * d'un quart d'écran ampute le sujet si on se contente de centrer. Le
+   * château du Médoc, par exemple, se trouve sur la droite de son image.
    */
   panels: [
-    { image: "/images/biarritz-plage.jpg", label: "Pyrénées-Atlantiques" },
-    { image: "/images/vignes-chateau.jpg", label: "Médoc" },
-    { image: "/images/hero-contact.jpg", label: "Périgord" },
-    { image: "/images/svc-creations.jpg", label: "Gascogne" },
+    {
+      image: "/images/biarritz-plage.jpg",
+      label: "Pyrénées-Atlantiques",
+      cadrage: "center",
+    },
+    {
+      image: "/images/vignes-chateau.jpg",
+      label: "Médoc",
+      cadrage: "72% center",
+    },
+    {
+      image: "/images/hero-contact.jpg",
+      label: "Périgord",
+      cadrage: "center",
+    },
+    {
+      image: "/images/svc-creations.jpg",
+      label: "Gascogne",
+      cadrage: "center",
+    },
   ],
 };
 
@@ -472,8 +490,8 @@ export const resume = {
   ],
   citation: "De votre premier appel à votre retour, nous nous occupons de tout",
   images: {
-    gauche: "/images/dest-bordeaux.jpg",
-    droite: "/images/hero-experiences.jpg",
+    gauche: "/images/exp-margaux.jpg",
+    droite: "/images/exp-landes.jpg",
   },
 };
 
@@ -487,7 +505,7 @@ export const mosaique = {
   ],
   droite: [
     "/images/exp-surf.jpg",
-    "/images/exp-margaux.jpg",
+    "/images/dest-bordeaux.jpg",
     "/images/hero-accueil.jpg",
     "/images/auth-fond.jpg",
   ],

@@ -1,56 +1,40 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { hero } from "@/content/site";
 
 /**
- * Héros en carrousel : les photos défilent horizontalement derrière le titre.
+ * Héros en quatre panneaux côte à côte : les quatre territoires visibles
+ * d'un seul coup d'œil, avec le nom de la maison par-dessus.
  *
- * Elles étaient auparavant découpées en quatre bandes verticales côte à côte,
- * ce qui amputait chaque sujet — un château se retrouvait hors cadre. Chaque
- * photo occupe désormais toute la largeur.
+ * Chaque panneau n'occupe qu'un quart de la largeur. Un simple centrage
+ * amputait les sujets — le château du Médoc sortait du cadre. Le champ
+ * `cadrage` défini dans le contenu indique donc quelle partie garder.
  *
- * Le défilement s'arrête si le visiteur a demandé à réduire les animations.
+ * Sur téléphone, seuls les deux premiers panneaux restent : quatre bandes
+ * de 97 pixels ne montreraient plus rien.
  */
-const DUREE = 6000;
-
 export function Hero() {
-  const [index, setIndex] = useState(0);
-  const total = hero.panels.length;
-
-  useEffect(() => {
-    const reduit = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduit.matches) return;
-
-    const minuteur = setInterval(
-      () => setIndex((i) => (i + 1) % total),
-      DUREE,
-    );
-    return () => clearInterval(minuteur);
-  }, [total]);
-
   return (
     <section
       id="accueil"
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-vine-900"
-      aria-roledescription="carrousel"
     >
-      {/* La piste glisse d'une photo à l'autre */}
-      <div
-        className="absolute inset-0 flex transition-transform duration-[1400ms] ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none"
-        style={{ transform: `translateX(-${index * 100}%)` }}
-      >
-        {hero.panels.map((panel, i) => (
-          <div key={panel.image} className="relative h-full w-full shrink-0">
+      <div className="absolute inset-0 grid grid-cols-2 lg:grid-cols-4">
+        {hero.panels.map((panel, index) => (
+          <div
+            key={panel.image}
+            className={`relative overflow-hidden ${index > 1 ? "hidden lg:block" : ""}`}
+          >
             <Image
               src={panel.image}
               alt={`Paysage — ${panel.label}`}
               fill
-              priority={i === 0}
-              sizes="100vw"
+              priority={index < 2}
+              sizes="(max-width: 1024px) 50vw, 25vw"
               className="object-cover"
+              style={{ objectPosition: panel.cadrage }}
             />
+            {/* Séparation discrète entre les panneaux */}
+            <span className="absolute inset-y-0 right-0 w-px bg-sand-50/25" />
           </div>
         ))}
       </div>
@@ -59,7 +43,6 @@ export function Hero() {
       <div className="absolute inset-0 bg-vine-900/45" />
       <div className="absolute inset-0 bg-gradient-to-b from-vine-900/55 via-transparent to-vine-900/65" />
 
-      {/* Titre */}
       <div className="relative z-10 w-full px-6 text-center">
         <h1 className="font-display text-[2.05rem] leading-none font-light tracking-[0.08em] text-sand-50 uppercase sm:text-6xl sm:tracking-[0.1em] lg:text-[5rem]">
           {hero.title}
@@ -70,25 +53,22 @@ export function Hero() {
         </p>
       </div>
 
-      {/* Repères de progression */}
-      <div className="absolute bottom-24 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
-        {hero.panels.map((panel, i) => (
-          <button
-            key={panel.image}
-            type="button"
-            onClick={() => setIndex(i)}
-            aria-label={`Voir ${panel.label}`}
-            aria-current={i === index}
-            className="flex h-11 w-11 items-center justify-center"
-          >
-            <span
-              className={`block h-px transition-all duration-500 ${
-                i === index ? "w-10 bg-sand-50" : "w-5 bg-sand-50/45"
-              }`}
-            />
-          </button>
-        ))}
-      </div>
+      {/* Chevron de défilement */}
+      <a
+        href="#intro"
+        aria-label="Aller à la section suivante"
+        className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 p-3 text-sand-50/80 transition-colors hover:text-gold-400"
+      >
+        <svg
+          viewBox="0 0 32 20"
+          className="h-5 w-8"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <path d="M2 2l14 12L30 2" strokeLinecap="round" />
+        </svg>
+      </a>
     </section>
   );
 }

@@ -77,14 +77,14 @@ export const hero = {
 };
 
 export const intro = {
-  eyebrow: "Agence locale — services & expériences uniques",
-  title: "Découvrez le meilleur du Sud-Ouest",
+  eyebrow: "Conciergerie indépendante — Nouvelle-Aquitaine",
+  title: "Le Sud-Ouest comme on y vit",
   body: [
-    "RDR Services est une conciergerie de voyage indépendante, née d'une conviction simple : les plus beaux souvenirs ne s'achètent pas en ligne, ils se construisent avec quelqu'un qui connaît le terrain.",
-    "Nous concevons des séjours privés d'une journée à trois semaines — des grands crus du Médoc aux vallées basques — avec chauffeur dédié, accès privilégiés et un interlocuteur unique disponible avant, pendant et après votre voyage.",
+    "Cinq territoires, une seule maison. Nous organisons des séjours privés dans le Sud-Ouest pour des voyageurs qui préfèrent qu'on leur ouvre des portes plutôt qu'on leur remette un dépliant.",
+    "D'une journée à trois semaines, du vignoble bordelais à l'océan landais. Le programme se construit avec vous, se réajuste en route si l'envie change, et reste entre les mains d'une seule personne du début à la fin.",
   ],
   stats: [
-    { value: "10 ans", label: "d'expérience dans l'hôtellerie de luxe" },
+    { value: "5", label: "territoires parcourus toute l'année" },
     { value: "1 à 21", label: "jours, en privatif intégral" },
     { value: "24/7", label: "assistance pendant votre séjour" },
     { value: "100 %", label: "sur mesure, jamais de groupe" },
@@ -104,7 +104,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "excursions",
-    title: "Excursions",
+    title: "Journées guidées",
     short: "À la journée, en événement ou en voyage complet.",
     description:
       "Nous prenons en charge l'intégralité de votre journée : itinéraire, réservations, déjeuner, transport et accompagnement. Vous n'avez qu'à profiter.",
@@ -119,7 +119,7 @@ export const services: Service[] = [
   },
   {
     slug: "creations-sur-mesure",
-    title: "Créations sur mesure",
+    title: "Séjours sur mesure",
     short: "Événements privés, séjours et voyages entièrement composés.",
     description:
       "Un anniversaire, une demande en mariage, un séminaire ou trois semaines de découverte : nous construisons le programme de zéro, autour de vos contraintes réelles.",
@@ -135,7 +135,7 @@ export const services: Service[] = [
   },
   {
     slug: "transport-vip",
-    title: "Transport VIP",
+    title: "Chauffeur privé",
     short: "Berlines et vans Mercedes, chauffeur dédié.",
     description:
       "Notre flotte est à vous pour la durée du séjour. Le même chauffeur du premier au dernier jour : il connaît vos habitudes, vos horaires et vos adresses.",
@@ -151,7 +151,7 @@ export const services: Service[] = [
   },
   {
     slug: "acces-privilegies",
-    title: "Accès privilégiés",
+    title: "Accès réservés",
     short: "Notre réseau de châteaux et de partenaires, en privatif.",
     description:
       "Grands crus classés fermés au public, tables complètes, ateliers d'artisans : dix ans de relations locales ouvrent des portes qu'aucune plateforme ne référence.",
@@ -472,8 +472,8 @@ export const resume = {
       detail: "Nous vivons ici, nous connaissons les gens",
     },
     {
-      titre: "Séjours privés sur mesure",
-      detail: "D'une excursion à la journée à trois semaines",
+      titre: "Programmes composés à la carte",
+      detail: "De la sortie d'une journée au voyage de trois semaines",
     },
     {
       titre: "Chauffeur dédié",
@@ -488,7 +488,7 @@ export const resume = {
       detail: "Joignable avant, pendant et après votre voyage",
     },
   ],
-  citation: "De votre premier appel à votre retour, nous nous occupons de tout",
+  citation: "Vous nous dites ce qui vous ferait plaisir, nous nous chargeons du reste",
   images: {
     gauche: "/images/exp-margaux.jpg",
     droite: "/images/exp-landes.jpg",
@@ -510,8 +510,8 @@ export const mosaique = {
     "/images/auth-fond.jpg",
   ],
   citation:
-    "Quoi de mieux que découvrir un territoire d'exception, pris en charge par un expert local passionné",
-  signature: "Le fondateur, expert local",
+    "On ne connaît pas vraiment une région tant que personne d'ici ne vous y a emmené",
+  signature: "RDR Services",
 };
 
 /**

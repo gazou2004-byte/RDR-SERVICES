@@ -3,9 +3,9 @@ import { StoryMosaic } from "@/components/sections/story-mosaic";
 import { company, intro } from "@/content/site";
 
 const histoire = [
-  "RDR Services est né d'un constat simple, fait après dix ans passés dans l'hôtellerie de luxe, la conciergerie et le transport privé : les voyageurs qui viennent dans le Sud-Ouest passent à côté de l'essentiel. Ils visitent les châteaux que tout le monde visite, dînent là où tout le monde dîne, et rentrent chez eux avec les mêmes photos que les autres.",
-  "Ce qui manquait, ce n'était pas une agence de plus. C'était quelqu'un capable de décrocher son téléphone un dimanche matin pour qu'un grand cru classé vous ouvre ses chais, ou de trouver la table de quinze couverts qui n'a jamais eu de site internet.",
-  "Aujourd'hui, nous composons des séjours privés d'une journée à trois semaines, de Bordeaux aux Pyrénées-Atlantiques, du Périgord aux Landes. Toujours en privatif, toujours avec le même chauffeur, toujours avec un interlocuteur unique joignable 24 h/24 pendant votre voyage.",
+  "RDR Services est une conciergerie de voyage installée en Nouvelle-Aquitaine. Nous ne vendons pas de circuits : nous composons des séjours, un par un, pour des voyageurs qui veulent autre chose qu'un programme imprimé à l'avance.",
+  "Ce qui fait la différence tient à peu de choses : connaître le propriétaire qui ouvre son chai un dimanche, savoir quelle table vaut le détour et laquelle vit sur sa réputation, deviner qu'il vaut mieux inverser deux journées parce que la pluie arrive. Ce savoir-là ne s'achète pas, il se construit sur place.",
+  "Nous couvrons cinq territoires, du Bordelais aux Pyrénées-Atlantiques, du Périgord aux Landes et à la Gascogne. Toujours en privatif, toujours avec le même chauffeur du premier au dernier jour, et un interlocuteur unique que vous pouvez appeler à toute heure pendant votre voyage.",
 ] as const;
 
 export function AboutSection() {

@@ -64,7 +64,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
           <dt className="text-[0.7rem] tracking-[0.16em] text-vine-500 uppercase">
             {remaining > 0 ? "Reste à régler" : "Montant"}
           </dt>
-          <dd className="mt-1.5 text-[0.85rem] text-gold-600">
+          <dd className="mt-1.5 text-[0.85rem] text-feuille-600">
             {formatPrice(remaining > 0 ? remaining : booking.totalCents)}
           </dd>
         </div>

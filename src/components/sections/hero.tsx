@@ -9,8 +9,15 @@ import { hero } from "@/content/site";
  * amputait les sujets — le château du Médoc sortait du cadre. Le champ
  * `cadrage` défini dans le contenu indique donc quelle partie garder.
  *
- * Sur téléphone, seuls les deux premiers panneaux restent : quatre bandes
- * de 97 pixels ne montreraient plus rien.
+ * La grille change de forme selon l'écran, et les quatre photos restent
+ * visibles dans les deux cas :
+ *
+ *   ordinateur  4 colonnes sur toute la hauteur — des bandes verticales
+ *   téléphone   2 colonnes sur 2 rangées — quatre cases, aucune masquée
+ *
+ * Auparavant les deux derniers panneaux étaient purement cachés sous 1024 px :
+ * quatre bandes de 97 pixels ne montraient plus rien, mais les Landes et la
+ * Gascogne disparaissaient de la page d'accueil.
  */
 export function Hero() {
   return (
@@ -18,16 +25,15 @@ export function Hero() {
       id="accueil"
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-vine-900"
     >
-      <div className="absolute inset-0 grid grid-cols-2 lg:grid-cols-4">
+      <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">
         {hero.panels.map((panel, index) => (
-          <div
-            key={panel.image}
-            className={`relative overflow-hidden ${index > 1 ? "hidden lg:block" : ""}`}
-          >
+          <div key={panel.image} className="relative overflow-hidden">
             <Image
               src={panel.image}
               alt={`Paysage — ${panel.label}`}
               fill
+              // Les deux premières seules sont prioritaires : quatre grandes
+              // images chargées d'urgence retarderaient l'affichage du titre.
               priority={index < 2}
               sizes="(max-width: 1024px) 50vw, 25vw"
               className="object-cover"
@@ -35,6 +41,11 @@ export function Hero() {
             />
             {/* Séparation discrète entre les panneaux */}
             <span className="absolute inset-y-0 right-0 w-px bg-sand-50/25" />
+            {/* La couture horizontale n'existe que sur la grille en deux
+                rangées, donc sous la première rangée et sous 1024 px. */}
+            {index < 2 ? (
+              <span className="absolute inset-x-0 bottom-0 h-px bg-sand-50/25 lg:hidden" />
+            ) : null}
           </div>
         ))}
       </div>
@@ -57,7 +68,7 @@ export function Hero() {
       <a
         href="#intro"
         aria-label="Aller à la section suivante"
-        className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 p-3 text-sand-50/80 transition-colors hover:text-gold-400"
+        className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 p-3 text-sand-50/80 transition-colors hover:text-feuille-400"
       >
         <svg
           viewBox="0 0 32 20"

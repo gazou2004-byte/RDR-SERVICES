@@ -42,7 +42,7 @@ export function formatPrice(cents: number) {
 
 export const bookingStatuses = {
   DEVIS: { label: "Devis en attente", tone: "neutral" },
-  CONFIRME: { label: "Confirmé", tone: "gold" },
+  CONFIRME: { label: "Confirmé", tone: "feuille" },
   EN_COURS: { label: "En cours", tone: "wine" },
   TERMINE: { label: "Terminé", tone: "muted" },
   ANNULE: { label: "Annulé", tone: "muted" },

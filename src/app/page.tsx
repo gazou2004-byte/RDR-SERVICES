@@ -4,25 +4,36 @@ import { ServicesGrid } from "@/components/sections/services-grid";
 import { DestinationsGrid } from "@/components/sections/destinations-grid";
 import { SummaryPanel } from "@/components/sections/summary-panel";
 import { AboutSection } from "@/components/sections/about-section";
-import { FaqSection } from "@/components/sections/faq-section";
-import { ContactSection } from "@/components/sections/contact-section";
+import { Process } from "@/components/sections/process";
+import { Cta } from "@/components/sections/cta";
 
 /**
  * Le site tient sur cette page. Chaque section porte l'ancre vers laquelle
- * pointe le menu ; seules les quatre destinations ont leur propre page,
- * atteignable depuis la section « Visites privées ».
+ * pointe le menu ; seules les cinq destinations ont leur propre page,
+ * atteignable depuis la section « Destinations ».
+ *
+ * Les questions fréquentes et la demande de devis ne défilent plus en bas de
+ * page : elles sont dans la fenêtre de discussion, posée en bas à droite de
+ * l'écran et disponible depuis n'importe où (voir `chat-widget.tsx`).
  */
 export default function HomePage() {
   return (
     <>
       <Hero />
       <Intro />
-      <ServicesGrid />
+      {/* `detailed` : description longue et points de détail. Sans lui, la
+          section tenait 1 991 px pour quatre phrases d'une ligne. */}
+      <ServicesGrid detailed />
       <DestinationsGrid />
       <SummaryPanel />
       <AboutSection />
-      <FaqSection />
-      <ContactSection />
+      {/* Les quatre étapes répondent à la question qui retient un visiteur
+          avant d'écrire : que se passe-t-il si j'appelle ? */}
+      <Process />
+      {/* Le seul bloc sombre : il ferme la page au lieu de la laisser
+          s'arrêter sur la dernière étape. Son bouton ouvre la fenêtre de
+          discussion sur le formulaire. */}
+      <Cta />
     </>
   );
 }

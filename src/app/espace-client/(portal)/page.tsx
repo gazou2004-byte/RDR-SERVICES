@@ -43,7 +43,7 @@ export default async function DashboardPage() {
         <dl className="grid grid-cols-2 gap-px border border-vine-900/12 bg-vine-900/10 lg:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label} className="bg-sand-100 px-5 py-8 text-center">
-              <dt className="font-display text-3xl font-light text-gold-600">
+              <dt className="font-display text-3xl font-light text-feuille-600">
                 {stat.value}
               </dt>
               <dd className="mt-2 text-[0.72rem] leading-snug text-vine-500">
@@ -126,7 +126,7 @@ export default async function DashboardPage() {
                         {formatDate(document.createdAt)}
                       </p>
                     </div>
-                    <span className="shrink-0 text-[0.7rem] tracking-[0.18em] text-gold-600 uppercase">
+                    <span className="shrink-0 text-[0.7rem] tracking-[0.18em] text-feuille-600 uppercase">
                       Ouvrir
                     </span>
                   </a>

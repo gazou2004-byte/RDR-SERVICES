@@ -86,7 +86,7 @@ export default async function BookingDetailPage({ params }: Props) {
       {/* Suivi du règlement */}
       {booking.totalCents > 0 ? (
         <section className="border border-vine-900/12 p-8">
-          <h3 className="text-[0.7rem] font-medium tracking-[0.22em] text-gold-600 uppercase">
+          <h3 className="text-[0.7rem] font-medium tracking-[0.22em] text-feuille-600 uppercase">
             Règlement
           </h3>
           <div className="mt-6 flex flex-wrap items-baseline justify-between gap-4">
@@ -111,7 +111,7 @@ export default async function BookingDetailPage({ params }: Props) {
             aria-label="Progression du règlement"
           >
             <div
-              className="h-full bg-gold-600 transition-all duration-700"
+              className="h-full bg-feuille-600 transition-all duration-700"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -120,8 +120,8 @@ export default async function BookingDetailPage({ params }: Props) {
 
       {/* Notes du conseiller */}
       {booking.notes ? (
-        <section className="border-l-2 border-gold-600 bg-sand-100 p-8">
-          <h3 className="text-[0.7rem] font-medium tracking-[0.22em] text-gold-600 uppercase">
+        <section className="border-l-2 border-feuille-600 bg-sand-100 p-8">
+          <h3 className="text-[0.7rem] font-medium tracking-[0.22em] text-feuille-600 uppercase">
             Note de votre conseiller
           </h3>
           <p className="mt-5 text-[0.95rem] leading-relaxed whitespace-pre-line text-vine-700">
@@ -175,7 +175,7 @@ export default async function BookingDetailPage({ params }: Props) {
         </p>
         <Link
           href="/espace-client/messages"
-          className="mt-5 inline-block bg-gold-600 px-7 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] text-sand-50 uppercase transition-colors hover:bg-gold-500"
+          className="mt-5 inline-block bg-feuille-600 px-7 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] text-sand-50 uppercase transition-colors hover:bg-feuille-500"
         >
           Écrire à mon conseiller
         </Link>

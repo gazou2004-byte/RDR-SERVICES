@@ -2,7 +2,7 @@ import { bookingStatus } from "@/lib/format";
 
 const tones: Record<string, string> = {
   // Confirmé : vert vigne, l'état le plus positif
-  gold: "border-vine-600/55 bg-vine-300/45 text-vine-800",
+  feuille: "border-vine-600/55 bg-vine-300/45 text-vine-800",
   // En cours : aubergine
   wine: "border-tuile-600/45 bg-tuile-100 text-tuile-700",
   // Devis en attente : neutre

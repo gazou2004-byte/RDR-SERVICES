@@ -23,12 +23,13 @@ import path from "node:path";
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const espaceClient = path.join(racine, "src/app/espace-client");
 const espaceClientMasque = path.join(racine, "src/app/_espace-client");
-const pageContact = path.join(racine, "src/components/sections/contact-section.tsx");
+// Le formulaire est choisi dans ce fichier, seul endroit à réécrire.
+const socleChat = path.join(racine, "src/components/chat/chat-dock.tsx");
 
 // Nom du dépôt : sur GitHub Pages, le site vit dans /<dépôt>/
 const basePath = process.argv[2] ?? "/RDR-SERVICES";
 
-const contactOriginal = readFileSync(pageContact, "utf8");
+const chatOriginal = readFileSync(socleChat, "utf8");
 let deplace = false;
 
 function restaurer() {
@@ -36,8 +37,8 @@ function restaurer() {
     renameSync(espaceClientMasque, espaceClient);
     console.log("· espace client remis en place");
   }
-  writeFileSync(pageContact, contactOriginal);
-  console.log("· section contact restaurée");
+  writeFileSync(socleChat, chatOriginal);
+  console.log("· formulaire de la discussion restauré");
 }
 
 process.on("SIGINT", () => {
@@ -54,15 +55,20 @@ try {
     console.log("· espace client écarté du routage");
   }
 
-  writeFileSync(
-    pageContact,
-    contactOriginal
-      .replace(
-        'import { ContactForm } from "@/components/forms/contact-form";',
-        'import { ContactFormStatic } from "@/components/forms/contact-form-static";',
-      )
-      .replace("<ContactForm />", "<ContactFormStatic />"),
-  );
+  const bascule = chatOriginal
+    .replace(
+      'import { ContactForm } from "@/components/forms/contact-form";',
+      'import { ContactFormStatic } from "@/components/forms/contact-form-static";',
+    )
+    .replace("<ContactForm />", "<ContactFormStatic />");
+
+  if (bascule === chatOriginal) {
+    throw new Error(
+      "chat-dock.tsx n'importe plus ContactForm : la bascule vers la version " +
+        "messagerie n'a rien remplacé. Vérifiez le fichier avant de publier.",
+    );
+  }
+  writeFileSync(socleChat, bascule);
   console.log("· formulaire de contact basculé en version messagerie");
 
   rmSync(path.join(racine, "out"), { recursive: true, force: true });
@@ -82,7 +88,17 @@ try {
 
   // GitHub Pages ignore les dossiers commençant par un souligné sans ce fichier
   writeFileSync(path.join(racine, "out/.nojekyll"), "");
+
+  /*
+   * On efface .next : il contient une compilation au préfixe /<dépôt>/, propre
+   * à GitHub Pages. Un `npm run start` lancé ensuite la servirait telle quelle
+   * et le navigateur chercherait le CSS à une adresse inexistante — la page
+   * s'affichait alors sans aucune mise en forme.
+   */
+  rmSync(path.join(racine, ".next"), { recursive: true, force: true });
+
   console.log("\n✓ Vitrine compilée dans le dossier out/");
+  console.log("  (.next effacé : relancez `npm run build` pour travailler en local)");
 } catch (erreur) {
   console.error("\n✗ Échec de la compilation");
   process.exitCode = 1;

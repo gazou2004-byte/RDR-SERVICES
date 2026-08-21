@@ -17,7 +17,7 @@ export function Logo({
       <span
         className={`font-display text-2xl leading-none font-medium tracking-[0.12em] transition-colors ${
           tone === "light"
-            ? "text-sand-50 group-hover:text-gold-400"
+            ? "text-sand-50 group-hover:text-feuille-400"
             : "text-vine-900 group-hover:text-tuile-600"
         }`}
       >
@@ -25,7 +25,7 @@ export function Logo({
       </span>
       <span
         className={`text-[0.72rem] leading-none font-medium tracking-[0.28em] uppercase ${
-          tone === "light" ? "text-gold-400" : "text-gold-600"
+          tone === "light" ? "text-feuille-400" : "text-feuille-600"
         }`}
       >
         Services

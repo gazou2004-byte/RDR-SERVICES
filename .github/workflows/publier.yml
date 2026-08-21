@@ -1,0 +1,75 @@
+# Publication automatique du site vitrine.
+#
+# À chaque modification envoyée sur la branche `main`, GitHub compile le site
+# et le met en ligne. Il n'y a plus rien à lancer à la main : le lien
+# https://gazou2004-byte.github.io/ montre toujours la dernière version.
+#
+# Le bouton « Run workflow » sur l'onglet Actions permet aussi de relancer
+# une publication sans rien modifier.
+
+name: Publier le site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Autorisations minimales : lire le code, écrire sur GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Une seule publication à la fois. Si deux modifications se suivent de près,
+# la plus récente remplace la précédente au lieu d'attendre.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  compiler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      # Le client de base de données est ignoré par git : il se régénère ici.
+      # La vitrine ne s'y connecte jamais, mais la compilation vérifie les
+      # types de tout le projet, espace client compris.
+      - name: Générer le client Prisma
+        run: npx prisma generate
+        env:
+          DATABASE_URL: file:./ci.db
+
+      # Le chemin de base est vide : sur un dépôt nommé <compte>.github.io,
+      # le site est servi à la racine et non dans un sous-dossier.
+      - name: Compiler la vitrine
+        run: node scripts/build-vitrine.mjs ""
+        env:
+          DATABASE_URL: file:./ci.db
+          AUTH_SECRET: valeur-de-compilation-sans-usage-en-vitrine
+
+      - name: Préparer l'envoi vers Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  publier:
+    needs: compiler
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.mise-en-ligne.outputs.page_url }}
+    steps:
+      - name: Mettre en ligne
+        id: mise-en-ligne
+        uses: actions/deploy-pages@v4

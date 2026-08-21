@@ -40,7 +40,7 @@ export function MessageForm({
             id="bookingId"
             name="bookingId"
             defaultValue=""
-            className="mt-2.5 w-full border border-vine-900/20 bg-sand-100 px-4 py-3.5 text-[0.95rem] text-vine-900 focus:border-gold-600 focus:outline-none"
+            className="mt-2.5 w-full border border-vine-900/20 bg-sand-100 px-4 py-3.5 text-[0.95rem] text-vine-900 focus:border-feuille-600 focus:outline-none"
           >
             <option value="">Question générale</option>
             {bookings.map((booking) => (
@@ -69,7 +69,7 @@ export function MessageForm({
           />
         </div>
         {state.fieldErrors?.body ? (
-          <p className="mt-2 text-[0.75rem] text-gold-600">
+          <p className="mt-2 text-[0.75rem] text-feuille-600">
             {state.fieldErrors.body[0]}
           </p>
         ) : null}

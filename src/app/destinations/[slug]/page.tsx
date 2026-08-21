@@ -50,12 +50,12 @@ export default async function DestinationPage({ params }: Props) {
               <p className="font-display text-2xl leading-relaxed font-light text-vine-800 sm:text-3xl">
                 {destination.intro}
               </p>
-              <span className="rule-gold mt-9" />
+              <span className="rule-feuille mt-9" />
             </div>
 
             <dl className="reveal space-y-7 lg:col-span-5">
               <div className="border-b border-vine-900/12 pb-6">
-                <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
+                <dt className="text-[0.7rem] tracking-[0.22em] text-feuille-600 uppercase">
                   Durée conseillée
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
@@ -63,7 +63,7 @@ export default async function DestinationPage({ params }: Props) {
                 </dd>
               </div>
               <div className="border-b border-vine-900/12 pb-6">
-                <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
+                <dt className="text-[0.7rem] tracking-[0.22em] text-feuille-600 uppercase">
                   Meilleure saison
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
@@ -71,7 +71,7 @@ export default async function DestinationPage({ params }: Props) {
                 </dd>
               </div>
               <div>
-                <dt className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
+                <dt className="text-[0.7rem] tracking-[0.22em] text-feuille-600 uppercase">
                   Format
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
@@ -93,7 +93,7 @@ export default async function DestinationPage({ params }: Props) {
                 key={highlight}
                 className="reveal flex items-start gap-6 bg-sand-100 p-9"
               >
-                <span className="font-display text-3xl leading-none font-light text-gold-600">
+                <span className="font-display text-3xl leading-none font-light text-feuille-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <p className="pt-1.5 text-[0.95rem] leading-relaxed text-vine-700">
@@ -120,9 +120,9 @@ export default async function DestinationPage({ params }: Props) {
               <li key={day.day} className="reveal relative pb-12 pl-9 last:pb-0">
                 <span
                   aria-hidden
-                  className="absolute top-2 -left-[4.5px] h-2 w-2 rotate-45 bg-gold-600"
+                  className="absolute top-2 -left-[4.5px] h-2 w-2 rotate-45 bg-feuille-600"
                 />
-                <p className="text-[0.7rem] tracking-[0.22em] text-gold-600 uppercase">
+                <p className="text-[0.7rem] tracking-[0.22em] text-feuille-600 uppercase">
                   {day.day}
                 </p>
                 <h3 className="mt-3 font-display text-2xl font-light text-vine-900 sm:text-3xl">

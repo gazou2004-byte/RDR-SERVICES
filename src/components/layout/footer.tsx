@@ -1,94 +1,58 @@
 import Link from "next/link";
-import { company, destinations, nav } from "@/content/site";
+import { company } from "@/content/site";
 import { Container } from "@/components/ui/section";
+import { reseaux } from "@/components/ui/social-icons";
 import { Logo } from "./logo";
 
+/**
+ * Pied de page réduit à une bande fine.
+ *
+ * Tout ce qui s'y trouvait en double est parti ailleurs : les colonnes
+ * « Navigation » et « Destinations » reprenaient le menu du haut, la phrase de
+ * présentation doublait la section « À propos », et les coordonnées sont
+ * remontées dans le bandeau « Parlons de votre séjour », juste au-dessus.
+ * Ne restent que la marque, les réseaux et le légal.
+ */
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-vine-900/10 bg-sand-100">
-      <Container className="py-14 sm:py-20">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:gap-14 lg:grid-cols-4">
-          <div className="col-span-2 lg:col-span-1">
-            <Logo />
-            <p className="mt-6 max-w-xs text-sm leading-relaxed text-vine-600">
-              Conciergerie de voyage indépendante. Séjours privés sur mesure
-              dans le Sud-Ouest de la France.
-            </p>
-            <div className="mt-5 flex gap-6">
-              {Object.entries(company.socials).map(([name, href]) => (
+      {/* Le bas est plus creux que le haut : le bouton de discussion flotte
+          au-dessus du coin droit et masquait le dernier lien légal. */}
+      <Container className="pt-8 pb-20 sm:pt-9 sm:pb-16">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <Logo />
+
+          <div className="flex gap-5">
+            {Object.entries(company.socials).map(([cle, href]) => {
+              const reseau = reseaux[cle as keyof typeof reseaux];
+              if (!reseau) return null;
+              const { Icone, nom } = reseau;
+              return (
                 <a
-                  key={name}
+                  key={cle}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2 text-[0.74rem] tracking-[0.14em] text-vine-500 uppercase transition-colors hover:text-tuile-600"
+                  aria-label={nom}
+                  title={nom}
+                  className="grid h-10 w-10 place-items-center text-vine-600 transition-colors hover:text-tuile-600"
                 >
-                  {name}
+                  <Icone className="h-[1.15rem] w-[1.15rem]" />
                 </a>
-              ))}
-            </div>
+              );
+            })}
           </div>
-
-          <FooterColumn title="Navigation">
-            {nav.map((item) => (
-              <FooterLink key={item.href} href={item.href}>
-                {item.label}
-              </FooterLink>
-            ))}
-          </FooterColumn>
-
-          <FooterColumn title="Destinations">
-            {destinations.map((destination) => (
-              <FooterLink
-                key={destination.slug}
-                href={`/destinations/${destination.slug}`}
-              >
-                {destination.name}
-              </FooterLink>
-            ))}
-
-          </FooterColumn>
-
-          <FooterColumn title="Contact">
-            <li>
-              <a
-                href={`tel:${company.phoneHref}`}
-                className="inline-block py-2 text-sm text-vine-600 transition-colors hover:text-tuile-600"
-              >
-                {company.phone}
-              </a>
-            </li>
-            <li>
-              <a
-                href={`mailto:${company.email}`}
-                className="inline-block py-2 text-sm text-vine-600 transition-colors hover:text-tuile-600"
-              >
-                {company.email}
-              </a>
-            </li>
-            <li className="text-sm text-vine-600">{company.address}</li>
-            <li className="pt-4">
-              <Link
-                href="/#contact"
-                className="inline-block py-2 text-[0.74rem] tracking-[0.16em] text-tuile-600 uppercase transition-colors hover:text-tuile-700"
-              >
-                Demander un devis →
-              </Link>
-            </li>
-          </FooterColumn>
         </div>
 
-        <div className="mt-16 flex flex-col gap-5 border-t border-vine-900/10 pt-8 text-[0.72rem] text-vine-500 md:flex-row md:items-center md:justify-between">
+        {/* SIREN et RCS ont quitté cette ligne : ils figurent en entier sur la
+            page des mentions légales, à un clic. */}
+        <div className="mt-6 flex flex-col gap-3 border-t border-vine-900/10 pt-5 text-[0.72rem] text-vine-500 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {company.legalName}. Tous droits réservés.
+            © {year} {company.legalName}
           </p>
-          <div className="flex flex-wrap gap-x-7 gap-y-2">
-            <span>Licence ATOUT FRANCE n° {company.licenceAtoutFrance}</span>
-            <span>Licence transport n° {company.licenceTransport}</span>
-          </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
+          <div className="flex flex-wrap gap-x-6 gap-y-1">
             <Link
               href="/mentions-legales"
               className="inline-block py-2 transition-colors hover:text-tuile-600"
@@ -111,41 +75,5 @@ export function Footer() {
         </div>
       </Container>
     </footer>
-  );
-}
-
-function FooterColumn({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <h3 className="text-[0.7rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
-        {title}
-      </h3>
-      <ul className="mt-6 space-y-3">{children}</ul>
-    </div>
-  );
-}
-
-function FooterLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <li>
-      <Link
-        href={href}
-        className="inline-block py-2 text-sm text-vine-600 transition-colors hover:text-tuile-600"
-      >
-        {children}
-      </Link>
-    </li>
   );
 }

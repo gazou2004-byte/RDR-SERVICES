@@ -37,8 +37,13 @@ export function Header() {
     };
   }, [open]);
 
-  // L'espace client n'a pas d'image d'en-tête : le bandeau y est opaque d'emblée
-  const overHero = !pathname.startsWith("/espace-client");
+  /*
+   * Le bandeau ne se rend transparent, avec logo et liens clairs, que sur les
+   * pages qui commencent par une image plein cadre : l'accueil et les fiches
+   * de région. Ailleurs — mentions légales, crédits, page introuvable — le
+   * fond est pâle dès le premier pixel, et le logo clair y devenait invisible.
+   */
+  const overHero = pathname === "/" || pathname.startsWith("/destinations/");
   const transparent = overHero && !scrolled && !open;
 
   /*
@@ -95,8 +100,8 @@ export function Header() {
                 className={`font-display text-lg whitespace-nowrap transition-colors ${
                   transparent
                     ? isActive(item.href)
-                      ? "text-gold-400"
-                      : "text-sand-50 hover:text-gold-400"
+                      ? "text-feuille-400"
+                      : "text-sand-50 hover:text-feuille-400"
                     : isActive(item.href)
                       ? "text-tuile-600"
                       : "text-vine-800 hover:text-tuile-600"
@@ -106,7 +111,7 @@ export function Header() {
               </Link>
             );
 
-            // « Visites privées » déroule les quatre régions au survol
+            // « Destinations » déroule les cinq régions au survol
             if (!("regions" in item)) {
               return <span key={item.href}>{lien}</span>;
             }

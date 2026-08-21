@@ -51,7 +51,7 @@ export default async function DocumentsPage() {
                   </p>
                   <Link
                     href={`/espace-client/sejours/${document.booking.id}`}
-                    className="mt-2 inline-block text-[0.72rem] text-gold-600/80 transition-colors hover:text-tuile-600"
+                    className="mt-2 inline-block text-[0.72rem] text-feuille-600/80 transition-colors hover:text-tuile-600"
                   >
                     {document.booking.destination} ·{" "}
                     {document.booking.reference}

@@ -3,7 +3,7 @@ import { process } from "@/content/site";
 
 export function Process() {
   return (
-    <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-24">
+    <section className="border-b border-vine-900/10 bg-sand-100 py-12 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow="De la première idée au départ"
@@ -11,19 +11,19 @@ export function Process() {
           align="center"
         />
 
-        <ol className="mt-16 grid gap-px border border-vine-900/10 bg-vine-900/10 md:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-12 grid gap-px border border-vine-900/10 bg-vine-900/10 md:grid-cols-2 lg:grid-cols-4">
           {process.map((item) => (
             <li
               key={item.step}
-              className="reveal group relative bg-sand-100 p-9 transition-colors duration-500 hover:bg-sand-200 lg:p-10"
+              className="reveal group relative bg-sand-100 p-7 transition-colors duration-500 hover:bg-sand-200 lg:p-8"
             >
               <span className="font-display text-5xl leading-none font-light text-vine-400 transition-colors duration-500 group-hover:text-tuile-600">
                 {item.step}
               </span>
-              <h3 className="mt-7 font-display text-2xl font-light text-vine-900">
+              <h3 className="mt-5 font-display text-xl font-light text-vine-900">
                 {item.title}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-vine-600">
+              <p className="mt-3 text-sm leading-relaxed text-vine-600">
                 {item.description}
               </p>
             </li>

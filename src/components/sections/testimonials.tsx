@@ -19,7 +19,7 @@ export function Testimonials() {
             >
               <span
                 aria-hidden
-                className="font-display text-6xl leading-none text-gold-600/45"
+                className="font-display text-6xl leading-none text-feuille-600/45"
               >
                 &ldquo;
               </span>

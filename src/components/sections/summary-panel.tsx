@@ -32,7 +32,7 @@ export function SummaryPanel() {
             ))}
           </dl>
 
-          <span className="rule-gold mt-10" />
+          <span className="rule-feuille mt-10" />
 
           <p className="mt-8 max-w-md font-display text-xl leading-snug text-vine-800 italic sm:text-2xl">
             « {resume.citation} »

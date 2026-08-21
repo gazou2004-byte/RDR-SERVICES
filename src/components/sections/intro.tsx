@@ -25,9 +25,9 @@ export function Intro() {
           {intro.stats.map((stat) => (
             <div
               key={stat.label}
-              className="border-l border-gold-600/30 px-6 text-center first:border-l-0 lg:first:border-l"
+              className="border-l border-feuille-600/30 px-6 text-center first:border-l-0 lg:first:border-l"
             >
-              <dt className="font-display text-4xl font-light text-gold-600 sm:text-5xl">
+              <dt className="font-display text-4xl font-light text-feuille-600 sm:text-5xl">
                 {stat.value}
               </dt>
               <dd className="mx-auto mt-3 max-w-[14rem] text-[0.78rem] leading-relaxed text-vine-600">

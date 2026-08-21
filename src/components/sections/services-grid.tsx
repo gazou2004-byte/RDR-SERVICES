@@ -49,7 +49,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
                       >
                         <span
                           aria-hidden
-                          className="mt-2 h-1 w-1 shrink-0 rotate-45 bg-gold-600"
+                          className="mt-2 h-1 w-1 shrink-0 rotate-45 bg-feuille-600"
                         />
                         {bullet}
                       </li>

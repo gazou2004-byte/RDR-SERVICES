@@ -12,8 +12,8 @@ export function DestinationsGrid() {
     <section id="sejours" className="scroll-mt-24 border-b border-vine-900/10 bg-sand-100">
       <Container className="py-16 sm:py-24 lg:py-24">
         <SectionHeading
-          eyebrow="Quatre territoires du Sud-Ouest"
-          title="Visites privées"
+          eyebrow="Cinq territoires du Sud-Ouest"
+          title="Destinations"
           description="Chaque itinéraire présenté ici est un point de départ. Nous le retravaillons entièrement selon vos envies, votre rythme et la saison."
         />
       </Container>
@@ -23,7 +23,7 @@ export function DestinationsGrid() {
           <Link
             key={destination.slug}
             href={`/destinations/${destination.slug}`}
-            className="reveal group block border-t border-l border-gold-600/25 last:border-r"
+            className="reveal group block border-t border-l border-feuille-600/25 last:border-r"
           >
             {/*
               Hauteur fixe : les devises n'ont pas le même nombre de lignes,

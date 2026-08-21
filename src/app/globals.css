@@ -1,55 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette : fonds ivoire neutres, texte grain noir, or et aubergine */
+  /* Palette de la vigne : rosé, sarment, feuille, vin */
 
   /*
-   * Les fonds. Volontairement neutres : ce sont les photographies qui
-   * portent la couleur, le fond ne fait que les mettre en valeur.
-   * Un ivoire à peine chaud, sans teinte verte ni rosée.
+   * Les fonds : la robe d'un rosé, très diluée. La teinte est celle du vin
+   * rosé, mais désaturée — assez présente pour se voir, assez discrète pour
+   * que le texte et les photos restent devant.
    */
-  --color-sand-50: #fbfaf6;
-  --color-sand-100: #f4f2ea;
-  --color-sand-200: #e9e5d9;
-  --color-sand-300: #d3cec0;
-  --color-sand-400: #b0aa9b;
+  --color-sand-50: #f9f4f3;
+  --color-sand-100: #f1e9e7;
+  --color-sand-200: #e4d8d4;
+  --color-sand-300: #ccbab6;
+  --color-sand-400: #ab9793;
 
-  /* Grain noir — le texte et les fonds sombres. Un noir tirant sur la prune,
-     couleur du raisin mûr, plutôt qu'un gris neutre. */
-  --color-vine-900: #1c1920;
-  --color-vine-800: #29242f;
-  --color-vine-700: #3b3445;
-  --color-vine-600: #514860;
-  --color-vine-500: #6f6681;
-  --color-vine-400: #9b93a8;
-  --color-vine-300: #c4bfcd;
+  /* Sarment — le texte et les fonds sombres. Le brun du bois de vigne,
+     celui des branches taillées et des douelles de tonneau. */
+  --color-vine-900: #2b2018;
+  --color-vine-800: #3a2c21;
+  --color-vine-700: #50402f;
+  --color-vine-600: #67543e;
+  --color-vine-500: #877055;
+  --color-vine-400: #a99578;
+  --color-vine-300: #c9bba4;
 
   /*
-   * Deux accents, deux rôles distincts.
+   * Quatre matières de la vigne, quatre rôles. Chacune a son emploi,
+   * ce qui évite qu'elles se disputent l'attention sur une même page.
    *
-   * L'OR décore : ornements, filets, sur-titres, chiffres, bordures.
-   * L'AUBERGINE agit : boutons, liens actifs, mots mis en valeur dans
-   * les titres, bandeau d'appel à contact.
-   *
-   * S'en tenir à ce partage évite que les deux couleurs se disputent
-   * l'attention sur une même page.
+   *   ROSÉ     les fonds       la robe du vin rosé
+   *   SARMENT  le texte        le bois brun des branches et des tonneaux
+   *   FEUILLE  l'ornement      filets, sur-titres, chiffres, bordures
+   *   VIN      l'action        boutons, liens actifs, bandeau de contact
    */
 
-  /* Or — la décoration */
-  --color-gold-700: #8c6f24;
-  --color-gold-600: #a8862f;
-  --color-gold-500: #c2a04a;
-  --color-gold-400: #d5bb78;
-  --color-gold-300: #e6d5a6;
+  /* Feuille de vigne — la décoration */
+  --color-feuille-700: #354d23;
+  --color-feuille-600: #43602c;
+  --color-feuille-500: #567a38;
+  --color-feuille-400: #7d9d5e;
+  --color-feuille-300: #a8c290;
 
-  /* Aubergine — l'action. La couleur du grain de raisin noir,
-     profonde et sourde, qui tranche sans crier sur l'ivoire. */
-  --color-tuile-800: #34112b;
-  --color-tuile-700: #481838;
-  --color-tuile-600: #64244d;
-  --color-tuile-500: #7e3564;
-  --color-tuile-400: #a05f88;
-  --color-tuile-100: #f4e7f0;
+  /* Vin — l'action */
+  --color-tuile-800: #45101c;
+  --color-tuile-700: #5f1626;
+  --color-tuile-600: #832134;
+  --color-tuile-500: #9d3648;
+  --color-tuile-400: #bb6673;
+  --color-tuile-100: #f7e5e8;
 
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -70,33 +68,33 @@
   }
 
   ::selection {
-    background-color: var(--color-gold-500);
+    background-color: var(--color-feuille-500);
     color: var(--color-vine-900);
   }
 }
 
 @layer components {
-  /* Filet doré sous les titres de section */
-  .rule-gold {
-    @apply block h-px w-16 bg-gold-600;
+  /* Filet vert sous les titres de section */
+  .rule-feuille {
+    @apply block h-px w-16 bg-feuille-600;
   }
 
   .eyebrow {
-    @apply text-[0.72rem] font-medium uppercase text-gold-600;
+    @apply text-[0.72rem] font-medium uppercase text-feuille-600;
     letter-spacing: var(--tracking-brand);
   }
 
   /* Variantes sur fond sombre ou sur image */
-  .rule-gold-light {
-    @apply block h-px w-16 bg-gold-400;
+  .rule-feuille-light {
+    @apply block h-px w-16 bg-feuille-400;
   }
 
   .eyebrow-light {
-    @apply text-[0.72rem] font-medium uppercase text-gold-400;
+    @apply text-[0.72rem] font-medium uppercase text-feuille-400;
     letter-spacing: var(--tracking-brand);
   }
 
-  /* Le mot mis en valeur dans un titre : aubergine, en italique */
+  /* Le mot mis en valeur dans un titre : rouge vin, en italique */
   .accent-word {
     @apply text-tuile-600 normal-case italic;
   }
@@ -147,6 +145,56 @@
   .js .reveal,
   .js .reveal.is-visible {
     opacity: 1;
+    animation: none;
+  }
+}
+
+/*
+ * Fenêtre de discussion (voir `chat-widget.tsx`).
+ *
+ * Le formulaire de devis a été dessiné pour une pleine largeur : ses champs
+ * se mettent sur deux colonnes dès le palier `sm:`. Or ce palier regarde la
+ * largeur de la fenêtre du navigateur, pas celle du panneau — sur un grand
+ * écran, deux colonnes se retrouveraient donc tassées dans 25 rem. On force
+ * la colonne unique et on resserre les espacements.
+ */
+.chat-formulaire .grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.85rem;
+}
+
+.chat-formulaire form > * + * {
+  margin-top: 0.85rem;
+}
+
+/* Neuf champs dans un panneau étroit : sans cela, le défilement n'en finit pas. */
+.chat-formulaire input,
+.chat-formulaire select {
+  padding-block: 0.6rem;
+}
+
+.chat-formulaire textarea {
+  min-height: 6rem;
+}
+
+@keyframes chat-apparition {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.chat-panneau {
+  animation: chat-apparition 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: bottom right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-panneau {
     animation: none;
   }
 }

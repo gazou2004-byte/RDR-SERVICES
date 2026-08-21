@@ -1,5 +1,5 @@
 /**
- * Ornement en hachures dorées, posé au-dessus des titres de section.
+ * Ornement en hachures vertes, posé au-dessus des titres de section.
  * Rappelle les rangs de vigne vus de loin.
  */
 export function Ornament({
@@ -10,7 +10,9 @@ export function Ornament({
   /** `light` sur les fonds sombres. */
   tone?: "dark" | "light";
 }) {
-  const stroke = tone === "light" ? "#d5bb78" : "#a8862f";
+  // Le vert de feuille de vigne, pris dans la palette plutôt qu'en dur.
+  const stroke =
+    tone === "light" ? "var(--color-feuille-400)" : "var(--color-feuille-600)";
 
   return (
     <svg

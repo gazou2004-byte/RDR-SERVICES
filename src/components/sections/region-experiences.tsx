@@ -35,7 +35,7 @@ export function RegionExperiences({ region }: { region: string }) {
                 />
               </div>
 
-              <p className="mt-6 text-[0.7rem] tracking-[0.24em] text-gold-600 uppercase">
+              <p className="mt-6 text-[0.7rem] tracking-[0.24em] text-feuille-600 uppercase">
                 {experience.place}
               </p>
               <h3 className="mt-2.5 font-display text-2xl leading-tight font-light text-vine-900">

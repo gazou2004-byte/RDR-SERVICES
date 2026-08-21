@@ -16,7 +16,7 @@ export function Container({
 }
 
 /**
- * Titre de section : ornement doré, grande capitale sérif, filet doré,
+ * Titre de section : ornement vert, grande capitale sérif, filet vert,
  * puis le texte d'introduction. Centré par défaut.
  */
 export function SectionHeading({
@@ -63,7 +63,7 @@ export function SectionHeading({
             {/* Sur un titre centré, l'accent prend sa propre ligne */}
             {centered ? null : " "}
             <span
-              className={`normal-case italic ${centered ? "block" : ""} ${light ? "text-gold-400" : "text-tuile-600"}`}
+              className={`normal-case italic ${centered ? "block" : ""} ${light ? "text-feuille-400" : "text-tuile-600"}`}
             >
               {accent}
             </span>
@@ -72,7 +72,7 @@ export function SectionHeading({
       </h2>
 
       <span
-        className={`${light ? "rule-gold-light" : "rule-gold"} mt-8 ${centered ? "mx-auto" : ""}`}
+        className={`${light ? "rule-feuille-light" : "rule-feuille"} mt-8 ${centered ? "mx-auto" : ""}`}
       />
 
       {description ? (

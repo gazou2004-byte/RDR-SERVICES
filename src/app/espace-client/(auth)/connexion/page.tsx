@@ -18,7 +18,7 @@ export default function LoginPage() {
         Retrouvez vos séjours, vos documents de voyage et vos échanges avec
         votre conseiller.
       </p>
-      <span className="rule-gold mt-8 mb-9" />
+      <span className="rule-feuille mt-8 mb-9" />
       <LoginForm />
     </>
   );

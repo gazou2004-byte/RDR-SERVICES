@@ -5,16 +5,38 @@
 
 export const company = {
   name: "RDR Services",
-  legalName: "RDR Services",
+  legalName: "RDR SERVICES",
   tagline: "Conciergerie & voyages privés",
   baseline: "L'art de voyager dans le Sud-Ouest",
+
+  // ⚠ Les deux seules données encore fictives : à remplacer avant toute
+  // communication autour du site.
   phone: "+33 6 00 00 00 00",
   phoneHref: "+33600000000",
   email: "contact@rdr-services.fr",
-  address: "Bordeaux, Nouvelle-Aquitaine, France",
-  // Numéros à remplacer par les vôtres une fois les licences obtenues
-  licenceAtoutFrance: "IM0000000000",
-  licenceTransport: "EVTC0000000000",
+
+  address: "22 rue de la Marne, 33500 Libourne",
+  city: "Libourne",
+
+  /*
+   * Identité légale, relevée au registre national des entreprises
+   * (annuaire-entreprises.data.gouv.fr et societe.com, SIREN 920 247 517).
+   *
+   * Aucune immatriculation au registre des opérateurs de voyages et de
+   * séjours n'est rattachée à ce SIREN : le site ne doit donc afficher
+   * aucun numéro de licence tant qu'elle n'est pas obtenue.
+   */
+  legal: {
+    form: "SASU — société par actions simplifiée à associé unique",
+    capital: "2 500 €",
+    siren: "920 247 517",
+    siret: "920 247 517 00013",
+    rcs: "Libourne",
+    tva: "FR52920247517",
+    naf: "7420Z",
+    director: "Romain Da Rugna",
+    createdAt: "25 octobre 2022",
+  },
   socials: {
     instagram: "https://instagram.com/",
     linkedin: "https://linkedin.com/",
@@ -25,13 +47,16 @@ export const company = {
 /**
  * Le site tient sur une seule page : le menu pointe vers ses sections.
  * Seules les quatre destinations ont leur propre page, atteignable depuis
- * la section « Visites privées ».
+ * la section « Destinations ».
  */
 export const nav = [
   { label: "Accueil", href: "/#accueil" },
   { label: "Services", href: "/#services" },
-  { label: "Visites privées", href: "/#sejours", regions: true },
+  { label: "Destinations", href: "/#sejours", regions: true },
   { label: "À propos", href: "/#a-propos" },
+  // Ces deux entrées n'ont plus de section dans la page : elles ouvrent la
+  // fenêtre de discussion sur l'onglet correspondant (voir `chat-widget.tsx`).
+  { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
 ] as const;
 
@@ -54,14 +79,14 @@ export const hero = {
    */
   panels: [
     {
-      image: "/images/biarritz-plage.jpg",
-      label: "Pyrénées-Atlantiques",
-      cadrage: "center",
-    },
-    {
       image: "/images/vignes-chateau.jpg",
       label: "Médoc",
       cadrage: "72% center",
+    },
+    {
+      image: "/images/biarritz-plage.jpg",
+      label: "Pyrénées-Atlantiques",
+      cadrage: "center",
     },
     {
       image: "/images/hero-contact.jpg",
@@ -84,8 +109,8 @@ export const intro = {
     "D'une journée à trois semaines, du vignoble bordelais à l'océan landais. Le programme se construit avec vous, se réajuste en route si l'envie change, et reste entre les mains d'une seule personne du début à la fin.",
   ],
   stats: [
+    { value: "10 ans", label: "dans la conciergerie de luxe" },
     { value: "5", label: "territoires parcourus toute l'année" },
-    { value: "1 à 21", label: "jours, en privatif intégral" },
     { value: "24/7", label: "assistance pendant votre séjour" },
     { value: "100 %", label: "sur mesure, jamais de groupe" },
   ],
@@ -98,6 +123,7 @@ export type Service = {
   description: string;
   bullets: string[];
   image: string;
+  /** Bandeau de licence, affiché seulement si le numéro existe réellement. */
   licence?: string;
 };
 
@@ -131,7 +157,6 @@ export const services: Service[] = [
     ],
     image:
       "/images/bordeaux-bourse.jpg",
-    licence: `Licence ATOUT FRANCE n° ${company.licenceAtoutFrance}`,
   },
   {
     slug: "transport-vip",
@@ -147,7 +172,6 @@ export const services: Service[] = [
     ],
     image:
       "/images/vans-chateau.jpg",
-    licence: `Licence de transport n° ${company.licenceTransport}`,
   },
   {
     slug: "acces-privilegies",

@@ -45,12 +45,12 @@ export default async function MessagesPage() {
               key={message.id}
               className={`max-w-2xl border p-6 ${
                 message.fromStaff
-                  ? "border-gold-600/30 bg-sand-100"
-                  : "ml-auto border-vine-900/12 bg-gold-300/40"
+                  ? "border-feuille-600/30 bg-sand-100"
+                  : "ml-auto border-vine-900/12 bg-feuille-300/40"
               }`}
             >
               <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <p className="text-[0.7rem] tracking-[0.18em] text-gold-600 uppercase">
+                <p className="text-[0.7rem] tracking-[0.18em] text-feuille-600 uppercase">
                   {message.fromStaff ? "Votre conseiller" : "Vous"}
                 </p>
                 <p className="text-[0.68rem] text-vine-500">

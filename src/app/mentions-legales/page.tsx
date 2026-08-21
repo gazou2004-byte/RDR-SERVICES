@@ -15,12 +15,14 @@ export default function LegalPage() {
         <h1 className="mt-5 font-display text-5xl font-light text-vine-900">
           Mentions légales
         </h1>
-        <span className="rule-gold mt-8" />
+        <span className="rule-feuille mt-8" />
 
         <div className="mt-14 max-w-2xl space-y-10 text-[0.92rem] leading-relaxed text-vine-600">
-          <p className="border border-gold-600/35 bg-gold-300/40 px-5 py-4 text-[0.85rem] text-gold-700">
-            À compléter avec vos informations réelles (raison sociale, SIRET,
-            capital, assurance RCP, garantie financière) avant la mise en ligne.
+          <p className="border border-tuile-600/35 bg-tuile-100 px-5 py-4 text-[0.85rem] text-tuile-700">
+            Restent à fournir avant toute communication autour du site : le
+            téléphone et l&apos;e-mail réels, la garantie financière,
+            l&apos;assurance responsabilité civile professionnelle et le
+            médiateur de la consommation.
           </p>
 
           <Block title="Éditeur du site">
@@ -32,36 +34,53 @@ export default function LegalPage() {
               E-mail : {company.email}
             </p>
             <p>
-              Forme juridique : à compléter
+              Forme juridique : {company.legal.form}
               <br />
-              Capital social : à compléter
+              Capital social : {company.legal.capital}
               <br />
-              SIRET : à compléter
+              SIREN : {company.legal.siren}
               <br />
-              TVA intracommunautaire : à compléter
+              SIRET (siège) : {company.legal.siret}
               <br />
-              Directeur de la publication : à compléter
+              RCS : {company.legal.rcs}
+              <br />
+              Code APE : {company.legal.naf}
+              <br />
+              TVA intracommunautaire : {company.legal.tva}
+              <br />
+              Immatriculée le {company.legal.createdAt}
+              <br />
+              Directeur de la publication : {company.legal.director}
             </p>
           </Block>
 
           <Block title="Immatriculations et garanties">
             <p>
-              Immatriculation au registre des opérateurs de voyages et de
-              séjours (ATOUT FRANCE) : n° {company.licenceAtoutFrance}
+              {company.legalName} n&apos;est pas immatriculée au registre des
+              opérateurs de voyages et de séjours tenu par ATOUT FRANCE et ne
+              vend pas de forfaits touristiques. Les prestations présentées sur
+              ce site relèvent de la conciergerie et de l&apos;organisation de
+              services à la demande.
+            </p>
+            <p>
+              Garantie financière : sans objet en l&apos;état.
               <br />
-              Licence de transport (EVTC) : n° {company.licenceTransport}
-              <br />
-              Garantie financière : à compléter
-              <br />
-              Assurance responsabilité civile professionnelle : à compléter
+              Assurance responsabilité civile professionnelle : à compléter.
             </p>
           </Block>
 
           <Block title="Hébergement">
             <p>
-              Le site est hébergé par l&apos;hébergeur choisi lors du
-              déploiement (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789,
-              États-Unis, si vous utilisez Vercel).
+              Le site est hébergé par GitHub, Inc., 88 Colin P. Kelly Jr.
+              Street, San Francisco, CA 94107, États-Unis
+              (
+              <a
+                href="https://github.com"
+                className="underline transition-colors hover:text-tuile-600"
+              >
+                github.com
+              </a>
+              ).
             </p>
           </Block>
 

@@ -22,7 +22,7 @@ export function ContactSection() {
 
           <aside className="reveal lg:col-span-5">
             <div className="border border-vine-900/12 bg-sand-50 p-8">
-              <h3 className="text-[0.7rem] font-medium tracking-[0.24em] text-gold-600 uppercase">
+              <h3 className="text-[0.7rem] font-medium tracking-[0.24em] text-feuille-600 uppercase">
                 Nous joindre directement
               </h3>
               <dl className="mt-7 space-y-6">
@@ -69,7 +69,7 @@ export function ContactSection() {
             <ol className="mt-8 hidden space-y-5 border border-vine-900/12 p-8 sm:block">
               {process.map((item) => (
                 <li key={item.step} className="flex gap-5">
-                  <span className="font-display text-xl leading-none font-light text-gold-600">
+                  <span className="font-display text-xl leading-none font-light text-feuille-600">
                     {item.step}
                   </span>
                   <div>

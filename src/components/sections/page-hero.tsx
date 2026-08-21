@@ -40,11 +40,11 @@ export function PageHero({
           {accent ? (
             <>
               {" "}
-              <span className="text-gold-400 normal-case italic">{accent}</span>
+              <span className="text-feuille-400 normal-case italic">{accent}</span>
             </>
           ) : null}
         </h1>
-        <span className="rule-gold-light reveal mx-auto mt-8" />
+        <span className="rule-feuille-light reveal mx-auto mt-8" />
         {description ? (
           <p className="reveal mx-auto mt-8 max-w-2xl text-[0.98rem] leading-relaxed text-sand-200">
             {description}

@@ -40,15 +40,16 @@ Vous y trouverez, dans l'ordre :
 
 | Ce que vous voulez changer | Section du fichier |
 |---|---|
-| Téléphone, e-mail, adresse, licences, réseaux sociaux | `company` |
+| Téléphone, e-mail, adresse, identité légale, réseaux sociaux | `company` |
 | Les entrées du menu | `nav` |
 | Le grand titre de la page d'accueil | `hero` |
 | Le texte de présentation et les 4 chiffres clés | `intro` |
+| Les 22 activités par région | `activites` |
 | Les 4 services et leurs détails | `services` |
-| Les 6 expériences | `experiences` |
-| Les 4 destinations, leurs temps forts et itinéraires | `destinations` |
+| Les 9 expériences | `experiences` |
+| Les 5 régions, leurs temps forts et itinéraires | `destinations` |
 | Les 4 étapes « comment ça se passe » | `process` |
-| Les témoignages clients | `testimonials` |
+| Les témoignages clients (⚠ inventés, non affichés) | `testimonials` |
 | Les questions fréquentes | `faq` |
 
 Aucune connaissance technique n'est nécessaire : il suffit de remplacer le texte
@@ -67,13 +68,21 @@ licences l'exigent. **Dès que vous les remplacez par vos propres photos,
 supprimez les entrées correspondantes** dans
 [`src/content/credits.json`](src/content/credits.json).
 
-### Informations légales à compléter
+### Informations légales
 
-Les pages `/mentions-legales` et `/confidentialite` contiennent des mentions
-« à compléter » : raison sociale, SIRET, capital, garantie financière,
-assurance RCP, médiateur de la consommation. Ces informations sont
-**obligatoires** pour une agence de voyage. Complétez-les avant la mise en
-ligne, ainsi que les numéros de licence dans `company` (`site.ts`).
+L'identité de la société est renseignée dans `company.legal` (`site.ts`) à
+partir du registre national des entreprises : SASU, capital 2 500 €,
+SIREN 920 247 517, RCS Libourne, TVA FR52920247517.
+
+**Restent à fournir** : le téléphone et l'e-mail réels (les valeurs actuelles
+sont fictives), l'assurance responsabilité civile professionnelle et le
+médiateur de la consommation.
+
+**Aucune immatriculation au registre des opérateurs de voyages (ATOUT FRANCE)
+n'est rattachée à ce SIREN** — l'activité déclarée est la photographie
+(code APE 7420Z). Les deux numéros de licence qu'affichait le site étaient
+inventés et ont été retirés. Vendre des forfaits touristiques exige cette
+immatriculation, une garantie financière et une RCP.
 
 ---
 
@@ -81,18 +90,24 @@ ligne, ainsi que les numéros de licence dans `company` (`site.ts`).
 
 ### Pages publiques
 
+Le site tient sur une seule page, plus une fiche par région. Les anciennes
+pages `/services`, `/experiences`, `/a-propos` et `/contact` ont été
+supprimées : elles reprenaient le contenu de l'accueil, où le menu conduit
+maintenant par ancres.
+
 | Page | Adresse |
 |---|---|
-| Accueil | `/` |
-| Services | `/services` |
-| Expériences | `/experiences` |
-| Destinations | `/destinations` |
-| Détail d'une destination | `/destinations/bordeaux-medoc`, `/perigord`, `/pays-basque`, `/gascogne-armagnac` |
-| À propos | `/a-propos` |
-| Contact & devis | `/contact` |
+| Accueil (services, destinations, à propos, étapes) | `/` |
+| Détail d'une région | `/destinations/bordeaux-medoc`, `/perigord-dordogne`, `/landes`, `/pyrenees-atlantiques`, `/gascogne-armagnac` |
 | Mentions légales | `/mentions-legales` |
 | Confidentialité | `/confidentialite` |
 | Crédits photo | `/credits` |
+
+Les questions fréquentes et la demande de devis n'ont plus de section dans la
+page : elles vivent dans la **fenêtre de discussion** en bas à droite de
+l'écran, disponible partout. Les entrées « FAQ » et « Contact » du menu
+l'ouvrent sur le bon onglet. Voir
+[`src/components/chat/chat-widget.tsx`](src/components/chat/chat-widget.tsx).
 
 ### Espace client
 
@@ -131,22 +146,32 @@ dans la table `leads`. Pour les consulter : `npm run db:studio`.
 
 ---
 
-## Mise en ligne de la vitrine (déjà en place)
+## Mise en ligne de la vitrine — automatique
 
-Le site public est publié sur GitHub Pages :
+Le site public est en ligne à cette adresse, et elle ne change jamais :
 
-**https://gazou2004-byte.github.io/RDR-SERVICES/**
+**https://gazou2004-byte.github.io/**
 
-Pour republier après une modification :
+**Il n'y a rien à lancer.** À chaque modification envoyée sur la branche `main`,
+GitHub recompile le site et le remet en ligne tout seul, en deux à trois
+minutes :
 
 ```bash
-npm run deploy:vitrine
+git add -A
+git commit -m "ce que j'ai changé"
+git push
 ```
 
-La commande recompile le site public et le pousse sur la branche `gh-pages`.
-Le nom du sous-dossier est déduit du dépôt distant : si le dépôt est renommé,
-pensez à mettre à jour l'adresse avec
-`git remote set-url origin <nouvelle-url>` avant de republier.
+Le déroulé est visible dans l'onglet **Actions** du dépôt. Le bouton
+« Run workflow » y permet aussi de relancer une publication sans rien modifier.
+
+La recette est décrite dans
+[`.github/workflows/publier.yml`](.github/workflows/publier.yml). Le dépôt
+s'appelle `gazou2004-byte.github.io` : ce nom particulier est ce qui fait servir
+le site à la racine plutôt que dans un sous-dossier.
+
+`npm run deploy:vitrine` existe toujours pour publier à la main depuis le poste,
+mais ce n'est plus nécessaire.
 
 L'espace client n'est pas inclus dans cette version : il lui faut un serveur
 et une base de données. Voir la section suivante.

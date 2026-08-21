@@ -150,7 +150,7 @@ dans la table `leads`. Pour les consulter : `npm run db:studio`.
 
 Le site public est en ligne à cette adresse, et elle ne change jamais :
 
-**https://gazou2004-byte.github.io/**
+**https://gazou2004-byte.github.io/RDRSERVICES-vitrine/**
 
 **Il n'y a rien à lancer.** À chaque modification envoyée sur la branche `main`,
 GitHub recompile le site et le remet en ligne tout seul, en deux à trois
@@ -166,9 +166,11 @@ Le déroulé est visible dans l'onglet **Actions** du dépôt. Le bouton
 « Run workflow » y permet aussi de relancer une publication sans rien modifier.
 
 La recette est décrite dans
-[`.github/workflows/publier.yml`](.github/workflows/publier.yml). Le dépôt
-s'appelle `gazou2004-byte.github.io` : ce nom particulier est ce qui fait servir
-le site à la racine plutôt que dans un sous-dossier.
+[`.github/workflows/publier.yml`](.github/workflows/publier.yml). Le sous-dossier
+de l'adresse est déduit du nom du dépôt à chaque publication : **renommer le
+dépôt ne casse rien**, il suffit de relancer une publication depuis l'onglet
+Actions. Un dépôt nommé `gazou2004-byte.github.io` servirait le site à la
+racine, sans sous-dossier.
 
 `npm run deploy:vitrine` existe toujours pour publier à la main depuis le poste,
 mais ce n'est plus nécessaire.

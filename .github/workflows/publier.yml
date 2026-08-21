@@ -1,11 +1,11 @@
 # Publication automatique du site vitrine.
 #
 # À chaque modification envoyée sur la branche `main`, GitHub compile le site
-# et le met en ligne. Il n'y a plus rien à lancer à la main : le lien
-# https://gazou2004-byte.github.io/ montre toujours la dernière version.
+# et le met en ligne. Il n'y a plus rien à lancer à la main : l'adresse du
+# dépôt sur GitHub Pages montre toujours la dernière version.
 #
 # Le bouton « Run workflow » sur l'onglet Actions permet aussi de relancer
-# une publication sans rien modifier.
+# une publication sans rien modifier — utile après un renommage du dépôt.
 
 name: Publier le site
 
@@ -50,10 +50,26 @@ jobs:
         env:
           DATABASE_URL: file:./ci.db
 
-      # Le chemin de base est vide : sur un dépôt nommé <compte>.github.io,
-      # le site est servi à la racine et non dans un sous-dossier.
+      # GitHub Pages sert le site dans un sous-dossier au nom du dépôt, sauf
+      # si celui-ci s'appelle <compte>.github.io — auquel cas c'est la racine.
+      # Le chemin est déduit du nom réel plutôt qu'écrit en dur : renommer le
+      # dépôt ne casse plus les feuilles de style ni les photos.
+      - name: Déterminer le chemin de base
+        id: chemin
+        run: |
+          compte="${GITHUB_REPOSITORY%%/*}"
+          nom="${GITHUB_REPOSITORY#*/}"
+          minuscules() { printf '%s' "$1" | tr '[:upper:]' '[:lower:]'; }
+          if [ "$(minuscules "$nom")" = "$(minuscules "$compte").github.io" ]; then
+            base=""
+          else
+            base="/$nom"
+          fi
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+          echo "Le site sera servi sous « ${base:-/} »"
+
       - name: Compiler la vitrine
-        run: node scripts/build-vitrine.mjs ""
+        run: node scripts/build-vitrine.mjs "${{ steps.chemin.outputs.base }}"
         env:
           DATABASE_URL: file:./ci.db
           AUTH_SECRET: valeur-de-compilation-sans-usage-en-vitrine

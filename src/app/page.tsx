@@ -2,7 +2,6 @@ import { Hero } from "@/components/sections/hero";
 import { Intro } from "@/components/sections/intro";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { DestinationsGrid } from "@/components/sections/destinations-grid";
-import { SummaryPanel } from "@/components/sections/summary-panel";
 import { AboutSection } from "@/components/sections/about-section";
 import { Process } from "@/components/sections/process";
 import { Cta } from "@/components/sections/cta";
@@ -25,7 +24,9 @@ export default function HomePage() {
           section tenait 1 991 px pour quatre phrases d'une ligne. */}
       <ServicesGrid detailed />
       <DestinationsGrid />
-      <SummaryPanel />
+      {/* Le panneau de synthèse qui se trouvait ici a été retiré : ses cinq
+          points répétaient les quatre services, et « Un seul interlocuteur »
+          est déjà le sur-titre de leur section. */}
       <AboutSection />
       {/* Les quatre étapes répondent à la question qui retient un visiteur
           avant d'écrire : que se passe-t-il si j'appelle ? */}

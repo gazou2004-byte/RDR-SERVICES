@@ -49,14 +49,19 @@ export default function CreditsPage() {
                 {credit.license}
               </p>
               <div className="mt-3 flex flex-wrap gap-5 text-[0.72rem]">
-                <a
-                  href={credit.page}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-feuille-600 transition-colors hover:text-tuile-600"
-                >
-                  Page Wikimedia Commons →
-                </a>
+                {/* Les photographies fournies par RDR Services n'ont pas de
+                    page d'origine : sans ce garde-fou, le lien s'affichait
+                    quand même et ne menait nulle part. */}
+                {credit.page ? (
+                  <a
+                    href={credit.page}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-feuille-600 transition-colors hover:text-tuile-600"
+                  >
+                    Page Wikimedia Commons →
+                  </a>
+                ) : null}
                 {credit.licenseUrl ? (
                   <a
                     href={credit.licenseUrl}

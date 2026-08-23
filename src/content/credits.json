@@ -233,11 +233,11 @@
   },
   {
     "slot": "dest-landes",
-    "title": "Courant Huchet.JPG",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "author": "No machine-readable author provided. Jibi44 assumed (based on copyright claims).",
-    "page": "https://commons.wikimedia.org/wiki/File:Courant_Huchet.JPG"
+    "title": "Photographie fournie par RDR Services",
+    "license": "Droits confirmés par le propriétaire du site",
+    "licenseUrl": "",
+    "author": "",
+    "page": ""
   },
   {
     "slot": "dest-perigord",
@@ -336,14 +336,6 @@
     "page": "https://commons.wikimedia.org/wiki/File:Chais_%C3%A0_barriques_de_Sigalas.jpg"
   },
   {
-    "slot": "hero-contact",
-    "title": "Paysage Dordogne Domme.jpg",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "author": "Jebulon",
-    "page": "https://commons.wikimedia.org/wiki/File:Paysage_Dordogne_Domme.jpg"
-  },
-  {
     "slot": "hero-experiences",
     "title": "Vignobles de Moulis-en-Médoc.jpg",
     "license": "CC BY-SA 4.0",
@@ -401,6 +393,14 @@
   },
   {
     "slot": "vignes-chateau",
+    "title": "Photographie fournie par RDR Services",
+    "license": "Droits confirmés par le propriétaire du site",
+    "licenseUrl": "",
+    "author": "",
+    "page": ""
+  },
+  {
+    "slot": "bearn-ossau",
     "title": "Photographie fournie par RDR Services",
     "license": "Droits confirmés par le propriétaire du site",
     "licenseUrl": "",

@@ -17,6 +17,39 @@ const ongletParAncre: Record<string, Onglet> = {
   faq: "questions",
 };
 
+/* --- Déplacement vertical du lanceur ------------------------------------- */
+
+/** Hauteur par défaut du bouton au-dessus du bas de l'écran, en pixels. */
+const BAS_DEFAUT = 20;
+/** On l'empêche de toucher les bords. */
+const MARGE = 8;
+/** En deçà, on considère que le doigt a tremblé et qu'il s'agit d'un clic. */
+const SEUIL_GLISSE = 4;
+/** Un pas de flèche, pour ceux qui n'utilisent pas de souris. */
+const PAS_CLAVIER = 16;
+const CLE_POSITION = "rdr-lanceur-bas";
+const CLE_PANNEAU = "rdr-panneau-bas";
+
+/**
+ * La fenêtre ne se déplace que sur grand écran : sous 640 px elle est tenue
+ * par le haut *et* par le bas, lui imposer une hauteur la déformerait.
+ */
+function grandEcran() {
+  return window.matchMedia("(min-width: 640px)").matches;
+}
+
+/** Hauteur retenue de la visite précédente, ou `null` si rien n'a bougé. */
+function positionRetenue(cle: string): number | null {
+  try {
+    const v = window.localStorage.getItem(cle);
+    const n = v === null ? NaN : Number(v);
+    return Number.isFinite(n) ? n : null;
+  } catch {
+    // Navigation privée ou stockage refusé : la position par défaut fera.
+    return null;
+  }
+}
+
 /**
  * Fenêtre de discussion posée en bas à droite de l'écran.
  *
@@ -32,8 +65,111 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
   const pathname = usePathname();
   const [ouvert, setOuvert] = useState(false);
   const [onglet, setOnglet] = useState<Onglet>("questions");
-  const lanceur = useRef<HTMLButtonElement>(null);
-  const panneau = useRef<HTMLDivElement>(null);
+  const lanceur = useRef<HTMLButtonElement | null>(null);
+  const panneau = useRef<HTMLDivElement | null>(null);
+
+  /*
+   * Le bouton se glisse de haut en bas et retient sa hauteur d'une visite à
+   * l'autre.
+   *
+   * La position est écrite directement sur le nœud plutôt que gardée dans un
+   * état React, pour deux raisons. Le serveur ignore le contenu du stockage
+   * local : un état qui en découlerait ferait diverger le HTML rendu ici de
+   * celui rendu là-bas. Et pendant le glissement, écrire dans le style évite
+   * de reconstruire le composant à chaque pixel parcouru.
+   *
+   * `null` signifie « jamais déplacé » : c'est alors la classe `bottom-5` qui
+   * décide, et rien n'est écrit.
+   */
+  const basRef = useRef<number | null>(null);
+  const glisse = useRef<{ y0: number; bas0: number; bouge: boolean } | null>(
+    null,
+  );
+  const vientDeGlisser = useRef(false);
+
+  const poser = useCallback((v: number) => {
+    const n = lanceur.current;
+    if (!n) return;
+    const borne = Math.min(
+      Math.max(v, MARGE),
+      window.innerHeight - n.offsetHeight - MARGE,
+    );
+    basRef.current = borne;
+    n.style.bottom = `${borne}px`;
+  }, []);
+
+  /*
+   * Le bouton s'efface pendant que la fenêtre est ouverte. À sa réapparition
+   * il faut lui rendre sa hauteur, d'où une référence en fonction plutôt qu'un
+   * simple objet.
+   */
+  const attacher = useCallback(
+    (n: HTMLButtonElement | null) => {
+      lanceur.current = n;
+      if (!n) return;
+      if (basRef.current === null) basRef.current = positionRetenue(CLE_POSITION);
+      if (basRef.current !== null) poser(basRef.current);
+    },
+    [poser],
+  );
+
+  const retenir = useCallback(() => {
+    if (basRef.current === null) return;
+    try {
+      window.localStorage.setItem(CLE_POSITION, String(basRef.current));
+    } catch {
+      // La position vaut alors pour la visite en cours seulement.
+    }
+  }, []);
+
+  /*
+   * La fenêtre se déplace de la même façon, en l'attrapant par son en-tête.
+   * Elle garde sa propre hauteur : on ne veut pas qu'en remontant le bouton on
+   * déplace la fenêtre, ni l'inverse.
+   */
+  const basPanneau = useRef<number | null>(null);
+  const glissePanneau = useRef<{ y0: number; bas0: number } | null>(null);
+
+  const poserPanneau = useCallback((v: number) => {
+    const n = panneau.current;
+    if (!n || !grandEcran()) return;
+    const borne = Math.min(
+      Math.max(v, MARGE),
+      window.innerHeight - n.offsetHeight - MARGE,
+    );
+    basPanneau.current = borne;
+    n.style.bottom = `${borne}px`;
+  }, []);
+
+  const attacherPanneau = useCallback(
+    (n: HTMLDivElement | null) => {
+      panneau.current = n;
+      if (!n) return;
+      if (!grandEcran()) {
+        // Retour au petit écran : on rend la main aux classes.
+        n.style.bottom = "";
+        return;
+      }
+      if (basPanneau.current === null)
+        basPanneau.current = positionRetenue(CLE_PANNEAU);
+      if (basPanneau.current !== null) poserPanneau(basPanneau.current);
+    },
+    [poserPanneau],
+  );
+
+  // Une fenêtre rétrécie ne doit laisser ni le bouton ni la discussion
+  // hors de l'écran.
+  useEffect(() => {
+    const onResize = () => {
+      if (basRef.current !== null) poser(basRef.current);
+      const n = panneau.current;
+      if (!n) return;
+      if (!grandEcran()) n.style.bottom = "";
+      else if (basPanneau.current !== null) poserPanneau(basPanneau.current);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [poser, poserPanneau]);
 
   const ouvrir = useCallback((cible: Onglet) => {
     setOnglet(cible);
@@ -109,15 +245,54 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
 
       {ouvert ? (
         <div
-          ref={panneau}
+          ref={attacherPanneau}
           tabIndex={-1}
           role="dialog"
           aria-modal="false"
           aria-label={`Discuter avec ${company.name}`}
           className="chat-panneau fixed top-20 right-3 bottom-4 left-3 z-50 flex flex-col overflow-hidden border border-vine-900/15 bg-sand-50 shadow-[0_24px_60px_-20px] shadow-vine-900/45 outline-none sm:top-auto sm:left-auto sm:h-[min(40rem,calc(100dvh-7rem))] sm:w-[25rem]"
         >
-          {/* En-tête */}
-          <header className="flex items-start justify-between gap-4 bg-vine-900 px-5 py-4">
+          {/* En-tête : c'est aussi la poignée qui déplace la fenêtre. */}
+          <header
+            onPointerDown={(e) => {
+              // La croix de fermeture reste un bouton, pas une poignée.
+              if ((e.target as HTMLElement).closest("button")) return;
+              if (e.pointerType === "mouse" && e.button !== 0) return;
+              if (!grandEcran()) return;
+              const n = panneau.current;
+              if (!n) return;
+              glissePanneau.current = {
+                y0: e.clientY,
+                bas0:
+                  basPanneau.current ??
+                  window.innerHeight - n.getBoundingClientRect().bottom,
+              };
+              e.currentTarget.setPointerCapture(e.pointerId);
+            }}
+            onPointerMove={(e) => {
+              const g = glissePanneau.current;
+              if (!g) return;
+              poserPanneau(g.bas0 + (g.y0 - e.clientY));
+            }}
+            onPointerUp={(e) => {
+              if (!glissePanneau.current) return;
+              glissePanneau.current = null;
+              e.currentTarget.releasePointerCapture(e.pointerId);
+              if (basPanneau.current === null) return;
+              try {
+                window.localStorage.setItem(
+                  CLE_PANNEAU,
+                  String(basPanneau.current),
+                );
+              } catch {
+                // La position vaut alors pour la visite en cours seulement.
+              }
+            }}
+            onPointerCancel={() => {
+              glissePanneau.current = null;
+            }}
+            className="flex items-start justify-between gap-4 bg-vine-900 px-5 py-4 select-none sm:cursor-grab sm:touch-none sm:active:cursor-grabbing"
+          >
             <div>
               <p className="font-display text-lg leading-none font-light tracking-[0.14em] text-sand-50">
                 RDR <span className="text-feuille-300">SERVICES</span>
@@ -235,11 +410,55 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
           sa place et porte sa propre croix de fermeture. */}
       {!ouvert ? (
         <button
-          ref={lanceur}
+          ref={attacher}
           type="button"
-          onClick={() => ouvrir("questions")}
-          aria-label="Ouvrir la discussion"
-          className="chat-lanceur fixed right-4 bottom-5 z-50 flex items-center gap-2.5 bg-tuile-600 px-4 py-3 text-sand-50 shadow-[0_12px_28px_-10px] shadow-vine-900/60 transition-colors hover:bg-tuile-700 sm:right-5 sm:gap-3 sm:px-5"
+          onPointerDown={(e) => {
+            if (e.pointerType === "mouse" && e.button !== 0) return;
+            glisse.current = {
+              y0: e.clientY,
+              bas0: basRef.current ?? BAS_DEFAUT,
+              bouge: false,
+            };
+            e.currentTarget.setPointerCapture(e.pointerId);
+          }}
+          onPointerMove={(e) => {
+            const g = glisse.current;
+            if (!g) return;
+            const ecart = g.y0 - e.clientY;
+            if (Math.abs(ecart) > SEUIL_GLISSE) g.bouge = true;
+            if (g.bouge) poser(g.bas0 + ecart);
+          }}
+          onPointerUp={(e) => {
+            const g = glisse.current;
+            if (!g) return;
+            glisse.current = null;
+            e.currentTarget.releasePointerCapture(e.pointerId);
+            // Le clic part juste après : on lui dit de ne pas ouvrir la
+            // fenêtre si le bouton vient d'être déplacé.
+            vientDeGlisser.current = g.bouge;
+            if (g.bouge) retenir();
+          }}
+          onPointerCancel={() => {
+            glisse.current = null;
+          }}
+          onKeyDown={(e) => {
+            if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
+            e.preventDefault();
+            poser(
+              (basRef.current ?? BAS_DEFAUT) +
+                (e.key === "ArrowUp" ? PAS_CLAVIER : -PAS_CLAVIER),
+            );
+            retenir();
+          }}
+          onClick={() => {
+            if (vientDeGlisser.current) {
+              vientDeGlisser.current = false;
+              return;
+            }
+            ouvrir("questions");
+          }}
+          aria-label="Ouvrir la discussion. Glissez le bouton, ou utilisez les flèches haut et bas, pour le déplacer."
+          className="chat-lanceur fixed right-4 bottom-5 z-50 flex touch-none cursor-grab items-center gap-2.5 bg-tuile-600 px-4 py-3 text-sand-50 shadow-[0_12px_28px_-10px] shadow-vine-900/60 transition-colors select-none hover:bg-tuile-700 active:cursor-grabbing sm:right-5 sm:gap-3 sm:px-5"
         >
           <svg
             aria-hidden

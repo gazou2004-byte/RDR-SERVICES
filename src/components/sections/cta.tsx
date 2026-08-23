@@ -11,9 +11,10 @@ import { company } from "@/content/site";
  */
 export function Cta({
   title = "Parlons de votre séjour",
-  description = "Un appel de trente minutes suffit. Sans engagement, et sans commercial au bout du fil.",
+  description,
 }: {
   title?: string;
+  /** Facultatif : sans elle, le bandeau se réduit au titre et à l'appel. */
   description?: string;
 }) {
   return (
@@ -28,9 +29,11 @@ export function Cta({
         <h2 className="reveal mx-auto max-w-2xl font-display text-xl leading-tight font-light text-sand-50 sm:text-2xl">
           {title}
         </h2>
-        <p className="reveal mx-auto mt-2 max-w-2xl text-[0.85rem] leading-snug text-sand-200">
-          {description}
-        </p>
+        {description ? (
+          <p className="reveal mx-auto mt-2 max-w-2xl text-[0.85rem] leading-snug text-sand-200">
+            {description}
+          </p>
+        ) : null}
 
         {/* Les coordonnées ont quitté le pied de page pour ce bandeau : c'est
             ici qu'on décide d'appeler, pas deux blocs plus bas. L'adresse en a

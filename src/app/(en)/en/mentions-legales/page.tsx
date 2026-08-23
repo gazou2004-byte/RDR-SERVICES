@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { MentionsLegales } from "@/components/pages/mentions-legales";
-import { company } from "@/content/site";
+import { company } from "@/content/en";
 
 export const metadata: Metadata = {
-  title: "Mentions légales",
-  description: `Mentions légales de ${company.name}.`,
+  title: "Legal notice",
+  description: `Legal notice for ${company.name}.`,
   alternates: {
-    canonical: "/mentions-legales/",
+    canonical: "/en/mentions-legales/",
     languages: { fr: "/mentions-legales/", en: "/en/mentions-legales/" },
   },
 };
 
-export default function LegalPage() {
-  return <MentionsLegales langue="fr" />;
+export default function LegalPageEn() {
+  return <MentionsLegales langue="en" />;
 }

@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { Credits } from "@/components/pages/credits";
 
 export const metadata: Metadata = {
-  title: "Crédits photographiques",
+  title: "Photo credits",
   description:
-    "Auteurs et licences des photographies utilisées sur le site RDR Services.",
+    "Authors and licences of the photographs used on the RDR Services site.",
   alternates: {
-    canonical: "/credits/",
+    canonical: "/en/credits/",
     languages: { fr: "/credits/", en: "/en/credits/" },
   },
 };
 
-export default function CreditsPage() {
-  return <Credits langue="fr" />;
+export default function CreditsPageEn() {
+  return <Credits langue="en" />;
 }

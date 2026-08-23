@@ -59,7 +59,7 @@ export function RegionActivities({ region }: { region: string }) {
         <SectionHeading
           embleme={emblemeDeRegion(region)}
           eyebrow="Sur place"
-          title="Activités"
+          title="Quelques activités"
           description="À glisser dans votre programme, selon vos envies et la météo. Tout est réservé et organisé pour vous."
         />
       </Container>

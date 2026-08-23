@@ -152,7 +152,7 @@ export const services: Service[] = [
     title: "Séjours sur mesure",
     short: "Événements privés, séjours et voyages entièrement composés.",
     description:
-      "Un anniversaire, une demande en mariage, un séminaire ou trois semaines de découverte : nous construisons le programme de zéro, autour de vos contraintes réelles.",
+      "Un anniversaire, une demande en mariage, un séminaire ou trois semaines de découverte : nous construisons le programme de zéro, autour de vos envies.",
     bullets: [
       "Étude de vos envies lors d'un entretien préalable",
       "Proposition détaillée sous 72 heures",

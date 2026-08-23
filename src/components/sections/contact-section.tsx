@@ -1,8 +1,12 @@
 import { ContactForm } from "@/components/forms/contact-form";
 import { Container, SectionHeading } from "@/components/ui/section";
-import { company, process } from "@/content/site";
+import { contenu, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
-export function ContactSection() {
+export function ContactSection({ langue }: { langue: Langue }) {
+  const { company, destinations, process } = contenu(langue);
+  const t = ui(langue);
+
   return (
     <section
       id="contact"
@@ -10,24 +14,24 @@ export function ContactSection() {
     >
       <Container>
         <SectionHeading
-          eyebrow="Demande de devis"
-          title="Parlons de votre séjour"
-          description="Plus vous êtes précis, plus notre proposition sera juste du premier coup. Réponse sous 24 heures ouvrées."
+          eyebrow={t.contact.eyebrow}
+          title={t.contact.titre}
+          description={t.contact.description}
         />
 
         <div className="mt-14 grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="reveal lg:col-span-7">
-            <ContactForm />
+            <ContactForm langue={langue} destinations={destinations} />
           </div>
 
           <aside className="reveal lg:col-span-5">
             <div className="border border-vine-900/12 bg-sand-50 p-8">
               <h3 className="text-[0.7rem] font-medium tracking-[0.24em] text-feuille-600 uppercase">
-                Nous joindre directement
+                {t.contact.joindre}
               </h3>
               <dl className="mt-7 space-y-6">
                 <div>
-                  <dt className="text-[0.72rem] text-vine-500">Téléphone</dt>
+                  <dt className="text-[0.72rem] text-vine-500">{t.contact.telephone}</dt>
                   <dd className="mt-1">
                     <a
                       href={`tel:${company.phoneHref}`}
@@ -38,7 +42,7 @@ export function ContactSection() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[0.72rem] text-vine-500">E-mail</dt>
+                  <dt className="text-[0.72rem] text-vine-500">{t.contact.email}</dt>
                   <dd className="mt-1">
                     <a
                       href={`mailto:${company.email}`}
@@ -49,17 +53,17 @@ export function ContactSection() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[0.72rem] text-vine-500">Bureau</dt>
+                  <dt className="text-[0.72rem] text-vine-500">{t.contact.bureau}</dt>
                   <dd className="mt-1 text-[0.95rem] text-vine-800">
                     {company.address}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[0.72rem] text-vine-500">Disponibilité</dt>
+                  <dt className="text-[0.72rem] text-vine-500">{t.contact.disponibilite}</dt>
                   <dd className="mt-1 text-[0.95rem] text-vine-800">
-                    Lundi – samedi, 9 h – 19 h
+                    {t.contact.horaires}
                     <span className="mt-1 block text-[0.8rem] text-vine-600">
-                      Assistance 24 h/24 pendant votre séjour
+                      {t.contact.assistance}
                     </span>
                   </dd>
                 </div>

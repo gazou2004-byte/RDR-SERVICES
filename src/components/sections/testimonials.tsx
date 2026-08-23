@@ -1,13 +1,17 @@
 import { Container, SectionHeading } from "@/components/ui/section";
-import { testimonials } from "@/content/site";
+import { contenu, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
-export function Testimonials() {
+export function Testimonials({ langue }: { langue: Langue }) {
+  const { testimonials } = contenu(langue);
+  const t = ui(langue);
+
   return (
     <section className="border-b border-vine-900/10 py-16 sm:py-24 lg:py-24">
       <Container>
         <SectionHeading
-          eyebrow="Témoignages"
-          title="Ils nous ont confié leur séjour"
+          eyebrow={t.temoignages.eyebrow}
+          title={t.temoignages.titre}
           align="center"
         />
 

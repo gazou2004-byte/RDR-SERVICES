@@ -7,16 +7,9 @@ import {
   Select,
   Textarea,
 } from "@/components/ui/form";
-import { company, destinations } from "@/content/site";
-
-const budgets = [
-  "Moins de 3 000 €",
-  "3 000 – 6 000 €",
-  "6 000 – 12 000 €",
-  "12 000 – 25 000 €",
-  "Plus de 25 000 €",
-  "Je ne sais pas encore",
-];
+import type { Destination } from "@/content/site";
+import { ui } from "@/content/ui";
+import type { Langue } from "@/content/langue";
 
 /**
  * Version du formulaire pour la vitrine statique.
@@ -27,7 +20,22 @@ const budgets = [
  * ne dépend d'aucun service tiers. Dès que le site tournera sur un serveur,
  * c'est `contact-form.tsx` qui reprend la main et enregistre les demandes.
  */
-export function ContactFormStatic() {
+export function ContactFormStatic({
+  langue,
+  email,
+  destinations,
+}: {
+  langue: Langue;
+  /*
+   * L'adresse et les destinations arrivent en propriétés : ce composant tourne
+   * dans le navigateur, et y importer le contenu enverrait les deux
+   * dictionnaires entiers pour une liste déroulante.
+   */
+  email: string;
+  destinations: Destination[];
+}) {
+  const t = ui(langue);
+  const budgets = [...t.formulaire.budgets, t.formulaire.inconnu];
   const [envoye, setEnvoye] = useState(false);
 
   function composer(event: React.FormEvent<HTMLFormElement>) {
@@ -36,74 +44,74 @@ export function ContactFormStatic() {
     const v = (k: string) => (data.get(k) as string) || "—";
 
     const corps = [
-      `Prénom : ${v("firstName")}`,
-      `Nom : ${v("lastName")}`,
-      `E-mail : ${v("email")}`,
-      `Téléphone : ${v("phone")}`,
+      `${t.formulaire.prenom} : ${v("firstName")}`,
+      `${t.formulaire.nom} : ${v("lastName")}`,
+      `${t.formulaire.email} : ${v("email")}`,
+      `${t.formulaire.telephone} : ${v("phone")}`,
       "",
-      `Destination souhaitée : ${v("destination")}`,
-      `Date de départ : ${v("startDate")}`,
-      `Nombre de voyageurs : ${v("travelers")}`,
-      `Budget envisagé : ${v("budget")}`,
+      `${t.formulaire.destination} : ${v("destination")}`,
+      `${t.formulaire.dateDepart} : ${v("startDate")}`,
+      `${t.formulaire.voyageurs} : ${v("travelers")}`,
+      `${t.formulaire.budget} : ${v("budget")}`,
       "",
-      "Projet :",
+      t.formulaire.ligneProjet,
       v("message"),
     ].join("\n");
 
-    const sujet = `Demande de devis — ${v("firstName")} ${v("lastName")}`;
-    window.location.href = `mailto:${company.email}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
+    const sujet = `${t.formulaire.sujet} — ${v("firstName")} ${v("lastName")}`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
     setEnvoye(true);
   }
 
   return (
     <form onSubmit={composer} className="space-y-6">
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Prénom *" name="firstName">
+        <Field label={`${t.formulaire.prenom} *`} name="firstName">
           <Input id="firstName" name="firstName" required autoComplete="given-name" />
         </Field>
-        <Field label="Nom *" name="lastName">
+        <Field label={`${t.formulaire.nom} *`} name="lastName">
           <Input id="lastName" name="lastName" required autoComplete="family-name" />
         </Field>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="E-mail *" name="email">
+        <Field label={`${t.formulaire.email} *`} name="email">
           <Input id="email" name="email" type="email" required autoComplete="email" />
         </Field>
-        <Field label="Téléphone" name="phone">
+        <Field label={t.formulaire.telephone} name="phone">
           <Input id="phone" name="phone" type="tel" autoComplete="tel" />
         </Field>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Destination souhaitée" name="destination">
+        <Field label={t.formulaire.destination} name="destination">
           <Select id="destination" name="destination" defaultValue="">
-            <option value="">Je ne sais pas encore</option>
+            <option value="">{t.formulaire.inconnu}</option>
             {destinations.map((destination) => (
               <option key={destination.slug} value={destination.name}>
                 {destination.name}
               </option>
             ))}
-            <option value="Plusieurs régions">Plusieurs régions</option>
-            <option value="Événement privé">Événement privé / séminaire</option>
+            <option value="Plusieurs régions">{t.formulaire.plusieurs}</option>
+            <option value="Événement privé">{t.formulaire.evenement}</option>
           </Select>
         </Field>
         <Field
-          label="Date de départ approximative"
+          label={t.formulaire.depart}
           name="startDate"
-          hint="Une date indicative suffit."
+          hint={t.formulaire.indiceDepart}
         >
           <Input id="startDate" name="startDate" type="date" />
         </Field>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Nombre de voyageurs" name="travelers">
+        <Field label={t.formulaire.voyageurs} name="travelers">
           <Input id="travelers" name="travelers" type="number" min={1} max={40} placeholder="2" />
         </Field>
-        <Field label="Budget envisagé" name="budget">
+        <Field label={t.formulaire.budget} name="budget">
           <Select id="budget" name="budget" defaultValue="">
-            <option value="">Préciser plus tard</option>
+            <option value="">{t.formulaire.preciserPlusTard}</option>
             {budgets.map((budget) => (
               <option key={budget} value={budget}>
                 {budget}
@@ -114,16 +122,16 @@ export function ContactFormStatic() {
       </div>
 
       <Field
-        label="Votre projet *"
+        label={`${t.formulaire.projet} *`}
         name="message"
-        hint="Qui voyage, ce qui vous fait envie, ce que vous voulez éviter."
+        hint={t.formulaire.indiceProjet}
       >
         <Textarea
           id="message"
           name="message"
           rows={6}
           required
-          placeholder="Nous sommes deux couples, nous aimerions découvrir les grands crus du Médoc sur quatre jours en septembre…"
+          placeholder={t.formulaire.exemple}
         />
       </Field>
 
@@ -132,22 +140,22 @@ export function ContactFormStatic() {
           type="submit"
           className="inline-flex items-center justify-center gap-2 bg-tuile-600 px-8 py-4 text-[0.72rem] font-medium tracking-[0.2em] text-sand-50 uppercase transition-all duration-300 hover:bg-tuile-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tuile-600"
         >
-          Envoyer ma demande
+          {t.formulaire.envoyer}
         </button>
         <p className="text-[0.72rem] leading-relaxed text-vine-500">
           {envoye
-            ? "Votre logiciel de messagerie devrait s'ouvrir avec la demande pré-remplie. Sinon, écrivez-nous directement."
-            : "Le bouton ouvre votre messagerie avec la demande déjà rédigée."}
+            ? t.formulaire.messagerieOuverte
+            : t.formulaire.messagerieAvant}
         </p>
       </div>
 
       <p className="text-[0.8rem] text-vine-600">
-        Vous préférez écrire vous-même ?{" "}
+        {t.formulaire.ecrireSoiMeme}{" "}
         <a
-          href={`mailto:${company.email}`}
+          href={`mailto:${email}`}
           className="inline-block py-1.5 text-tuile-600 transition-colors hover:text-tuile-700"
         >
-          {company.email}
+          {email}
         </a>
       </p>
     </form>

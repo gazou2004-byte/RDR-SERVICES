@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { company } from "@/content/site";
+import { contenu, lien, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 import { Container } from "@/components/ui/section";
 import { reseaux } from "@/components/ui/social-icons";
 import { Logo } from "./logo";
@@ -24,7 +25,9 @@ import { Logo } from "./logo";
  * - Au-delà de 1280 px, la colonne du site est plus étroite que l'écran : le
  *   bouton flotte à côté et non par-dessus, la réserve est donc inutile.
  */
-export function Footer() {
+export function Footer({ langue }: { langue: Langue }) {
+  const { company } = contenu(langue);
+  const t = ui(langue);
   const year = new Date().getFullYear();
 
   return (
@@ -32,7 +35,7 @@ export function Footer() {
       <Container className="pt-3 pb-16 sm:pt-2 sm:pb-2">
         <div className="flex flex-col gap-2 text-[0.68rem] leading-tight text-vine-500 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pr-48 xl:pr-0">
           <div className="flex items-center justify-between gap-4 sm:justify-start sm:gap-4">
-            <Logo taille="petit" />
+            <Logo langue={langue} taille="petit" />
 
             <div className="flex gap-1">
               {Object.entries(company.socials).map(([cle, href]) => {
@@ -63,22 +66,22 @@ export function Footer() {
               © {year} {company.legalName}
             </p>
             <Link
-              href="/mentions-legales"
+              href={lien(langue, "/mentions-legales")}
               className="transition-colors hover:text-tuile-600"
             >
-              Mentions légales
+              {t.pied.mentions}
             </Link>
             <Link
-              href="/confidentialite"
+              href={lien(langue, "/confidentialite")}
               className="transition-colors hover:text-tuile-600"
             >
-              Confidentialité
+              {t.pied.confidentialite}
             </Link>
             <Link
-              href="/credits"
+              href={lien(langue, "/credits")}
               className="transition-colors hover:text-tuile-600"
             >
-              Crédits photo
+              {t.pied.credits}
             </Link>
           </div>
         </div>

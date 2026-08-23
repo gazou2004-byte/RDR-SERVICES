@@ -1,13 +1,17 @@
 import { Container, SectionHeading } from "@/components/ui/section";
-import { process } from "@/content/site";
+import { contenu, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
-export function Process() {
+export function Process({ langue }: { langue: Langue }) {
+  const { process } = contenu(langue);
+  const t = ui(langue);
+
   return (
     <section className="border-b border-vine-900/10 bg-sand-100 py-12 sm:py-16">
       <Container>
         <SectionHeading
-          eyebrow="De la première idée au départ"
-          title="Comment ça se passe"
+          eyebrow={t.etapes.eyebrow}
+          title={t.etapes.titre}
           align="center"
         />
 

@@ -1,20 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container, SectionHeading } from "@/components/ui/section";
-import { destinations } from "@/content/site";
+import { contenu, lien, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
 /**
  * Les quatre territoires, en colonnes pleine largeur : la devise en italique
  * au-dessus de la photo, et un bouton « Découvrir » centré sur l'image.
  */
-export function DestinationsGrid() {
+export function DestinationsGrid({ langue }: { langue: Langue }) {
+  const { destinations } = contenu(langue);
+  const t = ui(langue);
+
   return (
     <section id="sejours" className="scroll-mt-24 border-b border-vine-900/10 bg-sand-100">
       <Container className="py-16 sm:py-24 lg:py-24">
         <SectionHeading
-          eyebrow="Cinq territoires du Sud-Ouest"
-          title="Destinations"
-          description="Chaque itinéraire présenté ici est un point de départ. Nous le retravaillons entièrement selon vos envies, votre rythme et la saison."
+          eyebrow={t.destinations.eyebrow}
+          title={t.destinations.titre}
+          description={t.destinations.description}
         />
       </Container>
 
@@ -22,7 +26,7 @@ export function DestinationsGrid() {
         {destinations.map((destination) => (
           <Link
             key={destination.slug}
-            href={`/destinations/${destination.slug}`}
+            href={lien(langue, `/destinations/${destination.slug}`)}
             className="reveal group block border-t border-l border-feuille-600/25 last:border-r"
           >
             {/*
@@ -51,7 +55,7 @@ export function DestinationsGrid() {
                   {destination.name}
                 </h3>
                 <span className="border border-sand-50/70 px-6 py-2.5 text-[0.7rem] font-medium tracking-[0.2em] text-sand-50 uppercase transition-colors group-hover:bg-sand-50 group-hover:text-vine-900">
-                  Découvrir
+                  {t.destinations.decouvrir}
                 </span>
               </div>
             </div>

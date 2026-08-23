@@ -1,23 +1,28 @@
 import Link from "next/link";
+import { ui } from "@/content/ui";
+import { lien, type Langue } from "@/content/langue";
 
 export function Logo({
+  langue,
   className = "",
   tone = "dark",
   taille = "normal",
 }: {
+  langue: Langue;
   className?: string;
   /** `light` sur les fonds sombres (pied de page), `dark` partout ailleurs. */
   tone?: "dark" | "light";
   /** `petit` dans le pied de page, dont toute la ligne fait la hauteur du logo. */
   taille?: "normal" | "petit";
 }) {
+  const t = ui(langue);
   const petit = taille === "petit";
 
   return (
     <Link
-      href="/"
+      href={lien(langue, "/")}
       className={`group flex items-baseline ${petit ? "gap-2 py-0" : "gap-2.5 py-1.5"} ${className}`}
-      aria-label="RDR Services — retour à l'accueil"
+      aria-label={t.entete.retourAccueil}
     >
       <span
         className={`font-display ${petit ? "text-lg" : "text-2xl"} leading-none font-medium tracking-[0.12em] transition-colors ${

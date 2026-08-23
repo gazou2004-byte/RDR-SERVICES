@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { emblemeDeRegion } from "@/components/ui/ornament";
-import { experiences } from "@/content/site";
+import { contenu, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
 /**
  * Les expériences propres à une région, affichées sur sa fiche.
@@ -10,7 +11,15 @@ import { experiences } from "@/content/site";
  * le visiteur à deviner à quel territoire chacune se rattachait. Chaque
  * expérience porte désormais un `region` et n'apparaît que là où elle a lieu.
  */
-export function RegionExperiences({ region }: { region: string }) {
+export function RegionExperiences({
+  region,
+  langue,
+}: {
+  region: string;
+  langue: Langue;
+}) {
+  const { experiences } = contenu(langue);
+  const t = ui(langue);
   const items = experiences.filter((e) => e.region === region);
   if (items.length === 0) return null;
 
@@ -19,9 +28,9 @@ export function RegionExperiences({ region }: { region: string }) {
       <Container>
         <SectionHeading
           embleme={emblemeDeRegion(region)}
-          eyebrow="Sur place, avec nous"
-          title="Expériences uniques"
-          description="Ces moments ne sont pas réservables en ligne : ils reposent sur des relations construites au fil des années."
+          eyebrow={t.region.experiencesEyebrow}
+          title={t.region.experiencesTitre}
+          description={t.region.experiencesDescription}
         />
 
         <div className="mt-12 grid gap-9 sm:mt-14 sm:grid-cols-2">

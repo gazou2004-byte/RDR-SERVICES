@@ -1,20 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container, SectionHeading } from "@/components/ui/section";
-import { services } from "@/content/site";
+import { contenu, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
 /**
  * Services présentés en bandes pleine largeur : le texte occupe une moitié,
  * la photo l'autre, et le côté s'inverse d'une bande à l'autre.
  */
-export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
+export function ServicesGrid({
+  langue,
+  detailed = false,
+}: {
+  langue: Langue;
+  detailed?: boolean;
+}) {
+  const { services } = contenu(langue);
+  const t = ui(langue);
+
   return (
     <section id="services" className="scroll-mt-24 border-b border-vine-900/10">
       <Container className="py-16 sm:py-24 lg:py-24">
         <SectionHeading
-          eyebrow="Un seul interlocuteur"
-          title="Quatre métiers"
-          description="De la journée d'excursion au voyage de trois semaines, tout passe par la même personne. Vous n'avez jamais à réexpliquer votre dossier."
+          eyebrow={t.services.eyebrow}
+          title={t.services.titre}
+          description={t.services.description}
         />
       </Container>
 

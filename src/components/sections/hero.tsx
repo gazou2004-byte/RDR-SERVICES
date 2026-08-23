@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { hero } from "@/content/site";
+import { contenu, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
 /**
  * Héros en quatre panneaux côte à côte : les quatre territoires visibles
@@ -19,7 +20,10 @@ import { hero } from "@/content/site";
  * quatre bandes de 97 pixels ne montraient plus rien, mais les Landes et la
  * Gascogne disparaissaient de la page d'accueil.
  */
-export function Hero() {
+export function Hero({ langue }: { langue: Langue }) {
+  const { hero } = contenu(langue);
+  const t = ui(langue);
+
   return (
     <section
       id="accueil"
@@ -30,7 +34,7 @@ export function Hero() {
           <div key={panel.image} className="relative overflow-hidden">
             <Image
               src={panel.image}
-              alt={`Paysage — ${panel.label}`}
+              alt={`${t.heros.paysage} — ${panel.label}`}
               fill
               // Les deux premières seules sont prioritaires : quatre grandes
               // images chargées d'urgence retarderaient l'affichage du titre.
@@ -67,7 +71,7 @@ export function Hero() {
       {/* Chevron de défilement */}
       <a
         href="#intro"
-        aria-label="Aller à la section suivante"
+        aria-label={t.heros.sectionSuivante}
         className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 p-3 text-sand-50/80 transition-colors hover:text-feuille-400"
       >
         <svg

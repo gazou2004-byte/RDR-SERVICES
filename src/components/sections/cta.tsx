@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/section";
-import { company } from "@/content/site";
+import { contenu, lien, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
 /**
  * Le seul bloc sombre du site : il ponctue la page juste avant le pied,
@@ -10,13 +11,19 @@ import { company } from "@/content/site";
  * seule ligne dès qu'il y a la place, au lieu de s'empiler.
  */
 export function Cta({
-  title = "Parlons de votre séjour",
+  langue,
+  title,
   description,
 }: {
+  langue: Langue;
+  /** Sans titre donné, celui de la section de contact. */
   title?: string;
   /** Facultatif : sans elle, le bandeau se réduit au titre et à l'appel. */
   description?: string;
 }) {
+  const { company } = contenu(langue);
+  const t = ui(langue);
+
   return (
     <section className="relative overflow-hidden bg-tuile-800 py-5 sm:py-6">
       {/* Halo vert discret en fond */}
@@ -27,7 +34,7 @@ export function Cta({
 
       <Container className="relative z-10 text-center">
         <h2 className="reveal mx-auto max-w-2xl font-display text-xl leading-tight font-light text-sand-50 sm:text-2xl">
-          {title}
+          {title ?? t.contact.titre}
         </h2>
         {description ? (
           <p className="reveal mx-auto mt-2 max-w-2xl text-[0.85rem] leading-snug text-sand-200">
@@ -40,8 +47,12 @@ export function Cta({
             été retirée : elle n'aide personne à agir et figure sur la page des
             mentions légales, où la loi l'exige. */}
         <div className="reveal mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-8">
-          <ButtonLink href="/#contact" variant="feuille" taille="compact">
-            Nous contacter
+          <ButtonLink
+            href={lien(langue, "/#contact")}
+            variant="feuille"
+            taille="compact"
+          >
+            {t.contact.nousContacter}
           </ButtonLink>
 
           <div className="flex flex-wrap items-center justify-center gap-x-4 text-[0.82rem] text-sand-300">

@@ -106,6 +106,14 @@ export const intro = {
   ],
 };
 
+export const apropos = {
+  histoire: [
+    "RDR Services is a travel concierge based in Nouvelle-Aquitaine. We do not sell tours: we compose journeys, one at a time, for travellers who want something other than a programme printed in advance.",
+    "What makes the difference comes down to small things: knowing the owner who will open his cellar on a Sunday, knowing which table is worth the detour and which is living on its reputation, sensing that two days are better swapped because rain is coming. That kind of knowledge cannot be bought; it is built on the ground.",
+    "We cover five territories, from the Bordeaux vineyards to the Basque Country, from the Périgord to the Landes and Gascony. Always privately, always with the same driver from the first day to the last, and one person you can call at any hour while you are travelling.",
+  ],
+};
+
 export const services: Service[] = [
   {
     slug: "excursions",

@@ -3,7 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { company, faq } from "@/content/site";
+import type { Company } from "@/content/site";
+import { ui } from "@/content/ui";
+import type { Langue } from "@/content/langue";
 
 type Onglet = "questions" | "projet";
 
@@ -61,7 +63,23 @@ function positionRetenue(cle: string): number | null {
  * tourne sur un serveur ou en vitrine statique, ce n'est pas le même
  * composant, et c'est `chat-dock.tsx` qui tranche.
  */
-export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
+export function ChatWidget({
+  langue,
+  company,
+  faq,
+  formulaire,
+}: {
+  langue: Langue;
+  /*
+   * Coordonnées et questions arrivent en propriétés : ce composant tourne dans
+   * le navigateur, et y importer le contenu enverrait les deux dictionnaires
+   * entiers pour une dizaine de questions.
+   */
+  company: Company;
+  faq: { question: string; answer: string }[];
+  formulaire: ReactNode;
+}) {
+  const t = ui(langue);
   const pathname = usePathname();
   const [ouvert, setOuvert] = useState(false);
   const [onglet, setOnglet] = useState<Onglet>("questions");
@@ -226,8 +244,8 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
   if (pathname.startsWith("/espace-client")) return null;
 
   const onglets: { cle: Onglet; libelle: string }[] = [
-    { cle: "questions", libelle: "Questions fréquentes" },
-    { cle: "projet", libelle: "Votre projet" },
+    { cle: "questions", libelle: t.chat.ongletQuestions },
+    { cle: "projet", libelle: t.chat.ongletProjet },
   ];
 
   return (
@@ -249,7 +267,7 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
           tabIndex={-1}
           role="dialog"
           aria-modal="false"
-          aria-label={`Discuter avec ${company.name}`}
+          aria-label={`${t.chat.dialogue} ${company.name}`}
           className="chat-panneau fixed top-20 right-3 bottom-4 left-3 z-50 flex flex-col overflow-hidden border border-vine-900/15 bg-sand-50 shadow-[0_24px_60px_-20px] shadow-vine-900/45 outline-none sm:top-auto sm:left-auto sm:h-[min(40rem,calc(100dvh-7rem))] sm:w-[25rem]"
         >
           {/* En-tête : c'est aussi la poignée qui déplace la fenêtre. */}
@@ -291,7 +309,7 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
             onPointerCancel={() => {
               glissePanneau.current = null;
             }}
-            title="Glissez vers le haut ou vers le bas pour déplacer la fenêtre"
+            title={t.chat.poigneeTitre}
             className="flex items-start justify-between gap-4 bg-vine-900 px-5 py-4 select-none sm:cursor-grab sm:touch-none sm:active:cursor-grabbing"
           >
             <div>
@@ -309,13 +327,13 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
                 RDR <span className="text-feuille-300">SERVICES</span>
               </p>
               <p className="mt-1.5 text-[0.72rem] text-sand-300">
-                Réponse sous 24 heures ouvrées
+                {t.chat.reponse}
               </p>
             </div>
             <button
               type="button"
               onClick={fermer}
-              aria-label="Fermer la discussion"
+              aria-label={t.chat.fermer}
               className="-mr-1.5 -mt-0.5 grid h-9 w-9 shrink-0 place-items-center text-sand-200 transition-colors hover:text-sand-50"
             >
               <svg
@@ -357,9 +375,8 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
             {onglet === "questions" ? (
               <>
                 <p className="max-w-[19rem] rounded-tl-none bg-sand-200 px-4 py-3 text-[0.86rem] leading-relaxed text-vine-800">
-                  Bonjour. Voici ce qu&apos;on nous demande le plus souvent. Si
-                  votre question n&apos;y est pas, passez à l&apos;onglet
-                  «&nbsp;Votre projet&nbsp;».
+                  {t.chat.accueilQuestions}{" "}
+                  «&nbsp;{t.chat.ongletProjet}&nbsp;».
                 </p>
 
                 <div className="mt-5 space-y-2.5">
@@ -389,9 +406,7 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
             ) : (
               <>
                 <p className="max-w-[19rem] bg-sand-200 px-4 py-3 text-[0.86rem] leading-relaxed text-vine-800">
-                  Dites-nous où vous voulez aller, quand et à combien. Plus
-                  c&apos;est précis, plus notre proposition sera juste du
-                  premier coup.
+                  {t.chat.amorce}
                 </p>
 
                 <div className="chat-formulaire mt-5">{formulaire}</div>
@@ -405,13 +420,13 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
               href={`tel:${company.phoneHref}`}
               className="flex-1 border border-feuille-600/60 px-3 py-2 text-center text-[0.72rem] whitespace-nowrap text-feuille-700 transition-colors hover:bg-feuille-600 hover:text-sand-50"
             >
-              Appeler
+              {t.chat.appeler}
             </a>
             <a
               href={`mailto:${company.email}`}
               className="flex-1 border border-feuille-600/60 px-3 py-2 text-center text-[0.72rem] whitespace-nowrap text-feuille-700 transition-colors hover:bg-feuille-600 hover:text-sand-50"
             >
-              Écrire un e-mail
+              {t.chat.ecrire}
             </a>
           </div>
         </div>
@@ -468,8 +483,8 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
             }
             ouvrir("questions");
           }}
-          title="Cliquez pour ouvrir — glissez vers le haut ou vers le bas pour déplacer le bouton"
-          aria-label="Ouvrir la discussion. Glissez le bouton, ou utilisez les flèches haut et bas, pour le déplacer."
+          title={t.chat.lanceurTitre}
+          aria-label={t.chat.lanceurAria}
           className="chat-lanceur fixed right-4 bottom-5 z-50 flex touch-none cursor-grab items-center gap-2.5 bg-tuile-600 px-4 py-3 text-sand-50 shadow-[0_12px_28px_-10px] shadow-vine-900/60 transition-colors select-none hover:bg-tuile-700 active:cursor-grabbing sm:right-5 sm:gap-3 sm:px-5"
         >
           <svg
@@ -484,7 +499,7 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
             <path d="M2 4.2A1.2 1.2 0 013.2 3h11.6A1.2 1.2 0 0116 4.2v7.1a1.2 1.2 0 01-1.2 1.2H6.6L3 15.4V4.2z" />
           </svg>
           <span className="text-[0.72rem] font-medium tracking-[0.16em] uppercase">
-            Une question&nbsp;?
+            {t.chat.lanceur}
           </span>
         </button>
       ) : null}

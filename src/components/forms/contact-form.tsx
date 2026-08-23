@@ -11,18 +11,20 @@ import {
   SubmitButton,
   Textarea,
 } from "@/components/ui/form";
-import { destinations } from "@/content/site";
+import type { Destination } from "@/content/site";
+import { ui } from "@/content/ui";
+import type { Langue } from "@/content/langue";
 
-const budgets = [
-  "Moins de 3 000 €",
-  "3 000 – 6 000 €",
-  "6 000 – 12 000 €",
-  "12 000 – 25 000 €",
-  "Plus de 25 000 €",
-  "Je ne sais pas encore",
-];
-
-export function ContactForm() {
+export function ContactForm({
+  langue,
+  destinations,
+}: {
+  langue: Langue;
+  /* Comme la version statique : le contenu ne traverse pas le navigateur. */
+  destinations: Destination[];
+}) {
+  const t = ui(langue);
+  const budgets = [...t.formulaire.budgets, t.formulaire.inconnu];
   const [state, formAction] = useActionState<FormState, FormData>(
     submitLeadAction,
     {},
@@ -45,50 +47,50 @@ export function ContactForm() {
 
       <div className="grid gap-6 sm:grid-cols-2">
         <Field
-          label="Prénom *"
+          label={`${t.formulaire.prenom} *`}
           name="firstName"
           errors={state.fieldErrors?.firstName}
         >
           <Input id="firstName" name="firstName" required autoComplete="given-name" />
         </Field>
-        <Field label="Nom *" name="lastName" errors={state.fieldErrors?.lastName}>
+        <Field label={`${t.formulaire.nom} *`} name="lastName" errors={state.fieldErrors?.lastName}>
           <Input id="lastName" name="lastName" required autoComplete="family-name" />
         </Field>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="E-mail *" name="email" errors={state.fieldErrors?.email}>
+        <Field label={`${t.formulaire.email} *`} name="email" errors={state.fieldErrors?.email}>
           <Input id="email" name="email" type="email" required autoComplete="email" />
         </Field>
-        <Field label="Téléphone" name="phone" errors={state.fieldErrors?.phone}>
+        <Field label={t.formulaire.telephone} name="phone" errors={state.fieldErrors?.phone}>
           <Input id="phone" name="phone" type="tel" autoComplete="tel" />
         </Field>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Destination souhaitée" name="destination">
+        <Field label={t.formulaire.destination} name="destination">
           <Select id="destination" name="destination" defaultValue="">
-            <option value="">Je ne sais pas encore</option>
+            <option value="">{t.formulaire.inconnu}</option>
             {destinations.map((destination) => (
               <option key={destination.slug} value={destination.name}>
                 {destination.name}
               </option>
             ))}
-            <option value="Plusieurs régions">Plusieurs régions</option>
-            <option value="Événement privé">Événement privé / séminaire</option>
+            <option value="Plusieurs régions">{t.formulaire.plusieurs}</option>
+            <option value="Événement privé">{t.formulaire.evenement}</option>
           </Select>
         </Field>
         <Field
-          label="Date de départ approximative"
+          label={t.formulaire.depart}
           name="startDate"
-          hint="Une date indicative suffit."
+          hint={t.formulaire.indiceDepart}
         >
           <Input id="startDate" name="startDate" type="date" />
         </Field>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Nombre de voyageurs" name="travelers">
+        <Field label={t.formulaire.voyageurs} name="travelers">
           <Input
             id="travelers"
             name="travelers"
@@ -98,9 +100,9 @@ export function ContactForm() {
             placeholder="2"
           />
         </Field>
-        <Field label="Budget envisagé" name="budget">
+        <Field label={t.formulaire.budget} name="budget">
           <Select id="budget" name="budget" defaultValue="">
-            <option value="">Préciser plus tard</option>
+            <option value="">{t.formulaire.preciserPlusTard}</option>
             {budgets.map((budget) => (
               <option key={budget} value={budget}>
                 {budget}
@@ -111,17 +113,17 @@ export function ContactForm() {
       </div>
 
       <Field
-        label="Votre projet *"
+        label={`${t.formulaire.projet} *`}
         name="message"
         errors={state.fieldErrors?.message}
-        hint="Qui voyage, ce qui vous fait envie, ce que vous voulez éviter."
+        hint={t.formulaire.indiceProjet}
       >
         <Textarea
           id="message"
           name="message"
           rows={6}
           required
-          placeholder="Nous sommes deux couples, nous aimerions découvrir les grands crus du Médoc sur quatre jours en septembre…"
+          placeholder={t.formulaire.exemple}
         />
       </Field>
 
@@ -132,7 +134,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-5 pt-2 sm:flex-row sm:items-center">
-        <SubmitButton>Envoyer ma demande</SubmitButton>
+        <SubmitButton>{t.formulaire.envoyer}</SubmitButton>
         <p className="text-[0.72rem] leading-relaxed text-vine-500">
           Réponse sous 24 h ouvrées. Vos données ne sont ni revendues ni
           transmises à des tiers.

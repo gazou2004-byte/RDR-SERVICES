@@ -1,19 +1,23 @@
 import { Container, SectionHeading } from "@/components/ui/section";
-import { faq } from "@/content/site";
+import { contenu, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
 /**
  * Questions fréquentes en deux colonnes de fiches.
  * L'élément <details> natif porte l'ouverture : la section reste utilisable
  * même si le JavaScript ne s'exécute pas.
  */
-export function FaqSection() {
+export function FaqSection({ langue }: { langue: Langue }) {
+  const { faq } = contenu(langue);
+  const t = ui(langue);
+
   return (
     <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-24 lg:py-24">
       <Container>
         <SectionHeading
-          eyebrow="Questions fréquentes"
-          title="Ce que l'on nous demande"
-          description="Une question qui n'est pas ici ? Écrivez-nous, nous répondons sous 24 heures."
+          eyebrow={t.faq.eyebrow}
+          title={t.faq.titre}
+          description={t.faq.relance}
         />
 
         <div className="reveal mt-12 grid gap-4 sm:mt-14 sm:gap-5 lg:grid-cols-2 lg:gap-x-7">

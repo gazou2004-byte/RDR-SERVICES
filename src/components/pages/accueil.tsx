@@ -15,26 +15,34 @@ import { Cta } from "@/components/sections/cta";
  * page : elles sont dans la fenêtre de discussion, posée en bas à droite de
  * l'écran et disponible depuis n'importe où (voir `chat-widget.tsx`).
  */
-export default function HomePage() {
+import type { Langue } from "@/content/langue";
+
+/**
+ * La page d'accueil, indépendante de la langue.
+ *
+ * Les deux racines — française et anglaise — l'appellent avec leur propre
+ * langue : le balisage n'existe qu'une fois, seul le contenu change.
+ */
+export function Accueil({ langue }: { langue: Langue }) {
   return (
     <>
-      <Hero />
-      <Intro />
+      <Hero langue={langue} />
+      <Intro langue={langue} />
       {/* `detailed` : description longue et points de détail. Sans lui, la
           section tenait 1 991 px pour quatre phrases d'une ligne. */}
-      <ServicesGrid detailed />
-      <DestinationsGrid />
+      <ServicesGrid langue={langue} detailed />
+      <DestinationsGrid langue={langue} />
       {/* Le panneau de synthèse qui se trouvait ici a été retiré : ses cinq
           points répétaient les quatre services, et « Un seul interlocuteur »
           est déjà le sur-titre de leur section. */}
-      <AboutSection />
+      <AboutSection langue={langue} />
       {/* Les quatre étapes répondent à la question qui retient un visiteur
           avant d'écrire : que se passe-t-il si j'appelle ? */}
-      <Process />
+      <Process langue={langue} />
       {/* Le seul bloc sombre : il ferme la page au lieu de la laisser
           s'arrêter sur la dernière étape. Son bouton ouvre la fenêtre de
           discussion sur le formulaire. */}
-      <Cta />
+      <Cta langue={langue} />
     </>
   );
 }

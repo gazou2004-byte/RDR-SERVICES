@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,27 +7,16 @@ import { RegionExperiences } from "@/components/sections/region-experiences";
 import { RegionActivities } from "@/components/sections/region-activities";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { emblemeDeRegion } from "@/components/ui/ornament";
-import { destinations } from "@/content/site";
+import { contenu, lien, type Langue } from "@/content";
+import { ui } from "@/content/ui";
 
-type Props = { params: Promise<{ slug: string }> };
-
-export function generateStaticParams() {
-  return destinations.map((destination) => ({ slug: destination.slug }));
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const destination = destinations.find((item) => item.slug === slug);
-  if (!destination) return {};
-
-  return {
-    title: `${destination.name} — tour privé`,
-    description: destination.intro,
-  };
-}
-
-export default async function DestinationPage({ params }: Props) {
-  const { slug } = await params;
+/**
+ * La fiche d'un territoire, indépendante de la langue : les deux racines
+ * l'appellent avec la leur.
+ */
+export function Destination({ langue, slug }: { langue: Langue; slug: string }) {
+  const { activites, destinations } = contenu(langue);
+  const t = ui(langue);
   const destination = destinations.find((item) => item.slug === slug);
   if (!destination) notFound();
 
@@ -58,7 +46,7 @@ export default async function DestinationPage({ params }: Props) {
             <dl className="reveal space-y-7 lg:col-span-5">
               <div className="border-b border-vine-900/12 pb-6">
                 <dt className="text-[0.7rem] tracking-[0.22em] text-feuille-600 uppercase">
-                  Durée conseillée
+                  {t.destination.dureeConseillee}
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
                   {destination.duration}
@@ -66,7 +54,7 @@ export default async function DestinationPage({ params }: Props) {
               </div>
               <div className="border-b border-vine-900/12 pb-6">
                 <dt className="text-[0.7rem] tracking-[0.22em] text-feuille-600 uppercase">
-                  Meilleure saison
+                  {t.destination.meilleureSaison}
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
                   {destination.season}
@@ -74,10 +62,10 @@ export default async function DestinationPage({ params }: Props) {
               </div>
               <div>
                 <dt className="text-[0.7rem] tracking-[0.22em] text-feuille-600 uppercase">
-                  Format
+                  {t.destination.format}
                 </dt>
                 <dd className="mt-2 font-display text-2xl font-light text-vine-900">
-                  Privatif intégral
+                  {t.destination.privatif}
                 </dd>
               </div>
             </dl>
@@ -90,9 +78,9 @@ export default async function DestinationPage({ params }: Props) {
         <Container>
           <SectionHeading
             embleme={embleme}
-            eyebrow="Temps forts"
-            title="Quelques idées"
-            description="Les moments qui font le séjour, et les activités à y glisser selon vos envies et la météo. Tout est réservé et organisé pour vous."
+            eyebrow={t.destination.ideesEyebrow}
+            title={t.destination.ideesTitre}
+            description={t.destination.ideesDescription}
           />
           {/* Sans numéros : ces temps forts ne sont pas une séquence, rien
               n'oblige à les vivre dans cet ordre. */}
@@ -110,7 +98,12 @@ export default async function DestinationPage({ params }: Props) {
         {/* Le carrousel des activités était une section à lui seul, juste en
             dessous, avec son propre ornement et son propre filet pour la même
             idée. Il vient ici, sous les temps forts, sans en-tête. */}
-        <RegionActivities region={destination.slug} entete={false} />
+        <RegionActivities
+          region={destination.slug}
+          langue={langue}
+          items={activites[destination.slug] ?? []}
+          entete={false}
+        />
       </section>
 
       {/* Itinéraire suggéré */}
@@ -118,10 +111,10 @@ export default async function DestinationPage({ params }: Props) {
         <Container>
           <SectionHeading
             embleme={embleme}
-            eyebrow="Itinéraire suggéré"
-            title="Un exemple,"
-            accent="pas une formule"
-            description="Voici comment se déroule un séjour type. Le vôtre sera recomposé de zéro après notre premier échange."
+            eyebrow={t.destination.itineraireEyebrow}
+            title={t.destination.itineraireTitre}
+            accent={t.destination.itineraireAccent}
+            description={t.destination.itineraireDescription}
           />
 
           <ol className="mt-14 space-y-px border-l border-vine-900/15">
@@ -146,21 +139,21 @@ export default async function DestinationPage({ params }: Props) {
         </Container>
       </section>
 
-      <RegionExperiences region={destination.slug} />
+      <RegionExperiences region={destination.slug} langue={langue} />
 
       {/* Autres destinations */}
       <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading
             embleme={embleme}
-            eyebrow="Poursuivre"
-            title="Les autres territoires"
+            eyebrow={t.destination.autresEyebrow}
+            title={t.destination.autresTitre}
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-3">
             {others.map((other) => (
               <Link
                 key={other.slug}
-                href={`/destinations/${other.slug}`}
+                href={lien(langue, `/destinations/${other.slug}`)}
                 className="reveal group block"
               >
                 <div className="relative aspect-4/3 overflow-hidden bg-sand-200">
@@ -182,8 +175,9 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       <Cta
-        title={`Composer votre séjour en ${destination.name}`}
-        description="Dites-nous vos dates, le nombre de voyageurs et ce qui vous fait envie. Nous revenons vers vous sous 72 heures avec un programme complet."
+        langue={langue}
+        title={`${t.destination.ctaTitre} ${destination.name}`}
+        description={t.destination.ctaDescription}
       />
     </>
   );

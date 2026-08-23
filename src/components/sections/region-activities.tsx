@@ -4,7 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { emblemeDeRegion } from "@/components/ui/ornament";
-import { activites } from "@/content/site";
+import type { Activite } from "@/content/site";
+import { ui } from "@/content/ui";
+import type { Langue } from "@/content/langue";
 
 /**
  * Carrousel des activités d'une région.
@@ -15,9 +17,18 @@ import { activites } from "@/content/site";
  */
 export function RegionActivities({
   region,
+  langue,
+  items,
   entete = true,
 }: {
   region: string;
+  langue: Langue;
+  /*
+   * Les activités arrivent en propriété plutôt que par import : ce composant
+   * tourne dans le navigateur, et importer le contenu y expédierait les deux
+   * dictionnaires entiers pour quatre cartes.
+   */
+  items: Activite[];
   /**
    * `false` quand le carrousel est glissé dans une autre section, qui porte
    * alors le titre : deux en-têtes à la suite faisaient deux ornements et deux
@@ -25,7 +36,7 @@ export function RegionActivities({
    */
   entete?: boolean;
 }) {
-  const items = activites[region] ?? [];
+  const t = ui(langue);
   const [actif, setActif] = useState(0);
   const piste = `piste-activites-${region}`;
 
@@ -100,7 +111,7 @@ export function RegionActivities({
             key={item.titre}
             type="button"
             onClick={() => aller(index)}
-            aria-label={`Voir « ${item.titre} »`}
+            aria-label={`${t.region.voir} : ${item.titre}`}
             aria-current={index === actif}
             className="flex h-11 w-11 items-center justify-center"
           >
@@ -122,9 +133,9 @@ export function RegionActivities({
       <Container>
         <SectionHeading
           embleme={emblemeDeRegion(region)}
-          eyebrow="Sur place"
-          title="Quelques activités"
-          description="À glisser dans votre programme, selon vos envies et la météo. Tout est réservé et organisé pour vous."
+          eyebrow={t.region.activitesEyebrow}
+          title={t.region.activitesTitre}
+          description={t.region.activitesDescription}
         />
       </Container>
       {carrousel}

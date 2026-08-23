@@ -3,14 +3,35 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { destinations, nav } from "@/content/site";
+import type { Destination, NavItem } from "@/content/site";
+import { ui } from "@/content/ui";
+import {
+  autreLangue,
+  cheminAutreLangue,
+  lien as adresse,
+  type Langue,
+} from "@/content/langue";
 import { Logo } from "./logo";
 
 // Sur la vitrine statique, l'espace client n'est pas déployé : on masque
 // les liens qui y mènent plutôt que d'envoyer les visiteurs sur une 404.
 const espaceClientDisponible = process.env.NEXT_PUBLIC_VITRINE !== "1";
 
-export function Header() {
+export function Header({
+  langue,
+  nav,
+  destinations,
+}: {
+  langue: Langue;
+  /*
+   * Menu et destinations arrivent en propriétés : l'en-tête tourne dans le
+   * navigateur, et y importer le contenu enverrait les deux dictionnaires
+   * entiers pour six liens.
+   */
+  nav: NavItem[];
+  destinations: Destination[];
+}) {
+  const t = ui(langue);
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -53,7 +74,10 @@ export function Header() {
   const [sectionVue, setSectionVue] = useState("accueil");
 
   useEffect(() => {
-    if (pathname !== "/") return;
+    // L'accueil n'est pas à la même adresse dans les deux langues, et la barre
+    // oblique finale dépend du réglage `trailingSlash`.
+    const accueil = langue === "fr" ? "" : "/en";
+    if (pathname.replace(/\/$/, "") !== accueil) return;
     const ids = nav
       .map((item) => item.href.split("#")[1])
       .filter(Boolean) as string[];
@@ -73,7 +97,7 @@ export function Header() {
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, [pathname]);
+  }, [pathname, langue, nav]);
 
   const isActive = (href: string) => {
     const ancre = href.split("#")[1];
@@ -90,13 +114,17 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-8 px-6 lg:px-10">
-        <Logo className="shrink-0" tone={transparent ? "light" : "dark"} />
+        <Logo
+          langue={langue}
+          className="shrink-0"
+          tone={transparent ? "light" : "dark"}
+        />
 
         <nav className="hidden items-center gap-9 lg:flex">
           {nav.map((item) => {
             const lien = (
               <Link
-                href={item.href}
+                href={adresse(langue, item.href)}
                 className={`font-display text-lg whitespace-nowrap transition-colors ${
                   transparent
                     ? isActive(item.href)
@@ -124,7 +152,10 @@ export function Header() {
                     {destinations.map((destination) => (
                       <li key={destination.slug}>
                         <Link
-                          href={`/destinations/${destination.slug}`}
+                          href={adresse(
+                            langue,
+                            `/destinations/${destination.slug}`,
+                          )}
                           className="block px-6 py-3 text-[0.72rem] font-medium tracking-[0.16em] whitespace-nowrap text-vine-800 uppercase transition-colors hover:bg-sand-100 hover:text-tuile-600"
                         >
                           {destination.name}
@@ -137,16 +168,31 @@ export function Header() {
             );
           })}
 
+          {/* Le sélecteur mène à la même page dans l'autre langue, pas à son
+              accueil : perdre sa place en changeant de langue est agaçant. */}
+          <Link
+            href={cheminAutreLangue(pathname, langue)}
+            hrefLang={autreLangue(langue)}
+            lang={autreLangue(langue)}
+            className={`ml-1 px-2.5 py-2 text-[0.7rem] font-medium tracking-[0.16em] uppercase transition-colors ${
+              transparent
+                ? "text-sand-50/70 hover:text-sand-50"
+                : "text-vine-500 hover:text-tuile-600"
+            }`}
+          >
+            {t.langue.basculer}
+          </Link>
+
           {espaceClientDisponible ? (
             <Link
-              href="/espace-client"
+              href={adresse(langue, "/espace-client")}
               className={`ml-2 border px-5 py-2.5 text-[0.7rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
                 transparent
                   ? "border-sand-50/60 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
                   : "border-tuile-600/60 text-tuile-700 hover:bg-tuile-600 hover:text-sand-50"
               }`}
             >
-              Espace client
+              {t.entete.espaceClient}
             </Link>
           ) : null}
         </nav>
@@ -155,7 +201,7 @@ export function Header() {
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={open ? t.entete.fermerMenu : t.entete.ouvrirMenu}
           className="flex h-10 w-10 flex-col items-center justify-center gap-[6px] lg:hidden"
         >
           <span
@@ -181,7 +227,7 @@ export function Header() {
           {nav.map((item) => (
             <div key={item.href}>
               <Link
-                href={item.href}
+                href={adresse(langue, item.href)}
                 className={`block border-b border-vine-900/10 py-4 font-display text-2xl font-light ${
                   isActive(item.href) ? "text-tuile-600" : "text-vine-900"
                 }`}
@@ -193,7 +239,10 @@ export function Header() {
                   {destinations.map((destination) => (
                     <li key={destination.slug}>
                       <Link
-                        href={`/destinations/${destination.slug}`}
+                        href={adresse(
+                          langue,
+                          `/destinations/${destination.slug}`,
+                        )}
                         className="block py-2.5 pl-5 text-[0.78rem] tracking-[0.14em] text-vine-600 uppercase"
                       >
                         {destination.name}
@@ -204,12 +253,23 @@ export function Header() {
               ) : null}
             </div>
           ))}
+          {/* Le menu déplié est toujours sur fond clair : pas de variante
+              transparente ici. */}
+          <Link
+            href={cheminAutreLangue(pathname, langue)}
+            hrefLang={autreLangue(langue)}
+            lang={autreLangue(langue)}
+            className="border-b border-vine-900/10 py-4 text-[0.72rem] font-medium tracking-[0.16em] text-vine-500 uppercase"
+          >
+            {t.langue.basculer}
+          </Link>
+
           {espaceClientDisponible ? (
             <Link
-              href="/espace-client"
+              href={adresse(langue, "/espace-client")}
               className="mt-6 border border-tuile-600/60 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-tuile-700 uppercase"
             >
-              Espace client
+              {t.entete.espaceClient}
             </Link>
           ) : null}
         </nav>

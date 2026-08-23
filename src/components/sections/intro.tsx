@@ -1,7 +1,9 @@
 import { Container, SectionHeading } from "@/components/ui/section";
-import { intro } from "@/content/site";
+import { contenu, type Langue } from "@/content";
 
-export function Intro() {
+export function Intro({ langue }: { langue: Langue }) {
+  const { intro } = contenu(langue);
+
   return (
     <section
       id="intro"

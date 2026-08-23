@@ -1,11 +1,9 @@
-import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
-import "./globals.css";
-import { company } from "@/content/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ChatDock } from "@/components/chat/chat-dock";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
+import { contenu, type Langue } from "@/content";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -20,46 +18,30 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://rdr-services.fr"),
-  title: {
-    default: `${company.name} — ${company.tagline} dans le Sud-Ouest`,
-    template: `%s | ${company.name}`,
-  },
-  description:
-    "Conciergerie de voyage haut de gamme dans le Sud-Ouest : séjours privés sur mesure, grands crus du Bordelais, Périgord, Landes, Pyrénées-Atlantiques et Gascogne, transport VIP avec chauffeur dédié.",
-  keywords: [
-    "conciergerie",
-    "voyage privé",
-    "Sud-Ouest",
-    "Bordeaux",
-    "Médoc",
-    "Périgord",
-    "Landes",
-    "Pyrénées-Atlantiques",
-    "Gascogne",
-    "chauffeur privé",
-    "œnotourisme",
-  ],
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    siteName: company.name,
-    title: `${company.name} — ${company.tagline}`,
-    description:
-      "Séjours privés sur mesure dans le Sud-Ouest, avec chauffeur dédié et accès privilégiés aux grands crus.",
-  },
-};
-
-export default function RootLayout({
+/**
+ * L'ossature commune aux deux langues : le document, l'en-tête, le pied et la
+ * fenêtre de discussion.
+ *
+ * Le site a deux racines — une par langue — parce que l'attribut `lang` du
+ * document et le menu doivent différer dès le HTML servi, sans quoi un moteur
+ * de recherche verrait une page anglaise déclarée en français. Elles ne
+ * diffèrent que par cette langue : tout le reste tient ici, en un exemplaire.
+ */
+export function Coque({
+  langue,
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  langue: Langue;
+  children: React.ReactNode;
+}) {
+  const { destinations, nav } = contenu(langue);
+
   return (
     // suppressHydrationWarning : le script ci-dessous ajoute la classe `js`
     // sur <html> avant l'hydratation, ce qui fait légitimement diverger
     // le balisage serveur du balisage client sur ce seul attribut.
     <html
-      lang="fr"
+      lang={langue}
       className={`${cormorant.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
@@ -77,10 +59,10 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-screen flex-col bg-sand-50">
         <RevealOnScroll />
-        <Header />
+        <Header langue={langue} nav={nav} destinations={destinations} />
         <main className="flex-1">{children}</main>
-        <Footer />
-        <ChatDock />
+        <Footer langue={langue} />
+        <ChatDock langue={langue} />
       </body>
     </html>
   );

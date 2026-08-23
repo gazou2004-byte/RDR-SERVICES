@@ -8,7 +8,7 @@
  * l'anglais doit s'y conformer, sans quoi la compilation échoue.
  */
 
-import type { Langue } from ".";
+import type { Langue } from "./langue";
 
 const fr = {
   langue: { fr: "Français", en: "English", basculer: "English" },
@@ -32,7 +32,7 @@ const fr = {
     eyebrow: "Un seul interlocuteur",
     titre: "Quatre métiers",
     description:
-      "De la journée d'excursion au voyage de trois semaines, tout passe par la même personne. Vous n'avez jamais à répéter deux fois la même chose.",
+      "De la journée d'excursion au voyage de trois semaines, tout passe par la même personne. Vous n'avez jamais à réexpliquer votre dossier.",
     voirPlus: "Voir plus",
   },
 
@@ -120,6 +120,8 @@ const fr = {
     ecrire: "Écrire un e-mail",
     amorce:
       "Dites-nous où vous voulez aller, quand et à combien. Plus c'est précis, plus notre proposition sera juste du premier coup.",
+    accueilQuestions:
+      "Bonjour. Voici ce qu'on nous demande le plus souvent. Si votre question n'y est pas, passez à l'onglet",
   },
 
   formulaire: {
@@ -139,6 +141,25 @@ const fr = {
     exemple:
       "Nous sommes deux couples, nous aimerions découvrir les grands crus du Médoc sur quatre jours en septembre…",
     envoyer: "Envoyer ma demande",
+    budgets: [
+      "Moins de 3 000 €",
+      "3 000 – 6 000 €",
+      "6 000 – 12 000 €",
+      "12 000 – 25 000 €",
+      "Plus de 25 000 €",
+    ],
+    /* Étiquettes du courriel composé par la vitrine statique. */
+    sujet: "Demande de devis",
+    ligneProjet: "Projet :",
+    dateDepart: "Date de départ",
+    indiceDepart: "Une date indicative suffit.",
+    indiceProjet:
+      "Qui voyage, ce qui vous fait envie, ce que vous voulez éviter.",
+    messagerieOuverte:
+      "Votre logiciel de messagerie devrait s'ouvrir avec la demande pré-remplie. Sinon, écrivez-nous directement.",
+    messagerieAvant:
+      "Le bouton ouvre votre messagerie avec la demande déjà rédigée.",
+    ecrireSoiMeme: "Vous préférez écrire vous-même ?",
   },
 
   credits: {
@@ -181,7 +202,7 @@ const en: Ui = {
     eyebrow: "One person to talk to",
     titre: "Four crafts",
     description:
-      "From a day out to a three-week journey, everything goes through the same person. You never have to explain yourself twice.",
+      "From a day out to a three-week journey, everything goes through the same person. You never have to explain your file twice.",
     voirPlus: "See more",
   },
 
@@ -268,6 +289,8 @@ const en: Ui = {
     ecrire: "Send an email",
     amorce:
       "Tell us where you want to go, when, and how many of you. The more precise, the closer our proposal will be first time.",
+    accueilQuestions:
+      "Hello. Here is what we are asked most often. If your question is not here, move to the tab",
   },
 
   formulaire: {
@@ -287,6 +310,23 @@ const en: Ui = {
     exemple:
       "There are two couples of us; we would like to discover the classified growths of the Médoc over four days in September…",
     envoyer: "Send my request",
+    budgets: [
+      "Under €3,000",
+      "€3,000 – 6,000",
+      "€6,000 – 12,000",
+      "€12,000 – 25,000",
+      "Over €25,000",
+    ],
+    sujet: "Proposal request",
+    ligneProjet: "Project:",
+    dateDepart: "Departure date",
+    indiceDepart: "An approximate date is enough.",
+    indiceProjet: "Who is travelling, what appeals to you, what to avoid.",
+    messagerieOuverte:
+      "Your email programme should open with the request already filled in. If it does not, write to us directly.",
+    messagerieAvant:
+      "The button opens your email programme with the request already written.",
+    ecrireSoiMeme: "Would you rather write yourself?",
   },
 
   credits: {

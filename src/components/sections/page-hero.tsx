@@ -34,7 +34,7 @@ export function PageHero({
 
       <Container className="relative z-10 text-center">
         <Ornament tone="light" className="mx-auto" />
-        <p className="eyebrow-light reveal mt-7">{eyebrow}</p>
+        <p className="eyebrow-light reveal mt-4">{eyebrow}</p>
         <h1 className="section-title reveal mt-6 !text-sand-50">
           {title}
           {accent ? (

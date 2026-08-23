@@ -43,13 +43,15 @@ export function SectionHeading({
     <div
       className={`reveal ${centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} ${className}`}
     >
+      {/* L'ornement fait maintenant 64 px de haut au lieu de 16 : le blanc
+          qui le séparait du sur-titre est resserré d'autant. */}
       <Ornament
         tone={tone}
         className={centered ? "mx-auto" : ""}
       />
 
       {eyebrow ? (
-        <p className={`mt-7 ${light ? "eyebrow-light" : "eyebrow"}`}>
+        <p className={`mt-4 ${light ? "eyebrow-light" : "eyebrow"}`}>
           {eyebrow}
         </p>
       ) : null}

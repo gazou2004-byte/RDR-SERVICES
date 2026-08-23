@@ -17,7 +17,7 @@ export function PageHero({
   description,
   image,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   accent?: string;
   description?: string;
@@ -37,8 +37,13 @@ export function PageHero({
       <div className="absolute inset-0 bg-gradient-to-b from-vine-900/60 via-transparent to-vine-900/60" />
 
       <Container className="relative z-10 text-center">
-        <p className="eyebrow-light reveal">{eyebrow}</p>
-        <h1 className="section-title reveal mt-6 !text-sand-50">
+        {/* Facultatif : sur les destinations, la durée qui s'y trouvait a été
+            retirée de la photo — elle reste dans les informations clés, juste
+            en dessous. */}
+        {eyebrow ? <p className="eyebrow-light reveal">{eyebrow}</p> : null}
+        <h1
+          className={`section-title reveal !text-sand-50${eyebrow ? " mt-6" : ""}`}
+        >
           {title}
           {accent ? (
             <>

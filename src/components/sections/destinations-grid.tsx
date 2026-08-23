@@ -53,9 +53,6 @@ export function DestinationsGrid() {
                 <span className="border border-sand-50/70 px-6 py-2.5 text-[0.7rem] font-medium tracking-[0.2em] text-sand-50 uppercase transition-colors group-hover:bg-sand-50 group-hover:text-vine-900">
                   Découvrir
                 </span>
-                <span className="text-[0.7rem] tracking-[0.18em] text-sand-100/85 uppercase">
-                  {destination.duration}
-                </span>
               </div>
             </div>
           </Link>

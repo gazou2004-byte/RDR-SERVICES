@@ -91,19 +91,15 @@ export default async function DestinationPage({ params }: Props) {
           <SectionHeading
             embleme={embleme}
             eyebrow="Temps forts"
-            title="Ce que vous verrez"
+            title="Quelques idées"
             description="Les moments qui font le séjour, et les activités à y glisser selon vos envies et la météo. Tout est réservé et organisé pour vous."
           />
+          {/* Sans numéros : ces temps forts ne sont pas une séquence, rien
+              n'oblige à les vivre dans cet ordre. */}
           <ul className="mt-14 grid gap-px border border-vine-900/10 bg-vine-900/10 sm:grid-cols-2">
-            {destination.highlights.map((highlight, index) => (
-              <li
-                key={highlight}
-                className="reveal flex items-start gap-6 bg-sand-100 p-9"
-              >
-                <span className="font-display text-3xl leading-none font-light text-feuille-600">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="pt-1.5 text-[0.95rem] leading-relaxed text-vine-700">
+            {destination.highlights.map((highlight) => (
+              <li key={highlight} className="reveal bg-sand-100 p-9">
+                <p className="text-[0.95rem] leading-relaxed text-vine-700">
                   {highlight}
                 </p>
               </li>

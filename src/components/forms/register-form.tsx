@@ -4,8 +4,12 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { registerAction, type FormState } from "@/lib/actions/auth-actions";
 import { Field, FormAlert, Input, SubmitButton } from "@/components/ui/form";
+import { ui } from "@/content/ui";
+import { lienEspaceClient, type Langue } from "@/content/langue";
 
-export function RegisterForm() {
+export function RegisterForm({ langue }: { langue: Langue }) {
+  const t = ui(langue).espace;
+  const f = ui(langue).formulaire;
   const [state, formAction] = useActionState<FormState, FormData>(
     registerAction,
     {},
@@ -17,7 +21,7 @@ export function RegisterForm() {
 
       <div className="grid gap-6 sm:grid-cols-2">
         <Field
-          label="Prénom"
+          label={f.prenom}
           name="firstName"
           errors={state.fieldErrors?.firstName}
         >
@@ -28,16 +32,16 @@ export function RegisterForm() {
         </Field>
       </div>
 
-      <Field label="Adresse e-mail" name="email" errors={state.fieldErrors?.email}>
+      <Field label={t.adresseEmail} name="email" errors={state.fieldErrors?.email}>
         <Input id="email" name="email" type="email" required autoComplete="email" />
       </Field>
 
-      <Field label="Téléphone" name="phone" errors={state.fieldErrors?.phone}>
+      <Field label={f.telephone} name="phone" errors={state.fieldErrors?.phone}>
         <Input id="phone" name="phone" type="tel" autoComplete="tel" />
       </Field>
 
       <Field
-        label="Mot de passe"
+        label={t.motDePasse}
         name="password"
         errors={state.fieldErrors?.password}
         hint="8 caractères minimum."
@@ -52,7 +56,7 @@ export function RegisterForm() {
       </Field>
 
       <Field
-        label="Confirmer le mot de passe"
+        label={t.confirmerMotDePasse}
         name="confirmPassword"
         errors={state.fieldErrors?.confirmPassword}
       >
@@ -72,7 +76,7 @@ export function RegisterForm() {
       <p className="text-center text-[0.82rem] text-vine-500">
         Vous avez déjà un compte ?{" "}
         <Link
-          href="/espace-client/connexion"
+          href={`${lienEspaceClient(langue)}/connexion`}
           className="inline-block py-1.5 text-tuile-600 transition-colors hover:text-tuile-700"
         >
           Se connecter

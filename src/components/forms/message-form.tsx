@@ -4,12 +4,17 @@ import { useActionState, useEffect, useRef } from "react";
 import { sendMessageAction } from "@/lib/actions/lead-actions";
 import type { FormState } from "@/lib/actions/auth-actions";
 import { FormAlert, SubmitButton, Textarea } from "@/components/ui/form";
+import { ui } from "@/content/ui";
+import type { Langue } from "@/content/langue";
 
 export function MessageForm({
   bookings,
+  langue,
 }: {
   bookings: { id: string; reference: string; destination: string }[];
+  langue: Langue;
 }) {
+  const t = ui(langue).espace;
   const [state, formAction] = useActionState<FormState, FormData>(
     sendMessageAction,
     {},
@@ -34,7 +39,7 @@ export function MessageForm({
             htmlFor="bookingId"
             className="block text-[0.7rem] font-medium tracking-[0.18em] text-vine-600 uppercase"
           >
-            Séjour concerné
+            {t.sejourConcerne}
           </label>
           <select
             id="bookingId"
@@ -42,7 +47,7 @@ export function MessageForm({
             defaultValue=""
             className="mt-2.5 w-full border border-vine-900/20 bg-sand-100 px-4 py-3.5 text-[0.95rem] text-vine-900 focus:border-feuille-600 focus:outline-none"
           >
-            <option value="">Question générale</option>
+            <option value="">{t.questionGenerale}</option>
             {bookings.map((booking) => (
               <option key={booking.id} value={booking.id}>
                 {booking.destination} — {booking.reference}
@@ -57,7 +62,7 @@ export function MessageForm({
           htmlFor="body"
           className="block text-[0.7rem] font-medium tracking-[0.18em] text-vine-600 uppercase"
         >
-          Votre message
+          {t.votreMessage}
         </label>
         <div className="mt-2.5">
           <Textarea
@@ -65,7 +70,7 @@ export function MessageForm({
             name="body"
             rows={5}
             required
-            placeholder="Bonjour, je souhaiterais savoir si…"
+            placeholder={t.exempleMessage}
           />
         </div>
         {state.fieldErrors?.body ? (
@@ -75,7 +80,7 @@ export function MessageForm({
         ) : null}
       </div>
 
-      <SubmitButton pendingLabel="Envoi…">Envoyer</SubmitButton>
+      <SubmitButton pendingLabel="Envoi…">{t.envoyer}</SubmitButton>
     </form>
   );
 }

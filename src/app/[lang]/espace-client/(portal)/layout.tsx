@@ -3,6 +3,9 @@ import { Container } from "@/components/ui/section";
 import { PortalNav } from "@/components/portal/portal-nav";
 import { logoutAction } from "@/lib/actions/auth-actions";
 import { requireUser } from "@/lib/auth";
+import { estLangue } from "@/content";
+import { ui } from "@/content/ui";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Espace client",
@@ -11,9 +14,14 @@ export const metadata: Metadata = {
 
 export default async function PortalLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
+  if (!estLangue(lang)) notFound();
+  const t = ui(lang).espace;
   const user = await requireUser();
 
   return (
@@ -22,7 +30,7 @@ export default async function PortalLayout({
         {/* En-tête de l'espace */}
         <div className="flex flex-col gap-6 border-b border-vine-900/12 pb-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="eyebrow">Espace client</p>
+            <p className="eyebrow">{t.titre}</p>
             <h1 className="mt-4 font-display text-4xl leading-tight font-light text-vine-900 sm:text-5xl">
               Bonjour, {user.firstName}
             </h1>
@@ -33,14 +41,14 @@ export default async function PortalLayout({
               type="submit"
               className="border border-vine-900/25 px-5 py-2.5 text-[0.7rem] font-medium tracking-[0.18em] text-vine-600 uppercase transition-colors hover:border-tuile-600 hover:text-tuile-600"
             >
-              Se déconnecter
+              {t.deconnexion}
             </button>
           </form>
         </div>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-3">
-            <PortalNav />
+            <PortalNav langue={lang} />
           </div>
           <div className="lg:col-span-9">{children}</div>
         </div>

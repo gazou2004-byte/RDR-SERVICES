@@ -7,12 +7,18 @@ import {
   type FormState,
 } from "@/lib/actions/auth-actions";
 import { Field, FormAlert, Input, SubmitButton } from "@/components/ui/form";
+import { ui } from "@/content/ui";
+import type { Langue } from "@/content/langue";
 
 export function ProfileForm({
   user,
+  langue,
 }: {
   user: { firstName: string; lastName: string; email: string; phone: string | null };
+  langue: Langue;
 }) {
+  const t = ui(langue).espace;
+  const f = ui(langue).formulaire;
   const [state, formAction] = useActionState<FormState, FormData>(
     updateProfileAction,
     {},
@@ -27,7 +33,7 @@ export function ProfileForm({
 
       <div className="grid gap-6 sm:grid-cols-2">
         <Field
-          label="Prénom"
+          label={f.prenom}
           name="firstName"
           errors={state.fieldErrors?.firstName}
         >
@@ -49,9 +55,9 @@ export function ProfileForm({
       </div>
 
       <Field
-        label="Adresse e-mail"
+        label={t.adresseEmail}
         name="email"
-        hint="Pour modifier votre e-mail, écrivez à votre conseiller."
+        hint={t.indiceEmail}
       >
         <Input
           id="email"
@@ -63,7 +69,7 @@ export function ProfileForm({
         />
       </Field>
 
-      <Field label="Téléphone" name="phone" errors={state.fieldErrors?.phone}>
+      <Field label={f.telephone} name="phone" errors={state.fieldErrors?.phone}>
         <Input
           id="phone"
           name="phone"
@@ -72,12 +78,13 @@ export function ProfileForm({
         />
       </Field>
 
-      <SubmitButton pendingLabel="Enregistrement…">Enregistrer</SubmitButton>
+      <SubmitButton pendingLabel="Enregistrement…">{t.enregistrer}</SubmitButton>
     </form>
   );
 }
 
-export function PasswordForm() {
+export function PasswordForm({ langue }: { langue: Langue }) {
+  const t = ui(langue).espace;
   const [state, formAction] = useActionState<FormState, FormData>(
     updatePasswordAction,
     {},
@@ -91,7 +98,7 @@ export function PasswordForm() {
       ) : null}
 
       <Field
-        label="Mot de passe actuel"
+        label={t.motDePasseActuel}
         name="currentPassword"
         errors={state.fieldErrors?.currentPassword}
       >
@@ -106,7 +113,7 @@ export function PasswordForm() {
 
       <div className="grid gap-6 sm:grid-cols-2">
         <Field
-          label="Nouveau mot de passe"
+          label={t.nouveauMotDePasse}
           name="password"
           errors={state.fieldErrors?.password}
           hint="8 caractères minimum."
@@ -120,7 +127,7 @@ export function PasswordForm() {
           />
         </Field>
         <Field
-          label="Confirmer"
+          label={t.confirmer}
           name="confirmPassword"
           errors={state.fieldErrors?.confirmPassword}
         >
@@ -135,7 +142,7 @@ export function PasswordForm() {
       </div>
 
       <SubmitButton pendingLabel="Modification…">
-        Changer le mot de passe
+        {t.changerMotDePasse}
       </SubmitButton>
     </form>
   );

@@ -34,6 +34,7 @@ export {
   cheminDansLangue,
   estLangue,
   lien,
+  lienEspaceClient,
   separer,
 } from "./langue";
 export type { Langue } from "./langue";

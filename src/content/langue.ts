@@ -76,3 +76,12 @@ export function separer(chemin: string): { langue: Langue; reste: string } {
 export function cheminDansLangue(chemin: string, vers: Langue): string {
   return lien(vers, separer(chemin).reste);
 }
+
+/**
+ * L'espace client fait exception : il vit sous un préfixe de langue même en
+ * français. Ses pages sont rendues à la demande — elles ont besoin d'un
+ * serveur — et ne sont donc pas dupliquées comme celles du site public.
+ */
+export function lienEspaceClient(langue: Langue): string {
+  return `/${langue}/espace-client`;
+}

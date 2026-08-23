@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { StatusBadge } from "./status-badge";
 import { formatDateRange, formatPrice, nightsBetween } from "@/lib/format";
+import { ui } from "@/content/ui";
+import type { Langue } from "@/content/langue";
 
 export type BookingSummary = {
   id: string;
@@ -14,7 +16,14 @@ export type BookingSummary = {
   paidCents: number;
 };
 
-export function BookingCard({ booking }: { booking: BookingSummary }) {
+export function BookingCard({
+  booking,
+  langue,
+}: {
+  booking: BookingSummary;
+  langue: Langue;
+}) {
+  const t = ui(langue).espace;
   const nights = nightsBetween(booking.startDate, booking.endDate);
   const remaining = booking.totalCents - booking.paidCents;
 
@@ -38,7 +47,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
       <dl className="mt-7 grid gap-5 border-t border-vine-900/12 pt-6 sm:grid-cols-4">
         <div>
           <dt className="text-[0.7rem] tracking-[0.16em] text-vine-500 uppercase">
-            Dates
+            {t.dates}
           </dt>
           <dd className="mt-1.5 text-[0.85rem] text-vine-800">
             {formatDateRange(booking.startDate, booking.endDate)}
@@ -46,7 +55,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
         </div>
         <div>
           <dt className="text-[0.7rem] tracking-[0.16em] text-vine-500 uppercase">
-            Durée
+            {t.duree}
           </dt>
           <dd className="mt-1.5 text-[0.85rem] text-vine-800">
             {nights} {nights > 1 ? "nuits" : "nuit"}
@@ -54,7 +63,7 @@ export function BookingCard({ booking }: { booking: BookingSummary }) {
         </div>
         <div>
           <dt className="text-[0.7rem] tracking-[0.16em] text-vine-500 uppercase">
-            Voyageurs
+            {t.voyageurs}
           </dt>
           <dd className="mt-1.5 text-[0.85rem] text-vine-800">
             {booking.travelers}

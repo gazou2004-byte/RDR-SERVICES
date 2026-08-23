@@ -2,23 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ui } from "@/content/ui";
+import { lienEspaceClient, type Langue } from "@/content/langue";
 
-const links = [
-  { label: "Tableau de bord", href: "/espace-client" },
-  { label: "Mes séjours", href: "/espace-client/sejours" },
-  { label: "Documents", href: "/espace-client/documents" },
-  { label: "Messages", href: "/espace-client/messages" },
-  { label: "Mon profil", href: "/espace-client/profil" },
-];
-
-export function PortalNav() {
+export function PortalNav({ langue }: { langue: Langue }) {
   const pathname = usePathname();
+  const n = ui(langue).portail;
+  const racine = lienEspaceClient(langue);
+  const links = [
+    { label: n.tableauDeBord, href: racine },
+    { label: n.mesSejours, href: `${racine}/sejours` },
+    { label: n.documents, href: `${racine}/documents` },
+    { label: n.messages, href: `${racine}/messages` },
+    { label: n.monProfil, href: `${racine}/profil` },
+  ];
 
   return (
     <nav className="flex gap-px overflow-x-auto border border-vine-900/12 bg-vine-900/10 lg:flex-col lg:overflow-visible">
       {links.map((link) => {
         const active =
-          link.href === "/espace-client"
+          link.href === racine
             ? pathname === link.href
             : pathname.startsWith(link.href);
 

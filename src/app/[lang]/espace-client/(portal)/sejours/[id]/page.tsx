@@ -10,12 +10,16 @@ import {
   formatPrice,
   nightsBetween,
 } from "@/lib/format";
+import { estLangue } from "@/content";
+import { ui } from "@/content/ui";
 
-type Props = { params: Promise<{ id: string }> };
+type Props = { params: Promise<{ lang: string; id: string }> };
 
 export default async function BookingDetailPage({ params }: Props) {
   const user = await requireUser();
-  const { id } = await params;
+  const { lang, id } = await params;
+  if (!estLangue(lang)) notFound();
+  const t = ui(lang).espace;
 
   // Le filtre sur userId garantit qu'un client ne peut pas ouvrir
   // le séjour de quelqu'un d'autre en devinant un identifiant.
@@ -87,7 +91,7 @@ export default async function BookingDetailPage({ params }: Props) {
       {booking.totalCents > 0 ? (
         <section className="border border-vine-900/12 p-8">
           <h3 className="text-[0.7rem] font-medium tracking-[0.22em] text-feuille-600 uppercase">
-            Règlement
+            {t.reglement}
           </h3>
           <div className="mt-6 flex flex-wrap items-baseline justify-between gap-4">
             <p className="font-display text-3xl font-light text-vine-900">
@@ -108,7 +112,7 @@ export default async function BookingDetailPage({ params }: Props) {
             aria-valuenow={progress}
             aria-valuemin={0}
             aria-valuemax={100}
-            aria-label="Progression du règlement"
+            aria-label={t.progressionReglement}
           >
             <div
               className="h-full bg-feuille-600 transition-all duration-700"
@@ -122,7 +126,7 @@ export default async function BookingDetailPage({ params }: Props) {
       {booking.notes ? (
         <section className="border-l-2 border-feuille-600 bg-sand-100 p-8">
           <h3 className="text-[0.7rem] font-medium tracking-[0.22em] text-feuille-600 uppercase">
-            Note de votre conseiller
+            {t.noteConseiller}
           </h3>
           <p className="mt-5 text-[0.95rem] leading-relaxed whitespace-pre-line text-vine-700">
             {booking.notes}
@@ -133,7 +137,7 @@ export default async function BookingDetailPage({ params }: Props) {
       {/* Documents rattachés */}
       <section>
         <h3 className="font-display text-2xl font-light text-vine-900">
-          Documents du séjour
+          {t.documentsSejour}
         </h3>
         <div className="mt-6">
           {booking.documents.length === 0 ? (
@@ -159,7 +163,7 @@ export default async function BookingDetailPage({ params }: Props) {
                       </p>
                     </div>
                     <span className="shrink-0 text-[0.7rem] tracking-[0.18em] text-tuile-600 uppercase">
-                      Ouvrir
+                      {t.ouvrir}
                     </span>
                   </a>
                 </li>
@@ -171,13 +175,13 @@ export default async function BookingDetailPage({ params }: Props) {
 
       <section className="border border-vine-900/12 bg-sand-100 p-8 text-center">
         <p className="text-[0.95rem] text-vine-700">
-          Une question sur ce séjour ?
+          {t.questionSejour}
         </p>
         <Link
           href="/espace-client/messages"
           className="mt-5 inline-block bg-feuille-600 px-7 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] text-sand-50 uppercase transition-colors hover:bg-feuille-500"
         >
-          Écrire à mon conseiller
+          {t.ecrireConseiller}
         </Link>
       </section>
     </div>

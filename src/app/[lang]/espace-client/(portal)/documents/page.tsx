@@ -3,8 +3,18 @@ import { requireUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { EmptyState } from "@/components/portal/empty-state";
 import { documentKinds, formatDate } from "@/lib/format";
+import { estLangue } from "@/content";
+import { ui } from "@/content/ui";
+import { notFound } from "next/navigation";
 
-export default async function DocumentsPage() {
+export default async function DocumentsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!estLangue(lang)) notFound();
+  const t = ui(lang).espace;
   const user = await requireUser();
 
   const documents = await prisma.document.findMany({
@@ -18,7 +28,7 @@ export default async function DocumentsPage() {
   return (
     <div>
       <h2 className="font-display text-3xl font-light text-vine-900">
-        Tous vos documents
+        {t.tousDocuments}
       </h2>
       <p className="mt-4 max-w-xl text-[0.9rem] leading-relaxed text-vine-500">
         Devis, factures, programmes détaillés et bons d&apos;échange. Tout reste
@@ -28,7 +38,7 @@ export default async function DocumentsPage() {
       <div className="mt-9">
         {documents.length === 0 ? (
           <EmptyState
-            title="Aucun document"
+            title={t.aucunDocument}
             description="Vos documents de voyage apparaîtront ici au fur et à mesure de la préparation de votre séjour."
             actionLabel="Demander un devis"
             actionHref="/contact"

@@ -10,6 +10,7 @@ import {
   NOM_LANGUE,
   cheminDansLangue,
   lien as adresse,
+  lienEspaceClient,
   type Langue,
 } from "@/content/langue";
 import { Logo } from "./logo";
@@ -203,7 +204,7 @@ export function Header({
 
           {espaceClientDisponible ? (
             <Link
-              href={adresse(langue, "/espace-client")}
+              href={lienEspaceClient(langue)}
               className={`ml-2 border px-5 py-2.5 text-[0.7rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
                 transparent
                   ? "border-sand-50/60 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
@@ -295,7 +296,7 @@ export function Header({
 
           {espaceClientDisponible ? (
             <Link
-              href={adresse(langue, "/espace-client")}
+              href={lienEspaceClient(langue)}
               className="mt-6 border border-tuile-600/60 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-tuile-700 uppercase"
             >
               {t.entete.espaceClient}

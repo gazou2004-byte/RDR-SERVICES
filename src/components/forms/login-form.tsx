@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { loginAction, type FormState } from "@/lib/actions/auth-actions";
 import { Field, FormAlert, Input, SubmitButton } from "@/components/ui/form";
+import { ui } from "@/content/ui";
+import { lienEspaceClient, type Langue } from "@/content/langue";
 
-export function LoginForm() {
+export function LoginForm({ langue }: { langue: Langue }) {
+  const t = ui(langue).espace;
   const [state, formAction] = useActionState<FormState, FormData>(
     loginAction,
     {},
@@ -15,19 +18,19 @@ export function LoginForm() {
     <form action={formAction} className="space-y-6">
       {state.error ? <FormAlert tone="error">{state.error}</FormAlert> : null}
 
-      <Field label="Adresse e-mail" name="email" errors={state.fieldErrors?.email}>
+      <Field label={t.adresseEmail} name="email" errors={state.fieldErrors?.email}>
         <Input
           id="email"
           name="email"
           type="email"
           required
           autoComplete="email"
-          placeholder="vous@exemple.fr"
+          placeholder={t.exempleEmail}
         />
       </Field>
 
       <Field
-        label="Mot de passe"
+        label={t.motDePasse}
         name="password"
         errors={state.fieldErrors?.password}
       >
@@ -47,7 +50,7 @@ export function LoginForm() {
       <p className="text-center text-[0.82rem] text-vine-500">
         Pas encore de compte ?{" "}
         <Link
-          href="/espace-client/inscription"
+          href={`${lienEspaceClient(langue)}/inscription`}
           className="inline-block py-1.5 text-tuile-600 transition-colors hover:text-tuile-700"
         >
           Créer mon espace

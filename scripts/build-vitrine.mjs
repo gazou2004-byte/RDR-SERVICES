@@ -9,7 +9,7 @@
  * pas. Le site complet se compile toujours avec `npm run build`.
  *
  * Deux escamotages, tous deux annulés à la fin quoi qu'il arrive :
- *   1. `src/app/(fr)/espace-client` est renommé `_espace-client`. Next ignore les
+ *   1. `src/app/[lang]/espace-client` est renommé `_espace-client`. Next ignore les
  *      dossiers commençant par un souligné : les pages disparaissent donc du
  *      routage sans être supprimées.
  *   2. La page contact bascule sur le formulaire qui ouvre la messagerie,
@@ -21,8 +21,8 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const espaceClient = path.join(racine, "src/app/(fr)/espace-client");
-const espaceClientMasque = path.join(racine, "src/app/(fr)/_espace-client");
+const espaceClient = path.join(racine, "src/app/[lang]/espace-client");
+const espaceClientMasque = path.join(racine, "src/app/[lang]/_espace-client");
 // Le formulaire est choisi dans ce fichier, seul endroit à réécrire.
 const socleChat = path.join(racine, "src/components/chat/chat-dock.tsx");
 

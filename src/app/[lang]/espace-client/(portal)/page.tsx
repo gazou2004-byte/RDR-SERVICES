@@ -4,8 +4,18 @@ import { prisma } from "@/lib/prisma";
 import { BookingCard } from "@/components/portal/booking-card";
 import { EmptyState } from "@/components/portal/empty-state";
 import { formatDate, documentKinds } from "@/lib/format";
+import { estLangue } from "@/content";
+import { ui } from "@/content/ui";
+import { notFound } from "next/navigation";
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!estLangue(lang)) notFound();
+  const t = ui(lang).espace;
   const user = await requireUser();
 
   const [bookings, documents, unreadMessages] = await Promise.all([
@@ -57,14 +67,14 @@ export default async function DashboardPage() {
       <section>
         <div className="flex items-baseline justify-between gap-6">
           <h2 className="font-display text-3xl font-light text-vine-900">
-            Vos prochains séjours
+            {t.prochainsSejours}
           </h2>
           {upcoming.length > 0 ? (
             <Link
               href="/espace-client/sejours"
               className="text-[0.7rem] tracking-[0.18em] text-tuile-600 uppercase transition-colors hover:text-tuile-600"
             >
-              Tout voir →
+              {t.toutVoir}
             </Link>
           ) : null}
         </div>
@@ -72,7 +82,7 @@ export default async function DashboardPage() {
         <div className="mt-7 space-y-5">
           {upcoming.length === 0 ? (
             <EmptyState
-              title="Aucun séjour programmé"
+              title={t.aucunSejour}
               description="Dès qu'un devis sera établi pour vous, il apparaîtra ici avec son programme, ses documents et son suivi de paiement."
               actionLabel="Demander un devis"
               actionHref="/contact"
@@ -81,7 +91,7 @@ export default async function DashboardPage() {
             upcoming
               .slice(0, 3)
               .map((booking) => (
-                <BookingCard key={booking.id} booking={booking} />
+                <BookingCard key={booking.id} booking={booking} langue={lang} />
               ))
           )}
         </div>
@@ -90,14 +100,14 @@ export default async function DashboardPage() {
       <section>
         <div className="flex items-baseline justify-between gap-6">
           <h2 className="font-display text-3xl font-light text-vine-900">
-            Documents récents
+            {t.documentsRecents}
           </h2>
           {documents.length > 0 ? (
             <Link
               href="/espace-client/documents"
               className="text-[0.7rem] tracking-[0.18em] text-tuile-600 uppercase transition-colors hover:text-tuile-600"
             >
-              Tout voir →
+              {t.toutVoir}
             </Link>
           ) : null}
         </div>
@@ -105,7 +115,7 @@ export default async function DashboardPage() {
         <div className="mt-7">
           {documents.length === 0 ? (
             <EmptyState
-              title="Aucun document pour l'instant"
+              title={t.aucunDocument}
               description="Vos devis, factures, programmes détaillés et bons d'échange seront déposés ici au fil de la préparation de votre séjour."
             />
           ) : (

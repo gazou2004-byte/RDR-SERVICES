@@ -3,8 +3,18 @@ import { prisma } from "@/lib/prisma";
 import { MessageForm } from "@/components/forms/message-form";
 import { company } from "@/content/site";
 import { formatDate } from "@/lib/format";
+import { estLangue } from "@/content";
+import { ui } from "@/content/ui";
+import { notFound } from "next/navigation";
 
-export default async function MessagesPage() {
+export default async function MessagesPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!estLangue(lang)) notFound();
+  const t = ui(lang).espace;
   const user = await requireUser();
 
   const [messages, bookings] = await Promise.all([
@@ -84,9 +94,9 @@ export default async function MessagesPage() {
 
       <div className="border-t border-vine-900/12 pt-10">
         <h3 className="mb-6 font-display text-2xl font-light text-vine-900">
-          Nouveau message
+          {t.nouveauMessage}
         </h3>
-        <MessageForm bookings={bookings} />
+        <MessageForm bookings={bookings} langue={lang} />
       </div>
     </div>
   );

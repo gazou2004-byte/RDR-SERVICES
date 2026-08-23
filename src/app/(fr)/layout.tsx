@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { Coque } from "@/components/layout/coque";
 import { company } from "@/content/site";
+import { LOCALE_OG, META, equivalents } from "@/content/meta";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rdr-services.fr"),
@@ -9,30 +10,14 @@ export const metadata: Metadata = {
     default: `${company.name} — ${company.tagline} dans le Sud-Ouest`,
     template: `%s | ${company.name}`,
   },
-  description:
-    "Conciergerie de voyage haut de gamme dans le Sud-Ouest : séjours privés sur mesure, grands crus du Bordelais, Périgord, Landes, Pyrénées-Atlantiques et Gascogne, transport VIP avec chauffeur dédié.",
-  keywords: [
-    "conciergerie",
-    "voyage privé",
-    "Sud-Ouest",
-    "Bordeaux",
-    "Médoc",
-    "Périgord",
-    "Landes",
-    "Pyrénées-Atlantiques",
-    "Gascogne",
-    "chauffeur privé",
-    "œnotourisme",
-  ],
-  // Dit aux moteurs que la même page existe en anglais, et laquelle servir
-  // par défaut. Sans ces liens, les deux versions se feraient concurrence.
-  alternates: {
-    canonical: "/",
-    languages: { fr: "/", en: "/en/", "x-default": "/" },
-  },
+  description: META.fr.description,
+  keywords: META.fr.motsCles,
+  // Dit aux moteurs que la même page existe dans les cinq langues, et laquelle
+  // servir par défaut. Sans ces liens, les versions se feraient concurrence.
+  alternates: equivalents("fr", "/"),
   openGraph: {
     type: "website",
-    locale: "fr_FR",
+    locale: LOCALE_OG.fr,
     siteName: company.name,
     title: `${company.name} — ${company.tagline}`,
     description:

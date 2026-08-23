@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 import type { Destination, NavItem } from "@/content/site";
 import { ui } from "@/content/ui";
 import {
-  autreLangue,
-  cheminAutreLangue,
+  LANGUES,
+  NOM_LANGUE,
+  cheminDansLangue,
   lien as adresse,
   type Langue,
 } from "@/content/langue";
@@ -168,20 +169,37 @@ export function Header({
             );
           })}
 
-          {/* Le sélecteur mène à la même page dans l'autre langue, pas à son
+          {/* Chaque code mène à la même page dans sa langue, pas à son
               accueil : perdre sa place en changeant de langue est agaçant. */}
-          <Link
-            href={cheminAutreLangue(pathname, langue)}
-            hrefLang={autreLangue(langue)}
-            lang={autreLangue(langue)}
-            className={`ml-1 px-2.5 py-2 text-[0.7rem] font-medium tracking-[0.16em] uppercase transition-colors ${
-              transparent
-                ? "text-sand-50/70 hover:text-sand-50"
-                : "text-vine-500 hover:text-tuile-600"
-            }`}
+          <div
+            aria-label={t.langue.choisir}
+            className="ml-1 flex items-center gap-0.5"
           >
-            {t.langue.basculer}
-          </Link>
+            {LANGUES.map((code) => {
+              const courante = code === langue;
+              return (
+                <Link
+                  key={code}
+                  href={cheminDansLangue(pathname, code)}
+                  hrefLang={code}
+                  lang={code}
+                  title={NOM_LANGUE[code]}
+                  aria-current={courante ? "true" : undefined}
+                  className={`px-1.5 py-2 text-[0.65rem] font-medium tracking-[0.1em] uppercase transition-colors ${
+                    courante
+                      ? transparent
+                        ? "text-sand-50"
+                        : "text-tuile-600"
+                      : transparent
+                        ? "text-sand-50/45 hover:text-sand-50"
+                        : "text-vine-400 hover:text-tuile-600"
+                  }`}
+                >
+                  {code}
+                </Link>
+              );
+            })}
+          </div>
 
           {espaceClientDisponible ? (
             <Link
@@ -255,14 +273,25 @@ export function Header({
           ))}
           {/* Le menu déplié est toujours sur fond clair : pas de variante
               transparente ici. */}
-          <Link
-            href={cheminAutreLangue(pathname, langue)}
-            hrefLang={autreLangue(langue)}
-            lang={autreLangue(langue)}
-            className="border-b border-vine-900/10 py-4 text-[0.72rem] font-medium tracking-[0.16em] text-vine-500 uppercase"
+          <div
+            aria-label={t.langue.choisir}
+            className="flex flex-wrap items-center gap-x-5 border-b border-vine-900/10 py-4"
           >
-            {t.langue.basculer}
-          </Link>
+            {LANGUES.map((code) => (
+              <Link
+                key={code}
+                href={cheminDansLangue(pathname, code)}
+                hrefLang={code}
+                lang={code}
+                aria-current={code === langue ? "true" : undefined}
+                className={`text-[0.72rem] font-medium tracking-[0.14em] uppercase ${
+                  code === langue ? "text-tuile-600" : "text-vine-400"
+                }`}
+              >
+                {NOM_LANGUE[code]}
+              </Link>
+            ))}
+          </div>
 
           {espaceClientDisponible ? (
             <Link

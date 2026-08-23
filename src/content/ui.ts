@@ -11,7 +11,7 @@
 import type { Langue } from "./langue";
 
 const fr = {
-  langue: { fr: "Français", en: "English", basculer: "English" },
+  langue: { choisir: "Changer de langue" },
 
   entete: {
     espaceClient: "Espace client",
@@ -181,7 +181,7 @@ const fr = {
 export type Ui = typeof fr;
 
 const en: Ui = {
-  langue: { fr: "Français", en: "English", basculer: "Français" },
+  langue: { choisir: "Change language" },
 
   entete: {
     espaceClient: "Client area",
@@ -345,6 +345,515 @@ const en: Ui = {
   },
 };
 
+const es: Ui = {
+  langue: { choisir: "Cambiar de idioma" },
+
+  entete: {
+    espaceClient: "Área de cliente",
+    ouvrirMenu: "Abrir el menú",
+    fermerMenu: "Cerrar el menú",
+    retourAccueil: "RDR Services — volver al inicio",
+  },
+
+  pied: {
+    mentions: "Aviso legal",
+    confidentialite: "Privacidad",
+    credits: "Créditos fotográficos",
+  },
+
+  heros: { sectionSuivante: "Ir a la sección siguiente", paysage: "Paisaje" },
+
+  services: {
+    eyebrow: "Un único interlocutor",
+    titre: "Cuatro oficios",
+    description:
+      "De la excursión de un día al viaje de tres semanas, todo pasa por la misma persona. Nunca tendrá que volver a explicar su expediente.",
+    voirPlus: "Ver más",
+  },
+
+  destinations: {
+    eyebrow: "Cinco territorios del Suroeste",
+    titre: "Destinos",
+    description:
+      "Cada itinerario que aquí se presenta es un punto de partida. Lo reelaboramos por completo según sus deseos, su ritmo y la estación.",
+    decouvrir: "Descubrir",
+  },
+
+  apropos: { eyebrow: "Nuestra historia", titre: "Quiénes somos" },
+
+  etapes: { eyebrow: "De la primera idea a la salida", titre: "Cómo funciona" },
+
+  temoignages: {
+    eyebrow: "Testimonios",
+    titre: "Nos confiaron su viaje",
+  },
+
+  faq: {
+    eyebrow: "Preguntas frecuentes",
+    titre: "Lo que nos preguntan",
+    relance:
+      "¿Su pregunta no está aquí? Escríbanos, respondemos en menos de 24 horas.",
+  },
+
+  contact: {
+    eyebrow: "Solicitud de presupuesto",
+    titre: "Hablemos de su viaje",
+    description:
+      "Cuanto más preciso sea, más ajustada será nuestra propuesta a la primera. Respuesta en 24 horas laborables.",
+    joindre: "Contacto directo",
+    telephone: "Teléfono",
+    email: "Correo electrónico",
+    bureau: "Oficina",
+    disponibilite: "Disponibilidad",
+    horaires: "De lunes a sábado, de 9 h a 19 h",
+    assistance: "Asistencia 24 h durante su estancia",
+    nousContacter: "Contactar",
+  },
+
+  region: {
+    activitesEyebrow: "Sobre el terreno",
+    activitesTitre: "Algunas actividades",
+    activitesDescription:
+      "Para incluir en su programa, según sus ganas y el tiempo. Todo queda reservado y organizado para usted.",
+    voir: "Ver",
+    experiencesEyebrow: "Allí, con nosotros",
+    experiencesTitre: "Experiencias únicas",
+    experiencesDescription:
+      "Estos momentos no se reservan por internet: se apoyan en relaciones construidas a lo largo de los años.",
+  },
+
+  destination: {
+    ideesEyebrow: "Momentos destacados",
+    ideesTitre: "Algunas ideas",
+    ideesDescription:
+      "Los momentos que hacen el viaje, y las actividades que puede añadir según sus ganas y el tiempo. Todo queda reservado y organizado para usted.",
+    dureeConseillee: "Duración aconsejada",
+    meilleureSaison: "Mejor temporada",
+    format: "Formato",
+    privatif: "Totalmente privado",
+    itineraireEyebrow: "Itinerario sugerido",
+    itineraireTitre: "Un ejemplo,",
+    itineraireAccent: "no una fórmula",
+    itineraireDescription:
+      "Así se desarrolla un viaje tipo. El suyo se recompondrá desde cero tras nuestra primera conversación.",
+    autresEyebrow: "Seguir",
+    autresTitre: "Los demás territorios",
+    ctaTitre: "Componer su viaje por",
+    ctaDescription:
+      "Díganos sus fechas, cuántos viajan y qué les apetece. Volvemos a usted en 72 horas con un programa completo.",
+  },
+
+  chat: {
+    lanceur: "¿Una pregunta?",
+    lanceurTitre: "Haga clic para abrir — arrastre arriba o abajo para mover el botón",
+    lanceurAria:
+      "Abrir la conversación. Arrastre el botón, o use las flechas arriba y abajo, para moverlo.",
+    poigneeTitre: "Arrastre arriba o abajo para mover la ventana",
+    dialogue: "Hablar con",
+    reponse: "Respuesta en 24 horas laborables",
+    fermer: "Cerrar la conversación",
+    ongletQuestions: "Preguntas frecuentes",
+    ongletProjet: "Su proyecto",
+    appeler: "Llamar",
+    ecrire: "Escribir un correo",
+    amorce:
+      "Díganos adónde quiere ir, cuándo y cuántos son. Cuanto más preciso, más ajustada será nuestra propuesta a la primera.",
+    accueilQuestions:
+      "Hola. Esto es lo que más nos preguntan. Si su pregunta no está aquí, pase a la pestaña",
+  },
+
+  formulaire: {
+    prenom: "Nombre",
+    nom: "Apellidos",
+    email: "Correo electrónico",
+    telephone: "Teléfono",
+    destination: "Destino deseado",
+    inconnu: "Todavía no lo sé",
+    plusieurs: "Varias regiones",
+    evenement: "Celebración privada / convención",
+    depart: "Fecha aproximada de salida",
+    voyageurs: "Número de viajeros",
+    budget: "Presupuesto previsto",
+    preciserPlusTard: "Concretar más adelante",
+    projet: "Su proyecto",
+    exemple:
+      "Somos dos parejas y nos gustaría descubrir los grandes crus del Médoc durante cuatro días en septiembre…",
+    envoyer: "Enviar mi solicitud",
+    budgets: [
+      "Menos de 3.000 €",
+      "3.000 – 6.000 €",
+      "6.000 – 12.000 €",
+      "12.000 – 25.000 €",
+      "Más de 25.000 €",
+    ],
+    sujet: "Solicitud de presupuesto",
+    ligneProjet: "Proyecto:",
+    dateDepart: "Fecha de salida",
+    indiceDepart: "Basta con una fecha orientativa.",
+    indiceProjet: "Quién viaja, qué les apetece, qué prefieren evitar.",
+    messagerieOuverte:
+      "Su programa de correo debería abrirse con la solicitud ya redactada. Si no, escríbanos directamente.",
+    messagerieAvant:
+      "El botón abre su programa de correo con la solicitud ya redactada.",
+    ecrireSoiMeme: "¿Prefiere escribir usted mismo?",
+  },
+
+  credits: {
+    eyebrow: "Atribuciones",
+    titre: "Créditos fotográficos",
+    pageWikimedia: "Página de Wikimedia Commons →",
+    texteLicence: "Texto de la licencia →",
+  },
+
+  introuvable: {
+    code: "Error 404",
+    titre: "Página no encontrada",
+    texte: "Esta página no existe o se ha movido. Volvamos sobre nuestros pasos.",
+    retour: "Volver al inicio",
+    contact: "Contactar",
+  },
+};
+
+const de: Ui = {
+  langue: { choisir: "Sprache wechseln" },
+
+  entete: {
+    espaceClient: "Kundenbereich",
+    ouvrirMenu: "Menü öffnen",
+    fermerMenu: "Menü schließen",
+    retourAccueil: "RDR Services — zurück zur Startseite",
+  },
+
+  pied: {
+    mentions: "Impressum",
+    confidentialite: "Datenschutz",
+    credits: "Bildnachweise",
+  },
+
+  heros: { sectionSuivante: "Zum nächsten Abschnitt", paysage: "Landschaft" },
+
+  services: {
+    eyebrow: "Ein einziger Ansprechpartner",
+    titre: "Vier Handwerke",
+    description:
+      "Vom Tagesausflug bis zur dreiwöchigen Reise läuft alles über dieselbe Person. Sie müssen Ihr Anliegen nie zweimal erklären.",
+    voirPlus: "Mehr sehen",
+  },
+
+  destinations: {
+    eyebrow: "Fünf Regionen des Südwestens",
+    titre: "Reiseziele",
+    description:
+      "Jede hier gezeigte Route ist ein Ausgangspunkt. Wir arbeiten sie vollständig um, nach Ihren Wünschen, Ihrem Tempo und der Jahreszeit.",
+    decouvrir: "Entdecken",
+  },
+
+  apropos: { eyebrow: "Unsere Geschichte", titre: "Über uns" },
+
+  etapes: { eyebrow: "Von der ersten Idee bis zur Abreise", titre: "So läuft es ab" },
+
+  temoignages: {
+    eyebrow: "Stimmen",
+    titre: "Sie haben uns ihre Reise anvertraut",
+  },
+
+  faq: {
+    eyebrow: "Häufige Fragen",
+    titre: "Was man uns fragt",
+    relance:
+      "Ihre Frage steht nicht dabei? Schreiben Sie uns, wir antworten binnen 24 Stunden.",
+  },
+
+  contact: {
+    eyebrow: "Angebot anfragen",
+    titre: "Sprechen wir über Ihre Reise",
+    description:
+      "Je genauer Sie sind, desto treffender ist unser Vorschlag beim ersten Mal. Antwort binnen 24 Werkstunden.",
+    joindre: "Direkter Kontakt",
+    telephone: "Telefon",
+    email: "E-Mail",
+    bureau: "Büro",
+    disponibilite: "Erreichbarkeit",
+    horaires: "Montag bis Samstag, 9 bis 19 Uhr",
+    assistance: "Rund um die Uhr erreichbar während Ihres Aufenthalts",
+    nousContacter: "Kontakt aufnehmen",
+  },
+
+  region: {
+    activitesEyebrow: "Vor Ort",
+    activitesTitre: "Einige Vorschläge",
+    activitesDescription:
+      "Zum Einbauen in Ihr Programm, je nach Lust und Wetter. Alles wird für Sie reserviert und organisiert.",
+    voir: "Ansehen",
+    experiencesEyebrow: "Dort, mit uns",
+    experiencesTitre: "Besondere Erlebnisse",
+    experiencesDescription:
+      "Diese Momente lassen sich nicht online buchen: sie beruhen auf über Jahre gewachsenen Beziehungen.",
+  },
+
+  destination: {
+    ideesEyebrow: "Höhepunkte",
+    ideesTitre: "Einige Ideen",
+    ideesDescription:
+      "Die Momente, die die Reise ausmachen, und die Unternehmungen, die sich je nach Lust und Wetter einfügen lassen. Alles wird für Sie reserviert und organisiert.",
+    dureeConseillee: "Empfohlene Dauer",
+    meilleureSaison: "Beste Zeit",
+    format: "Form",
+    privatif: "Vollständig privat",
+    itineraireEyebrow: "Vorgeschlagene Route",
+    itineraireTitre: "Ein Beispiel,",
+    itineraireAccent: "keine Formel",
+    itineraireDescription:
+      "So verläuft eine typische Reise. Ihre wird nach unserem ersten Gespräch von Grund auf neu zusammengestellt.",
+    autresEyebrow: "Weiter",
+    autresTitre: "Die anderen Regionen",
+    ctaTitre: "Ihre Reise gestalten:",
+    ctaDescription:
+      "Nennen Sie uns Ihre Daten, die Zahl der Reisenden und was Sie reizt. Wir melden uns binnen 72 Stunden mit einem vollständigen Programm.",
+  },
+
+  chat: {
+    lanceur: "Eine Frage?",
+    lanceurTitre: "Klicken zum Öffnen — nach oben oder unten ziehen, um die Schaltfläche zu verschieben",
+    lanceurAria:
+      "Gespräch öffnen. Ziehen Sie die Schaltfläche oder verwenden Sie die Pfeiltasten nach oben und unten, um sie zu verschieben.",
+    poigneeTitre: "Nach oben oder unten ziehen, um das Fenster zu verschieben",
+    dialogue: "Sprechen mit",
+    reponse: "Antwort binnen 24 Werkstunden",
+    fermer: "Gespräch schließen",
+    ongletQuestions: "Häufige Fragen",
+    ongletProjet: "Ihr Vorhaben",
+    appeler: "Anrufen",
+    ecrire: "E-Mail schreiben",
+    amorce:
+      "Sagen Sie uns, wohin Sie möchten, wann und zu wievielt. Je genauer, desto treffender ist unser Vorschlag beim ersten Mal.",
+    accueilQuestions:
+      "Guten Tag. Das wird uns am häufigsten gefragt. Steht Ihre Frage nicht dabei, wechseln Sie zum Reiter",
+  },
+
+  formulaire: {
+    prenom: "Vorname",
+    nom: "Nachname",
+    email: "E-Mail",
+    telephone: "Telefon",
+    destination: "Gewünschtes Reiseziel",
+    inconnu: "Weiß ich noch nicht",
+    plusieurs: "Mehrere Regionen",
+    evenement: "Privater Anlass / Klausurtagung",
+    depart: "Ungefähres Abreisedatum",
+    voyageurs: "Zahl der Reisenden",
+    budget: "Vorgesehenes Budget",
+    preciserPlusTard: "Später festlegen",
+    projet: "Ihr Vorhaben",
+    exemple:
+      "Wir sind zwei Paare und möchten im September vier Tage lang die klassifizierten Gewächse des Médoc entdecken …",
+    envoyer: "Anfrage senden",
+    budgets: [
+      "Unter 3.000 €",
+      "3.000 – 6.000 €",
+      "6.000 – 12.000 €",
+      "12.000 – 25.000 €",
+      "Über 25.000 €",
+    ],
+    sujet: "Angebotsanfrage",
+    ligneProjet: "Vorhaben:",
+    dateDepart: "Abreisedatum",
+    indiceDepart: "Ein ungefähres Datum genügt.",
+    indiceProjet: "Wer reist, was Sie reizt, was Sie vermeiden möchten.",
+    messagerieOuverte:
+      "Ihr E-Mail-Programm sollte sich mit der bereits ausgefüllten Anfrage öffnen. Andernfalls schreiben Sie uns direkt.",
+    messagerieAvant:
+      "Die Schaltfläche öffnet Ihr E-Mail-Programm mit der bereits verfassten Anfrage.",
+    ecrireSoiMeme: "Lieber selbst schreiben?",
+  },
+
+  credits: {
+    eyebrow: "Nachweise",
+    titre: "Bildnachweise",
+    pageWikimedia: "Seite bei Wikimedia Commons →",
+    texteLicence: "Lizenztext →",
+  },
+
+  introuvable: {
+    code: "Fehler 404",
+    titre: "Seite nicht gefunden",
+    texte: "Diese Seite gibt es nicht oder sie wurde verschoben. Gehen wir zurück.",
+    retour: "Zurück zur Startseite",
+    contact: "Kontakt aufnehmen",
+  },
+};
+
+const it: Ui = {
+  langue: { choisir: "Cambia lingua" },
+
+  entete: {
+    espaceClient: "Area riservata",
+    ouvrirMenu: "Apri il menu",
+    fermerMenu: "Chiudi il menu",
+    retourAccueil: "RDR Services — torna alla home",
+  },
+
+  pied: {
+    mentions: "Note legali",
+    confidentialite: "Privacy",
+    credits: "Crediti fotografici",
+  },
+
+  heros: { sectionSuivante: "Vai alla sezione successiva", paysage: "Paesaggio" },
+
+  services: {
+    eyebrow: "Un solo interlocutore",
+    titre: "Quattro mestieri",
+    description:
+      "Dalla giornata di escursione al viaggio di tre settimane, tutto passa dalla stessa persona. Non dovrete mai rispiegare la vostra pratica.",
+    voirPlus: "Vedi di più",
+  },
+
+  destinations: {
+    eyebrow: "Cinque territori del Sud-Ovest",
+    titre: "Destinazioni",
+    description:
+      "Ogni itinerario qui presentato è un punto di partenza. Lo rielaboriamo interamente secondo i vostri desideri, il vostro ritmo e la stagione.",
+    decouvrir: "Scopri",
+  },
+
+  apropos: { eyebrow: "La nostra storia", titre: "Chi siamo" },
+
+  etapes: { eyebrow: "Dalla prima idea alla partenza", titre: "Come funziona" },
+
+  temoignages: {
+    eyebrow: "Testimonianze",
+    titre: "Ci hanno affidato il loro viaggio",
+  },
+
+  faq: {
+    eyebrow: "Domande frequenti",
+    titre: "Quello che ci chiedono",
+    relance:
+      "Una domanda che non trovate qui? Scriveteci, rispondiamo entro 24 ore.",
+  },
+
+  contact: {
+    eyebrow: "Richiesta di preventivo",
+    titre: "Parliamo del vostro viaggio",
+    description:
+      "Più sarete precisi, più la nostra proposta sarà giusta al primo colpo. Risposta entro 24 ore lavorative.",
+    joindre: "Contatti diretti",
+    telephone: "Telefono",
+    email: "E-mail",
+    bureau: "Ufficio",
+    disponibilite: "Disponibilità",
+    horaires: "Da lunedì a sabato, 9 – 19",
+    assistance: "Assistenza 24 ore su 24 durante il soggiorno",
+    nousContacter: "Contattaci",
+  },
+
+  region: {
+    activitesEyebrow: "Sul posto",
+    activitesTitre: "Qualche attività",
+    activitesDescription:
+      "Da inserire nel vostro programma, secondo la voglia e il meteo. Tutto viene prenotato e organizzato per voi.",
+    voir: "Vedi",
+    experiencesEyebrow: "Là, con noi",
+    experiencesTitre: "Esperienze uniche",
+    experiencesDescription:
+      "Questi momenti non si prenotano online: si reggono su relazioni costruite negli anni.",
+  },
+
+  destination: {
+    ideesEyebrow: "Momenti salienti",
+    ideesTitre: "Qualche idea",
+    ideesDescription:
+      "I momenti che fanno il viaggio, e le attività da inserirvi secondo la voglia e il meteo. Tutto viene prenotato e organizzato per voi.",
+    dureeConseillee: "Durata consigliata",
+    meilleureSaison: "Stagione migliore",
+    format: "Formula",
+    privatif: "Interamente privato",
+    itineraireEyebrow: "Itinerario suggerito",
+    itineraireTitre: "Un esempio,",
+    itineraireAccent: "non una formula",
+    itineraireDescription:
+      "Ecco come si svolge un viaggio tipo. Il vostro sarà ricomposto da zero dopo il nostro primo colloquio.",
+    autresEyebrow: "Continua",
+    autresTitre: "Gli altri territori",
+    ctaTitre: "Comporre il vostro viaggio in",
+    ctaDescription:
+      "Diteci le vostre date, quanti siete e che cosa vi attira. Torniamo da voi entro 72 ore con un programma completo.",
+  },
+
+  chat: {
+    lanceur: "Una domanda?",
+    lanceurTitre: "Clic per aprire — trascinate in alto o in basso per spostare il pulsante",
+    lanceurAria:
+      "Apri la conversazione. Trascinate il pulsante, o usate le frecce su e giù, per spostarlo.",
+    poigneeTitre: "Trascinate in alto o in basso per spostare la finestra",
+    dialogue: "Parlare con",
+    reponse: "Risposta entro 24 ore lavorative",
+    fermer: "Chiudi la conversazione",
+    ongletQuestions: "Domande frequenti",
+    ongletProjet: "Il vostro progetto",
+    appeler: "Chiamare",
+    ecrire: "Scrivere un'e-mail",
+    amorce:
+      "Diteci dove volete andare, quando e in quanti. Più sarete precisi, più la nostra proposta sarà giusta al primo colpo.",
+    accueilQuestions:
+      "Buongiorno. Ecco che cosa ci chiedono più spesso. Se la vostra domanda non c'è, passate alla scheda",
+  },
+
+  formulaire: {
+    prenom: "Nome",
+    nom: "Cognome",
+    email: "E-mail",
+    telephone: "Telefono",
+    destination: "Destinazione desiderata",
+    inconnu: "Non lo so ancora",
+    plusieurs: "Più regioni",
+    evenement: "Occasione privata / convention",
+    depart: "Data di partenza approssimativa",
+    voyageurs: "Numero di viaggiatori",
+    budget: "Budget previsto",
+    preciserPlusTard: "Preciserò più avanti",
+    projet: "Il vostro progetto",
+    exemple:
+      "Siamo due coppie e vorremmo scoprire i grandi cru del Médoc in quattro giorni a settembre…",
+    envoyer: "Invia la richiesta",
+    budgets: [
+      "Meno di 3.000 €",
+      "3.000 – 6.000 €",
+      "6.000 – 12.000 €",
+      "12.000 – 25.000 €",
+      "Oltre 25.000 €",
+    ],
+    sujet: "Richiesta di preventivo",
+    ligneProjet: "Progetto:",
+    dateDepart: "Data di partenza",
+    indiceDepart: "Basta una data indicativa.",
+    indiceProjet: "Chi viaggia, che cosa vi attira, che cosa volete evitare.",
+    messagerieOuverte:
+      "Il vostro programma di posta dovrebbe aprirsi con la richiesta già compilata. In caso contrario, scriveteci direttamente.",
+    messagerieAvant:
+      "Il pulsante apre il vostro programma di posta con la richiesta già scritta.",
+    ecrireSoiMeme: "Preferite scrivere voi?",
+  },
+
+  credits: {
+    eyebrow: "Attribuzioni",
+    titre: "Crediti fotografici",
+    pageWikimedia: "Pagina Wikimedia Commons →",
+    texteLicence: "Testo della licenza →",
+  },
+
+  introuvable: {
+    code: "Errore 404",
+    titre: "Pagina non trovata",
+    texte: "Questa pagina non esiste o è stata spostata. Torniamo sui nostri passi.",
+    retour: "Torna alla home",
+    contact: "Contattaci",
+  },
+};
+
+const dictionnaires: Record<Langue, Ui> = { fr, en, es, de, it };
+
 export function ui(langue: Langue): Ui {
-  return langue === "en" ? en : fr;
+  return dictionnaires[langue];
 }

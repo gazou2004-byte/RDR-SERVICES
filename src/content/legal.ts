@@ -229,6 +229,332 @@ const en: Legal = {
     "This is a courtesy translation. In the event of any discrepancy, the French version of this page prevails.",
 };
 
+const es: Legal = {
+  mentions: {
+    eyebrow: "Información legal",
+    titre: "Aviso legal",
+    avertissement:
+      "Pendiente de facilitar antes de cualquier comunicación sobre el sitio: el teléfono y el correo reales, la garantía financiera, el seguro de responsabilidad civil profesional y el mediador de consumo.",
+    editeur: {
+      titre: "Editor del sitio",
+      telephone: "Teléfono",
+      email: "Correo electrónico",
+      forme: "Forma jurídica",
+      capital: "Capital social",
+      siren: "SIREN",
+      siret: "SIRET (sede)",
+      rcs: "Registro mercantil",
+      ape: "Código APE",
+      tva: "IVA intracomunitario",
+      immatriculee: "Inscrita el",
+      directeur: "Director de la publicación",
+    },
+    garanties: {
+      titre: "Inscripciones y garantías",
+      texte:
+        "no está inscrita en el registro de operadores de viajes y estancias que lleva ATOUT FRANCE y no vende paquetes turísticos. Las prestaciones presentadas en este sitio corresponden a servicios de conserjería y a la organización de servicios a petición.",
+      garantie: "Garantía financiera: no procede en la situación actual.",
+      assurance: "Seguro de responsabilidad civil profesional: pendiente.",
+    },
+    hebergement: {
+      titre: "Alojamiento web",
+      avant:
+        "El sitio está alojado por GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, Estados Unidos",
+    },
+    propriete: {
+      titre: "Propiedad intelectual",
+      texte:
+        "Todos los contenidos de este sitio (textos, imágenes, logotipos, elementos gráficos) están protegidos por derechos de autor. Queda prohibida toda reproducción, incluso parcial, sin autorización previa por escrito.",
+    },
+    mediation: {
+      titre: "Mediación de consumo",
+      texte:
+        "Conforme al artículo L.612-1 del Código de Consumo francés, todo cliente tiene derecho a recurrir gratuitamente a un mediador de consumo con vistas a la resolución amistosa de un litigio. Datos del mediador: pendiente.",
+    },
+  },
+
+  confidentialite: {
+    eyebrow: "Sus datos",
+    titre: "Política de privacidad",
+    intro:
+      "concede especial importancia a la protección de sus datos personales. Esta página explica de forma sencilla qué recogemos, por qué, y cómo ejercer sus derechos.",
+    sections: [
+      {
+        titre: "Datos que recogemos",
+        body: [
+          "Formulario de presupuesto: nombre, apellidos, correo electrónico, teléfono, destino deseado, fechas, número de viajeros, presupuesto orientativo y descripción de su proyecto.",
+          "Área de cliente: nombre, apellidos, correo, teléfono, contraseña (almacenada cifrada y no reversible), así como las estancias, documentos y mensajes asociados a usted.",
+        ],
+      },
+      {
+        titre: "Por qué los recogemos",
+        body: [
+          "Para responder a su solicitud y organizar su estancia (ejecución del contrato).",
+          "Para darle acceso a su área de cliente y a sus documentos de viaje.",
+          "Para cumplir nuestras obligaciones contables y legales de conservación.",
+        ],
+      },
+      {
+        titre: "Plazo de conservación",
+        body: [
+          "Solicitudes no convertidas en reserva: 3 años desde el último contacto.",
+          "Expedientes de clientes y documentos contables: 10 años, conforme a las obligaciones legales.",
+          "Cuentas del área de cliente: hasta que solicite su supresión.",
+        ],
+      },
+      {
+        titre: "Comunicación de datos",
+        body: [
+          "Sus datos no se venden ni se alquilan. Solo se transmiten a los proveedores estrictamente necesarios para la realización de su estancia (alojamientos, restaurantes, propiedades visitadas) y a nuestro proveedor técnico de alojamiento.",
+        ],
+      },
+      {
+        titre: "Sus derechos",
+        body: [
+          "Dispone de derechos de acceso, rectificación, supresión, limitación, oposición y portabilidad de sus datos.",
+          "Para ejercerlos, escríbanos. Respondemos en el plazo de un mes. También puede dirigirse a la CNIL (www.cnil.fr), la autoridad francesa de protección de datos, si considera que sus derechos no se respetan.",
+        ],
+      },
+      {
+        titre: "Cookies",
+        body: [
+          "Este sitio no utiliza cookies publicitarias ni rastreadores de terceros. Solo se instala una cookie técnica cuando se conecta a su área de cliente: sirve exclusivamente para mantener la sesión iniciada y desaparece al cerrarla.",
+        ],
+      },
+    ],
+    contactTitre: "Contactar",
+    contactTexte: "Para cualquier duda sobre sus datos:",
+  },
+
+  credits: {
+    intro:
+      "Parte de las fotografías proviene de Wikimedia Commons y se reutiliza respetando sus licencias. Las demás las ha facilitado RDR Services. Está previsto sustituirlas por fotografías propias de",
+    obligation:
+      "Algunas licencias (CC BY, CC BY-SA, FAL) obligan a citar al autor. Mientras estas imágenes estén en línea, esta página debe seguir publicada y accesible desde el pie de página.",
+  },
+
+  versionFrancaiseFaitFoi:
+    "Esta es una traducción de cortesía. En caso de discrepancia, prevalece la versión francesa de esta página.",
+};
+
+const de: Legal = {
+  mentions: {
+    eyebrow: "Rechtliche Angaben",
+    titre: "Impressum",
+    avertissement:
+      "Vor jeder Kommunikation über die Website noch zu ergänzen: die tatsächliche Telefonnummer und E-Mail-Adresse, die finanzielle Sicherheit, die Berufshaftpflichtversicherung und die Verbraucherschlichtungsstelle.",
+    editeur: {
+      titre: "Herausgeber der Website",
+      telephone: "Telefon",
+      email: "E-Mail",
+      forme: "Rechtsform",
+      capital: "Stammkapital",
+      siren: "SIREN",
+      siret: "SIRET (Sitz)",
+      rcs: "Handelsregister",
+      ape: "APE-Code",
+      tva: "USt-IdNr.",
+      immatriculee: "Eingetragen am",
+      directeur: "Verantwortlich für den Inhalt",
+    },
+    garanties: {
+      titre: "Eintragungen und Sicherheiten",
+      texte:
+        "ist nicht im von ATOUT FRANCE geführten Register der Reise- und Aufenthaltsveranstalter eingetragen und verkauft keine Pauschalreisen. Die auf dieser Website dargestellten Leistungen sind Concierge-Leistungen und die Organisation von Diensten auf Anfrage.",
+      garantie: "Finanzielle Sicherheit: derzeit nicht einschlägig.",
+      assurance: "Berufshaftpflichtversicherung: noch zu ergänzen.",
+    },
+    hebergement: {
+      titre: "Hosting",
+      avant:
+        "Die Website wird gehostet von GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA",
+    },
+    propriete: {
+      titre: "Urheberrecht",
+      texte:
+        "Sämtliche Inhalte dieser Website (Texte, Bilder, Logos, grafische Elemente) sind urheberrechtlich geschützt. Jede Vervielfältigung, auch auszugsweise, ist ohne vorherige schriftliche Zustimmung untersagt.",
+    },
+    mediation: {
+      titre: "Verbraucherschlichtung",
+      texte:
+        "Nach Artikel L.612-1 des französischen Verbrauchergesetzbuchs hat jeder Kunde das Recht, zur gütlichen Beilegung einer Streitigkeit kostenfrei eine Verbraucherschlichtungsstelle anzurufen. Angaben zur Schlichtungsstelle: noch zu ergänzen.",
+    },
+  },
+
+  confidentialite: {
+    eyebrow: "Ihre Daten",
+    titre: "Datenschutzerklärung",
+    intro:
+      "misst dem Schutz Ihrer personenbezogenen Daten besondere Bedeutung bei. Diese Seite erklärt in einfachen Worten, was wir erheben, warum, und wie Sie Ihre Rechte ausüben.",
+    sections: [
+      {
+        titre: "Welche Daten wir erheben",
+        body: [
+          "Anfrageformular: Vorname, Nachname, E-Mail-Adresse, Telefon, gewünschtes Reiseziel, Daten, Zahl der Reisenden, ungefähres Budget und eine Beschreibung Ihres Vorhabens.",
+          "Kundenbereich: Vorname, Nachname, E-Mail, Telefon, Passwort (verschlüsselt und nicht rückführbar gespeichert) sowie die Ihnen zugeordneten Reisen, Unterlagen und Nachrichten.",
+        ],
+      },
+      {
+        titre: "Warum wir sie erheben",
+        body: [
+          "Um Ihre Anfrage zu beantworten und Ihre Reise zu organisieren (Vertragserfüllung).",
+          "Um Ihnen Zugang zu Ihrem Kundenbereich und Ihren Reiseunterlagen zu geben.",
+          "Um unseren buchhalterischen und gesetzlichen Aufbewahrungspflichten nachzukommen.",
+        ],
+      },
+      {
+        titre: "Speicherdauer",
+        body: [
+          "Anfragen ohne Buchung: 3 Jahre ab dem letzten Kontakt.",
+          "Kundenakten und Buchhaltungsbelege: 10 Jahre, wie gesetzlich vorgeschrieben.",
+          "Konten im Kundenbereich: bis zu Ihrem Löschungsverlangen.",
+        ],
+      },
+      {
+        titre: "Weitergabe der Daten",
+        body: [
+          "Ihre Daten werden weder verkauft noch vermietet. Sie werden ausschließlich an die für die Durchführung Ihrer Reise unbedingt erforderlichen Dienstleister weitergegeben (Unterkünfte, Restaurants, besuchte Anwesen) sowie an unseren technischen Hoster.",
+        ],
+      },
+      {
+        titre: "Ihre Rechte",
+        body: [
+          "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit.",
+          "Zur Ausübung schreiben Sie uns. Wir antworten binnen eines Monats. Sie können sich auch an die CNIL (www.cnil.fr), die französische Datenschutzbehörde, wenden, wenn Sie Ihre Rechte verletzt sehen.",
+        ],
+      },
+      {
+        titre: "Cookies",
+        body: [
+          "Diese Website verwendet weder Werbe-Cookies noch Tracker Dritter. Ein einziges technisches Cookie wird gesetzt, wenn Sie sich in Ihrem Kundenbereich anmelden: es dient allein dazu, Sie angemeldet zu halten, und verschwindet beim Abmelden.",
+        ],
+      },
+    ],
+    contactTitre: "Kontakt",
+    contactTexte: "Bei Fragen zu Ihren Daten:",
+  },
+
+  credits: {
+    intro:
+      "Ein Teil der Fotografien stammt von Wikimedia Commons und wird unter Beachtung der jeweiligen Lizenzen verwendet. Die übrigen wurden von RDR Services bereitgestellt. Sie sollen durch eigene Aufnahmen ersetzt werden von",
+    obligation:
+      "Einige Lizenzen (CC BY, CC BY-SA, FAL) verlangen die Nennung des Urhebers. Solange diese Bilder online sind, muss diese Seite online und über die Fußzeile erreichbar bleiben.",
+  },
+
+  versionFrancaiseFaitFoi:
+    "Dies ist eine Übersetzung aus Gefälligkeit. Bei Abweichungen ist die französische Fassung dieser Seite maßgeblich.",
+};
+
+const it: Legal = {
+  mentions: {
+    eyebrow: "Informazioni legali",
+    titre: "Note legali",
+    avertissement:
+      "Ancora da fornire prima di qualsiasi comunicazione sul sito: il telefono e l'e-mail reali, la garanzia finanziaria, l'assicurazione di responsabilità civile professionale e il mediatore del consumo.",
+    editeur: {
+      titre: "Editore del sito",
+      telephone: "Telefono",
+      email: "E-mail",
+      forme: "Forma giuridica",
+      capital: "Capitale sociale",
+      siren: "SIREN",
+      siret: "SIRET (sede)",
+      rcs: "Registro delle imprese",
+      ape: "Codice APE",
+      tva: "Partita IVA intracomunitaria",
+      immatriculee: "Iscritta il",
+      directeur: "Direttore della pubblicazione",
+    },
+    garanties: {
+      titre: "Iscrizioni e garanzie",
+      texte:
+        "non è iscritta al registro degli operatori di viaggi e soggiorni tenuto da ATOUT FRANCE e non vende pacchetti turistici. Le prestazioni presentate su questo sito rientrano nei servizi di concierge e nell'organizzazione di servizi su richiesta.",
+      garantie: "Garanzia finanziaria: non pertinente allo stato attuale.",
+      assurance: "Assicurazione di responsabilità civile professionale: da completare.",
+    },
+    hebergement: {
+      titre: "Hosting",
+      avant:
+        "Il sito è ospitato da GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, Stati Uniti",
+    },
+    propriete: {
+      titre: "Proprietà intellettuale",
+      texte:
+        "Tutti i contenuti presenti su questo sito (testi, immagini, loghi, elementi grafici) sono protetti dal diritto d'autore. Qualsiasi riproduzione, anche parziale, è vietata senza previa autorizzazione scritta.",
+    },
+    mediation: {
+      titre: "Mediazione del consumo",
+      texte:
+        "Ai sensi dell'articolo L.612-1 del Codice del consumo francese, ogni cliente ha diritto di ricorrere gratuitamente a un mediatore del consumo per la risoluzione amichevole di una controversia. Dati del mediatore: da completare.",
+    },
+  },
+
+  confidentialite: {
+    eyebrow: "I vostri dati",
+    titre: "Informativa sulla privacy",
+    intro:
+      "attribuisce particolare importanza alla protezione dei vostri dati personali. Questa pagina spiega in modo semplice che cosa raccogliamo, perché, e come esercitare i vostri diritti.",
+    sections: [
+      {
+        titre: "Dati che raccogliamo",
+        body: [
+          "Modulo di preventivo: nome, cognome, indirizzo e-mail, telefono, destinazione desiderata, date, numero di viaggiatori, budget indicativo e descrizione del vostro progetto.",
+          "Area riservata: nome, cognome, e-mail, telefono, password (conservata cifrata e non reversibile), oltre ai soggiorni, ai documenti e ai messaggi a voi collegati.",
+        ],
+      },
+      {
+        titre: "Perché li raccogliamo",
+        body: [
+          "Per rispondere alla vostra richiesta e organizzare il soggiorno (esecuzione del contratto).",
+          "Per darvi accesso alla vostra area riservata e ai documenti di viaggio.",
+          "Per rispettare i nostri obblighi contabili e legali di conservazione.",
+        ],
+      },
+      {
+        titre: "Durata di conservazione",
+        body: [
+          "Richieste non convertite in prenotazione: 3 anni dall'ultimo contatto.",
+          "Pratiche dei clienti e documenti contabili: 10 anni, come previsto dalla legge.",
+          "Account dell'area riservata: fino alla vostra richiesta di cancellazione.",
+        ],
+      },
+      {
+        titre: "Comunicazione dei dati",
+        body: [
+          "I vostri dati non vengono né venduti né ceduti. Sono trasmessi solo ai fornitori strettamente necessari alla realizzazione del soggiorno (alloggi, ristoranti, proprietà visitate) e al nostro fornitore tecnico di hosting.",
+        ],
+      },
+      {
+        titre: "I vostri diritti",
+        body: [
+          "Avete diritto di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità dei vostri dati.",
+          "Per esercitarli, scriveteci. Rispondiamo entro un mese. Potete anche rivolgervi alla CNIL (www.cnil.fr), l'autorità francese per la protezione dei dati, se ritenete che i vostri diritti non siano rispettati.",
+        ],
+      },
+      {
+        titre: "Cookie",
+        body: [
+          "Questo sito non utilizza cookie pubblicitari né tracciatori di terze parti. Un solo cookie tecnico viene installato quando accedete alla vostra area riservata: serve esclusivamente a mantenervi collegati e scompare alla disconnessione.",
+        ],
+      },
+    ],
+    contactTitre: "Contatti",
+    contactTexte: "Per qualsiasi domanda relativa ai vostri dati:",
+  },
+
+  credits: {
+    intro:
+      "Una parte delle fotografie proviene da Wikimedia Commons ed è riutilizzata nel rispetto delle rispettive licenze. Le altre sono state fornite da RDR Services. È previsto che vengano sostituite da fotografie proprie di",
+    obligation:
+      "Alcune licenze (CC BY, CC BY-SA, FAL) impongono di citare l'autore. Finché queste immagini restano online, questa pagina deve restare pubblicata e raggiungibile dal piè di pagina.",
+  },
+
+  versionFrancaiseFaitFoi:
+    "Questa è una traduzione di cortesia. In caso di discordanza, prevale la versione francese di questa pagina.",
+};
+
+const dictionnaires: Record<Langue, Legal> = { fr, en, es, de, it };
+
 export function legal(langue: Langue): Legal {
-  return langue === "en" ? en : fr;
+  return dictionnaires[langue];
 }

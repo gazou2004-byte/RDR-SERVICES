@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { equivalents } from "@/content/meta";
 import { Destination } from "@/components/pages/destination";
 import { destinations } from "@/content/site";
 
@@ -16,13 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${destination.name} — tour privé`,
     description: destination.intro,
-    alternates: {
-      canonical: `/destinations/${slug}/`,
-      languages: {
-        fr: `/destinations/${slug}/`,
-        en: `/en/destinations/${slug}/`,
-      },
-    },
+    alternates: equivalents("fr", `/destinations/${slug}/`),
   };
 }
 

@@ -113,7 +113,7 @@ export const intro = {
     "Du vignoble bordelais à l'océan landais. Le programme se construit avec vous, se réajuste en route si l'envie change, et reste entre les mains d'une seule personne du début à la fin.",
   ],
   stats: [
-    { value: "10 ans", label: "dans la conciergerie de luxe" },
+    { value: "10 ans", label: "Clefs d'Or, conciergerie de luxe" },
     { value: "5", label: "territoires parcourus toute l'année" },
     { value: "24/7", label: "assistance pendant votre séjour" },
     { value: "100 %", label: "sur mesure, jamais de groupe" },

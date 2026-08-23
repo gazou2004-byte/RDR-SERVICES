@@ -39,7 +39,8 @@ export default async function DestinationPage({ params }: Props) {
   return (
     <>
       <PageHero
-        eyebrow={`Tour privé — ${destination.duration}`}
+        /* « Tour privé » retiré : la durée seule suffit au-dessus du titre. */
+        eyebrow={destination.duration}
         title={destination.name}
         description={destination.tagline}
         image={destination.image}

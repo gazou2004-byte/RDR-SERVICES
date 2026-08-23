@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Ornament } from "./ornament";
+import { Ornament, type Embleme } from "./ornament";
 
 export function Container({
   children,
@@ -26,6 +26,7 @@ export function SectionHeading({
   description,
   align = "center",
   tone = "dark",
+  embleme = "grappe",
   className = "",
 }: {
   eyebrow?: string;
@@ -34,6 +35,8 @@ export function SectionHeading({
   description?: string;
   align?: "left" | "center";
   tone?: "dark" | "light";
+  /** Sur une page de destination, le motif du territoire remplace la grappe. */
+  embleme?: Embleme;
   className?: string;
 }) {
   const centered = align === "center";
@@ -47,6 +50,7 @@ export function SectionHeading({
           qui le séparait du sur-titre est resserré d'autant. */}
       <Ornament
         tone={tone}
+        embleme={embleme}
         className={centered ? "mx-auto" : ""}
       />
 

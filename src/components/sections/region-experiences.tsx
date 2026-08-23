@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container, SectionHeading } from "@/components/ui/section";
+import { emblemeDeRegion } from "@/components/ui/ornament";
 import { experiences } from "@/content/site";
 
 /**
@@ -17,6 +18,7 @@ export function RegionExperiences({ region }: { region: string }) {
     <section className="border-b border-vine-900/10 bg-sand-100 py-16 sm:py-20 lg:py-24">
       <Container>
         <SectionHeading
+          embleme={emblemeDeRegion(region)}
           eyebrow="Sur place, avec nous"
           title="Expériences uniques"
           description="Ces moments ne sont pas réservables en ligne : ils reposent sur des relations construites au fil des années."

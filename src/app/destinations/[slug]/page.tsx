@@ -7,6 +7,7 @@ import { Cta } from "@/components/sections/cta";
 import { RegionExperiences } from "@/components/sections/region-experiences";
 import { RegionActivities } from "@/components/sections/region-activities";
 import { Container, SectionHeading } from "@/components/ui/section";
+import { emblemeDeRegion } from "@/components/ui/ornament";
 import { destinations } from "@/content/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -32,6 +33,8 @@ export default async function DestinationPage({ params }: Props) {
   if (!destination) notFound();
 
   const others = destinations.filter((item) => item.slug !== slug);
+  // Chaque territoire a son motif au-dessus des titres, à la place de la grappe.
+  const embleme = emblemeDeRegion(destination.slug);
 
   return (
     <>
@@ -86,7 +89,11 @@ export default async function DestinationPage({ params }: Props) {
       {/* Temps forts */}
       <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-24">
         <Container>
-          <SectionHeading eyebrow="Temps forts" title="Ce que vous verrez" />
+          <SectionHeading
+            embleme={embleme}
+            eyebrow="Temps forts"
+            title="Ce que vous verrez"
+          />
           <ul className="mt-14 grid gap-px border border-vine-900/10 bg-vine-900/10 sm:grid-cols-2">
             {destination.highlights.map((highlight, index) => (
               <li
@@ -109,6 +116,7 @@ export default async function DestinationPage({ params }: Props) {
       <section className="border-b border-vine-900/10 py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading
+            embleme={embleme}
             eyebrow="Itinéraire suggéré"
             title="Un exemple,"
             accent="pas une formule"
@@ -145,6 +153,7 @@ export default async function DestinationPage({ params }: Props) {
       <section className="border-b border-vine-900/10 bg-sand-100 py-14 sm:py-20 lg:py-24">
         <Container>
           <SectionHeading
+            embleme={embleme}
             eyebrow="Poursuivre"
             title="Les autres territoires"
           />

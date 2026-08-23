@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Container, SectionHeading } from "@/components/ui/section";
+import { emblemeDeRegion } from "@/components/ui/ornament";
 import { activites } from "@/content/site";
 
 /**
@@ -56,6 +57,7 @@ export function RegionActivities({ region }: { region: string }) {
     <section className="border-b border-vine-900/10 py-16 sm:py-20 lg:py-24">
       <Container>
         <SectionHeading
+          embleme={emblemeDeRegion(region)}
           eyebrow="Sur place"
           title="Activités"
           description="À glisser dans votre programme, selon vos envies et la météo. Tout est réservé et organisé pour vous."

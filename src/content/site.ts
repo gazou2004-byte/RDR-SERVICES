@@ -139,7 +139,7 @@ export const hero = {
 
 export const intro = {
   eyebrow: "Conciergerie indépendante — Nouvelle-Aquitaine",
-  title: "Le Sud-Ouest comme on y vit",
+  title: "Le Sud-Ouest en exclusivité",
   body: [
     "Cinq territoires, une seule maison. Nous organisons des séjours privés dans le Sud-Ouest pour des voyageurs qui préfèrent qu'on leur ouvre des portes plutôt qu'on leur remette un dépliant.",
     "Du vignoble bordelais à l'océan landais. Le programme se construit avec vous, se réajuste en route si l'envie change, et reste entre les mains d'une seule personne du début à la fin.",

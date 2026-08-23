@@ -82,6 +82,15 @@ export function ChatWidget({
   const t = ui(langue);
   const pathname = usePathname();
   const [ouvert, setOuvert] = useState(false);
+  /*
+   * Le lanceur reste caché tant que le bandeau de photos de l'accueil occupe
+   * l'écran : posé dessus, il salissait la première image qu'on voit du site.
+   * Il apparaît dès qu'on l'a dépassé, et sur les autres pages tout de suite.
+   *
+   * Il part de « invisible » plutôt que de « visible » pour ne pas clignoter :
+   * le HTML servi ne sait pas encore où en est le défilement.
+   */
+  const [visible, setVisible] = useState(false);
   const [onglet, setOnglet] = useState<Onglet>("questions");
   const lanceur = useRef<HTMLButtonElement | null>(null);
   const panneau = useRef<HTMLDivElement | null>(null);
@@ -208,6 +217,21 @@ export function ChatWidget({
     document.addEventListener("keydown", surTouche);
     return () => document.removeEventListener("keydown", surTouche);
   }, [ouvert, fermer]);
+
+  useEffect(() => {
+    const bandeau = document.getElementById("accueil");
+    if (!bandeau) {
+      // Pas de bandeau sur cette page : le lanceur se montre aussitôt.
+      const image = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(image);
+    }
+    const observateur = new IntersectionObserver(
+      ([entree]) => setVisible(!entree.isIntersecting),
+      { threshold: 0 },
+    );
+    observateur.observe(bandeau);
+    return () => observateur.disconnect();
+  }, [pathname]);
 
   /* À l'ouverture, le clavier entre dans le panneau. */
   useEffect(() => {
@@ -485,7 +509,11 @@ export function ChatWidget({
           }}
           title={t.chat.lanceurTitre}
           aria-label={t.chat.lanceurAria}
-          className="chat-lanceur fixed right-4 bottom-5 z-50 flex touch-none cursor-grab items-center gap-2.5 bg-tuile-600 px-4 py-3 text-sand-50 shadow-[0_12px_28px_-10px] shadow-vine-900/60 transition-colors select-none hover:bg-tuile-700 active:cursor-grabbing sm:right-5 sm:gap-3 sm:px-5"
+          aria-hidden={!visible}
+          tabIndex={visible ? undefined : -1}
+          className={`chat-lanceur fixed right-4 bottom-5 z-50 flex touch-none cursor-grab items-center gap-2.5 bg-tuile-600 px-4 py-3 text-sand-50 shadow-[0_12px_28px_-10px] shadow-vine-900/60 transition-[opacity,background-color] duration-500 select-none hover:bg-tuile-700 active:cursor-grabbing sm:right-5 sm:gap-3 sm:px-5 ${
+            visible ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
         >
           <svg
             aria-hidden

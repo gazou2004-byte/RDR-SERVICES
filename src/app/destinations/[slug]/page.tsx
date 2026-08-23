@@ -92,6 +92,7 @@ export default async function DestinationPage({ params }: Props) {
             embleme={embleme}
             eyebrow="Temps forts"
             title="Ce que vous verrez"
+            description="Les moments qui font le séjour, et les activités à y glisser selon vos envies et la météo. Tout est réservé et organisé pour vous."
           />
           <ul className="mt-14 grid gap-px border border-vine-900/10 bg-vine-900/10 sm:grid-cols-2">
             {destination.highlights.map((highlight, index) => (
@@ -109,6 +110,11 @@ export default async function DestinationPage({ params }: Props) {
             ))}
           </ul>
         </Container>
+
+        {/* Le carrousel des activités était une section à lui seul, juste en
+            dessous, avec son propre ornement et son propre filet pour la même
+            idée. Il vient ici, sous les temps forts, sans en-tête. */}
+        <RegionActivities region={destination.slug} entete={false} />
       </section>
 
       {/* Itinéraire suggéré */}
@@ -143,8 +149,6 @@ export default async function DestinationPage({ params }: Props) {
           </ol>
         </Container>
       </section>
-
-      <RegionActivities region={destination.slug} />
 
       <RegionExperiences region={destination.slug} />
 

@@ -1,9 +1,41 @@
 /**
- * Contenu du site — tout le texte éditable est regroupé ici.
+ * Contenu du site en français — tout le texte éditable est regroupé ici.
  * Modifie ce fichier pour changer les textes, services, destinations et coordonnées.
+ *
+ * La version anglaise vit dans `en.ts` et suit exactement la même forme ;
+ * `index.ts` choisit l'une ou l'autre selon la langue de la page. Les types
+ * ci-dessous sont ce qui garantit que les deux ne divergent pas : ajouter un
+ * champ ici sans l'ajouter là-bas ne compile pas.
  */
 
-export const company = {
+export type Company = {
+  name: string;
+  legalName: string;
+  tagline: string;
+  baseline: string;
+  phone: string;
+  phoneHref: string;
+  email: string;
+  address: string;
+  city: string;
+  legal: {
+    form: string;
+    capital: string;
+    siren: string;
+    siret: string;
+    rcs: string;
+    tva: string;
+    naf: string;
+    director: string;
+    createdAt: string;
+  };
+  socials: { instagram: string; linkedin: string; facebook: string };
+};
+
+/** Une entrée du menu. `regions` déplie la liste des destinations. */
+export type NavItem = { label: string; href: string; regions?: boolean };
+
+export const company: Company = {
   name: "RDR Services",
   legalName: "RDR SERVICES",
   tagline: "Conciergerie & voyages privés",
@@ -42,14 +74,14 @@ export const company = {
     linkedin: "https://linkedin.com/",
     facebook: "https://facebook.com/",
   },
-} as const;
+};
 
 /**
  * Le site tient sur une seule page : le menu pointe vers ses sections.
  * Seules les quatre destinations ont leur propre page, atteignable depuis
  * la section « Destinations ».
  */
-export const nav = [
+export const nav: NavItem[] = [
   { label: "Accueil", href: "/#accueil" },
   { label: "Services", href: "/#services" },
   { label: "Destinations", href: "/#sejours", regions: true },
@@ -58,7 +90,7 @@ export const nav = [
   // fenêtre de discussion sur l'onglet correspondant (voir `chat-widget.tsx`).
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
-] as const;
+];
 
 export const hero = {
   eyebrow: "Immersion & expériences",

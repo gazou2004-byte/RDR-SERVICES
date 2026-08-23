@@ -13,7 +13,18 @@ import { activites } from "@/content/site";
  * glisser au doigt ou à la molette. Les flèches et les pastilles ne sont que
  * des raccourcis. Une région sans activité n'affiche rien.
  */
-export function RegionActivities({ region }: { region: string }) {
+export function RegionActivities({
+  region,
+  entete = true,
+}: {
+  region: string;
+  /**
+   * `false` quand le carrousel est glissé dans une autre section, qui porte
+   * alors le titre : deux en-têtes à la suite faisaient deux ornements et deux
+   * filets pour une seule idée.
+   */
+  entete?: boolean;
+}) {
   const items = activites[region] ?? [];
   const [actif, setActif] = useState(0);
   const piste = `piste-activites-${region}`;
@@ -53,17 +64,8 @@ export function RegionActivities({ region }: { region: string }) {
 
   if (items.length === 0) return null;
 
-  return (
-    <section className="border-b border-vine-900/10 py-16 sm:py-20 lg:py-24">
-      <Container>
-        <SectionHeading
-          embleme={emblemeDeRegion(region)}
-          eyebrow="Sur place"
-          title="Quelques activités"
-          description="À glisser dans votre programme, selon vos envies et la météo. Tout est réservé et organisé pour vous."
-        />
-      </Container>
-
+  const carrousel = (
+    <>
       <div
         id={piste}
         className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 sm:mt-14 sm:gap-7 lg:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -110,6 +112,22 @@ export function RegionActivities({ region }: { region: string }) {
           </button>
         ))}
       </div>
+    </>
+  );
+
+  if (!entete) return carrousel;
+
+  return (
+    <section className="border-b border-vine-900/10 py-16 sm:py-20 lg:py-24">
+      <Container>
+        <SectionHeading
+          embleme={emblemeDeRegion(region)}
+          eyebrow="Sur place"
+          title="Quelques activités"
+          description="À glisser dans votre programme, selon vos envies et la météo. Tout est réservé et organisé pour vous."
+        />
+      </Container>
+      {carrousel}
     </section>
   );
 }

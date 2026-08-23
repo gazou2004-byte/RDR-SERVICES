@@ -89,9 +89,13 @@ export const hero = {
       cadrage: "center",
     },
     {
-      image: "/images/hero-contact.jpg",
-      label: "Périgord",
-      cadrage: "center",
+      image: "/images/bearn-ossau.jpg",
+      // L'étiquette ne s'affiche pas : elle ne sert qu'à décrire la photo aux
+      // lecteurs d'écran et aux moteurs. Elle suit donc le sujet réel.
+      label: "Béarn",
+      // Le pic du Midi d'Ossau est aux deux cinquièmes de la largeur ; un
+      // centrage strict le sortirait du panneau, qui est étroit et haut.
+      cadrage: "42% center",
     },
     {
       image: "/images/svc-creations.jpg",

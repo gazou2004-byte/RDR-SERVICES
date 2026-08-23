@@ -1,10 +1,14 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/section";
-import { Ornament } from "@/components/ui/ornament";
 
 /**
  * En-tête des pages internes : photo pleine largeur, voile vert,
  * titre centré en capitales sérif. Même écriture que le héros d'accueil.
+ *
+ * Pas d'ornement ici : la grappe est un dessin au trait fin, elle se perdait
+ * dans la photo. Le sur-titre vert clair et le filet sous le titre suffisent
+ * à marquer la hiérarchie. L'ornement reste sur les titres de section, qui
+ * sont posés sur un fond uni.
  */
 export function PageHero({
   eyebrow,
@@ -33,8 +37,7 @@ export function PageHero({
       <div className="absolute inset-0 bg-gradient-to-b from-vine-900/60 via-transparent to-vine-900/60" />
 
       <Container className="relative z-10 text-center">
-        <Ornament tone="light" className="mx-auto" />
-        <p className="eyebrow-light reveal mt-4">{eyebrow}</p>
+        <p className="eyebrow-light reveal">{eyebrow}</p>
         <h1 className="section-title reveal mt-6 !text-sand-50">
           {title}
           {accent ? (

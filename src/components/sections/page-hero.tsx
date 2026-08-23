@@ -24,7 +24,10 @@ export function PageHero({
   image: string;
 }) {
   return (
-    <section className="relative flex min-h-[62svh] items-center overflow-hidden pt-32 pb-20 lg:min-h-[68svh]">
+    <section
+      data-bandeau
+      className="relative flex min-h-[62svh] items-center overflow-hidden pt-32 pb-20 lg:min-h-[68svh]"
+    >
       <Image
         src={image}
         alt=""

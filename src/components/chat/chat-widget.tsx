@@ -83,9 +83,10 @@ export function ChatWidget({
   const pathname = usePathname();
   const [ouvert, setOuvert] = useState(false);
   /*
-   * Le lanceur reste caché tant que le bandeau de photos de l'accueil occupe
-   * l'écran : posé dessus, il salissait la première image qu'on voit du site.
-   * Il apparaît dès qu'on l'a dépassé, et sur les autres pages tout de suite.
+   * Le lanceur reste caché tant qu'un bandeau photo occupe l'écran — celui de
+   * l'accueil comme ceux des pages de destination : posé dessus, il salissait
+   * la première image qu'on voit. Il apparaît dès qu'on l'a dépassé, et sur
+   * les pages sans photo d'en-tête, tout de suite.
    *
    * Il part de « invisible » plutôt que de « visible » pour ne pas clignoter :
    * le HTML servi ne sait pas encore où en est le défilement.
@@ -219,7 +220,7 @@ export function ChatWidget({
   }, [ouvert, fermer]);
 
   useEffect(() => {
-    const bandeau = document.getElementById("accueil");
+    const bandeau = document.querySelector("[data-bandeau]");
     if (!bandeau) {
       // Pas de bandeau sur cette page : le lanceur se montre aussitôt.
       const image = requestAnimationFrame(() => setVisible(true));

@@ -27,6 +27,9 @@ export function Hero({ langue }: { langue: Langue }) {
   return (
     <section
       id="accueil"
+      // Marque les grandes photos d'en-tête : le bouton de discussion s'y
+      // efface, voir `chat-widget.tsx`.
+      data-bandeau
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-vine-900"
     >
       <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">

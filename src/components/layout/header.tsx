@@ -170,8 +170,10 @@ export function Header({
             );
           })}
 
-          {/* Chaque code mène à la même page dans sa langue, pas à son
-              accueil : perdre sa place en changeant de langue est agaçant. */}
+          {/* Pastilles à la manière du sélecteur de CLAM : la langue en cours
+              est encadrée et remplie, les autres restent en retrait. Chaque
+              pastille mène à la même page dans sa langue, pas à son accueil —
+              perdre sa place en changeant de langue est agaçant. */}
           <div
             aria-label={t.langue.choisir}
             className="ml-1 flex items-center gap-0.5"
@@ -186,14 +188,14 @@ export function Header({
                   lang={code}
                   title={NOM_LANGUE[code]}
                   aria-current={courante ? "true" : undefined}
-                  className={`px-1.5 py-2 text-[0.65rem] font-medium tracking-[0.1em] uppercase transition-colors ${
+                  className={`rounded-[5px] border px-[0.42rem] py-[0.22rem] text-[0.66rem] leading-none font-bold tracking-[0.05em] uppercase transition-all duration-150 ${
                     courante
                       ? transparent
-                        ? "text-sand-50"
-                        : "text-tuile-600"
+                        ? "border-sand-50 bg-sand-50/15 text-sand-50"
+                        : "border-vine-900 bg-sand-200 text-vine-900"
                       : transparent
-                        ? "text-sand-50/45 hover:text-sand-50"
-                        : "text-vine-400 hover:text-tuile-600"
+                        ? "border-transparent text-sand-50/45 hover:text-sand-50"
+                        : "border-transparent text-vine-400 hover:text-vine-900"
                   }`}
                 >
                   {code}
@@ -276,7 +278,7 @@ export function Header({
               transparente ici. */}
           <div
             aria-label={t.langue.choisir}
-            className="flex flex-wrap items-center gap-x-5 border-b border-vine-900/10 py-4"
+            className="flex flex-wrap items-center gap-2 border-b border-vine-900/10 py-4"
           >
             {LANGUES.map((code) => (
               <Link
@@ -284,12 +286,15 @@ export function Header({
                 href={cheminDansLangue(pathname, code)}
                 hrefLang={code}
                 lang={code}
+                title={NOM_LANGUE[code]}
                 aria-current={code === langue ? "true" : undefined}
-                className={`text-[0.72rem] font-medium tracking-[0.14em] uppercase ${
-                  code === langue ? "text-tuile-600" : "text-vine-400"
+                className={`rounded-[5px] border px-2.5 py-1.5 text-[0.72rem] leading-none font-bold tracking-[0.05em] uppercase transition-all duration-150 ${
+                  code === langue
+                    ? "border-vine-900 bg-sand-200 text-vine-900"
+                    : "border-transparent text-vine-400"
                 }`}
               >
-                {NOM_LANGUE[code]}
+                {code}
               </Link>
             ))}
           </div>

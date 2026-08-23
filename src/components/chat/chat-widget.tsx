@@ -291,9 +291,20 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
             onPointerCancel={() => {
               glissePanneau.current = null;
             }}
+            title="Glissez vers le haut ou vers le bas pour déplacer la fenêtre"
             className="flex items-start justify-between gap-4 bg-vine-900 px-5 py-4 select-none sm:cursor-grab sm:touch-none sm:active:cursor-grabbing"
           >
             <div>
+              {/* Poignée : trois filets, pour qu'on voie que ça s'attrape.
+                  Masquée sur téléphone, où la fenêtre ne se déplace pas. */}
+              <span
+                aria-hidden
+                className="mb-2 hidden h-2.5 w-8 flex-col justify-between sm:flex"
+              >
+                <span className="block h-px w-full bg-sand-50/45" />
+                <span className="block h-px w-full bg-sand-50/45" />
+                <span className="block h-px w-full bg-sand-50/45" />
+              </span>
               <p className="font-display text-lg leading-none font-light tracking-[0.14em] text-sand-50">
                 RDR <span className="text-feuille-300">SERVICES</span>
               </p>
@@ -457,6 +468,7 @@ export function ChatWidget({ formulaire }: { formulaire: ReactNode }) {
             }
             ouvrir("questions");
           }}
+          title="Cliquez pour ouvrir — glissez vers le haut ou vers le bas pour déplacer le bouton"
           aria-label="Ouvrir la discussion. Glissez le bouton, ou utilisez les flèches haut et bas, pour le déplacer."
           className="chat-lanceur fixed right-4 bottom-5 z-50 flex touch-none cursor-grab items-center gap-2.5 bg-tuile-600 px-4 py-3 text-sand-50 shadow-[0_12px_28px_-10px] shadow-vine-900/60 transition-colors select-none hover:bg-tuile-700 active:cursor-grabbing sm:right-5 sm:gap-3 sm:px-5"
         >

@@ -70,7 +70,7 @@ export function ServicesGrid({
                     href="/#services"
                     className="group mt-8 inline-flex items-center gap-2 py-2 text-[0.74rem] font-medium tracking-[0.2em] text-tuile-600 uppercase transition-colors hover:text-tuile-700 sm:mt-10"
                   >
-                    Voir plus
+                    {t.services.voirPlus}
                     <svg
                       aria-hidden
                       viewBox="0 0 14 8"

@@ -33,7 +33,9 @@ export function ContactForm({
   if (state.success) {
     return (
       <div className="border border-feuille-600/40 bg-sand-100 p-12 text-center">
-        <p className="font-display text-3xl font-light text-feuille-600">Merci</p>
+        <p className="font-display text-3xl font-light text-feuille-600">
+          {t.formulaire.merci}
+        </p>
         <p className="mx-auto mt-5 max-w-md text-[0.95rem] leading-relaxed text-vine-700">
           {state.success}
         </p>

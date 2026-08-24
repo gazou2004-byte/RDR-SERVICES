@@ -70,7 +70,7 @@ export function RegisterForm({ langue }: { langue: Langue }) {
       </Field>
 
       <SubmitButton className="w-full" pendingLabel="Création…">
-        Créer mon espace
+        {t.creerMonEspace}
       </SubmitButton>
 
       <p className="text-center text-[0.82rem] text-vine-500">
@@ -79,7 +79,7 @@ export function RegisterForm({ langue }: { langue: Langue }) {
           href={`${lienEspaceClient(langue)}/connexion`}
           className="inline-block py-1.5 text-tuile-600 transition-colors hover:text-tuile-700"
         >
-          Se connecter
+          {t.seConnecter}
         </Link>
       </p>
     </form>

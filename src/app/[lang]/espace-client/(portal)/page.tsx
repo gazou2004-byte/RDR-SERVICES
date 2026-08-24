@@ -137,7 +137,7 @@ export default async function DashboardPage({
                       </p>
                     </div>
                     <span className="shrink-0 text-[0.7rem] tracking-[0.18em] text-feuille-600 uppercase">
-                      Ouvrir
+                      {t.ouvrir}
                     </span>
                   </a>
                 </li>

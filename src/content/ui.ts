@@ -140,6 +140,7 @@ const fr = {
     projet: "Votre projet",
     exemple:
       "Nous sommes deux couples, nous aimerions découvrir les grands crus du Médoc sur quatre jours en septembre…",
+    merci: "Merci",
     envoyer: "Envoyer ma demande",
     budgets: [
       "Moins de 3 000 €",
@@ -371,6 +372,7 @@ const en: Ui = {
     projet: "Your project",
     exemple:
       "There are two couples of us; we would like to discover the classified growths of the Médoc over four days in September…",
+    merci: "Thank you",
     envoyer: "Send my request",
     budgets: [
       "Under €3,000",
@@ -602,6 +604,7 @@ const es: Ui = {
     projet: "Su proyecto",
     exemple:
       "Somos dos parejas y nos gustaría descubrir los grandes crus del Médoc durante cuatro días en septiembre…",
+    merci: "Gracias",
     envoyer: "Enviar mi solicitud",
     budgets: [
       "Menos de 3.000 €",
@@ -833,6 +836,7 @@ const de: Ui = {
     projet: "Ihr Vorhaben",
     exemple:
       "Wir sind zwei Paare und möchten im September vier Tage lang die klassifizierten Gewächse des Médoc entdecken …",
+    merci: "Danke",
     envoyer: "Anfrage senden",
     budgets: [
       "Unter 3.000 €",
@@ -1064,6 +1068,7 @@ const it: Ui = {
     projet: "Il vostro progetto",
     exemple:
       "Siamo due coppie e vorremmo scoprire i grandi cru del Médoc in quattro giorni a settembre…",
+    merci: "Grazie",
     envoyer: "Invia la richiesta",
     budgets: [
       "Meno di 3.000 €",

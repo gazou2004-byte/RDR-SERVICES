@@ -44,7 +44,7 @@ export function LoginForm({ langue }: { langue: Langue }) {
       </Field>
 
       <SubmitButton className="w-full" pendingLabel="Connexion…">
-        Se connecter
+        {t.seConnecter}
       </SubmitButton>
 
       <p className="text-center text-[0.82rem] text-vine-500">
@@ -53,7 +53,7 @@ export function LoginForm({ langue }: { langue: Langue }) {
           href={`${lienEspaceClient(langue)}/inscription`}
           className="inline-block py-1.5 text-tuile-600 transition-colors hover:text-tuile-700"
         >
-          Créer mon espace
+          {t.creerMonEspace}
         </Link>
       </p>
     </form>

@@ -40,7 +40,7 @@ export default async function MessagesPage({
     <div className="space-y-12">
       <div>
         <h2 className="font-display text-3xl font-light text-vine-900">
-          Messages
+          {t.messages}
         </h2>
         <p className="mt-4 max-w-xl text-[0.9rem] leading-relaxed text-vine-500">
           Votre conseiller répond sous 24 heures ouvrées. Pour une urgence

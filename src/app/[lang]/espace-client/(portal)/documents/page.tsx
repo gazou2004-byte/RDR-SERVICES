@@ -71,7 +71,7 @@ export default async function DocumentsPage({
                   href={document.url}
                   className="shrink-0 border border-tuile-600/40 px-5 py-2.5 text-[0.7rem] tracking-[0.18em] text-tuile-700 uppercase transition-colors hover:border-tuile-600 hover:text-tuile-600"
                 >
-                  Ouvrir
+                  {t.ouvrir}
                 </a>
               </li>
             ))}

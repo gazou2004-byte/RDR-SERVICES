@@ -142,7 +142,7 @@ export default async function BookingDetailPage({ params }: Props) {
         <div className="mt-6">
           {booking.documents.length === 0 ? (
             <p className="border border-dashed border-vine-900/20 px-6 py-10 text-center text-[0.88rem] text-vine-500">
-              Aucun document n&apos;a encore été déposé pour ce séjour.
+              {t.aucunDocumentSejour}
             </p>
           ) : (
             <ul className="divide-y divide-vine-900/12 border border-vine-900/12">

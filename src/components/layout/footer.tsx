@@ -65,6 +65,14 @@ export function Footer({ langue }: { langue: Langue }) {
             <p>
               © {year} {company.legalName}
             </p>
+            {/* La FAQ a quitté le menu du haut : ce lien ouvre la fenêtre de
+                discussion sur l'onglet des questions, comme avant. */}
+            <Link
+              href={lien(langue, "/#faq")}
+              className="transition-colors hover:text-tuile-600"
+            >
+              {t.pied.faq}
+            </Link>
             <Link
               href={lien(langue, "/mentions-legales")}
               className="transition-colors hover:text-tuile-600"

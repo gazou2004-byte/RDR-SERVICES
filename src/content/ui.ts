@@ -21,6 +21,7 @@ const fr = {
   },
 
   pied: {
+    faq: "FAQ",
     mentions: "Mentions légales",
     confidentialite: "Confidentialité",
     credits: "Crédits photo",
@@ -260,6 +261,7 @@ const en: Ui = {
   },
 
   pied: {
+    faq: "FAQ",
     mentions: "Legal notice",
     confidentialite: "Privacy",
     credits: "Photo credits",
@@ -494,6 +496,7 @@ const es: Ui = {
   },
 
   pied: {
+    faq: "Preguntas",
     mentions: "Aviso legal",
     confidentialite: "Privacidad",
     credits: "Créditos fotográficos",
@@ -732,6 +735,7 @@ const de: Ui = {
   },
 
   pied: {
+    faq: "Fragen",
     mentions: "Impressum",
     confidentialite: "Datenschutz",
     credits: "Bildnachweise",
@@ -970,6 +974,7 @@ const it: Ui = {
   },
 
   pied: {
+    faq: "Domande",
     mentions: "Note legali",
     confidentialite: "Privacy",
     credits: "Crediti fotografici",

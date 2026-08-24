@@ -53,11 +53,7 @@ export const company: Company = {
 
 export const nav: NavItem[] = [
   { label: "Inicio", href: "/#accueil" },
-  { label: "Servicios", href: "/#services" },
   { label: "Destinos", href: "/#sejours", regions: true },
-  { label: "Quiénes somos", href: "/#a-propos" },
-  { label: "Preguntas", href: "/#faq" },
-  { label: "Contacto", href: "/#contact" },
 ];
 
 export const hero = {

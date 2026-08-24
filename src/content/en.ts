@@ -52,11 +52,7 @@ export const company: Company = {
 
 export const nav: NavItem[] = [
   { label: "Home", href: "/#accueil" },
-  { label: "Services", href: "/#services" },
   { label: "Destinations", href: "/#sejours", regions: true },
-  { label: "About", href: "/#a-propos" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export const hero = {

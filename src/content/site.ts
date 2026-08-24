@@ -83,13 +83,9 @@ export const company: Company = {
  */
 export const nav: NavItem[] = [
   { label: "Accueil", href: "/#accueil" },
-  { label: "Services", href: "/#services" },
   { label: "Destinations", href: "/#sejours", regions: true },
-  { label: "À propos", href: "/#a-propos" },
   // Ces deux entrées n'ont plus de section dans la page : elles ouvrent la
   // fenêtre de discussion sur l'onglet correspondant (voir `chat-widget.tsx`).
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export const hero = {

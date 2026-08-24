@@ -1,10 +1,8 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
-import { requireUser } from "@/lib/auth";
-import type { FormState } from "./auth-actions";
+import type { FormState } from "./etat-formulaire";
 
 const leadSchema = z.object({
   firstName: z.string().trim().min(2, "Votre prénom est trop court."),
@@ -61,36 +59,4 @@ export async function submitLeadAction(
     success:
       "Votre demande est bien arrivée. Nous revenons vers vous sous 24 heures ouvrées.",
   };
-}
-
-const messageSchema = z.object({
-  bookingId: z.string().trim().optional(),
-  body: z.string().trim().min(2, "Votre message est vide."),
-});
-
-/** Envoie un message depuis l'espace client. */
-export async function sendMessageAction(
-  _prev: FormState,
-  formData: FormData,
-): Promise<FormState> {
-  const user = await requireUser();
-  const parsed = messageSchema.safeParse(
-    Object.fromEntries(formData) as Record<string, string>,
-  );
-
-  if (!parsed.success) {
-    return { fieldErrors: z.flattenError(parsed.error).fieldErrors };
-  }
-
-  await prisma.message.create({
-    data: {
-      userId: user.id,
-      bookingId: parsed.data.bookingId || null,
-      body: parsed.data.body,
-      fromStaff: false,
-    },
-  });
-
-  revalidatePath("/espace-client/messages");
-  return { success: "Message envoyé." };
 }

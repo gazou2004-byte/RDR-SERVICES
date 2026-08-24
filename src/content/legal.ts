@@ -65,14 +65,12 @@ const fr = {
         titre: "Données que nous collectons",
         body: [
           "Formulaire de devis : prénom, nom, adresse e-mail, téléphone, destination souhaitée, dates, nombre de voyageurs, budget indicatif et description de votre projet.",
-          "Espace client : prénom, nom, e-mail, téléphone, mot de passe (stocké sous forme chiffrée et non réversible), ainsi que les séjours, documents et messages qui vous sont rattachés.",
         ],
       },
       {
         titre: "Pourquoi nous les collectons",
         body: [
           "Répondre à votre demande de devis et organiser votre séjour (exécution du contrat).",
-          "Vous donner accès à votre espace client et à vos documents de voyage.",
           "Respecter nos obligations comptables et légales de conservation.",
         ],
       },
@@ -81,7 +79,6 @@ const fr = {
         body: [
           "Demandes de devis non converties : 3 ans à compter du dernier contact.",
           "Dossiers clients et pièces comptables : 10 ans, conformément aux obligations légales.",
-          "Comptes de l'espace client : jusqu'à votre demande de suppression.",
         ],
       },
       {
@@ -100,7 +97,7 @@ const fr = {
       {
         titre: "Cookies",
         body: [
-          "Ce site n'utilise ni cookie publicitaire ni traceur tiers. Un unique cookie technique est déposé lorsque vous vous connectez à votre espace client : il sert exclusivement à vous maintenir connecté et disparaît à la déconnexion.",
+          "Ce site ne dépose aucun cookie : ni publicitaire, ni de mesure d'audience, ni technique. Rien n'est écrit sur votre appareil, hormis la langue et la position du bouton de discussion, que votre navigateur retient seul et ne nous transmet jamais.",
         ],
       },
     ],
@@ -175,14 +172,12 @@ const en: Legal = {
         titre: "Data we collect",
         body: [
           "Proposal form: first name, surname, email address, telephone, preferred destination, dates, number of travellers, indicative budget and a description of your project.",
-          "Client area: first name, surname, email, telephone, password (stored encrypted and not reversible), together with the journeys, documents and messages attached to you.",
         ],
       },
       {
         titre: "Why we collect it",
         body: [
           "To answer your request and arrange your journey (performance of the contract).",
-          "To give you access to your client area and your travel documents.",
           "To meet our accounting and legal record-keeping obligations.",
         ],
       },
@@ -191,7 +186,6 @@ const en: Legal = {
         body: [
           "Requests that did not lead to a booking: 3 years from the last contact.",
           "Client files and accounting records: 10 years, as the law requires.",
-          "Client area accounts: until you ask us to delete them.",
         ],
       },
       {
@@ -210,7 +204,7 @@ const en: Legal = {
       {
         titre: "Cookies",
         body: [
-          "This site uses neither advertising cookies nor third-party trackers. A single technical cookie is set when you sign in to your client area: it serves only to keep you signed in, and disappears when you sign out.",
+          "This site sets no cookies at all: no advertising, no analytics, no technical ones. Nothing is written to your device apart from your language and the position of the chat button, which your browser keeps to itself and never sends to us.",
         ],
       },
     ],
@@ -283,14 +277,12 @@ const es: Legal = {
         titre: "Datos que recogemos",
         body: [
           "Formulario de presupuesto: nombre, apellidos, correo electrónico, teléfono, destino deseado, fechas, número de viajeros, presupuesto orientativo y descripción de su proyecto.",
-          "Área de cliente: nombre, apellidos, correo, teléfono, contraseña (almacenada cifrada y no reversible), así como las estancias, documentos y mensajes asociados a usted.",
         ],
       },
       {
         titre: "Por qué los recogemos",
         body: [
           "Para responder a su solicitud y organizar su estancia (ejecución del contrato).",
-          "Para darle acceso a su área de cliente y a sus documentos de viaje.",
           "Para cumplir nuestras obligaciones contables y legales de conservación.",
         ],
       },
@@ -299,7 +291,6 @@ const es: Legal = {
         body: [
           "Solicitudes no convertidas en reserva: 3 años desde el último contacto.",
           "Expedientes de clientes y documentos contables: 10 años, conforme a las obligaciones legales.",
-          "Cuentas del área de cliente: hasta que solicite su supresión.",
         ],
       },
       {
@@ -318,7 +309,7 @@ const es: Legal = {
       {
         titre: "Cookies",
         body: [
-          "Este sitio no utiliza cookies publicitarias ni rastreadores de terceros. Solo se instala una cookie técnica cuando se conecta a su área de cliente: sirve exclusivamente para mantener la sesión iniciada y desaparece al cerrarla.",
+          "Este sitio no instala ninguna cookie: ni publicitaria, ni de medición, ni técnica. En su dispositivo solo se guardan el idioma y la posición del botón de conversación, que su navegador conserva por su cuenta y nunca nos transmite.",
         ],
       },
     ],
@@ -391,14 +382,12 @@ const de: Legal = {
         titre: "Welche Daten wir erheben",
         body: [
           "Anfrageformular: Vorname, Nachname, E-Mail-Adresse, Telefon, gewünschtes Reiseziel, Daten, Zahl der Reisenden, ungefähres Budget und eine Beschreibung Ihres Vorhabens.",
-          "Kundenbereich: Vorname, Nachname, E-Mail, Telefon, Passwort (verschlüsselt und nicht rückführbar gespeichert) sowie die Ihnen zugeordneten Reisen, Unterlagen und Nachrichten.",
         ],
       },
       {
         titre: "Warum wir sie erheben",
         body: [
           "Um Ihre Anfrage zu beantworten und Ihre Reise zu organisieren (Vertragserfüllung).",
-          "Um Ihnen Zugang zu Ihrem Kundenbereich und Ihren Reiseunterlagen zu geben.",
           "Um unseren buchhalterischen und gesetzlichen Aufbewahrungspflichten nachzukommen.",
         ],
       },
@@ -407,7 +396,6 @@ const de: Legal = {
         body: [
           "Anfragen ohne Buchung: 3 Jahre ab dem letzten Kontakt.",
           "Kundenakten und Buchhaltungsbelege: 10 Jahre, wie gesetzlich vorgeschrieben.",
-          "Konten im Kundenbereich: bis zu Ihrem Löschungsverlangen.",
         ],
       },
       {
@@ -426,7 +414,7 @@ const de: Legal = {
       {
         titre: "Cookies",
         body: [
-          "Diese Website verwendet weder Werbe-Cookies noch Tracker Dritter. Ein einziges technisches Cookie wird gesetzt, wenn Sie sich in Ihrem Kundenbereich anmelden: es dient allein dazu, Sie angemeldet zu halten, und verschwindet beim Abmelden.",
+          "Diese Website setzt überhaupt keine Cookies: weder für Werbung noch zur Messung noch technische. Auf Ihrem Gerät werden allein Ihre Sprache und die Position der Gesprächsschaltfläche abgelegt — Ihr Browser behält beides für sich und übermittelt es uns nie.",
         ],
       },
     ],
@@ -499,14 +487,12 @@ const it: Legal = {
         titre: "Dati che raccogliamo",
         body: [
           "Modulo di preventivo: nome, cognome, indirizzo e-mail, telefono, destinazione desiderata, date, numero di viaggiatori, budget indicativo e descrizione del vostro progetto.",
-          "Area riservata: nome, cognome, e-mail, telefono, password (conservata cifrata e non reversibile), oltre ai soggiorni, ai documenti e ai messaggi a voi collegati.",
         ],
       },
       {
         titre: "Perché li raccogliamo",
         body: [
           "Per rispondere alla vostra richiesta e organizzare il soggiorno (esecuzione del contratto).",
-          "Per darvi accesso alla vostra area riservata e ai documenti di viaggio.",
           "Per rispettare i nostri obblighi contabili e legali di conservazione.",
         ],
       },
@@ -515,7 +501,6 @@ const it: Legal = {
         body: [
           "Richieste non convertite in prenotazione: 3 anni dall'ultimo contatto.",
           "Pratiche dei clienti e documenti contabili: 10 anni, come previsto dalla legge.",
-          "Account dell'area riservata: fino alla vostra richiesta di cancellazione.",
         ],
       },
       {
@@ -534,7 +519,7 @@ const it: Legal = {
       {
         titre: "Cookie",
         body: [
-          "Questo sito non utilizza cookie pubblicitari né tracciatori di terze parti. Un solo cookie tecnico viene installato quando accedete alla vostra area riservata: serve esclusivamente a mantenervi collegati e scompare alla disconnessione.",
+          "Questo sito non installa alcun cookie: né pubblicitario, né di misurazione, né tecnico. Sul vostro dispositivo restano solo la lingua e la posizione del pulsante di conversazione, che il vostro browser conserva per sé e non ci trasmette mai.",
         ],
       },
     ],

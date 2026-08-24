@@ -7,18 +7,11 @@ import type { Destination, NavItem } from "@/content/site";
 import { ui } from "@/content/ui";
 import {
   lien as adresse,
-  lienEspaceClient,
   separer,
   type Langue,
 } from "@/content/langue";
 import { SelecteurLangue } from "./selecteur-langue";
 import { Logo } from "./logo";
-
-/*
- * La vitrine statique porte les pages de connexion et d'inscription, en
- * démonstration : le lien du menu y mène donc, il n'aboutit plus sur une 404.
- */
-const espaceClientDisponible = true;
 
 export function Header({
   langue,
@@ -177,18 +170,6 @@ export function Header({
 
           <SelecteurLangue langue={langue} transparent={transparent} />
 
-          {espaceClientDisponible ? (
-            <Link
-              href={lienEspaceClient(langue)}
-              className={`ml-2 border px-5 py-2.5 text-[0.7rem] font-medium tracking-[0.18em] whitespace-nowrap uppercase transition-all ${
-                transparent
-                  ? "border-sand-50/60 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
-                  : "border-tuile-600/60 text-tuile-700 hover:bg-tuile-600 hover:text-sand-50"
-              }`}
-            >
-              {t.entete.espaceClient}
-            </Link>
-          ) : null}
         </nav>
 
         <button
@@ -251,14 +232,6 @@ export function Header({
             <SelecteurLangue langue={langue} taille="deplie" />
           </div>
 
-          {espaceClientDisponible ? (
-            <Link
-              href={lienEspaceClient(langue)}
-              className="mt-6 border border-tuile-600/60 px-5 py-4 text-center text-[0.7rem] font-medium tracking-[0.18em] text-tuile-700 uppercase"
-            >
-              {t.entete.espaceClient}
-            </Link>
-          ) : null}
         </nav>
       </div>
     </header>

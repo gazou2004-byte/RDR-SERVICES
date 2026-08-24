@@ -806,6 +806,6 @@ export const faq = [
   {
     question: "Comment se passe le paiement ?",
     answer:
-      "Un acompte de 30 % à la validation du programme, le solde quinze jours avant le départ. Virement ou carte bancaire. Vos documents et factures sont accessibles dans votre espace client.",
+      "Un acompte de 30 % à la validation du programme, le solde quinze jours avant le départ. Virement ou carte bancaire. Vos documents et factures vous sont adressés par e-mail.",
   },
 ];

@@ -730,6 +730,6 @@ export const faq = [
   {
     question: "How does payment work?",
     answer:
-      "A 30% deposit when the programme is agreed, the balance fifteen days before departure. Bank transfer or card. Your documents and invoices are available in your client area.",
+      "A 30% deposit when the programme is agreed, the balance fifteen days before departure. Bank transfer or card. Your documents and invoices are sent to you by email.",
   },
 ];

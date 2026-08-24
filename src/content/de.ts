@@ -730,6 +730,6 @@ export const faq = [
   {
     question: "Wie läuft die Bezahlung ab?",
     answer:
-      "Eine Anzahlung von 30 % bei Bestätigung des Programms, der Restbetrag fünfzehn Tage vor Abreise. Überweisung oder Karte. Ihre Unterlagen und Rechnungen finden Sie in Ihrem Kundenbereich.",
+      "Eine Anzahlung von 30 % bei Bestätigung des Programms, der Restbetrag fünfzehn Tage vor Abreise. Überweisung oder Karte. Ihre Unterlagen und Rechnungen erhalten Sie per E-Mail.",
   },
 ];

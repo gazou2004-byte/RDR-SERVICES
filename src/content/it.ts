@@ -730,6 +730,6 @@ export const faq = [
   {
     question: "Come funziona il pagamento?",
     answer:
-      "Un acconto del 30 % alla conferma del programma, il saldo quindici giorni prima della partenza. Bonifico o carta. I vostri documenti e le fatture sono disponibili nella vostra area riservata.",
+      "Un acconto del 30 % alla conferma del programma, il saldo quindici giorni prima della partenza. Bonifico o carta. I vostri documenti e le fatture vi vengono inviati per e-mail.",
   },
 ];

@@ -265,9 +265,6 @@ export function ChatWidget({
     return () => document.removeEventListener("click", surClic, true);
   }, [ouvrir]);
 
-  /* L'espace client a ses propres outils : pas de fenêtre commerciale ici. */
-  if (pathname.startsWith("/espace-client")) return null;
-
   const onglets: { cle: Onglet; libelle: string }[] = [
     { cle: "questions", libelle: t.chat.ongletQuestions },
     { cle: "projet", libelle: t.chat.ongletProjet },

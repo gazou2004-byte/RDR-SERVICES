@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import { submitLeadAction } from "@/lib/actions/lead-actions";
-import type { FormState } from "@/lib/actions/auth-actions";
+import type { FormState } from "@/lib/actions/etat-formulaire";
 import {
   Field,
   FormAlert,

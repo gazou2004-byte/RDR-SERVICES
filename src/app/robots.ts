@@ -8,7 +8,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/espace-client",
     },
     sitemap: "https://rdr-services.fr/sitemap.xml",
   };

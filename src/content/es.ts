@@ -730,6 +730,6 @@ export const faq = [
   {
     question: "¿Cómo funciona el pago?",
     answer:
-      "Un anticipo del 30 % al validar el programa y el resto quince días antes de la salida. Transferencia o tarjeta. Sus documentos y facturas están disponibles en su área de cliente.",
+      "Un anticipo del 30 % al validar el programa y el resto quince días antes de la salida. Transferencia o tarjeta. Sus documentos y facturas se le envían por correo electrónico.",
   },
 ];

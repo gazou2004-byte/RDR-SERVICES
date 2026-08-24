@@ -4,33 +4,16 @@
  *
  *   npm run build:vitrine
  *
- * L'espace client en est volontairement absent : il a besoin d'un serveur
- * Node et d'une base de données, ce qu'un hébergement de fichiers ne fournit
- * pas. Le site complet se compile toujours avec `npm run build`.
- *
- * Deux escamotages, tous deux annulés à la fin quoi qu'il arrive :
- *   1. `src/app/[lang]/espace-client` est renommé `_espace-client`. Next ignore les
- *      dossiers commençant par un souligné : les pages disparaissent donc du
- *      routage sans être supprimées.
- *   2. La page contact bascule sur le formulaire qui ouvre la messagerie,
- *      puisqu'aucune action serveur ne peut s'exécuter en statique.
+ * Un seul escamotage, annulé à la fin quoi qu'il arrive : le formulaire de
+ * contact bascule sur la version qui ouvre la messagerie du visiteur, puisque
+ * aucune action serveur ne peut s'exécuter en statique.
  */
 import { execSync } from "node:child_process";
-import { existsSync, readFileSync, renameSync, writeFileSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, rmSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-/*
- * Seul le portail est écarté : il exige une session et une base de données.
- * Les pages de connexion et d'inscription restent, comme sur la vitrine du
- * Clam — le visiteur voit à quoi ressemble l'espace client, et une mention
- * lui dit que rien n'y est enregistré.
- */
-const portail = path.join(racine, "src/app/[lang]/espace-client/(portal)");
-const portailMasque = path.join(racine, "src/app/[lang]/espace-client/_portal");
-// Deux fichiers désignent les composants à utiliser : ce sont les seuls réécrits.
-const socleComptes = path.join(racine, "src/components/forms/formulaires-compte.ts");
 // Le formulaire est choisi dans ce fichier, seul endroit à réécrire.
 const socleChat = path.join(racine, "src/components/chat/chat-dock.tsx");
 
@@ -38,17 +21,10 @@ const socleChat = path.join(racine, "src/components/chat/chat-dock.tsx");
 const basePath = process.argv[2] ?? "/RDR-SERVICES";
 
 const chatOriginal = readFileSync(socleChat, "utf8");
-const comptesOriginal = readFileSync(socleComptes, "utf8");
-let deplace = false;
 
 function restaurer() {
-  if (deplace && existsSync(portailMasque)) {
-    renameSync(portailMasque, portail);
-    console.log("· portail client remis en place");
-  }
   writeFileSync(socleChat, chatOriginal);
-  writeFileSync(socleComptes, comptesOriginal);
-  console.log("· formulaires restaurés");
+  console.log("· formulaire de la discussion restauré");
 }
 
 process.on("SIGINT", () => {
@@ -58,27 +34,6 @@ process.on("SIGINT", () => {
 
 try {
   console.log(`Compilation de la vitrine (basePath « ${basePath} »)\n`);
-
-  if (existsSync(portail)) {
-    renameSync(portail, portailMasque);
-    deplace = true;
-    console.log("· portail client écarté du routage (session et base absentes)");
-  }
-
-  const comptes = comptesOriginal
-    .replace('export { LoginForm } from "./login-form";',
-      'export { LoginForm } from "./login-form-static";')
-    .replace('export { RegisterForm } from "./register-form";',
-      'export { RegisterForm } from "./register-form-static";');
-
-  if (comptes === comptesOriginal) {
-    throw new Error(
-      "formulaires-compte.ts ne désigne plus les formulaires attendus : la " +
-        "bascule vers les versions de démonstration n'a rien remplacé.",
-    );
-  }
-  writeFileSync(socleComptes, comptes);
-  console.log("· formulaires de compte basculés en démonstration");
 
   const bascule = chatOriginal
     .replace(

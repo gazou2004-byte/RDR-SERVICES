@@ -8,6 +8,7 @@ import { ui } from "@/content/ui";
 import {
   lien as adresse,
   lienEspaceClient,
+  separer,
   type Langue,
 } from "@/content/langue";
 import { SelecteurLangue } from "./selecteur-langue";
@@ -63,8 +64,13 @@ export function Header({
    * pages qui commencent par une image plein cadre : l'accueil et les fiches
    * de région. Ailleurs — mentions légales, crédits, page introuvable — le
    * fond est pâle dès le premier pixel, et le logo clair y devenait invisible.
+   *
+   * Le préfixe de langue est retiré avant la comparaison : sans cela, `/en/`
+   * et `/es/destinations/landes/` n'étaient pas reconnues comme des pages à
+   * image, et le bandeau restait pâle par-dessus la photo.
    */
-  const overHero = pathname === "/" || pathname.startsWith("/destinations/");
+  const { reste } = separer(pathname);
+  const overHero = reste === "/" || reste.startsWith("/destinations/");
   const transparent = overHero && !scrolled && !open;
 
   /*
@@ -74,10 +80,7 @@ export function Header({
   const [sectionVue, setSectionVue] = useState("accueil");
 
   useEffect(() => {
-    // L'accueil n'est pas à la même adresse dans les deux langues, et la barre
-    // oblique finale dépend du réglage `trailingSlash`.
-    const accueil = langue === "fr" ? "" : "/en";
-    if (pathname.replace(/\/$/, "") !== accueil) return;
+    if (reste !== "/") return;
     const ids = nav
       .map((item) => item.href.split("#")[1])
       .filter(Boolean) as string[];
@@ -97,12 +100,14 @@ export function Header({
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, [pathname, langue, nav]);
+  }, [reste, nav]);
 
   const isActive = (href: string) => {
     const ancre = href.split("#")[1];
     if (!ancre) return pathname === href;
-    return pathname === "/" && sectionVue === ancre;
+    // Même raison : les ancres du menu ne s'allument que sur l'accueil, quelle
+    // que soit la langue de celui-ci.
+    return reste === "/" && sectionVue === ancre;
   };
 
   return (

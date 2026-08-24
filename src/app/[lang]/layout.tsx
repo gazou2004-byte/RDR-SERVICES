@@ -2,19 +2,24 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { Coque } from "@/components/layout/coque";
-import { contenu, estLangue, LANGUES_PREFIXEES } from "@/content";
+import { contenu, estLangue, LANGUES } from "@/content";
 import { LOCALE_OG, META, equivalents } from "@/content/meta";
 
 /**
- * La racine des langues qui portent un préfixe d'adresse.
+ * La racine des pages portant un préfixe de langue.
  *
- * Le français n'en fait pas partie : il vit à la racine du site, dans le
- * groupe `(fr)`, pour que son adresse d'origine reste intacte. Les quatre
- * autres partagent ce seul jeu de pages — sans quoi il faudrait cinq copies de
- * chaque fichier de route.
+ * Le site public français vit à la racine, dans le groupe `(fr)`, pour que son
+ * adresse d'origine reste intacte ; les quatre autres langues partagent ce
+ * seul jeu de pages, sans quoi il faudrait cinq copies de chaque route.
+ *
+ * Le français figure quand même dans cette liste, pour une seule raison :
+ * l'espace client vit sous un préfixe dans toutes les langues, français
+ * compris. Sans lui, `/fr/espace-client/connexion` n'existerait pas. Cela
+ * publie au passage un double du site français sous `/fr/` — inoffensif : ces
+ * pages déclarent la racine comme leur adresse de référence.
  */
 export function generateStaticParams() {
-  return LANGUES_PREFIXEES.map((lang) => ({ lang }));
+  return LANGUES.map((lang) => ({ lang }));
 }
 
 type Props = { params: Promise<{ lang: string }> };

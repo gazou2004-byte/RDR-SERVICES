@@ -27,7 +27,7 @@ export function RegisterForm({ langue }: { langue: Langue }) {
         >
           <Input id="firstName" name="firstName" required autoComplete="given-name" />
         </Field>
-        <Field label="Nom" name="lastName" errors={state.fieldErrors?.lastName}>
+        <Field label={f.nom} name="lastName" errors={state.fieldErrors?.lastName}>
           <Input id="lastName" name="lastName" required autoComplete="family-name" />
         </Field>
       </div>

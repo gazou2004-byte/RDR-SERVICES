@@ -21,8 +21,16 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const espaceClient = path.join(racine, "src/app/[lang]/espace-client");
-const espaceClientMasque = path.join(racine, "src/app/[lang]/_espace-client");
+/*
+ * Seul le portail est écarté : il exige une session et une base de données.
+ * Les pages de connexion et d'inscription restent, comme sur la vitrine du
+ * Clam — le visiteur voit à quoi ressemble l'espace client, et une mention
+ * lui dit que rien n'y est enregistré.
+ */
+const portail = path.join(racine, "src/app/[lang]/espace-client/(portal)");
+const portailMasque = path.join(racine, "src/app/[lang]/espace-client/_portal");
+// Deux fichiers désignent les composants à utiliser : ce sont les seuls réécrits.
+const socleComptes = path.join(racine, "src/components/forms/formulaires-compte.ts");
 // Le formulaire est choisi dans ce fichier, seul endroit à réécrire.
 const socleChat = path.join(racine, "src/components/chat/chat-dock.tsx");
 
@@ -30,15 +38,17 @@ const socleChat = path.join(racine, "src/components/chat/chat-dock.tsx");
 const basePath = process.argv[2] ?? "/RDR-SERVICES";
 
 const chatOriginal = readFileSync(socleChat, "utf8");
+const comptesOriginal = readFileSync(socleComptes, "utf8");
 let deplace = false;
 
 function restaurer() {
-  if (deplace && existsSync(espaceClientMasque)) {
-    renameSync(espaceClientMasque, espaceClient);
-    console.log("· espace client remis en place");
+  if (deplace && existsSync(portailMasque)) {
+    renameSync(portailMasque, portail);
+    console.log("· portail client remis en place");
   }
   writeFileSync(socleChat, chatOriginal);
-  console.log("· formulaire de la discussion restauré");
+  writeFileSync(socleComptes, comptesOriginal);
+  console.log("· formulaires restaurés");
 }
 
 process.on("SIGINT", () => {
@@ -49,11 +59,26 @@ process.on("SIGINT", () => {
 try {
   console.log(`Compilation de la vitrine (basePath « ${basePath} »)\n`);
 
-  if (existsSync(espaceClient)) {
-    renameSync(espaceClient, espaceClientMasque);
+  if (existsSync(portail)) {
+    renameSync(portail, portailMasque);
     deplace = true;
-    console.log("· espace client écarté du routage");
+    console.log("· portail client écarté du routage (session et base absentes)");
   }
+
+  const comptes = comptesOriginal
+    .replace('export { LoginForm } from "./login-form";',
+      'export { LoginForm } from "./login-form-static";')
+    .replace('export { RegisterForm } from "./register-form";',
+      'export { RegisterForm } from "./register-form-static";');
+
+  if (comptes === comptesOriginal) {
+    throw new Error(
+      "formulaires-compte.ts ne désigne plus les formulaires attendus : la " +
+        "bascule vers les versions de démonstration n'a rien remplacé.",
+    );
+  }
+  writeFileSync(socleComptes, comptes);
+  console.log("· formulaires de compte basculés en démonstration");
 
   const bascule = chatOriginal
     .replace(

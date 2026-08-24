@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Destination } from "@/components/pages/destination";
-import { contenu, estLangue, LANGUES_PREFIXEES } from "@/content";
+import { contenu, estLangue, LANGUES } from "@/content";
 import { equivalents } from "@/content/meta";
 import { destinations } from "@/content/site";
 
@@ -10,7 +10,7 @@ type Props = { params: Promise<{ lang: string; slug: string }> };
 // Les identifiants d'adresse sont communs à toutes les langues : un seul jeu
 // d'URL à maintenir, et un lien reste valable quand on change de langue.
 export function generateStaticParams() {
-  return LANGUES_PREFIXEES.flatMap((lang) =>
+  return LANGUES.flatMap((lang) =>
     destinations.map((destination) => ({ lang, slug: destination.slug })),
   );
 }

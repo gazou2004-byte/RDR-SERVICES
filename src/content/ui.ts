@@ -207,6 +207,12 @@ const fr = {
     dates: "Dates",
     duree: "Durée",
     voyageurs: "Voyageurs",
+    accrocheConnexion:
+      "Retrouvez vos séjours, vos documents de voyage et vos échanges avec votre conseiller.",
+    accrocheInscription:
+      "Suivez vos séjours, téléchargez vos documents et échangez avec votre conseiller au même endroit.",
+    demonstration:
+      "Démonstration — le site est entièrement navigable, mais la création de compte et la connexion sont désactivées tant qu'il ne tourne pas sur un serveur.",
     seConnecter: "Se connecter",
     creerMonEspace: "Créer mon espace",
     adresseEmail: "Adresse e-mail",
@@ -437,6 +443,12 @@ const en: Ui = {
     dates: "Dates",
     duree: "Length",
     voyageurs: "Travellers",
+    accrocheConnexion:
+      "Find your journeys, your travel documents and your exchanges with your adviser.",
+    accrocheInscription:
+      "Follow your journeys, download your documents and talk to your adviser, all in one place.",
+    demonstration:
+      "Demonstration — the whole site can be browsed, but creating an account and signing in are disabled until it runs on a server.",
     seConnecter: "Sign in",
     creerMonEspace: "Create my account",
     adresseEmail: "Email address",
@@ -669,6 +681,12 @@ const es: Ui = {
     dates: "Fechas",
     duree: "Duración",
     voyageurs: "Viajeros",
+    accrocheConnexion:
+      "Encuentre sus viajes, sus documentos de viaje y sus conversaciones con su asesor.",
+    accrocheInscription:
+      "Siga sus viajes, descargue sus documentos y hable con su asesor, todo en un mismo sitio.",
+    demonstration:
+      "Demostración — el sitio se puede recorrer por completo, pero la creación de cuenta y el acceso están desactivados mientras no funcione en un servidor.",
     seConnecter: "Iniciar sesión",
     creerMonEspace: "Crear mi cuenta",
     adresseEmail: "Correo electrónico",
@@ -901,6 +919,12 @@ const de: Ui = {
     dates: "Daten",
     duree: "Dauer",
     voyageurs: "Reisende",
+    accrocheConnexion:
+      "Hier finden Sie Ihre Reisen, Ihre Reiseunterlagen und Ihren Austausch mit Ihrem Berater.",
+    accrocheInscription:
+      "Verfolgen Sie Ihre Reisen, laden Sie Ihre Unterlagen herunter und sprechen Sie mit Ihrem Berater — alles an einem Ort.",
+    demonstration:
+      "Demonstration — die gesamte Website lässt sich durchsehen, aber Kontoerstellung und Anmeldung sind deaktiviert, solange sie nicht auf einem Server läuft.",
     seConnecter: "Anmelden",
     creerMonEspace: "Mein Konto anlegen",
     adresseEmail: "E-Mail-Adresse",
@@ -1133,6 +1157,12 @@ const it: Ui = {
     dates: "Date",
     duree: "Durata",
     voyageurs: "Viaggiatori",
+    accrocheConnexion:
+      "Ritrovate i vostri viaggi, i vostri documenti di viaggio e gli scambi con il vostro consulente.",
+    accrocheInscription:
+      "Seguite i vostri viaggi, scaricate i documenti e parlate con il vostro consulente, tutto nello stesso posto.",
+    demonstration:
+      "Dimostrazione — il sito è interamente navigabile, ma la creazione dell'account e l'accesso sono disattivati finché non gira su un server.",
     seConnecter: "Accedi",
     creerMonEspace: "Crea il mio account",
     adresseEmail: "Indirizzo e-mail",

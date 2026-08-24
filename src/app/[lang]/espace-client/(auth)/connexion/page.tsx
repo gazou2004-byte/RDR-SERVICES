@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LoginForm } from "@/components/forms/login-form";
+import { LoginForm } from "@/components/forms/formulaires-compte";
 import { estLangue } from "@/content";
 import { ui } from "@/content/ui";
 import { notFound } from "next/navigation";
@@ -26,10 +26,17 @@ export default async function LoginPage({
         {t.bonRetour}
       </h1>
       <p className="mt-4 text-[0.9rem] leading-relaxed text-vine-600">
-        Retrouvez vos séjours, vos documents de voyage et vos échanges avec
-        votre conseiller.
+        {t.accrocheConnexion}
       </p>
       <span className="rule-feuille mt-8 mb-9" />
+
+      {/* Sur la vitrine statique, aucun compte ne peut être créé : mieux vaut
+          le dire avant que le visiteur remplisse les champs. */}
+      {process.env.NEXT_PUBLIC_VITRINE === "1" ? (
+        <p className="mb-8 border border-feuille-600/35 bg-feuille-300/30 px-5 py-4 text-[0.85rem] leading-relaxed text-feuille-700">
+          {t.demonstration}
+        </p>
+      ) : null}
       <LoginForm langue={lang} />
     </>
   );

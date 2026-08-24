@@ -14,9 +14,11 @@ import {
 import { SelecteurLangue } from "./selecteur-langue";
 import { Logo } from "./logo";
 
-// Sur la vitrine statique, l'espace client n'est pas déployé : on masque
-// les liens qui y mènent plutôt que d'envoyer les visiteurs sur une 404.
-const espaceClientDisponible = process.env.NEXT_PUBLIC_VITRINE !== "1";
+/*
+ * La vitrine statique porte les pages de connexion et d'inscription, en
+ * démonstration : le lien du menu y mène donc, il n'aboutit plus sur une 404.
+ */
+const espaceClientDisponible = true;
 
 export function Header({
   langue,

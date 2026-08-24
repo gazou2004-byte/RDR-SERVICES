@@ -1,14 +1,28 @@
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import { getCurrentUser } from "@/lib/auth";
+import { lienEspaceClient, estLangue } from "@/content/langue";
 
 export default async function AuthLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }) {
-  // Déjà connecté : inutile de repasser par la connexion
-  if (await getCurrentUser()) redirect("/espace-client");
+  const { lang } = await params;
+
+  /*
+   * La vitrine statique n'a ni session ni base : on n'y charge même pas le
+   * module d'authentification, qui lit les cookies et interrogerait une base
+   * absente. Import différé plutôt qu'en tête de fichier, pour cette raison.
+   */
+  if (process.env.NEXT_PUBLIC_VITRINE !== "1") {
+    const { getCurrentUser } = await import("@/lib/auth");
+    // Déjà connecté : inutile de repasser par la connexion
+    if (await getCurrentUser()) {
+      redirect(lienEspaceClient(estLangue(lang) ? lang : "fr"));
+    }
+  }
 
   return (
     <div className="relative flex min-h-[100svh] items-center justify-center px-6 py-32">

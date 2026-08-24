@@ -241,7 +241,7 @@ export function Header({
             </div>
           ))}
           <div className="border-b border-vine-900/10 py-4">
-            <SelecteurLangue langue={langue} />
+            <SelecteurLangue langue={langue} taille="deplie" />
           </div>
 
           {espaceClientDisponible ? (

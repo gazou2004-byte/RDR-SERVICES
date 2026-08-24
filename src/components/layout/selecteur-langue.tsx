@@ -13,8 +13,13 @@ import {
 import { ui } from "@/content/ui";
 
 /**
- * Sélecteur de langue repris du Clam : une pastille ronde portant un globe,
- * qui déplie la liste des langues avec leur drapeau et leur nom.
+ * Sélecteur de langue repris du Clam : un globe qui déplie la liste des
+ * langues avec leur drapeau et leur nom.
+ *
+ * Le bouton est volontairement discret : ni contour ni fond, et la même
+ * écriture que les autres entrées du menu — il s'y lit comme un mot de plus.
+ * Encadré, il tirait l'œil plus que les liens du site. C'est la liste dépliée
+ * qui porte le dessin.
  *
  * Une différence avec l'original, et elle est volontaire : là-bas les entrées
  * sont des boutons qui rechargent la page dans la langue choisie ; ici ce sont
@@ -27,10 +32,13 @@ import { ui } from "@/content/ui";
 export function SelecteurLangue({
   langue,
   transparent = false,
+  taille = "barre",
 }: {
   langue: Langue;
   /** L'en-tête posé sur une photo réclame un bouton clair. */
   transparent?: boolean;
+  /** Le menu déplié écrit plus grand que la barre du haut. */
+  taille?: "barre" | "deplie";
 }) {
   const pathname = usePathname();
   const [ouvert, setOuvert] = useState(false);
@@ -65,29 +73,33 @@ export function SelecteurLangue({
         aria-label={t.langue.choisir}
         aria-expanded={ouvert}
         aria-haspopup="menu"
-        className={`flex h-9 items-center gap-1.5 rounded-full border-[1.5px] px-2.5 text-[0.7rem] font-bold tracking-[0.03em] uppercase transition-colors ${
+        // Même écriture que les autres entrées du menu : serif, même corps,
+        // mêmes couleurs. Le sélecteur se lit comme un mot de plus.
+        className={`flex items-center gap-1.5 font-display whitespace-nowrap transition-colors ${
+          taille === "deplie" ? "text-2xl font-light" : "text-lg"
+        } ${
           transparent
-            ? "border-sand-50/50 text-sand-50 hover:bg-sand-50 hover:text-vine-900"
-            : "border-vine-900/25 text-vine-600 hover:bg-vine-900 hover:text-sand-50"
+            ? "text-sand-50 hover:text-feuille-400"
+            : "text-vine-800 hover:text-tuile-600"
         }`}
       >
         <svg
           aria-hidden
-          width="16"
-          height="16"
+          width="15"
+          height="15"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth={2}
+          strokeWidth={1.6}
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="shrink-0"
+          className="mt-px shrink-0 opacity-70"
         >
           <circle cx="12" cy="12" r="10" />
           <line x1="2" y1="12" x2="22" y2="12" />
           <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
         </svg>
-        {langue}
+        {NOM_LANGUE[langue]}
       </button>
 
       {ouvert ? (

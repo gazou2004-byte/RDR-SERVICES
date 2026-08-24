@@ -29,6 +29,15 @@ export const NOM_LANGUE: Record<Langue, string> = {
   it: "Italiano",
 };
 
+/** Le drapeau de chaque langue, pour le sélecteur. */
+export const DRAPEAU: Record<Langue, string> = {
+  fr: "🇫🇷",
+  en: "🇬🇧",
+  es: "🇪🇸",
+  de: "🇩🇪",
+  it: "🇮🇹",
+};
+
 /** `true` si la valeur désigne une langue connue. */
 export function estLangue(valeur: string): valeur is Langue {
   return (LANGUES as string[]).includes(valeur);

@@ -27,6 +27,7 @@ export function contenu(langue: Langue): Contenu {
 }
 
 export {
+  DRAPEAU,
   LANGUES,
   LANGUES_PREFIXEES,
   LANGUE_RACINE,

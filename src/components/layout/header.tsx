@@ -6,13 +6,11 @@ import { useEffect, useState } from "react";
 import type { Destination, NavItem } from "@/content/site";
 import { ui } from "@/content/ui";
 import {
-  LANGUES,
-  NOM_LANGUE,
-  cheminDansLangue,
   lien as adresse,
   lienEspaceClient,
   type Langue,
 } from "@/content/langue";
+import { SelecteurLangue } from "./selecteur-langue";
 import { Logo } from "./logo";
 
 // Sur la vitrine statique, l'espace client n'est pas déployé : on masque
@@ -170,39 +168,7 @@ export function Header({
             );
           })}
 
-          {/* Pastilles à la manière du sélecteur de CLAM : la langue en cours
-              est encadrée et remplie, les autres restent en retrait. Chaque
-              pastille mène à la même page dans sa langue, pas à son accueil —
-              perdre sa place en changeant de langue est agaçant. */}
-          <div
-            aria-label={t.langue.choisir}
-            className="ml-1 flex items-center gap-0.5"
-          >
-            {LANGUES.map((code) => {
-              const courante = code === langue;
-              return (
-                <Link
-                  key={code}
-                  href={cheminDansLangue(pathname, code)}
-                  hrefLang={code}
-                  lang={code}
-                  title={NOM_LANGUE[code]}
-                  aria-current={courante ? "true" : undefined}
-                  className={`rounded-[5px] border px-[0.42rem] py-[0.22rem] text-[0.66rem] leading-none font-bold tracking-[0.05em] uppercase transition-all duration-150 ${
-                    courante
-                      ? transparent
-                        ? "border-sand-50 bg-sand-50/15 text-sand-50"
-                        : "border-vine-900 bg-sand-200 text-vine-900"
-                      : transparent
-                        ? "border-transparent text-sand-50/45 hover:text-sand-50"
-                        : "border-transparent text-vine-400 hover:text-vine-900"
-                  }`}
-                >
-                  {code}
-                </Link>
-              );
-            })}
-          </div>
+          <SelecteurLangue langue={langue} transparent={transparent} />
 
           {espaceClientDisponible ? (
             <Link
@@ -274,29 +240,8 @@ export function Header({
               ) : null}
             </div>
           ))}
-          {/* Le menu déplié est toujours sur fond clair : pas de variante
-              transparente ici. */}
-          <div
-            aria-label={t.langue.choisir}
-            className="flex flex-wrap items-center gap-2 border-b border-vine-900/10 py-4"
-          >
-            {LANGUES.map((code) => (
-              <Link
-                key={code}
-                href={cheminDansLangue(pathname, code)}
-                hrefLang={code}
-                lang={code}
-                title={NOM_LANGUE[code]}
-                aria-current={code === langue ? "true" : undefined}
-                className={`rounded-[5px] border px-2.5 py-1.5 text-[0.72rem] leading-none font-bold tracking-[0.05em] uppercase transition-all duration-150 ${
-                  code === langue
-                    ? "border-vine-900 bg-sand-200 text-vine-900"
-                    : "border-transparent text-vine-400"
-                }`}
-              >
-                {code}
-              </Link>
-            ))}
+          <div className="border-b border-vine-900/10 py-4">
+            <SelecteurLangue langue={langue} />
           </div>
 
           {espaceClientDisponible ? (
